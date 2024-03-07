@@ -14,7 +14,7 @@
 ;----------------
 ; PROGRAM INPUTS
 ;----------------
-MEASURED_TEMP	EQU 0X0 ; Mesured value from temperature sensor
+MEASURED_TEMP	EQU -0Xa ; Mesured value from temperature sensor
 REFERENCE_TEMP	EQU 0XF ; input value from the keypad
 DENOMINATOR EQU	0XA
 COUNTER	EQU 0X31
@@ -36,10 +36,10 @@ REF_DEC_L   EQU	0X60
 ; PROGRAM OUTPUTS
 ;----------------
 CONT_REG_NOTHING    EQU	0X00	;CONTROL REGISTER SETTINGS
-CONT_REG_COOL	EQU 0X02
-CONT_REG_HEAT	EQU 0X01
-#define	HEATER	PORTD,2
-#define	COOLER	PORTD,1
+CONT_REG_COOL	EQU 0X04
+CONT_REG_HEAT	EQU 0X02
+;#define	HEATER	PORTD,2
+;#define	COOLER	PORTD,1
 	
 PSECT absdata,abs,ovrld
 

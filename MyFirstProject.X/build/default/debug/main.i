@@ -32681,7 +32681,7 @@ ENDM
 ;----------------
 ; PROGRAM INPUTS
 ;----------------
-MEASURED_TEMP EQU 0X0 ; Mesured value from temperature sensor
+MEASURED_TEMP EQU -0Xa ; Mesured value from temperature sensor
 REFERENCE_TEMP EQU 0XF ; input value from the keypad
 DENOMINATOR EQU 0XA
 COUNTER EQU 0X31
