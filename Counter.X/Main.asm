@@ -11,13 +11,14 @@
 ;  	V1.0: 3/17/2024 -First Version
 ;-----------------------------
 #include <xc.inc>
-#include <./AssemblyConfig.inc>
+#include "AssemblyConfig.inc"
 ;----------------
 ; PROGRAM INPUTS
 ;----------------
 SETF TRISA    
 LARGE_LOOP EQU	0XFF
 SMALL_LOOP EQU	0X7
+
     
     
 ;----------------
@@ -27,6 +28,8 @@ BUTTON	EQU	0X10
 DELAY1	EQU	0X11
 DELAY2	EQU	0X12
 DELAY3	EQU	0X13
+LAST_CODE_ADDR	EQU 0X14
+FIRST_CODE_ADDR	EQU 0X15
 ;----------------
 ; PROGRAM OUTPUTS
 ;----------------
@@ -41,7 +44,14 @@ db  0x92, 0x82, 0xF8, 0x80, 0x98 ; numbers 5-9
 ;----------------
 	ORG 0X30
 START: 
-    
+    MOVLW   0X1F
+    MOVWF   FIRST_CODE_ADDR
+    MOVLW   0X2A
+    CLRF    WREG
+    CALL    SCAN
+    CALL    DISPLAY
+    CALL    DELAY
+    GOTO    START
 	
 ;--------------
 ;SUBROUTINES
@@ -82,16 +92,16 @@ GTEQ:
 COUNT_UP:
     CLRF WREG
     MOVFF TBLPTRL, WREG
-    CPFSLT 0X2A
+    CPFSLT LAST_CODE_ADDR
     GOTO ZERO_COUNTER_UP
     CLRF WREG
     AFTER_RESET_UP:
     TBLRD*+
-    MOVFF TABALAT, PORTC
+    MOVFF TABLAT, PORTC
     RETURN
     
 ZERO_COUNTER_UP:
-    MOVLW OX20
+    MOVLW 0X20
     MOVWF TBLPTRL
     GOTO AFTER_RESET_UP
 
@@ -101,23 +111,24 @@ COUNT_DOWN:
     CPFSGT  0X1F
     GOTO RESET_COUNT_DOWN
     CLRF WREG
-    AFTER_RESET_UP:
+    AFTER_RESET_DOWN:
     TBLRD*-
-    MOVFF TABALAT, PORTC
+    MOVFF TABLAT, PORTC
     RETURN
     
 RESET_COUNT_DOWN:
-    MOVLW OX28
-    MOVWF TBLPTRL
-    GOTO AFTER_RESET_DOWN
+    MOVLW   0X20
+    MOVWF   TBLPTRL
+    GOTO    AFTER_RESET_DOWN
     
     
  COUNT_RESET:
     MOVLW 0X20
     MOVWF TBLPTRL
     TBLRD*
-    MOVFF TABALAT, PORTC
+    MOVFF TABLAT, PORTC
     RETURN
+    
 ;----------------- END OF DISPLAY ROUTINE
     
 DELAY:
@@ -141,3 +152,4 @@ lOOP1:
     MOVWF DELAY2
     DECFSZ DELAY3
     BRA	LOOP2
+    RETURN

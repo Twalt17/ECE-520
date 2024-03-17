@@ -1,0 +1,45 @@
+### HEXMate logfile and output summary ###
+
+### Command-line arguments ###
+ C:\Users\Tyler\AppData\Local\Temp\xcAsnb8.\driver_tmp_3.o
+ -Odist/default/debug\Counter.X.debug.hex
+ -logfile=dist/default/debug\Counter.X.debug.hxl
+ -addressing=1
+ -break=300000
+
+### Memory Usage ###
+ Input file ranges:
+  300000h - 300009h		(C:\Users\Tyler\AppData\Local\Temp\xcAsnb8.\driver_tmp_3.o)
+  310000h - 310005h		(C:\Users\Tyler\AppData\Local\Temp\xcAsnb8.\driver_tmp_3.o)
+  310020h - 310029h		(C:\Users\Tyler\AppData\Local\Temp\xcAsnb8.\driver_tmp_3.o)
+  310030h - 3100EFh		(C:\Users\Tyler\AppData\Local\Temp\xcAsnb8.\driver_tmp_3.o)
+ Unused ranges:
+  0h - 2FFFFFh
+  30000Ah - 30FFFFh
+  310006h - 31001Fh
+  31002Ah - 31002Fh
+
+### Hex Memory Map ###
+ Legend:
+  -- = Unused memory
+  H1 = Input file             (C:\Users\Tyler\AppData\Local\Temp\xcAsnb8.\driver_tmp_3.o)
+----------------------------------------------------------
+         | 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
+----------------------------------------------------------
+00300000 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 -- -- -- -- -- --
+----------------------------------------------------------
+00310000 | H1 H1 H1 H1 H1 H1 -- -- -- -- -- -- -- -- -- --
+----------------------------------------------------------
+00310020 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 -- -- -- -- -- --
+00310030 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+00310040 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+00310050 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+00310060 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+00310070 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+00310080 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+00310090 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+003100A0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+003100B0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+003100C0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+003100D0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+003100E0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
