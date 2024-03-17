@@ -1,14 +1,14 @@
 ;-----------------------------
-; Title: Temperature Control Systen
+; Title: Seven Segment Counter
 ;-----------------------------
-; Purpose: Turns on heating or cooling systems based on desired temperature 
+; Purpose: Takes input from a keypad and either counts up or down 
 ; Dependencies: None
 ; Compiler: MPLAB X IDE v6.20
 ; Author: Tyler Walters
-; OUTPUTS: Outputs Connected to heating and cooling systems
-; INPUTS: Connected to keypad and temperature sensor 
+; OUTPUTS: Outputs Connected to seven segment display
+; INPUTS: Connected to keypad
 ; Versions:
-;  	V1.0: 3/2/2024 -First Version
+;  	V1.0: 3/17/2024 -First Version
 ;-----------------------------
 #include <xc.inc>
 #include <./AssemblyConfig.inc>
@@ -16,12 +16,17 @@
 ; PROGRAM INPUTS
 ;----------------
 SETF TRISA    
+LARGE_LOOP EQU	0XFF
+SMALL_LOOP EQU	0X7
     
     
 ;----------------
 ; REGISTERS
 ;----------------
 BUTTON	EQU	0X10
+DELAY1	EQU	0X11
+DELAY2	EQU	0X12
+DELAY3	EQU	0X13
 ;----------------
 ; PROGRAM OUTPUTS
 ;----------------
@@ -112,5 +117,27 @@ RESET_COUNT_DOWN:
     MOVWF TBLPTRL
     TBLRD*
     MOVFF TABALAT, PORTC
-    
+    RETURN
 ;----------------- END OF DISPLAY ROUTINE
+    
+DELAY:
+    CLRF WREG
+    MOVLW LARGE_LOOP
+    MOVWF DELAY1
+    MOVWF DELAY2
+    MOVLW SMALL_LOOP
+    MOVWF DELAY3
+LOOP3:	
+    NOP
+    DCFSNZ DELAY1
+    BRA	LOOP3
+LOOP2:
+    MOVLW LARGE_LOOP
+    MOVWF DELAY1
+    DECFSZ DELAY2
+    BRA LOOP3
+lOOP1:
+    MOVLW LARGE_LOOP
+    MOVWF DELAY2
+    DECFSZ DELAY3
+    BRA	LOOP2
