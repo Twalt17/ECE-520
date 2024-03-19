@@ -4,11 +4,11 @@ Linker command line:
 
 -W-3 \
   --edf=C:\Program Files\Microchip\xc8\v2.46\pic\dat\20240104201356_en.msgs \
-  -cs -h+dist/default/debug\Counter.X.debug.sym \
-  --cmf=dist/default/debug\Counter.X.debug.cmf -z -Q18F47K42 \
-  -oC:\Users\Tyler\AppData\Local\Temp\xcAscno.\driver_tmp_3.o \
+  -cs -h+dist/default/production\Counter.X.production.sym \
+  --cmf=dist/default/production\Counter.X.production.cmf -z -Q18F47K42 \
+  -oC:\Users\Tyler\AppData\Local\Temp\xcAsavo.\driver_tmp_3.o \
   --fixupoverflow=error -ver=XC8 PIC(R) Assembler --fixupoverflow=lstwarn \
-  -Mdist/default/debug/Counter.X.debug.map -E1 --acfsm=1493 \
+  -Mdist/default/production/Counter.X.production.map -E1 --acfsm=1493 \
   -ACODE=00h-01FFFFh -ACONST=00h-01FFFFh -ASMALLCONST=02000h-020FFhx480 \
   -AMEDIUMCONST=02000h-0FFFFh,012000h-01FFFFh -ACOMRAM=00h-05Fh \
   -AABS1=00h-01FFFh -ABIGRAM=00h-01FFFh -ARAM=060h-0FFh,0100h-01FFhx31 \
@@ -25,7 +25,7 @@ Linker command line:
   -ABANK30=01E00h-01EFFh -ABANK31=01F00h-01FFFh \
   -ASFR=03800h-038FFhx7,03F00h-03F5Fh,03F60h-03FFFh -ABIGSFR=03800h-03FFFh \
   -AIDLOC=0200000h-020000Fh -AEEDATA=0310000h-03103FFh \
-  build/default/debug/Main.o 
+  build/default/production/Main.o 
 
 Object code version is 3.11
 
@@ -34,7 +34,7 @@ Machine type is 18F47K42
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-build/default/debug/Main.o
+build/default/production/Main.o
                 config                           300000   300000        A        0       4
                 absdata                               0        0       FE        0       0
 

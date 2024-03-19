@@ -93,7 +93,7 @@ __Hudata_bank28 0 0 ABS 0
 __Ludata_bank28 0 0 ABS 0
 %segments
 %locals
-build/default/debug/Main.o
+build/default/production/Main.o
 Main.asm
 37 0 0 ABS 0
 38 2 0 ABS 0
