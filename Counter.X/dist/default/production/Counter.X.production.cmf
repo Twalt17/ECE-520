@@ -12,7 +12,7 @@
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
 $build/default/production/Main.o
-absdata - 0 0 0 FE 1 1
+absdata - 0 0 0 108 1 1
 config CONFIG 4 300000 300000 A 1 1
 # %UNUSED Section
 # This section enumerates the unused ranges of each CLASS. Each entry
@@ -32,10 +32,10 @@ BANK6 600-6FF 1
 BANK7 700-7FF 1
 BANK8 800-8FF 1
 BANK9 900-9FF 1
-CONST FE-1FFFF 1
+CONST 108-1FFFF 1
 IDLOC 200000-20000F 1
 SMALLCONST 2000-1FFFF 1
-CODE FE-1FFFF 1
+CODE 108-1FFFF 1
 BANK10 A00-AFF 1
 BANK11 B00-BFF 1
 BANK12 C00-CFF 1
@@ -58,7 +58,7 @@ BANK28 1C00-1CFF 1
 BANK29 1D00-1DFF 1
 BANK30 1E00-1EFF 1
 BANK31 1F00-1FFF 1
-BIGRAM FE-1FFF 1
+BIGRAM 108-1FFF 1
 BIGSFR 3800-3FFF 1
 COMRAM 0-5F 1
 EEDATA 310000-3103FF 1
@@ -135,46 +135,49 @@ E absdata ABS >44:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github R
 90 absdata ABS >116:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Counter.X\Main.asm
 92 absdata ABS >117:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Counter.X\Main.asm
 96 absdata ABS >118:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Counter.X\Main.asm
-98 absdata ABS >120:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Counter.X\Main.asm
-9A absdata ABS >121:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Counter.X\Main.asm
-A0 absdata ABS >122:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Counter.X\Main.asm
-A2 absdata ABS >125:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Counter.X\Main.asm
-A4 absdata ABS >126:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Counter.X\Main.asm
-A6 absdata ABS >127:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Counter.X\Main.asm
-AA absdata ABS >130:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Counter.X\Main.asm
-AC absdata ABS >131:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Counter.X\Main.asm
-B2 absdata ABS >132:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Counter.X\Main.asm
-B4 absdata ABS >133:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Counter.X\Main.asm
+9A absdata ABS >119:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Counter.X\Main.asm
+9C absdata ABS >121:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Counter.X\Main.asm
+9E absdata ABS >122:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Counter.X\Main.asm
+A4 absdata ABS >123:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Counter.X\Main.asm
+A6 absdata ABS >126:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Counter.X\Main.asm
+A8 absdata ABS >127:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Counter.X\Main.asm
+AA absdata ABS >128:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Counter.X\Main.asm
+AE absdata ABS >131:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Counter.X\Main.asm
+B0 absdata ABS >132:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Counter.X\Main.asm
+B6 absdata ABS >133:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Counter.X\Main.asm
 B8 absdata ABS >134:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Counter.X\Main.asm
-BA absdata ABS >136:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Counter.X\Main.asm
-BC absdata ABS >137:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Counter.X\Main.asm
+BC absdata ABS >135:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Counter.X\Main.asm
+C0 absdata ABS >136:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Counter.X\Main.asm
 C2 absdata ABS >138:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Counter.X\Main.asm
-C4 absdata ABS >141:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Counter.X\Main.asm
-C6 absdata ABS >142:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Counter.X\Main.asm
-C8 absdata ABS >143:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Counter.X\Main.asm
-CC absdata ABS >147:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Counter.X\Main.asm
-CE absdata ABS >148:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Counter.X\Main.asm
-D0 absdata ABS >149:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Counter.X\Main.asm
-D2 absdata ABS >150:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Counter.X\Main.asm
+C4 absdata ABS >139:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Counter.X\Main.asm
+C6 absdata ABS >140:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Counter.X\Main.asm
+CC absdata ABS >141:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Counter.X\Main.asm
+CE absdata ABS >144:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Counter.X\Main.asm
+D0 absdata ABS >145:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Counter.X\Main.asm
+D2 absdata ABS >146:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Counter.X\Main.asm
+D6 absdata ABS >150:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Counter.X\Main.asm
 D8 absdata ABS >151:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Counter.X\Main.asm
-DA absdata ABS >156:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Counter.X\Main.asm
-DC absdata ABS >157:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Counter.X\Main.asm
-DE absdata ABS >158:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Counter.X\Main.asm
-E0 absdata ABS >159:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Counter.X\Main.asm
-E2 absdata ABS >160:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Counter.X\Main.asm
-E4 absdata ABS >161:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Counter.X\Main.asm
-E6 absdata ABS >163:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Counter.X\Main.asm
-E8 absdata ABS >164:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Counter.X\Main.asm
-EA absdata ABS >165:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Counter.X\Main.asm
-EC absdata ABS >167:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Counter.X\Main.asm
-EE absdata ABS >168:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Counter.X\Main.asm
-F0 absdata ABS >169:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Counter.X\Main.asm
-F2 absdata ABS >170:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Counter.X\Main.asm
-F4 absdata ABS >172:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Counter.X\Main.asm
-F6 absdata ABS >173:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Counter.X\Main.asm
-F8 absdata ABS >174:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Counter.X\Main.asm
-FA absdata ABS >175:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Counter.X\Main.asm
-FC absdata ABS >176:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Counter.X\Main.asm
+DA absdata ABS >152:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Counter.X\Main.asm
+DC absdata ABS >153:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Counter.X\Main.asm
+E2 absdata ABS >154:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Counter.X\Main.asm
+E4 absdata ABS >159:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Counter.X\Main.asm
+E6 absdata ABS >160:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Counter.X\Main.asm
+E8 absdata ABS >161:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Counter.X\Main.asm
+EA absdata ABS >162:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Counter.X\Main.asm
+EC absdata ABS >163:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Counter.X\Main.asm
+EE absdata ABS >164:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Counter.X\Main.asm
+F0 absdata ABS >166:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Counter.X\Main.asm
+F2 absdata ABS >167:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Counter.X\Main.asm
+F4 absdata ABS >168:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Counter.X\Main.asm
+F6 absdata ABS >170:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Counter.X\Main.asm
+F8 absdata ABS >171:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Counter.X\Main.asm
+FA absdata ABS >172:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Counter.X\Main.asm
+FC absdata ABS >173:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Counter.X\Main.asm
+FE absdata ABS >175:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Counter.X\Main.asm
+100 absdata ABS >176:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Counter.X\Main.asm
+102 absdata ABS >177:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Counter.X\Main.asm
+104 absdata ABS >178:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Counter.X\Main.asm
+106 absdata ABS >179:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Counter.X\Main.asm
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -187,7 +190,7 @@ FC absdata ABS >176:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github
 # was defined in a psect then <psect> will be "-". File-name
 # is the name of the object file in which the symbol was defined.
 %SYMTAB
-__Hspace_0 FE 0 ABS 0 - -
+__Hspace_0 108 0 ABS 0 - -
 __Hspace_1 0 0 ABS 0 - -
 __Hspace_3 0 0 ABS 0 - -
 __Hspace_4 60000A 0 ABS 0 - -
@@ -235,7 +238,7 @@ __Hcode 0 0 ABS 0 code -
 __Hdata 0 0 ABS 0 data -
 __Lcode 0 0 ABS 0 code -
 __Ldata 0 0 ABS 0 data -
-__Habsdata FE 0 ABS 0 absdata -
+__Habsdata 108 0 ABS 0 absdata -
 __S0 0 0 ABS 0 - -
 __S1 0 0 ABS 0 - -
 __S3 0 0 ABS 0 - -

@@ -6,7 +6,7 @@ Linker command line:
   --edf=C:\Program Files\Microchip\xc8\v2.46\pic\dat\20240104201356_en.msgs \
   -cs -h+dist/default/production\Counter.X.production.sym \
   --cmf=dist/default/production\Counter.X.production.cmf -z -Q18F47K42 \
-  -oC:\Users\Tyler\AppData\Local\Temp\xcAsavo.\driver_tmp_3.o \
+  -oC:\Users\Tyler\AppData\Local\Temp\xcAsjho.\driver_tmp_3.o \
   --fixupoverflow=error -ver=XC8 PIC(R) Assembler --fixupoverflow=lstwarn \
   -Mdist/default/production/Counter.X.production.map -E1 --acfsm=1493 \
   -ACODE=00h-01FFFFh -ACONST=00h-01FFFFh -ASMALLCONST=02000h-020FFhx480 \
@@ -36,7 +36,7 @@ Machine type is 18F47K42
                 Name                               Link     Load   Length Selector   Space Scale
 build/default/production/Main.o
                 config                           300000   300000        A        0       4
-                absdata                               0        0       FE        0       0
+                absdata                               0        0      108        0       0
 
 TOTAL           Name                               Link     Load   Length     Space
         CLASS   CODE           
@@ -131,7 +131,7 @@ TOTAL           Name                               Link     Load   Length     Sp
                 config                           300000   300000        A         4
 
         CLASS   UNCLASSED
-                absdata                               0        0       FE         0
+                absdata                               0        0      108         0
 
 
 SEGMENTS        Name                           Load    Length   Top    Selector   Space  Class
@@ -173,11 +173,11 @@ UNUSED ADDRESS RANGES
         BANK7            000700-0007FF              100
         BANK8            000800-0008FF              100
         BANK9            000900-0009FF              100
-        BIGRAM           0000FE-001FFF             1F02
+        BIGRAM           000108-001FFF             1EF8
         BIGSFR           003800-003FFF              800
-        CODE             0000FE-01FFFF            1FF02
+        CODE             000108-01FFFF            1FEF8
         COMRAM           000000-00005F               60
-        CONST            0000FE-01FFFF            1FF02
+        CONST            000108-01FFFF            1FEF8
         EEDATA           310000-3103FF              400
         IDLOC            200000-20000F               10
         MEDIUMCONST      002000-00FFFF             E000
@@ -188,10 +188,10 @@ UNUSED ADDRESS RANGES
 
                                   Symbol Table
 
-__H__absolute__ __absolute__ 000000  __Habsdata      absdata      0000FE
+__H__absolute__ __absolute__ 000000  __Habsdata      absdata      000108
 __Hcode         code         000000  __Hconfig       config       30000A
 __Hdata         data         000000  __Hedata        edata        000000
-__Hspace_0      (abs)        0000FE  __Hspace_1      (abs)        000000
+__Hspace_0      (abs)        000108  __Hspace_1      (abs)        000000
 __Hspace_3      (abs)        000000  __Hspace_4      (abs)        60000A
 __Hudata        udata        000000  __Hudata_acs    udata_acs    000000
 __Hudata_bank0  udata_bank0  000000  __Hudata_bank1  udata_bank1  000000
