@@ -8,7 +8,7 @@
 ; OUTPUTS: Outputs Connected to seven segment display
 ; INPUTS: Connected to keypad
 ; Versions:
-;  	V1.0: 3/17/2024 -First Version
+;  	V1.0: 3/24/2024 -First Version
 ;-----------------------------
 #include <xc.inc>
 #include "AssemblyConfig.inc"
@@ -63,9 +63,9 @@ START:
     MOVLW   0X29
     MOVWF   LAST_CODE_ADDR
     CLRF    WREG
-    CALL    SCAN
-    CALL    DISPLAY
-    CALL    DELAY
+    CALL    SCAN    ;Scan keyboard
+    CALL    DISPLAY ;Figure out what to do display with user input
+    CALL    DELAY   ; Delay so 7 segment doesn't move too fast
     GOTO    START
 	
 ;--------------
@@ -94,70 +94,70 @@ SCAN:
     
 DISPLAY:
 UP_DOWN_RESET:
-    MOVWF BUTTON
-    MOVLW 0X0
-    CPFSEQ BUTTON
-    GOTO NONZERO
+    MOVWF BUTTON    
+    MOVLW 0X0	    ;First Check for 0 or no input
+    CPFSEQ BUTTON   ;If zero return to main
+    GOTO NONZERO    ;If not zero check what was input
     RETURN
 NONZERO:
     MOVLW 0X2
-    CPFSGT  BUTTON
-    GOTO LTEQ
-    GOTO COUNT_RESET
+    CPFSGT  BUTTON	;Check if greater than 2
+    GOTO LTEQ		;If not check for less than equal to
+    GOTO COUNT_RESET	;if greater than reset counter
     
 LTEQ:
-    CPFSLT BUTTON
-    GOTO COUNT_DOWN
-    GOTO COUNT_UP
+    CPFSLT BUTTON	
+    GOTO COUNT_DOWN	;input equals 2 count down
+    GOTO COUNT_UP	;input equals 1 count up
     
 COUNT_UP:
-    CLRF WREG
-    MOVFF TBLPTRL, WREG
-    CPFSEQ LAST_CODE_ADDR
-    GOTO AFTER_RESET_UP
-    GOTO ZERO_COUNTER_UP
+    CLRF WREG		    
+    MOVFF TBLPTRL, WREG	    
+    CPFSEQ LAST_CODE_ADDR   ;See if counter needs to flip from 9 to 0
+    GOTO AFTER_RESET_UP	    
+    GOTO ZERO_COUNTER_UP    
     CLRF WREG
     AFTER_RESET_UP:
-    TBLRD+*
+    TBLRD+*		    ;Preincrement and display data at tblptr
     MOVFF TABLAT, PORTD
     RETURN
     
 ZERO_COUNTER_UP:
     MOVLW 0X1F
-    MOVWF TBLPTRL
-    GOTO AFTER_RESET_UP
+    MOVWF TBLPTRL	;Reset the tbptr to 1 before 0 position
+    GOTO AFTER_RESET_UP	    
 
 COUNT_DOWN:
-    CLRF WREG
-    MOVFF TBLPTRL, WREG
-    CPFSEQ  FIRST_CODE_ADDR
+    CLRF WREG	    
+    MOVFF TBLPTRL, WREG	    
+    CPFSEQ  FIRST_CODE_ADDR	;See if tblptr needs to reset from 0 to 9
     GOTO AFTER_RESET_DOWN
     GOTO RESET_COUNT_DOWN
     CLRF WREG
     AFTER_RESET_DOWN:
-    DECF TBLPTRL
+    DECF TBLPTRL		;Predecrement before displaying data
     TBLRD*
     MOVFF TABLAT, PORTD
     RETURN
     
 RESET_COUNT_DOWN:
     MOVLW   0X2A
-    MOVWF   TBLPTRL
+    MOVWF   TBLPTRL		;Move tblptr to 9 address
     GOTO    AFTER_RESET_DOWN
     
     
  COUNT_RESET:
     MOVLW 0X20
-    MOVWF TBLPTRL
-    TBLRD*
-    MOVFF TABLAT, PORTD
+    MOVWF TBLPTRL   
+    TBLRD*		    
+    MOVFF TABLAT, PORTD		;Move tblptr address to zero then send to portd
     RETURN
     
 ;----------------- END OF DISPLAY ROUTINE
     
 DELAY:
     CLRF WREG
-    MOVLW LARGE_LOOP
+    MOVLW LARGE_LOOP	    ;Create 3 loops which can be adjusted with loop variables
     MOVWF DELAY1
     MOVWF DELAY2
     MOVLW SMALL_LOOP
