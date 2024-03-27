@@ -52,6 +52,7 @@ GOTO	START
 org 0x20
 db  0xC0, 0xF9, 0xA4, 0xB0, 0x99 ; numbers 0-4
 db  0x92, 0x82, 0xF8, 0x80, 0x98 ; numbers 5-9
+db  0x88, 0x83, 0xc6, 0xa1, 0x86, 0x8e ; Letters A-F
 
 ;----------------
 ; MAIN PROGRAM
@@ -60,7 +61,7 @@ db  0x92, 0x82, 0xF8, 0x80, 0x98 ; numbers 5-9
 START: 
     MOVLW   0X20
     MOVWF   FIRST_CODE_ADDR
-    MOVLW   0X29
+    MOVLW   0X2F
     MOVWF   LAST_CODE_ADDR
     CLRF    WREG
     CALL    SCAN    ;Scan keyboard
@@ -141,7 +142,7 @@ COUNT_DOWN:
     RETURN
     
 RESET_COUNT_DOWN:
-    MOVLW   0X2A
+    MOVLW   0X30
     MOVWF   TBLPTRL		;Move tblptr to 9 address
     GOTO    AFTER_RESET_DOWN
     
