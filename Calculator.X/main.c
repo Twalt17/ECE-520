@@ -30,11 +30,19 @@ void main(void) {
     ANSELD = 0;
     TRISD = 0;
     
+    while(1){
+    X_Input_REG = 0;
+    Y_Input_REG = 0;
+    Operation_REG = 0;
+    calculation = 0;
+    Display_Result_REG = 0;
+    
     X_Input_REG = scan_number();
     Operation_REG = scan_operation();
     Y_Input_REG = scan_number();
     calculation = calculate(X_Input_REG, Y_Input_REG, Operation_REG);
     PORT_Output(calculation);
+    }
     return;
 }
 
@@ -173,4 +181,6 @@ void PORT_Output(unsigned char answer){
         PORTBbits.RB6 = 0;
     }
     PORTD = 0;
+    PORTB = 0;
+    
 }
