@@ -26925,7 +26925,7 @@ unsigned char scan_number(){
         PORTBbits.RB2 = 0;
 
 }
-    _delay((unsigned long)((100)*(8000000/4000.0)));
+    _delay((unsigned long)((1)*(8000000/4000.0)));
 
     input *=10;
     output = input;
@@ -26935,24 +26935,25 @@ unsigned char scan_number(){
     {
         PORTBbits.RB0 = 1;
         if (PORTAbits.RA0 == 1)input = 1;
-        if(PORTAbits.RA1 == 1) input = 2;
-        if(PORTAbits.RA2 == 1) input = 3;
+        if(PORTAbits.RA1 == 1) input = 4;
+        if(PORTAbits.RA2 == 1) input = 7;
         PORTBbits.RB0 = 0;
 
          PORTBbits.RB1 = 1;
-        if (PORTAbits.RA0 == 1)input = 4;
+        if(PORTAbits.RA0 == 1) input = 2;
         if(PORTAbits.RA1 == 1) input = 5;
-        if(PORTAbits.RA2 == 1) input = 6;
+        if(PORTAbits.RA2 == 1) input = 8;
+        if(PORTAbits.RA3 == 1) input = 0;
         PORTBbits.RB1 = 0;
 
          PORTBbits.RB2 = 1;
-        if (PORTAbits.RA0 == 1)input = 7;
-        if(PORTAbits.RA1 == 1) input = 8;
+        if (PORTAbits.RA0 == 1)input = 3;
+        if(PORTAbits.RA1 == 1) input = 6;
         if(PORTAbits.RA2 == 1) input = 9;
         PORTBbits.RB2 = 0;
 }
     output += input;
-    _delay((unsigned long)((100)*(8000000/4000.0)));
+    _delay((unsigned long)((1)*(8000000/4000.0)));
     return output;
 }
 
@@ -26965,7 +26966,7 @@ unsigned char scan_operation(){
         if(PORTAbits.RA2 == 1) op_key = 3;
         if(PORTAbits.RA3 == 1) op_key = 4;
     }
-        _delay((unsigned long)((200)*(8000000/4000.0)));
+        _delay((unsigned long)((1)*(8000000/4000.0)));
         return op_key;
 }
 
@@ -26979,24 +26980,50 @@ unsigned char calculate(unsigned char x, unsigned char y, unsigned char op){
         output = x*y;
     if(op == 4)
         output = x/y;
+    return output;
 }
 
 void PORT_Output(unsigned char answer){
     unsigned char first_dig = 0;
     unsigned char second_dig = 0;
     unsigned char i = 0;
+    unsigned char display1 = 0;
+    unsigned char display2 = 0;
 
     if(answer<0)
         PORTBbits.RB7 = 0;
     first_dig = answer/10;
     second_dig = answer % 10;
+
+    if(first_dig == 0) display1 = 0xC0;
+    if(first_dig == 1) display1 = 0xF9;
+    if(first_dig == 2) display1 = 0xA4;
+    if(first_dig == 3) display1 = 0xB0;
+    if(first_dig == 4) display1 = 0x99;
+    if(first_dig == 5) display1 = 0x92;
+    if(first_dig == 6) display1 = 0x82;
+    if(first_dig == 7) display1 = 0xF8;
+    if(first_dig == 8) display1 = 0x80;
+    if(first_dig == 9) display1 = 0x98;
+
+    if(second_dig == 0) display2 = 0xC0;
+    if(second_dig == 1) display2 = 0xF9;
+    if(second_dig == 2) display2 = 0xA4;
+    if(second_dig == 3) display2 = 0xB0;
+    if(second_dig == 4) display2 = 0x99;
+    if(second_dig == 5) display2 = 0x92;
+    if(second_dig == 6) display2 = 0x82;
+    if(second_dig == 7) display2 = 0xF8;
+    if(second_dig == 8) display2 = 0x80;
+    if(second_dig == 9) display2 = 0x98;
+
     for(i = 1; i<10000; i++)
     {
         PORTBbits.RB5 = 1;
-        PORTD = first_dig;
+        PORTD = display1;
         PORTBbits.RB5 = 0;
         PORTBbits.RB6 = 1;
-        PORTD = second_dig;
+        PORTD = display2;
         PORTBbits.RB6 = 0;
     }
     PORTD = 0;
