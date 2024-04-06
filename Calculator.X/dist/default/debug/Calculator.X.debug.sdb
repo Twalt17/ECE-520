@@ -37,11 +37,11 @@
 [v _main main `(v  1 e 1 0 ]
 "41
 [v _scan_number scan_number `(uc  1 e 1 0 ]
-"100
+"101
 [v _scan_operation scan_operation `(uc  1 e 1 0 ]
-"113
+"114
 [v _calculate calculate `(uc  1 e 1 0 ]
-"126
+"127
 [v _PORT_Output PORT_Output `(v  1 e 1 0 ]
 "8017 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f47k42.h
 [v _ANSELA ANSELA `VEuc  1 e 1 @14912 ]
@@ -98,12 +98,12 @@
 {
 "39
 } 0
-"100
+"101
 [v _scan_operation scan_operation `(uc  1 e 1 0 ]
 {
-"101
+"102
 [v scan_operation@op_key op_key `uc  1 a 1 1 ]
-"111
+"112
 } 0
 "41
 [v _scan_number scan_number `(uc  1 e 1 0 ]
@@ -116,20 +116,20 @@
 [v scan_number@count count `uc  1 a 1 2 ]
 "44
 [v scan_number@button button `uc  1 a 1 1 ]
-"98
+"99
 } 0
-"113
+"114
 [v _calculate calculate `(uc  1 e 1 0 ]
 {
 [v calculate@x x `uc  1 a 1 wreg ]
-"114
+"115
 [v calculate@output output `uc  1 a 1 6 ]
-"113
+"114
 [v calculate@x x `uc  1 a 1 wreg ]
 [v calculate@y y `uc  1 p 1 4 ]
 [v calculate@op op `uc  1 p 1 5 ]
 [v calculate@x x `uc  1 a 1 7 ]
-"124
+"125
 } 0
 "4 C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\lbdiv.c
 [v ___lbdiv __lbdiv `(uc  1 e 1 0 ]
@@ -146,25 +146,25 @@
 [v ___lbdiv@dividend dividend `uc  1 a 1 1 ]
 "26
 } 0
-"126 C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Calculator.X\main.c
+"127 C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Calculator.X\main.c
 [v _PORT_Output PORT_Output `(v  1 e 1 0 ]
 {
 [v PORT_Output@answer answer `uc  1 a 1 wreg ]
-"128
-[v PORT_Output@second_dig second_dig `uc  1 a 1 13 ]
-"127
-[v PORT_Output@first_dig first_dig `uc  1 a 1 12 ]
-"131
-[v PORT_Output@display2 display2 `uc  1 a 1 11 ]
-"130
-[v PORT_Output@display1 display1 `uc  1 a 1 10 ]
 "129
-[v PORT_Output@i i `uc  1 a 1 8 ]
-"126
-[v PORT_Output@answer answer `uc  1 a 1 wreg ]
+[v PORT_Output@second_dig second_dig `uc  1 a 1 13 ]
 "128
+[v PORT_Output@first_dig first_dig `uc  1 a 1 12 ]
+"132
+[v PORT_Output@display2 display2 `uc  1 a 1 11 ]
+"131
+[v PORT_Output@display1 display1 `uc  1 a 1 10 ]
+"130
+[v PORT_Output@i i `uc  1 a 1 8 ]
+"127
+[v PORT_Output@answer answer `uc  1 a 1 wreg ]
+"129
 [v PORT_Output@answer answer `uc  1 a 1 9 ]
-"174
+"176
 } 0
 "7 C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\awmod.c
 [v ___awmod __awmod `(i  1 e 2 0 ]

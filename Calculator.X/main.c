@@ -48,19 +48,20 @@ unsigned char scan_number(){
     {
         PORTBbits.RB0 = 1; 
         if (PORTAbits.RA0 == 1)input = 1;
-        if(PORTAbits.RA1 == 1) input = 2;
-        if(PORTAbits.RA2 == 1) input = 3;
+        if(PORTAbits.RA1 == 1) input = 4;
+        if(PORTAbits.RA2 == 1) input = 7;
         PORTBbits.RB0 = 0;
         
          PORTBbits.RB1 = 1; 
-        if (PORTAbits.RA0 == 1)input = 4;
+        if (PORTAbits.RA0 == 1)input = 2;
         if(PORTAbits.RA1 == 1) input = 5;
-        if(PORTAbits.RA2 == 1) input = 6;
+        if(PORTAbits.RA2 == 1) input = 8;
+        if(PORTAbits.RA3 == 1) input = 0;
         PORTBbits.RB1 = 0;
         
          PORTBbits.RB2 = 1; 
-        if (PORTAbits.RA0 == 1)input = 7;
-        if(PORTAbits.RA1 == 1) input = 8;
+        if (PORTAbits.RA0 == 1)input = 3;
+        if(PORTAbits.RA1 == 1) input = 6;
         if(PORTAbits.RA2 == 1) input = 9;
         PORTBbits.RB2 = 0;
        
@@ -159,6 +160,7 @@ void PORT_Output(unsigned char answer){
     
     PORTBbits.RB2 = 1;
     while (PORTAbits.RA3 == 0){
+        PORTD = 0;
     }
  
     for(i = 1; i<10000; i++)

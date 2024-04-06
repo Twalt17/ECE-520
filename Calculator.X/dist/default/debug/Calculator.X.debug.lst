@@ -1,7 +1,7 @@
 
 
 Microchip MPLAB XC8 Assembler V2.46 build 20240104201356 
-                                                                                               Sat Apr 06 13:35:02 2024
+                                                                                               Sat Apr 06 13:46:06 2024
 
 Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1 
      1                           	processor	18F47K42
@@ -95,21 +95,21 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
     81                           ; #config settings
     82                           
     83                           	psect	cinit
-    84   0026F4                     __pcinit:
+    84   00270E                     __pcinit:
     85                           	callstack 0
-    86   0026F4                     start_initialization:
+    86   00270E                     start_initialization:
     87                           	callstack 0
-    88   0026F4                     __initialization:
+    88   00270E                     __initialization:
     89                           	callstack 0
     90                           
     91                           ; Clear objects allocated to COMRAM (1 bytes)
-    92   0026F4  6A13               	clrf	__pbssCOMRAM& (0+255),c
-    93   0026F6                     end_of_initialization:
+    92   00270E  6A13               	clrf	__pbssCOMRAM& (0+255),c
+    93   002710                     end_of_initialization:
     94                           	callstack 0
-    95   0026F6                     __end_of__initialization:
+    95   002710                     __end_of__initialization:
     96                           	callstack 0
-    97   0026F6  0100               	movlb	0
-    98   0026F8  EF58  F013         	goto	_main	;jump to C main() function
+    97   002710  0100               	movlb	0
+    98   002712  EF65  F013         	goto	_main	;jump to C main() function
     99                           
    100                           	psect	bssCOMRAM
    101   000013                     __pbssCOMRAM:
@@ -273,65 +273,65 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
    249 ;;
    250                           
    251                           	psect	text0
-   252   0026B0                     __ptext0:
+   252   0026CA                     __ptext0:
    253                           	callstack 0
-   254   0026B0                     _main:
+   254   0026CA                     _main:
    255                           	callstack 29
-   256   0026B0                     
+   256   0026CA                     
    257                           ;main.c: 26:     TRISA = 0xFF;
-   258   0026B0  68C2               	setf	194,c	;volatile
-   259   0026B2                     
+   258   0026CA  68C2               	setf	194,c	;volatile
+   259   0026CC                     
    260                           ;main.c: 27:     ANSELA = 0;
-   261   0026B2  0E00               	movlw	0
-   262   0026B4  013A               	movlb	58	; () banked
-   263   0026B6  6F40               	movwf	64,b	;volatile
+   261   0026CC  0E00               	movlw	0
+   262   0026CE  013A               	movlb	58	; () banked
+   263   0026D0  6F40               	movwf	64,b	;volatile
    264                           
    265                           ;main.c: 28:     TRISB = 0;
-   266   0026B8  0E00               	movlw	0
-   267   0026BA  6EC3               	movwf	195,c	;volatile
+   266   0026D2  0E00               	movlw	0
+   267   0026D4  6EC3               	movwf	195,c	;volatile
    268                           
    269                           ;main.c: 29:     ANSELB = 0;
-   270   0026BC  0E00               	movlw	0
-   271   0026BE  6F50               	movwf	80,b	;volatile
+   270   0026D6  0E00               	movlw	0
+   271   0026D8  6F50               	movwf	80,b	;volatile
    272                           
    273                           ;main.c: 30:     ANSELD = 0;
-   274   0026C0  0E00               	movlw	0
-   275   0026C2  6F70               	movwf	112,b	;volatile
+   274   0026DA  0E00               	movlw	0
+   275   0026DC  6F70               	movwf	112,b	;volatile
    276                           
    277                           ;main.c: 31:     TRISD = 0;
-   278   0026C4  0E00               	movlw	0
-   279   0026C6  6EC5               	movwf	197,c	;volatile
-   280   0026C8                     
+   278   0026DE  0E00               	movlw	0
+   279   0026E0  6EC5               	movwf	197,c	;volatile
+   280   0026E2                     
    281                           ; BSR set to: 58
    282                           ;main.c: 33:     X_Input_REG = scan_number();
-   283   0026C8  EC10  F011         	call	_scan_number	;wreg free
-   284   0026CC  6E12               	movwf	_X_Input_REG^0,c
-   285   0026CE                     
+   283   0026E2  EC14  F011         	call	_scan_number	;wreg free
+   284   0026E6  6E12               	movwf	_X_Input_REG^0,c
+   285   0026E8                     
    286                           ;main.c: 34:     Operation_REG = scan_operation();
-   287   0026CE  ECB7  F012         	call	_scan_operation	;wreg free
-   288   0026D2  6E10               	movwf	_Operation_REG^0,c
-   289   0026D4                     
+   287   0026E8  ECC4  F012         	call	_scan_operation	;wreg free
+   288   0026EC  6E10               	movwf	_Operation_REG^0,c
+   289   0026EE                     
    290                           ;main.c: 35:     Y_Input_REG = scan_number();
-   291   0026D4  EC10  F011         	call	_scan_number	;wreg free
-   292   0026D8  6E11               	movwf	_Y_Input_REG^0,c
-   293   0026DA                     
+   291   0026EE  EC14  F011         	call	_scan_number	;wreg free
+   292   0026F2  6E11               	movwf	_Y_Input_REG^0,c
+   293   0026F4                     
    294                           ;main.c: 36:     calculation = calculate(X_Input_REG, Y_Input_REG, Operation_REG);
-   295   0026DA  C011  F005         	movff	_Y_Input_REG,calculate@y
-   296   0026DE  C010  F006         	movff	_Operation_REG,calculate@op
-   297   0026E2  5012               	movf	_X_Input_REG^0,w,c
-   298   0026E4  ECF1  F012         	call	_calculate
-   299   0026E8  6E0F               	movwf	_calculation^0,c
-   300   0026EA                     
+   295   0026F4  C011  F005         	movff	_Y_Input_REG,calculate@y
+   296   0026F8  C010  F006         	movff	_Operation_REG,calculate@op
+   297   0026FC  5012               	movf	_X_Input_REG^0,w,c
+   298   0026FE  ECFE  F012         	call	_calculate
+   299   002702  6E0F               	movwf	_calculation^0,c
+   300   002704                     
    301                           ;main.c: 37:     PORT_Output(calculation);
-   302   0026EA  500F               	movf	_calculation^0,w,c
-   303   0026EC  EC01  F010         	call	_PORT_Output
-   304   0026F0  EFFE  F0FF         	goto	start
-   305   0026F4                     __end_of_main:
+   302   002704  500F               	movf	_calculation^0,w,c
+   303   002706  EC01  F010         	call	_PORT_Output
+   304   00270A  EFFE  F0FF         	goto	start
+   305   00270E                     __end_of_main:
    306                           	callstack 0
    307                           
    308 ;; *************** function _scan_operation *****************
    309 ;; Defined at:
-   310 ;;		line 100 in file "main.c"
+   310 ;;		line 101 in file "main.c"
    311 ;; Parameters:    Size  Location     Type
    312 ;;		None
    313 ;; Auto vars:     Size  Location     Type
@@ -369,89 +369,89 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
    335 ;;
    336                           
    337                           	psect	text1
-   338   00256E                     __ptext1:
+   338   002588                     __ptext1:
    339                           	callstack 0
-   340   00256E                     _scan_operation:
+   340   002588                     _scan_operation:
    341                           	callstack 30
-   342   00256E                     
-   343                           ;main.c: 101:     unsigned char op_key = 0;
-   344   00256E  0E00               	movlw	0
-   345   002570  6E02               	movwf	scan_operation@op_key^0,c
+   342   002588                     
+   343                           ;main.c: 102:     unsigned char op_key = 0;
+   344   002588  0E00               	movlw	0
+   345   00258A  6E02               	movwf	scan_operation@op_key^0,c
    346                           
-   347                           ;main.c: 102:     while (op_key ==0) {
-   348   002572  EFE0  F012         	goto	l74
-   349   002576                     l75:
+   347                           ;main.c: 103:     while (op_key ==0) {
+   348   00258C  EFED  F012         	goto	l75
+   349   002590                     l76:
    350                           
-   351                           ;main.c: 103:      PORTBbits.RB0 = 1;
-   352   002576  80CB               	bsf	203,0,c	;volatile
+   351                           ;main.c: 104:      PORTBbits.RB0 = 1;
+   352   002590  80CB               	bsf	203,0,c	;volatile
    353                           
-   354                           ;main.c: 104:         if(PORTAbits.RA0 == 1) op_key = 1;
-   355   002578  A0CA               	btfss	202,0,c	;volatile
-   356   00257A  EFC1  F012         	goto	u371
-   357   00257E  EFC3  F012         	goto	u370
-   358   002582                     u371:
-   359   002582  EFC5  F012         	goto	l1017
-   360   002586                     u370:
-   361   002586  0E01               	movlw	1
-   362   002588  6E02               	movwf	scan_operation@op_key^0,c
-   363   00258A                     l1017:
+   354                           ;main.c: 105:         if(PORTAbits.RA0 == 1) op_key = 1;
+   355   002592  A0CA               	btfss	202,0,c	;volatile
+   356   002594  EFCE  F012         	goto	u381
+   357   002598  EFD0  F012         	goto	u380
+   358   00259C                     u381:
+   359   00259C  EFD2  F012         	goto	l1022
+   360   0025A0                     u380:
+   361   0025A0  0E01               	movlw	1
+   362   0025A2  6E02               	movwf	scan_operation@op_key^0,c
+   363   0025A4                     l1022:
    364                           
-   365                           ;main.c: 105:         if(PORTAbits.RA1 == 1) op_key = 2;
-   366   00258A  A2CA               	btfss	202,1,c	;volatile
-   367   00258C  EFCA  F012         	goto	u381
-   368   002590  EFCC  F012         	goto	u380
-   369   002594                     u381:
-   370   002594  EFCE  F012         	goto	l1021
-   371   002598                     u380:
-   372   002598  0E02               	movlw	2
-   373   00259A  6E02               	movwf	scan_operation@op_key^0,c
-   374   00259C                     l1021:
+   365                           ;main.c: 106:         if(PORTAbits.RA1 == 1) op_key = 2;
+   366   0025A4  A2CA               	btfss	202,1,c	;volatile
+   367   0025A6  EFD7  F012         	goto	u391
+   368   0025AA  EFD9  F012         	goto	u390
+   369   0025AE                     u391:
+   370   0025AE  EFDB  F012         	goto	l1026
+   371   0025B2                     u390:
+   372   0025B2  0E02               	movlw	2
+   373   0025B4  6E02               	movwf	scan_operation@op_key^0,c
+   374   0025B6                     l1026:
    375                           
-   376                           ;main.c: 106:         if(PORTAbits.RA2 == 1) op_key = 3;
-   377   00259C  A4CA               	btfss	202,2,c	;volatile
-   378   00259E  EFD3  F012         	goto	u391
-   379   0025A2  EFD5  F012         	goto	u390
-   380   0025A6                     u391:
-   381   0025A6  EFD7  F012         	goto	l1025
-   382   0025AA                     u390:
-   383   0025AA  0E03               	movlw	3
-   384   0025AC  6E02               	movwf	scan_operation@op_key^0,c
-   385   0025AE                     l1025:
+   376                           ;main.c: 107:         if(PORTAbits.RA2 == 1) op_key = 3;
+   377   0025B6  A4CA               	btfss	202,2,c	;volatile
+   378   0025B8  EFE0  F012         	goto	u401
+   379   0025BC  EFE2  F012         	goto	u400
+   380   0025C0                     u401:
+   381   0025C0  EFE4  F012         	goto	l1030
+   382   0025C4                     u400:
+   383   0025C4  0E03               	movlw	3
+   384   0025C6  6E02               	movwf	scan_operation@op_key^0,c
+   385   0025C8                     l1030:
    386                           
-   387                           ;main.c: 107:         if(PORTAbits.RA3 == 1) op_key = 4;
-   388   0025AE  A6CA               	btfss	202,3,c	;volatile
-   389   0025B0  EFDC  F012         	goto	u401
-   390   0025B4  EFDE  F012         	goto	u400
-   391   0025B8                     u401:
-   392   0025B8  EFE0  F012         	goto	l74
-   393   0025BC                     u400:
-   394   0025BC  0E04               	movlw	4
-   395   0025BE  6E02               	movwf	scan_operation@op_key^0,c
-   396   0025C0                     l74:
+   387                           ;main.c: 108:         if(PORTAbits.RA3 == 1) op_key = 4;
+   388   0025C8  A6CA               	btfss	202,3,c	;volatile
+   389   0025CA  EFE9  F012         	goto	u411
+   390   0025CE  EFEB  F012         	goto	u410
+   391   0025D2                     u411:
+   392   0025D2  EFED  F012         	goto	l75
+   393   0025D6                     u410:
+   394   0025D6  0E04               	movlw	4
+   395   0025D8  6E02               	movwf	scan_operation@op_key^0,c
+   396   0025DA                     l75:
    397                           
-   398                           ;main.c: 102:     while (op_key ==0) {
-   399   0025C0  5002               	movf	scan_operation@op_key^0,w,c
-   400   0025C2  B4D8               	btfsc	status,2,c
-   401   0025C4  EFE6  F012         	goto	u411
-   402   0025C8  EFE8  F012         	goto	u410
-   403   0025CC                     u411:
-   404   0025CC  EFBB  F012         	goto	l75
-   405   0025D0                     u410:
-   406   0025D0                     
-   407                           ;main.c: 109:         _delay((unsigned long)((1)*(8000000/4000.0)));
-   408   0025D0  0E03               	movlw	3
-   409   0025D2  6E01               	movwf	??_scan_operation^0,c
-   410   0025D4  0E98               	movlw	152
-   411   0025D6                     u1077:
-   412   0025D6  2EE8               	decfsz	wreg,f,c
-   413   0025D8  D7FE               	bra	u1077
-   414   0025DA  2E01               	decfsz	??_scan_operation^0,f,c
-   415   0025DC  D7FC               	bra	u1077
-   416   0025DE                     
-   417                           ;main.c: 110:         return op_key;
-   418   0025DE  5002               	movf	scan_operation@op_key^0,w,c
-   419   0025E0  0012               	return		;funcret
-   420   0025E2                     __end_of_scan_operation:
+   398                           ;main.c: 103:     while (op_key ==0) {
+   399   0025DA  5002               	movf	scan_operation@op_key^0,w,c
+   400   0025DC  B4D8               	btfsc	status,2,c
+   401   0025DE  EFF3  F012         	goto	u421
+   402   0025E2  EFF5  F012         	goto	u420
+   403   0025E6                     u421:
+   404   0025E6  EFC8  F012         	goto	l76
+   405   0025EA                     u420:
+   406   0025EA                     
+   407                           ;main.c: 110:         _delay((unsigned long)((1)*(8000000/4000.0)));
+   408   0025EA  0E03               	movlw	3
+   409   0025EC  6E01               	movwf	??_scan_operation^0,c
+   410   0025EE  0E98               	movlw	152
+   411   0025F0                     u1087:
+   412   0025F0  2EE8               	decfsz	wreg,f,c
+   413   0025F2  D7FE               	bra	u1087
+   414   0025F4  2E01               	decfsz	??_scan_operation^0,f,c
+   415   0025F6  D7FC               	bra	u1087
+   416   0025F8                     
+   417                           ;main.c: 111:         return op_key;
+   418   0025F8  5002               	movf	scan_operation@op_key^0,w,c
+   419   0025FA  0012               	return		;funcret
+   420   0025FC                     __end_of_scan_operation:
    421                           	callstack 0
    422                           
    423 ;; *************** function _scan_number *****************
@@ -497,1284 +497,1303 @@ Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1
    453 ;;
    454                           
    455                           	psect	text2
-   456   002220                     __ptext2:
+   456   002228                     __ptext2:
    457                           	callstack 0
-   458   002220                     _scan_number:
+   458   002228                     _scan_number:
    459                           	callstack 30
-   460   002220                     
+   460   002228                     
    461                           ;main.c: 42:     unsigned char input = 10;
-   462   002220  0E0A               	movlw	10
-   463   002222  6E05               	movwf	scan_number@input^0,c
+   462   002228  0E0A               	movlw	10
+   463   00222A  6E05               	movwf	scan_number@input^0,c
    464                           
    465                           ;main.c: 44:     unsigned char button = 0;
-   466   002224  0E00               	movlw	0
-   467   002226  6E02               	movwf	scan_number@button^0,c
+   466   00222C  0E00               	movlw	0
+   467   00222E  6E02               	movwf	scan_number@button^0,c
    468                           
    469                           ;main.c: 45:     unsigned char count = 2;
-   470   002228  0E02               	movlw	2
-   471   00222A  6E03               	movwf	scan_number@count^0,c
+   470   002230  0E02               	movlw	2
+   471   002232  6E03               	movwf	scan_number@count^0,c
    472                           
    473                           ;main.c: 47:     while (input == 10)
-   474   00222C  EF6F  F011         	goto	l945
-   475   002230                     l47:
+   474   002234  EF7C  F011         	goto	l950
+   475   002238                     l47:
    476                           
    477                           ;main.c: 48:     {;main.c: 49:         PORTBbits.RB0 = 1;
-   478   002230  80CB               	bsf	203,0,c	;volatile
+   478   002238  80CB               	bsf	203,0,c	;volatile
    479                           
    480                           ;main.c: 50:         if (PORTAbits.RA0 == 1)input = 1;
-   481   002232  A0CA               	btfss	202,0,c	;volatile
-   482   002234  EF1E  F011         	goto	u161
-   483   002238  EF20  F011         	goto	u160
-   484   00223C                     u161:
-   485   00223C  EF22  F011         	goto	l903
-   486   002240                     u160:
-   487   002240  0E01               	movlw	1
-   488   002242  6E05               	movwf	scan_number@input^0,c
-   489   002244                     l903:
+   481   00223A  A0CA               	btfss	202,0,c	;volatile
+   482   00223C  EF22  F011         	goto	u161
+   483   002240  EF24  F011         	goto	u160
+   484   002244                     u161:
+   485   002244  EF26  F011         	goto	l904
+   486   002248                     u160:
+   487   002248  0E01               	movlw	1
+   488   00224A  6E05               	movwf	scan_number@input^0,c
+   489   00224C                     l904:
    490                           
-   491                           ;main.c: 51:         if(PORTAbits.RA1 == 1) input = 2;
-   492   002244  A2CA               	btfss	202,1,c	;volatile
-   493   002246  EF27  F011         	goto	u171
-   494   00224A  EF29  F011         	goto	u170
-   495   00224E                     u171:
-   496   00224E  EF2B  F011         	goto	l907
-   497   002252                     u170:
-   498   002252  0E02               	movlw	2
-   499   002254  6E05               	movwf	scan_number@input^0,c
-   500   002256                     l907:
+   491                           ;main.c: 51:         if(PORTAbits.RA1 == 1) input = 4;
+   492   00224C  A2CA               	btfss	202,1,c	;volatile
+   493   00224E  EF2B  F011         	goto	u171
+   494   002252  EF2D  F011         	goto	u170
+   495   002256                     u171:
+   496   002256  EF2F  F011         	goto	l908
+   497   00225A                     u170:
+   498   00225A  0E04               	movlw	4
+   499   00225C  6E05               	movwf	scan_number@input^0,c
+   500   00225E                     l908:
    501                           
-   502                           ;main.c: 52:         if(PORTAbits.RA2 == 1) input = 3;
-   503   002256  A4CA               	btfss	202,2,c	;volatile
-   504   002258  EF30  F011         	goto	u181
-   505   00225C  EF32  F011         	goto	u180
-   506   002260                     u181:
-   507   002260  EF34  F011         	goto	l911
-   508   002264                     u180:
-   509   002264  0E03               	movlw	3
-   510   002266  6E05               	movwf	scan_number@input^0,c
-   511   002268                     l911:
+   502                           ;main.c: 52:         if(PORTAbits.RA2 == 1) input = 7;
+   503   00225E  A4CA               	btfss	202,2,c	;volatile
+   504   002260  EF34  F011         	goto	u181
+   505   002264  EF36  F011         	goto	u180
+   506   002268                     u181:
+   507   002268  EF38  F011         	goto	l912
+   508   00226C                     u180:
+   509   00226C  0E07               	movlw	7
+   510   00226E  6E05               	movwf	scan_number@input^0,c
+   511   002270                     l912:
    512                           
    513                           ;main.c: 53:         PORTBbits.RB0 = 0;
-   514   002268  90CB               	bcf	203,0,c	;volatile
-   515   00226A                     
+   514   002270  90CB               	bcf	203,0,c	;volatile
+   515   002272                     
    516                           ;main.c: 55:          PORTBbits.RB1 = 1;
-   517   00226A  82CB               	bsf	203,1,c	;volatile
-   518   00226C                     
-   519                           ;main.c: 56:         if (PORTAbits.RA0 == 1)input = 4;
-   520   00226C  A0CA               	btfss	202,0,c	;volatile
-   521   00226E  EF3B  F011         	goto	u191
-   522   002272  EF3D  F011         	goto	u190
-   523   002276                     u191:
-   524   002276  EF3F  F011         	goto	l919
-   525   00227A                     u190:
-   526   00227A  0E04               	movlw	4
-   527   00227C  6E05               	movwf	scan_number@input^0,c
-   528   00227E                     l919:
+   517   002272  82CB               	bsf	203,1,c	;volatile
+   518   002274                     
+   519                           ;main.c: 56:         if (PORTAbits.RA0 == 1)input = 2;
+   520   002274  A0CA               	btfss	202,0,c	;volatile
+   521   002276  EF3F  F011         	goto	u191
+   522   00227A  EF41  F011         	goto	u190
+   523   00227E                     u191:
+   524   00227E  EF43  F011         	goto	l920
+   525   002282                     u190:
+   526   002282  0E02               	movlw	2
+   527   002284  6E05               	movwf	scan_number@input^0,c
+   528   002286                     l920:
    529                           
    530                           ;main.c: 57:         if(PORTAbits.RA1 == 1) input = 5;
-   531   00227E  A2CA               	btfss	202,1,c	;volatile
-   532   002280  EF44  F011         	goto	u201
-   533   002284  EF46  F011         	goto	u200
-   534   002288                     u201:
-   535   002288  EF48  F011         	goto	l923
-   536   00228C                     u200:
-   537   00228C  0E05               	movlw	5
-   538   00228E  6E05               	movwf	scan_number@input^0,c
-   539   002290                     l923:
+   531   002286  A2CA               	btfss	202,1,c	;volatile
+   532   002288  EF48  F011         	goto	u201
+   533   00228C  EF4A  F011         	goto	u200
+   534   002290                     u201:
+   535   002290  EF4C  F011         	goto	l924
+   536   002294                     u200:
+   537   002294  0E05               	movlw	5
+   538   002296  6E05               	movwf	scan_number@input^0,c
+   539   002298                     l924:
    540                           
-   541                           ;main.c: 58:         if(PORTAbits.RA2 == 1) input = 6;
-   542   002290  A4CA               	btfss	202,2,c	;volatile
-   543   002292  EF4D  F011         	goto	u211
-   544   002296  EF4F  F011         	goto	u210
-   545   00229A                     u211:
-   546   00229A  EF51  F011         	goto	l927
-   547   00229E                     u210:
-   548   00229E  0E06               	movlw	6
-   549   0022A0  6E05               	movwf	scan_number@input^0,c
-   550   0022A2                     l927:
+   541                           ;main.c: 58:         if(PORTAbits.RA2 == 1) input = 8;
+   542   002298  A4CA               	btfss	202,2,c	;volatile
+   543   00229A  EF51  F011         	goto	u211
+   544   00229E  EF53  F011         	goto	u210
+   545   0022A2                     u211:
+   546   0022A2  EF55  F011         	goto	l928
+   547   0022A6                     u210:
+   548   0022A6  0E08               	movlw	8
+   549   0022A8  6E05               	movwf	scan_number@input^0,c
+   550   0022AA                     l928:
    551                           
-   552                           ;main.c: 59:         PORTBbits.RB1 = 0;
-   553   0022A2  92CB               	bcf	203,1,c	;volatile
-   554   0022A4                     
-   555                           ;main.c: 61:          PORTBbits.RB2 = 1;
-   556   0022A4  84CB               	bsf	203,2,c	;volatile
-   557   0022A6                     
-   558                           ;main.c: 62:         if (PORTAbits.RA0 == 1)input = 7;
-   559   0022A6  A0CA               	btfss	202,0,c	;volatile
-   560   0022A8  EF58  F011         	goto	u221
-   561   0022AC  EF5A  F011         	goto	u220
-   562   0022B0                     u221:
-   563   0022B0  EF5C  F011         	goto	l935
-   564   0022B4                     u220:
-   565   0022B4  0E07               	movlw	7
-   566   0022B6  6E05               	movwf	scan_number@input^0,c
-   567   0022B8                     l935:
-   568                           
-   569                           ;main.c: 63:         if(PORTAbits.RA1 == 1) input = 8;
-   570   0022B8  A2CA               	btfss	202,1,c	;volatile
-   571   0022BA  EF61  F011         	goto	u231
-   572   0022BE  EF63  F011         	goto	u230
-   573   0022C2                     u231:
-   574   0022C2  EF65  F011         	goto	l939
-   575   0022C6                     u230:
-   576   0022C6  0E08               	movlw	8
-   577   0022C8  6E05               	movwf	scan_number@input^0,c
-   578   0022CA                     l939:
+   552                           ;main.c: 59:         if(PORTAbits.RA3 == 1) input = 0;
+   553   0022AA  A6CA               	btfss	202,3,c	;volatile
+   554   0022AC  EF5A  F011         	goto	u221
+   555   0022B0  EF5C  F011         	goto	u220
+   556   0022B4                     u221:
+   557   0022B4  EF5E  F011         	goto	l932
+   558   0022B8                     u220:
+   559   0022B8  0E00               	movlw	0
+   560   0022BA  6E05               	movwf	scan_number@input^0,c
+   561   0022BC                     l932:
+   562                           
+   563                           ;main.c: 60:         PORTBbits.RB1 = 0;
+   564   0022BC  92CB               	bcf	203,1,c	;volatile
+   565   0022BE                     
+   566                           ;main.c: 62:          PORTBbits.RB2 = 1;
+   567   0022BE  84CB               	bsf	203,2,c	;volatile
+   568   0022C0                     
+   569                           ;main.c: 63:         if (PORTAbits.RA0 == 1)input = 3;
+   570   0022C0  A0CA               	btfss	202,0,c	;volatile
+   571   0022C2  EF65  F011         	goto	u231
+   572   0022C6  EF67  F011         	goto	u230
+   573   0022CA                     u231:
+   574   0022CA  EF69  F011         	goto	l940
+   575   0022CE                     u230:
+   576   0022CE  0E03               	movlw	3
+   577   0022D0  6E05               	movwf	scan_number@input^0,c
+   578   0022D2                     l940:
    579                           
-   580                           ;main.c: 64:         if(PORTAbits.RA2 == 1) input = 9;
-   581   0022CA  A4CA               	btfss	202,2,c	;volatile
-   582   0022CC  EF6A  F011         	goto	u241
-   583   0022D0  EF6C  F011         	goto	u240
-   584   0022D4                     u241:
-   585   0022D4  EF6E  F011         	goto	l943
-   586   0022D8                     u240:
-   587   0022D8  0E09               	movlw	9
-   588   0022DA  6E05               	movwf	scan_number@input^0,c
-   589   0022DC                     l943:
+   580                           ;main.c: 64:         if(PORTAbits.RA1 == 1) input = 6;
+   581   0022D2  A2CA               	btfss	202,1,c	;volatile
+   582   0022D4  EF6E  F011         	goto	u241
+   583   0022D8  EF70  F011         	goto	u240
+   584   0022DC                     u241:
+   585   0022DC  EF72  F011         	goto	l944
+   586   0022E0                     u240:
+   587   0022E0  0E06               	movlw	6
+   588   0022E2  6E05               	movwf	scan_number@input^0,c
+   589   0022E4                     l944:
    590                           
-   591                           ;main.c: 65:         PORTBbits.RB2 = 0;
-   592   0022DC  94CB               	bcf	203,2,c	;volatile
-   593   0022DE                     l945:
-   594                           
-   595                           ;main.c: 47:     while (input == 10)
-   596   0022DE  0E0A               	movlw	10
-   597   0022E0  1805               	xorwf	scan_number@input^0,w,c
-   598   0022E2  B4D8               	btfsc	status,2,c
-   599   0022E4  EF76  F011         	goto	u251
-   600   0022E8  EF78  F011         	goto	u250
-   601   0022EC                     u251:
-   602   0022EC  EF18  F011         	goto	l47
-   603   0022F0                     u250:
-   604   0022F0                     
-   605                           ;main.c: 68:     _delay((unsigned long)((1)*(8000000/4000.0)));
-   606   0022F0  0E03               	movlw	3
-   607   0022F2  6E01               	movwf	??_scan_number^0,c
-   608   0022F4  0E98               	movlw	152
-   609   0022F6                     u1087:
-   610   0022F6  2EE8               	decfsz	wreg,f,c
-   611   0022F8  D7FE               	bra	u1087
-   612   0022FA  2E01               	decfsz	??_scan_number^0,f,c
-   613   0022FC  D7FC               	bra	u1087
-   614   0022FE                     
-   615                           ;main.c: 70:     input *=10;
-   616   0022FE  0E0A               	movlw	10
-   617   002300  0205               	mulwf	scan_number@input^0,c
-   618   002302  50F3               	movf	prodl,w,c
-   619   002304  6E05               	movwf	scan_number@input^0,c
-   620   002306                     
-   621                           ;main.c: 71:     output = input;
-   622   002306  C005  F004         	movff	scan_number@input,scan_number@output
-   623   00230A                     
-   624                           ;main.c: 73:     input = 10;
-   625   00230A  0E0A               	movlw	10
-   626   00230C  6E05               	movwf	scan_number@input^0,c
-   627                           
-   628                           ;main.c: 74:     while (input == 10)
-   629   00230E  EFE9  F011         	goto	l1003
-   630   002312                     l59:
-   631                           
-   632                           ;main.c: 75:     {;main.c: 76:         PORTBbits.RB0 = 1;
-   633   002312  80CB               	bsf	203,0,c	;volatile
-   634                           
-   635                           ;main.c: 77:         if (PORTAbits.RA0 == 1)input = 1;
-   636   002314  A0CA               	btfss	202,0,c	;volatile
-   637   002316  EF8F  F011         	goto	u261
-   638   00231A  EF91  F011         	goto	u260
-   639   00231E                     u261:
-   640   00231E  EF93  F011         	goto	l957
-   641   002322                     u260:
-   642   002322  0E01               	movlw	1
-   643   002324  6E05               	movwf	scan_number@input^0,c
-   644   002326                     l957:
+   591                           ;main.c: 65:         if(PORTAbits.RA2 == 1) input = 9;
+   592   0022E4  A4CA               	btfss	202,2,c	;volatile
+   593   0022E6  EF77  F011         	goto	u251
+   594   0022EA  EF79  F011         	goto	u250
+   595   0022EE                     u251:
+   596   0022EE  EF7B  F011         	goto	l948
+   597   0022F2                     u250:
+   598   0022F2  0E09               	movlw	9
+   599   0022F4  6E05               	movwf	scan_number@input^0,c
+   600   0022F6                     l948:
+   601                           
+   602                           ;main.c: 66:         PORTBbits.RB2 = 0;
+   603   0022F6  94CB               	bcf	203,2,c	;volatile
+   604   0022F8                     l950:
+   605                           
+   606                           ;main.c: 47:     while (input == 10)
+   607   0022F8  0E0A               	movlw	10
+   608   0022FA  1805               	xorwf	scan_number@input^0,w,c
+   609   0022FC  B4D8               	btfsc	status,2,c
+   610   0022FE  EF83  F011         	goto	u261
+   611   002302  EF85  F011         	goto	u260
+   612   002306                     u261:
+   613   002306  EF1C  F011         	goto	l47
+   614   00230A                     u260:
+   615   00230A                     
+   616                           ;main.c: 69:     _delay((unsigned long)((1)*(8000000/4000.0)));
+   617   00230A  0E03               	movlw	3
+   618   00230C  6E01               	movwf	??_scan_number^0,c
+   619   00230E  0E98               	movlw	152
+   620   002310                     u1097:
+   621   002310  2EE8               	decfsz	wreg,f,c
+   622   002312  D7FE               	bra	u1097
+   623   002314  2E01               	decfsz	??_scan_number^0,f,c
+   624   002316  D7FC               	bra	u1097
+   625   002318                     
+   626                           ;main.c: 71:     input *=10;
+   627   002318  0E0A               	movlw	10
+   628   00231A  0205               	mulwf	scan_number@input^0,c
+   629   00231C  50F3               	movf	prodl,w,c
+   630   00231E  6E05               	movwf	scan_number@input^0,c
+   631   002320                     
+   632                           ;main.c: 72:     output = input;
+   633   002320  C005  F004         	movff	scan_number@input,scan_number@output
+   634   002324                     
+   635                           ;main.c: 74:     input = 10;
+   636   002324  0E0A               	movlw	10
+   637   002326  6E05               	movwf	scan_number@input^0,c
+   638                           
+   639                           ;main.c: 75:     while (input == 10)
+   640   002328  EFF6  F011         	goto	l1008
+   641   00232C                     l60:
+   642                           
+   643                           ;main.c: 76:     {;main.c: 77:         PORTBbits.RB0 = 1;
+   644   00232C  80CB               	bsf	203,0,c	;volatile
    645                           
-   646                           ;main.c: 78:         if(PORTAbits.RA1 == 1) input = 4;
-   647   002326  A2CA               	btfss	202,1,c	;volatile
-   648   002328  EF98  F011         	goto	u271
-   649   00232C  EF9A  F011         	goto	u270
-   650   002330                     u271:
-   651   002330  EF9C  F011         	goto	l961
-   652   002334                     u270:
-   653   002334  0E04               	movlw	4
-   654   002336  6E05               	movwf	scan_number@input^0,c
-   655   002338                     l961:
+   646                           ;main.c: 78:         if (PORTAbits.RA0 == 1)input = 1;
+   647   00232E  A0CA               	btfss	202,0,c	;volatile
+   648   002330  EF9C  F011         	goto	u271
+   649   002334  EF9E  F011         	goto	u270
+   650   002338                     u271:
+   651   002338  EFA0  F011         	goto	l962
+   652   00233C                     u270:
+   653   00233C  0E01               	movlw	1
+   654   00233E  6E05               	movwf	scan_number@input^0,c
+   655   002340                     l962:
    656                           
-   657                           ;main.c: 79:         if(PORTAbits.RA2 == 1) input = 7;
-   658   002338  A4CA               	btfss	202,2,c	;volatile
-   659   00233A  EFA1  F011         	goto	u281
-   660   00233E  EFA3  F011         	goto	u280
-   661   002342                     u281:
-   662   002342  EFA5  F011         	goto	l965
-   663   002346                     u280:
-   664   002346  0E07               	movlw	7
-   665   002348  6E05               	movwf	scan_number@input^0,c
-   666   00234A                     l965:
+   657                           ;main.c: 79:         if(PORTAbits.RA1 == 1) input = 4;
+   658   002340  A2CA               	btfss	202,1,c	;volatile
+   659   002342  EFA5  F011         	goto	u281
+   660   002346  EFA7  F011         	goto	u280
+   661   00234A                     u281:
+   662   00234A  EFA9  F011         	goto	l966
+   663   00234E                     u280:
+   664   00234E  0E04               	movlw	4
+   665   002350  6E05               	movwf	scan_number@input^0,c
+   666   002352                     l966:
    667                           
-   668                           ;main.c: 80:         PORTBbits.RB0 = 0;
-   669   00234A  90CB               	bcf	203,0,c	;volatile
-   670   00234C                     
-   671                           ;main.c: 82:          PORTBbits.RB1 = 1;
-   672   00234C  82CB               	bsf	203,1,c	;volatile
-   673   00234E                     
-   674                           ;main.c: 83:         if(PORTAbits.RA0 == 1) input = 2;
-   675   00234E  A0CA               	btfss	202,0,c	;volatile
-   676   002350  EFAC  F011         	goto	u291
-   677   002354  EFAE  F011         	goto	u290
-   678   002358                     u291:
-   679   002358  EFB0  F011         	goto	l973
-   680   00235C                     u290:
-   681   00235C  0E02               	movlw	2
-   682   00235E  6E05               	movwf	scan_number@input^0,c
-   683   002360                     l973:
-   684                           
-   685                           ;main.c: 84:         if(PORTAbits.RA1 == 1) input = 5;
-   686   002360  A2CA               	btfss	202,1,c	;volatile
-   687   002362  EFB5  F011         	goto	u301
-   688   002366  EFB7  F011         	goto	u300
-   689   00236A                     u301:
-   690   00236A  EFB9  F011         	goto	l977
-   691   00236E                     u300:
-   692   00236E  0E05               	movlw	5
-   693   002370  6E05               	movwf	scan_number@input^0,c
-   694   002372                     l977:
+   668                           ;main.c: 80:         if(PORTAbits.RA2 == 1) input = 7;
+   669   002352  A4CA               	btfss	202,2,c	;volatile
+   670   002354  EFAE  F011         	goto	u291
+   671   002358  EFB0  F011         	goto	u290
+   672   00235C                     u291:
+   673   00235C  EFB2  F011         	goto	l970
+   674   002360                     u290:
+   675   002360  0E07               	movlw	7
+   676   002362  6E05               	movwf	scan_number@input^0,c
+   677   002364                     l970:
+   678                           
+   679                           ;main.c: 81:         PORTBbits.RB0 = 0;
+   680   002364  90CB               	bcf	203,0,c	;volatile
+   681   002366                     
+   682                           ;main.c: 83:          PORTBbits.RB1 = 1;
+   683   002366  82CB               	bsf	203,1,c	;volatile
+   684   002368                     
+   685                           ;main.c: 84:         if(PORTAbits.RA0 == 1) input = 2;
+   686   002368  A0CA               	btfss	202,0,c	;volatile
+   687   00236A  EFB9  F011         	goto	u301
+   688   00236E  EFBB  F011         	goto	u300
+   689   002372                     u301:
+   690   002372  EFBD  F011         	goto	l978
+   691   002376                     u300:
+   692   002376  0E02               	movlw	2
+   693   002378  6E05               	movwf	scan_number@input^0,c
+   694   00237A                     l978:
    695                           
-   696                           ;main.c: 85:         if(PORTAbits.RA2 == 1) input = 8;
-   697   002372  A4CA               	btfss	202,2,c	;volatile
-   698   002374  EFBE  F011         	goto	u311
-   699   002378  EFC0  F011         	goto	u310
-   700   00237C                     u311:
-   701   00237C  EFC2  F011         	goto	l981
-   702   002380                     u310:
-   703   002380  0E08               	movlw	8
-   704   002382  6E05               	movwf	scan_number@input^0,c
-   705   002384                     l981:
+   696                           ;main.c: 85:         if(PORTAbits.RA1 == 1) input = 5;
+   697   00237A  A2CA               	btfss	202,1,c	;volatile
+   698   00237C  EFC2  F011         	goto	u311
+   699   002380  EFC4  F011         	goto	u310
+   700   002384                     u311:
+   701   002384  EFC6  F011         	goto	l982
+   702   002388                     u310:
+   703   002388  0E05               	movlw	5
+   704   00238A  6E05               	movwf	scan_number@input^0,c
+   705   00238C                     l982:
    706                           
-   707                           ;main.c: 86:         if(PORTAbits.RA3 == 1) input = 0;
-   708   002384  A6CA               	btfss	202,3,c	;volatile
-   709   002386  EFC7  F011         	goto	u321
-   710   00238A  EFC9  F011         	goto	u320
-   711   00238E                     u321:
-   712   00238E  EFCB  F011         	goto	l985
-   713   002392                     u320:
-   714   002392  0E00               	movlw	0
-   715   002394  6E05               	movwf	scan_number@input^0,c
-   716   002396                     l985:
+   707                           ;main.c: 86:         if(PORTAbits.RA2 == 1) input = 8;
+   708   00238C  A4CA               	btfss	202,2,c	;volatile
+   709   00238E  EFCB  F011         	goto	u321
+   710   002392  EFCD  F011         	goto	u320
+   711   002396                     u321:
+   712   002396  EFCF  F011         	goto	l986
+   713   00239A                     u320:
+   714   00239A  0E08               	movlw	8
+   715   00239C  6E05               	movwf	scan_number@input^0,c
+   716   00239E                     l986:
    717                           
-   718                           ;main.c: 87:         PORTBbits.RB1 = 0;
-   719   002396  92CB               	bcf	203,1,c	;volatile
-   720   002398                     
-   721                           ;main.c: 89:          PORTBbits.RB2 = 1;
-   722   002398  84CB               	bsf	203,2,c	;volatile
-   723   00239A                     
-   724                           ;main.c: 90:         if (PORTAbits.RA0 == 1)input = 3;
-   725   00239A  A0CA               	btfss	202,0,c	;volatile
-   726   00239C  EFD2  F011         	goto	u331
-   727   0023A0  EFD4  F011         	goto	u330
-   728   0023A4                     u331:
-   729   0023A4  EFD6  F011         	goto	l993
-   730   0023A8                     u330:
-   731   0023A8  0E03               	movlw	3
-   732   0023AA  6E05               	movwf	scan_number@input^0,c
-   733   0023AC                     l993:
-   734                           
-   735                           ;main.c: 91:         if(PORTAbits.RA1 == 1) input = 6;
-   736   0023AC  A2CA               	btfss	202,1,c	;volatile
-   737   0023AE  EFDB  F011         	goto	u341
-   738   0023B2  EFDD  F011         	goto	u340
-   739   0023B6                     u341:
-   740   0023B6  EFDF  F011         	goto	l997
-   741   0023BA                     u340:
-   742   0023BA  0E06               	movlw	6
-   743   0023BC  6E05               	movwf	scan_number@input^0,c
-   744   0023BE                     l997:
+   718                           ;main.c: 87:         if(PORTAbits.RA3 == 1) input = 0;
+   719   00239E  A6CA               	btfss	202,3,c	;volatile
+   720   0023A0  EFD4  F011         	goto	u331
+   721   0023A4  EFD6  F011         	goto	u330
+   722   0023A8                     u331:
+   723   0023A8  EFD8  F011         	goto	l990
+   724   0023AC                     u330:
+   725   0023AC  0E00               	movlw	0
+   726   0023AE  6E05               	movwf	scan_number@input^0,c
+   727   0023B0                     l990:
+   728                           
+   729                           ;main.c: 88:         PORTBbits.RB1 = 0;
+   730   0023B0  92CB               	bcf	203,1,c	;volatile
+   731   0023B2                     
+   732                           ;main.c: 90:          PORTBbits.RB2 = 1;
+   733   0023B2  84CB               	bsf	203,2,c	;volatile
+   734   0023B4                     
+   735                           ;main.c: 91:         if (PORTAbits.RA0 == 1)input = 3;
+   736   0023B4  A0CA               	btfss	202,0,c	;volatile
+   737   0023B6  EFDF  F011         	goto	u341
+   738   0023BA  EFE1  F011         	goto	u340
+   739   0023BE                     u341:
+   740   0023BE  EFE3  F011         	goto	l998
+   741   0023C2                     u340:
+   742   0023C2  0E03               	movlw	3
+   743   0023C4  6E05               	movwf	scan_number@input^0,c
+   744   0023C6                     l998:
    745                           
-   746                           ;main.c: 92:         if(PORTAbits.RA2 == 1) input = 9;
-   747   0023BE  A4CA               	btfss	202,2,c	;volatile
-   748   0023C0  EFE4  F011         	goto	u351
-   749   0023C4  EFE6  F011         	goto	u350
-   750   0023C8                     u351:
-   751   0023C8  EFE8  F011         	goto	l1001
-   752   0023CC                     u350:
-   753   0023CC  0E09               	movlw	9
-   754   0023CE  6E05               	movwf	scan_number@input^0,c
-   755   0023D0                     l1001:
+   746                           ;main.c: 92:         if(PORTAbits.RA1 == 1) input = 6;
+   747   0023C6  A2CA               	btfss	202,1,c	;volatile
+   748   0023C8  EFE8  F011         	goto	u351
+   749   0023CC  EFEA  F011         	goto	u350
+   750   0023D0                     u351:
+   751   0023D0  EFEC  F011         	goto	l1002
+   752   0023D4                     u350:
+   753   0023D4  0E06               	movlw	6
+   754   0023D6  6E05               	movwf	scan_number@input^0,c
+   755   0023D8                     l1002:
    756                           
-   757                           ;main.c: 93:         PORTBbits.RB2 = 0;
-   758   0023D0  94CB               	bcf	203,2,c	;volatile
-   759   0023D2                     l1003:
-   760                           
-   761                           ;main.c: 74:     while (input == 10)
-   762   0023D2  0E0A               	movlw	10
-   763   0023D4  1805               	xorwf	scan_number@input^0,w,c
-   764   0023D6  B4D8               	btfsc	status,2,c
-   765   0023D8  EFF0  F011         	goto	u361
-   766   0023DC  EFF2  F011         	goto	u360
-   767   0023E0                     u361:
-   768   0023E0  EF89  F011         	goto	l59
-   769   0023E4                     u360:
-   770   0023E4                     
-   771                           ;main.c: 95:     output += input;
-   772   0023E4  5005               	movf	scan_number@input^0,w,c
-   773   0023E6  2604               	addwf	scan_number@output^0,f,c
-   774   0023E8                     
-   775                           ;main.c: 96:     _delay((unsigned long)((1)*(8000000/4000.0)));
-   776   0023E8  0E03               	movlw	3
-   777   0023EA  6E01               	movwf	??_scan_number^0,c
-   778   0023EC  0E98               	movlw	152
-   779   0023EE                     u1097:
-   780   0023EE  2EE8               	decfsz	wreg,f,c
-   781   0023F0  D7FE               	bra	u1097
-   782   0023F2  2E01               	decfsz	??_scan_number^0,f,c
-   783   0023F4  D7FC               	bra	u1097
-   784   0023F6                     
-   785                           ;main.c: 97:     return output;
-   786   0023F6  5004               	movf	scan_number@output^0,w,c
-   787   0023F8  0012               	return		;funcret
-   788   0023FA                     __end_of_scan_number:
-   789                           	callstack 0
-   790                           
-   791 ;; *************** function _calculate *****************
-   792 ;; Defined at:
-   793 ;;		line 113 in file "main.c"
-   794 ;; Parameters:    Size  Location     Type
-   795 ;;  x               1    wreg     unsigned char 
-   796 ;;  y               1    4[COMRAM] unsigned char 
-   797 ;;  op              1    5[COMRAM] unsigned char 
-   798 ;; Auto vars:     Size  Location     Type
-   799 ;;  x               1    7[COMRAM] unsigned char 
-   800 ;;  output          1    6[COMRAM] unsigned char 
-   801 ;; Return value:  Size  Location     Type
-   802 ;;                  1    wreg      unsigned char 
-   803 ;; Registers used:
-   804 ;;		wreg, status,2, status,0, prodl, prodh, cstack
-   805 ;; Tracked objects:
-   806 ;;		On entry : 0/0
-   807 ;;		On exit  : 0/0
-   808 ;;		Unchanged: 0/0
-   809 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+   757                           ;main.c: 93:         if(PORTAbits.RA2 == 1) input = 9;
+   758   0023D8  A4CA               	btfss	202,2,c	;volatile
+   759   0023DA  EFF1  F011         	goto	u361
+   760   0023DE  EFF3  F011         	goto	u360
+   761   0023E2                     u361:
+   762   0023E2  EFF5  F011         	goto	l1006
+   763   0023E6                     u360:
+   764   0023E6  0E09               	movlw	9
+   765   0023E8  6E05               	movwf	scan_number@input^0,c
+   766   0023EA                     l1006:
+   767                           
+   768                           ;main.c: 94:         PORTBbits.RB2 = 0;
+   769   0023EA  94CB               	bcf	203,2,c	;volatile
+   770   0023EC                     l1008:
+   771                           
+   772                           ;main.c: 75:     while (input == 10)
+   773   0023EC  0E0A               	movlw	10
+   774   0023EE  1805               	xorwf	scan_number@input^0,w,c
+   775   0023F0  B4D8               	btfsc	status,2,c
+   776   0023F2  EFFD  F011         	goto	u371
+   777   0023F6  EFFF  F011         	goto	u370
+   778   0023FA                     u371:
+   779   0023FA  EF96  F011         	goto	l60
+   780   0023FE                     u370:
+   781   0023FE                     
+   782                           ;main.c: 96:     output += input;
+   783   0023FE  5005               	movf	scan_number@input^0,w,c
+   784   002400  2604               	addwf	scan_number@output^0,f,c
+   785   002402                     
+   786                           ;main.c: 97:     _delay((unsigned long)((1)*(8000000/4000.0)));
+   787   002402  0E03               	movlw	3
+   788   002404  6E01               	movwf	??_scan_number^0,c
+   789   002406  0E98               	movlw	152
+   790   002408                     u1107:
+   791   002408  2EE8               	decfsz	wreg,f,c
+   792   00240A  D7FE               	bra	u1107
+   793   00240C  2E01               	decfsz	??_scan_number^0,f,c
+   794   00240E  D7FC               	bra	u1107
+   795   002410                     
+   796                           ;main.c: 98:     return output;
+   797   002410  5004               	movf	scan_number@output^0,w,c
+   798   002412  0012               	return		;funcret
+   799   002414                     __end_of_scan_number:
+   800                           	callstack 0
+   801                           
+   802 ;; *************** function _calculate *****************
+   803 ;; Defined at:
+   804 ;;		line 114 in file "main.c"
+   805 ;; Parameters:    Size  Location     Type
+   806 ;;  x               1    wreg     unsigned char 
+   807 ;;  y               1    4[COMRAM] unsigned char 
+   808 ;;  op              1    5[COMRAM] unsigned char 
+   809 ;; Auto vars:     Size  Location     Type
+   810 ;;  x               1    7[COMRAM] unsigned char 
+   811 ;;  output          1    6[COMRAM] unsigned char 
+   812 ;; Return value:  Size  Location     Type
+   813 ;;                  1    wreg      unsigned char 
+   814 ;; Registers used:
+   815 ;;		wreg, status,2, status,0, prodl, prodh, cstack
+   816 ;; Tracked objects:
+   817 ;;		On entry : 0/0
+   818 ;;		On exit  : 0/0
+   819 ;;		Unchanged: 0/0
+   820 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
       +1  BANK12  BANK13  BANK14  BANK15  BANK16  BANK17  BANK18  BANK19  BANK20  BANK21  BANK22  BANK23  BANK24  BANK25  BANK2
       +6  BANK27  BANK28  BANK29  BANK30  BANK31
-   810 ;;      Params:         2       0       0       0       0       0       0       0       0       0       0       0       
+   821 ;;      Params:         2       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0       0
-   811 ;;      Locals:         2       0       0       0       0       0       0       0       0       0       0       0       
+   822 ;;      Locals:         2       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0       0
-   812 ;;      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       
+   823 ;;      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0       0
-   813 ;;      Totals:         4       0       0       0       0       0       0       0       0       0       0       0       
+   824 ;;      Totals:         4       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0       0
-   814 ;;Total ram usage:        4 bytes
-   815 ;; Hardware stack levels used: 1
-   816 ;; Hardware stack levels required when called: 1
-   817 ;; This function calls:
-   818 ;;		___lbdiv
-   819 ;; This function is called by:
-   820 ;;		_main
-   821 ;; This function uses a non-reentrant model
-   822 ;;
-   823                           
-   824                           	psect	text3
-   825   0025E2                     __ptext3:
-   826                           	callstack 0
-   827   0025E2                     _calculate:
-   828                           	callstack 29
-   829                           
-   830                           ;incstack = 0
-   831                           ;calculate@x stored from wreg
-   832   0025E2  6E08               	movwf	calculate@x^0,c
-   833   0025E4                     
-   834                           ;main.c: 114:     unsigned char output = 0;
-   835   0025E4  0E00               	movlw	0
-   836   0025E6  6E07               	movwf	calculate@output^0,c
-   837   0025E8                     
-   838                           ;main.c: 115:     if(op == 1)
-   839   0025E8  0406               	decf	calculate@op^0,w,c
-   840   0025EA  A4D8               	btfss	status,2,c
-   841   0025EC  EFFA  F012         	goto	u821
-   842   0025F0  EFFC  F012         	goto	u820
-   843   0025F4                     u821:
-   844   0025F4  EFFF  F012         	goto	l84
-   845   0025F8                     u820:
-   846   0025F8                     
-   847                           ;main.c: 116:         output = x + y;
-   848   0025F8  5008               	movf	calculate@x^0,w,c
-   849   0025FA  2405               	addwf	calculate@y^0,w,c
-   850   0025FC  6E07               	movwf	calculate@output^0,c
-   851   0025FE                     l84:
-   852                           
-   853                           ;main.c: 117:     if(op ==2)
-   854   0025FE  0E02               	movlw	2
-   855   002600  1806               	xorwf	calculate@op^0,w,c
-   856   002602  A4D8               	btfss	status,2,c
-   857   002604  EF06  F013         	goto	u831
-   858   002608  EF08  F013         	goto	u830
-   859   00260C                     u831:
-   860   00260C  EF0B  F013         	goto	l85
-   861   002610                     u830:
-   862   002610                     
-   863                           ;main.c: 118:         output = x-y;
-   864   002610  5005               	movf	calculate@y^0,w,c
-   865   002612  5C08               	subwf	calculate@x^0,w,c
-   866   002614  6E07               	movwf	calculate@output^0,c
-   867   002616                     l85:
-   868                           
-   869                           ;main.c: 119:     if(op == 3)
-   870   002616  0E03               	movlw	3
-   871   002618  1806               	xorwf	calculate@op^0,w,c
-   872   00261A  A4D8               	btfss	status,2,c
-   873   00261C  EF12  F013         	goto	u841
-   874   002620  EF14  F013         	goto	u840
-   875   002624                     u841:
-   876   002624  EF19  F013         	goto	l1279
-   877   002628                     u840:
-   878   002628                     
-   879                           ;main.c: 120:         output = x*y;
-   880   002628  5008               	movf	calculate@x^0,w,c
-   881   00262A  0205               	mulwf	calculate@y^0,c
-   882   00262C  006F FFCC  F007    	movff	prodl,calculate@output
-   883   002632                     l1279:
-   884                           
-   885                           ;main.c: 121:     if(op == 4)
-   886   002632  0E04               	movlw	4
-   887   002634  1806               	xorwf	calculate@op^0,w,c
-   888   002636  A4D8               	btfss	status,2,c
-   889   002638  EF20  F013         	goto	u851
-   890   00263C  EF22  F013         	goto	u850
-   891   002640                     u851:
-   892   002640  EF28  F013         	goto	l1283
-   893   002644                     u850:
-   894   002644                     
-   895                           ;main.c: 122:         output = x/y;
-   896   002644  C005  F001         	movff	calculate@y,___lbdiv@divisor
-   897   002648  5008               	movf	calculate@x^0,w,c
-   898   00264A  EC2A  F013         	call	___lbdiv
-   899   00264E  6E07               	movwf	calculate@output^0,c
-   900   002650                     l1283:
-   901                           
-   902                           ;main.c: 123:     return output;
-   903   002650  5007               	movf	calculate@output^0,w,c
-   904   002652  0012               	return		;funcret
-   905   002654                     __end_of_calculate:
-   906                           	callstack 0
-   907                           
-   908 ;; *************** function ___lbdiv *****************
-   909 ;; Defined at:
-   910 ;;		line 4 in file "C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\lbdiv.c"
-   911 ;; Parameters:    Size  Location     Type
-   912 ;;  dividend        1    wreg     unsigned char 
-   913 ;;  divisor         1    0[COMRAM] unsigned char 
-   914 ;; Auto vars:     Size  Location     Type
-   915 ;;  dividend        1    1[COMRAM] unsigned char 
-   916 ;;  quotient        1    3[COMRAM] unsigned char 
-   917 ;;  counter         1    2[COMRAM] unsigned char 
-   918 ;; Return value:  Size  Location     Type
-   919 ;;                  1    wreg      unsigned char 
-   920 ;; Registers used:
-   921 ;;		wreg, status,2, status,0
-   922 ;; Tracked objects:
-   923 ;;		On entry : 0/0
-   924 ;;		On exit  : 0/0
-   925 ;;		Unchanged: 0/0
-   926 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+   825 ;;Total ram usage:        4 bytes
+   826 ;; Hardware stack levels used: 1
+   827 ;; Hardware stack levels required when called: 1
+   828 ;; This function calls:
+   829 ;;		___lbdiv
+   830 ;; This function is called by:
+   831 ;;		_main
+   832 ;; This function uses a non-reentrant model
+   833 ;;
+   834                           
+   835                           	psect	text3
+   836   0025FC                     __ptext3:
+   837                           	callstack 0
+   838   0025FC                     _calculate:
+   839                           	callstack 29
+   840                           
+   841                           ;incstack = 0
+   842                           ;calculate@x stored from wreg
+   843   0025FC  6E08               	movwf	calculate@x^0,c
+   844   0025FE                     
+   845                           ;main.c: 115:     unsigned char output = 0;
+   846   0025FE  0E00               	movlw	0
+   847   002600  6E07               	movwf	calculate@output^0,c
+   848   002602                     
+   849                           ;main.c: 116:     if(op == 1)
+   850   002602  0406               	decf	calculate@op^0,w,c
+   851   002604  A4D8               	btfss	status,2,c
+   852   002606  EF07  F013         	goto	u831
+   853   00260A  EF09  F013         	goto	u830
+   854   00260E                     u831:
+   855   00260E  EF0C  F013         	goto	l85
+   856   002612                     u830:
+   857   002612                     
+   858                           ;main.c: 117:         output = x + y;
+   859   002612  5008               	movf	calculate@x^0,w,c
+   860   002614  2405               	addwf	calculate@y^0,w,c
+   861   002616  6E07               	movwf	calculate@output^0,c
+   862   002618                     l85:
+   863                           
+   864                           ;main.c: 118:     if(op ==2)
+   865   002618  0E02               	movlw	2
+   866   00261A  1806               	xorwf	calculate@op^0,w,c
+   867   00261C  A4D8               	btfss	status,2,c
+   868   00261E  EF13  F013         	goto	u841
+   869   002622  EF15  F013         	goto	u840
+   870   002626                     u841:
+   871   002626  EF18  F013         	goto	l86
+   872   00262A                     u840:
+   873   00262A                     
+   874                           ;main.c: 119:         output = x-y;
+   875   00262A  5005               	movf	calculate@y^0,w,c
+   876   00262C  5C08               	subwf	calculate@x^0,w,c
+   877   00262E  6E07               	movwf	calculate@output^0,c
+   878   002630                     l86:
+   879                           
+   880                           ;main.c: 120:     if(op == 3)
+   881   002630  0E03               	movlw	3
+   882   002632  1806               	xorwf	calculate@op^0,w,c
+   883   002634  A4D8               	btfss	status,2,c
+   884   002636  EF1F  F013         	goto	u851
+   885   00263A  EF21  F013         	goto	u850
+   886   00263E                     u851:
+   887   00263E  EF26  F013         	goto	l1288
+   888   002642                     u850:
+   889   002642                     
+   890                           ;main.c: 121:         output = x*y;
+   891   002642  5008               	movf	calculate@x^0,w,c
+   892   002644  0205               	mulwf	calculate@y^0,c
+   893   002646  006F FFCC  F007    	movff	prodl,calculate@output
+   894   00264C                     l1288:
+   895                           
+   896                           ;main.c: 122:     if(op == 4)
+   897   00264C  0E04               	movlw	4
+   898   00264E  1806               	xorwf	calculate@op^0,w,c
+   899   002650  A4D8               	btfss	status,2,c
+   900   002652  EF2D  F013         	goto	u861
+   901   002656  EF2F  F013         	goto	u860
+   902   00265A                     u861:
+   903   00265A  EF35  F013         	goto	l1292
+   904   00265E                     u860:
+   905   00265E                     
+   906                           ;main.c: 123:         output = x/y;
+   907   00265E  C005  F001         	movff	calculate@y,___lbdiv@divisor
+   908   002662  5008               	movf	calculate@x^0,w,c
+   909   002664  EC37  F013         	call	___lbdiv
+   910   002668  6E07               	movwf	calculate@output^0,c
+   911   00266A                     l1292:
+   912                           
+   913                           ;main.c: 124:     return output;
+   914   00266A  5007               	movf	calculate@output^0,w,c
+   915   00266C  0012               	return		;funcret
+   916   00266E                     __end_of_calculate:
+   917                           	callstack 0
+   918                           
+   919 ;; *************** function ___lbdiv *****************
+   920 ;; Defined at:
+   921 ;;		line 4 in file "C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\lbdiv.c"
+   922 ;; Parameters:    Size  Location     Type
+   923 ;;  dividend        1    wreg     unsigned char 
+   924 ;;  divisor         1    0[COMRAM] unsigned char 
+   925 ;; Auto vars:     Size  Location     Type
+   926 ;;  dividend        1    1[COMRAM] unsigned char 
+   927 ;;  quotient        1    3[COMRAM] unsigned char 
+   928 ;;  counter         1    2[COMRAM] unsigned char 
+   929 ;; Return value:  Size  Location     Type
+   930 ;;                  1    wreg      unsigned char 
+   931 ;; Registers used:
+   932 ;;		wreg, status,2, status,0
+   933 ;; Tracked objects:
+   934 ;;		On entry : 0/0
+   935 ;;		On exit  : 0/0
+   936 ;;		Unchanged: 0/0
+   937 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
       +1  BANK12  BANK13  BANK14  BANK15  BANK16  BANK17  BANK18  BANK19  BANK20  BANK21  BANK22  BANK23  BANK24  BANK25  BANK2
       +6  BANK27  BANK28  BANK29  BANK30  BANK31
-   927 ;;      Params:         1       0       0       0       0       0       0       0       0       0       0       0       
+   938 ;;      Params:         1       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0       0
-   928 ;;      Locals:         3       0       0       0       0       0       0       0       0       0       0       0       
+   939 ;;      Locals:         3       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0       0
-   929 ;;      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       
+   940 ;;      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0       0
-   930 ;;      Totals:         4       0       0       0       0       0       0       0       0       0       0       0       
+   941 ;;      Totals:         4       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0       0
-   931 ;;Total ram usage:        4 bytes
-   932 ;; Hardware stack levels used: 1
-   933 ;; This function calls:
-   934 ;;		Nothing
-   935 ;; This function is called by:
-   936 ;;		_calculate
-   937 ;; This function uses a non-reentrant model
-   938 ;;
-   939                           
-   940                           	psect	text4
-   941   002654                     __ptext4:
-   942                           	callstack 0
-   943   002654                     ___lbdiv:
-   944                           	callstack 29
-   945                           
-   946                           ;incstack = 0
-   947                           ;___lbdiv@dividend stored from wreg
-   948   002654  6E02               	movwf	___lbdiv@dividend^0,c
-   949   002656  0E00               	movlw	0
-   950   002658  6E04               	movwf	___lbdiv@quotient^0,c
-   951   00265A  5001               	movf	___lbdiv@divisor^0,w,c
-   952   00265C  B4D8               	btfsc	status,2,c
-   953   00265E  EF33  F013         	goto	u791
-   954   002662  EF35  F013         	goto	u790
-   955   002666                     u791:
-   956   002666  EF56  F013         	goto	l1265
-   957   00266A                     u790:
-   958   00266A  0E01               	movlw	1
-   959   00266C  6E03               	movwf	___lbdiv@counter^0,c
-   960   00266E  EF3C  F013         	goto	l1253
-   961   002672                     l1249:
-   962   002672  90D8               	bcf	status,0,c
-   963   002674  3601               	rlcf	___lbdiv@divisor^0,f,c
-   964   002676  2A03               	incf	___lbdiv@counter^0,f,c
-   965   002678                     l1253:
-   966   002678  AE01               	btfss	___lbdiv@divisor^0,7,c
-   967   00267A  EF41  F013         	goto	u801
-   968   00267E  EF43  F013         	goto	u800
-   969   002682                     u801:
-   970   002682  EF39  F013         	goto	l1249
-   971   002686                     u800:
-   972   002686                     l1255:
-   973   002686  90D8               	bcf	status,0,c
-   974   002688  3604               	rlcf	___lbdiv@quotient^0,f,c
-   975   00268A  5001               	movf	___lbdiv@divisor^0,w,c
-   976   00268C  5C02               	subwf	___lbdiv@dividend^0,w,c
-   977   00268E  A0D8               	btfss	status,0,c
-   978   002690  EF4C  F013         	goto	u811
-   979   002694  EF4E  F013         	goto	u810
-   980   002698                     u811:
-   981   002698  EF51  F013         	goto	l1261
-   982   00269C                     u810:
-   983   00269C  5001               	movf	___lbdiv@divisor^0,w,c
-   984   00269E  5E02               	subwf	___lbdiv@dividend^0,f,c
-   985   0026A0  8004               	bsf	___lbdiv@quotient^0,0,c
-   986   0026A2                     l1261:
-   987   0026A2  90D8               	bcf	status,0,c
-   988   0026A4  3201               	rrcf	___lbdiv@divisor^0,f,c
-   989   0026A6  2E03               	decfsz	___lbdiv@counter^0,f,c
-   990   0026A8  EF43  F013         	goto	l1255
-   991   0026AC                     l1265:
-   992   0026AC  5004               	movf	___lbdiv@quotient^0,w,c
-   993   0026AE  0012               	return		;funcret
-   994   0026B0                     __end_of___lbdiv:
-   995                           	callstack 0
-   996                           
-   997 ;; *************** function _PORT_Output *****************
-   998 ;; Defined at:
-   999 ;;		line 126 in file "main.c"
-  1000 ;; Parameters:    Size  Location     Type
-  1001 ;;  answer          1    wreg     unsigned char 
-  1002 ;; Auto vars:     Size  Location     Type
-  1003 ;;  answer          1    9[COMRAM] unsigned char 
-  1004 ;;  second_dig      1   13[COMRAM] unsigned char 
-  1005 ;;  first_dig       1   12[COMRAM] unsigned char 
-  1006 ;;  display2        1   11[COMRAM] unsigned char 
-  1007 ;;  display1        1   10[COMRAM] unsigned char 
-  1008 ;;  i               1    8[COMRAM] unsigned char 
-  1009 ;; Return value:  Size  Location     Type
-  1010 ;;                  1    wreg      void 
-  1011 ;; Registers used:
-  1012 ;;		wreg, status,2, status,0, cstack
-  1013 ;; Tracked objects:
-  1014 ;;		On entry : 0/0
-  1015 ;;		On exit  : 0/0
-  1016 ;;		Unchanged: 0/0
-  1017 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+   942 ;;Total ram usage:        4 bytes
+   943 ;; Hardware stack levels used: 1
+   944 ;; This function calls:
+   945 ;;		Nothing
+   946 ;; This function is called by:
+   947 ;;		_calculate
+   948 ;; This function uses a non-reentrant model
+   949 ;;
+   950                           
+   951                           	psect	text4
+   952   00266E                     __ptext4:
+   953                           	callstack 0
+   954   00266E                     ___lbdiv:
+   955                           	callstack 29
+   956                           
+   957                           ;incstack = 0
+   958                           ;___lbdiv@dividend stored from wreg
+   959   00266E  6E02               	movwf	___lbdiv@dividend^0,c
+   960   002670  0E00               	movlw	0
+   961   002672  6E04               	movwf	___lbdiv@quotient^0,c
+   962   002674  5001               	movf	___lbdiv@divisor^0,w,c
+   963   002676  B4D8               	btfsc	status,2,c
+   964   002678  EF40  F013         	goto	u801
+   965   00267C  EF42  F013         	goto	u800
+   966   002680                     u801:
+   967   002680  EF63  F013         	goto	l1274
+   968   002684                     u800:
+   969   002684  0E01               	movlw	1
+   970   002686  6E03               	movwf	___lbdiv@counter^0,c
+   971   002688  EF49  F013         	goto	l1262
+   972   00268C                     l1258:
+   973   00268C  90D8               	bcf	status,0,c
+   974   00268E  3601               	rlcf	___lbdiv@divisor^0,f,c
+   975   002690  2A03               	incf	___lbdiv@counter^0,f,c
+   976   002692                     l1262:
+   977   002692  AE01               	btfss	___lbdiv@divisor^0,7,c
+   978   002694  EF4E  F013         	goto	u811
+   979   002698  EF50  F013         	goto	u810
+   980   00269C                     u811:
+   981   00269C  EF46  F013         	goto	l1258
+   982   0026A0                     u810:
+   983   0026A0                     l1264:
+   984   0026A0  90D8               	bcf	status,0,c
+   985   0026A2  3604               	rlcf	___lbdiv@quotient^0,f,c
+   986   0026A4  5001               	movf	___lbdiv@divisor^0,w,c
+   987   0026A6  5C02               	subwf	___lbdiv@dividend^0,w,c
+   988   0026A8  A0D8               	btfss	status,0,c
+   989   0026AA  EF59  F013         	goto	u821
+   990   0026AE  EF5B  F013         	goto	u820
+   991   0026B2                     u821:
+   992   0026B2  EF5E  F013         	goto	l1270
+   993   0026B6                     u820:
+   994   0026B6  5001               	movf	___lbdiv@divisor^0,w,c
+   995   0026B8  5E02               	subwf	___lbdiv@dividend^0,f,c
+   996   0026BA  8004               	bsf	___lbdiv@quotient^0,0,c
+   997   0026BC                     l1270:
+   998   0026BC  90D8               	bcf	status,0,c
+   999   0026BE  3201               	rrcf	___lbdiv@divisor^0,f,c
+  1000   0026C0  2E03               	decfsz	___lbdiv@counter^0,f,c
+  1001   0026C2  EF50  F013         	goto	l1264
+  1002   0026C6                     l1274:
+  1003   0026C6  5004               	movf	___lbdiv@quotient^0,w,c
+  1004   0026C8  0012               	return		;funcret
+  1005   0026CA                     __end_of___lbdiv:
+  1006                           	callstack 0
+  1007                           
+  1008 ;; *************** function _PORT_Output *****************
+  1009 ;; Defined at:
+  1010 ;;		line 127 in file "main.c"
+  1011 ;; Parameters:    Size  Location     Type
+  1012 ;;  answer          1    wreg     unsigned char 
+  1013 ;; Auto vars:     Size  Location     Type
+  1014 ;;  answer          1    9[COMRAM] unsigned char 
+  1015 ;;  second_dig      1   13[COMRAM] unsigned char 
+  1016 ;;  first_dig       1   12[COMRAM] unsigned char 
+  1017 ;;  display2        1   11[COMRAM] unsigned char 
+  1018 ;;  display1        1   10[COMRAM] unsigned char 
+  1019 ;;  i               1    8[COMRAM] unsigned char 
+  1020 ;; Return value:  Size  Location     Type
+  1021 ;;                  1    wreg      void 
+  1022 ;; Registers used:
+  1023 ;;		wreg, status,2, status,0, cstack
+  1024 ;; Tracked objects:
+  1025 ;;		On entry : 0/0
+  1026 ;;		On exit  : 0/0
+  1027 ;;		Unchanged: 0/0
+  1028 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
       +1  BANK12  BANK13  BANK14  BANK15  BANK16  BANK17  BANK18  BANK19  BANK20  BANK21  BANK22  BANK23  BANK24  BANK25  BANK2
       +6  BANK27  BANK28  BANK29  BANK30  BANK31
-  1018 ;;      Params:         0       0       0       0       0       0       0       0       0       0       0       0       
+  1029 ;;      Params:         0       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0       0
-  1019 ;;      Locals:         6       0       0       0       0       0       0       0       0       0       0       0       
+  1030 ;;      Locals:         6       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0       0
-  1020 ;;      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       
+  1031 ;;      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0       0
-  1021 ;;      Totals:         6       0       0       0       0       0       0       0       0       0       0       0       
+  1032 ;;      Totals:         6       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0       0
-  1022 ;;Total ram usage:        6 bytes
-  1023 ;; Hardware stack levels used: 1
-  1024 ;; Hardware stack levels required when called: 1
-  1025 ;; This function calls:
-  1026 ;;		___awdiv
-  1027 ;;		___awmod
-  1028 ;; This function is called by:
-  1029 ;;		_main
-  1030 ;; This function uses a non-reentrant model
-  1031 ;;
-  1032                           
-  1033                           	psect	text5
-  1034   002002                     __ptext5:
-  1035                           	callstack 0
-  1036   002002                     _PORT_Output:
-  1037                           	callstack 29
-  1038                           
-  1039                           ;incstack = 0
-  1040                           ;PORT_Output@answer stored from wreg
-  1041   002002  6E0A               	movwf	PORT_Output@answer^0,c
-  1042   002004                     
-  1043                           ;main.c: 128:     unsigned char second_dig = 0;
-  1044   002004  0E00               	movlw	0
-  1045   002006  6E0E               	movwf	PORT_Output@second_dig^0,c
-  1046                           
-  1047                           ;main.c: 129:     unsigned char i = 0;
-  1048   002008  0E00               	movlw	0
-  1049   00200A  6E09               	movwf	PORT_Output@i^0,c
-  1050                           
-  1051                           ;main.c: 130:     unsigned char display1 = 0;
-  1052   00200C  0E00               	movlw	0
-  1053   00200E  6E0B               	movwf	PORT_Output@display1^0,c
-  1054                           
-  1055                           ;main.c: 131:     unsigned char display2 = 0;
-  1056   002010  0E00               	movlw	0
-  1057   002012  6E0C               	movwf	PORT_Output@display2^0,c
-  1058   002014                     
-  1059                           ;main.c: 135:     first_dig = answer/10;
-  1060   002014  C00A  F001         	movff	PORT_Output@answer,___awdiv@dividend
-  1061   002018  6A02               	clrf	(___awdiv@dividend+1)^0,c
-  1062   00201A  0E00               	movlw	0
-  1063   00201C  6E04               	movwf	(___awdiv@divisor+1)^0,c
-  1064   00201E  0E0A               	movlw	10
-  1065   002020  6E03               	movwf	___awdiv@divisor^0,c
-  1066   002022  ECFD  F011         	call	___awdiv	;wreg free
-  1067   002026  5001               	movf	?___awdiv^0,w,c
-  1068   002028  6E0D               	movwf	PORT_Output@first_dig^0,c
-  1069                           
-  1070                           ;main.c: 136:     second_dig = answer % 10;
-  1071   00202A  C00A  F001         	movff	PORT_Output@answer,___awmod@dividend
-  1072   00202E  6A02               	clrf	(___awmod@dividend+1)^0,c
-  1073   002030  0E00               	movlw	0
-  1074   002032  6E04               	movwf	(___awmod@divisor+1)^0,c
-  1075   002034  0E0A               	movlw	10
-  1076   002036  6E03               	movwf	___awmod@divisor^0,c
-  1077   002038  EC5F  F012         	call	___awmod	;wreg free
-  1078   00203C  5001               	movf	?___awmod^0,w,c
-  1079   00203E  6E0E               	movwf	PORT_Output@second_dig^0,c
-  1080   002040                     
-  1081                           ;main.c: 138:     if(first_dig == 0) display1 = 0xC0;
-  1082   002040  500D               	movf	PORT_Output@first_dig^0,w,c
-  1083   002042  A4D8               	btfss	status,2,c
-  1084   002044  EF26  F010         	goto	u861
-  1085   002048  EF28  F010         	goto	u860
-  1086   00204C                     u861:
-  1087   00204C  EF2A  F010         	goto	l1297
-  1088   002050                     u860:
-  1089   002050  0EC0               	movlw	192
-  1090   002052  6E0B               	movwf	PORT_Output@display1^0,c
-  1091   002054                     l1297:
-  1092                           
-  1093                           ;main.c: 139:     if(first_dig == 1) display1 = 0xF9;
-  1094   002054  040D               	decf	PORT_Output@first_dig^0,w,c
-  1095   002056  A4D8               	btfss	status,2,c
-  1096   002058  EF30  F010         	goto	u871
-  1097   00205C  EF32  F010         	goto	u870
-  1098   002060                     u871:
-  1099   002060  EF34  F010         	goto	l1301
-  1100   002064                     u870:
-  1101   002064  0EF9               	movlw	249
-  1102   002066  6E0B               	movwf	PORT_Output@display1^0,c
-  1103   002068                     l1301:
-  1104                           
-  1105                           ;main.c: 140:     if(first_dig == 2) display1 = 0xA4;
-  1106   002068  0E02               	movlw	2
-  1107   00206A  180D               	xorwf	PORT_Output@first_dig^0,w,c
-  1108   00206C  A4D8               	btfss	status,2,c
-  1109   00206E  EF3B  F010         	goto	u881
-  1110   002072  EF3D  F010         	goto	u880
-  1111   002076                     u881:
-  1112   002076  EF3F  F010         	goto	l1305
-  1113   00207A                     u880:
-  1114   00207A  0EA4               	movlw	164
-  1115   00207C  6E0B               	movwf	PORT_Output@display1^0,c
-  1116   00207E                     l1305:
-  1117                           
-  1118                           ;main.c: 141:     if(first_dig == 3) display1 = 0xB0;
-  1119   00207E  0E03               	movlw	3
-  1120   002080  180D               	xorwf	PORT_Output@first_dig^0,w,c
-  1121   002082  A4D8               	btfss	status,2,c
-  1122   002084  EF46  F010         	goto	u891
-  1123   002088  EF48  F010         	goto	u890
-  1124   00208C                     u891:
-  1125   00208C  EF4A  F010         	goto	l1309
-  1126   002090                     u890:
-  1127   002090  0EB0               	movlw	176
-  1128   002092  6E0B               	movwf	PORT_Output@display1^0,c
-  1129   002094                     l1309:
-  1130                           
-  1131                           ;main.c: 142:     if(first_dig == 4) display1 = 0x99;
-  1132   002094  0E04               	movlw	4
-  1133   002096  180D               	xorwf	PORT_Output@first_dig^0,w,c
-  1134   002098  A4D8               	btfss	status,2,c
-  1135   00209A  EF51  F010         	goto	u901
-  1136   00209E  EF53  F010         	goto	u900
-  1137   0020A2                     u901:
-  1138   0020A2  EF55  F010         	goto	l1313
-  1139   0020A6                     u900:
-  1140   0020A6  0E99               	movlw	153
-  1141   0020A8  6E0B               	movwf	PORT_Output@display1^0,c
-  1142   0020AA                     l1313:
-  1143                           
-  1144                           ;main.c: 143:     if(first_dig == 5) display1 = 0x92;
-  1145   0020AA  0E05               	movlw	5
-  1146   0020AC  180D               	xorwf	PORT_Output@first_dig^0,w,c
-  1147   0020AE  A4D8               	btfss	status,2,c
-  1148   0020B0  EF5C  F010         	goto	u911
-  1149   0020B4  EF5E  F010         	goto	u910
-  1150   0020B8                     u911:
-  1151   0020B8  EF60  F010         	goto	l1317
-  1152   0020BC                     u910:
-  1153   0020BC  0E92               	movlw	146
-  1154   0020BE  6E0B               	movwf	PORT_Output@display1^0,c
-  1155   0020C0                     l1317:
-  1156                           
-  1157                           ;main.c: 144:     if(first_dig == 6) display1 = 0x82;
-  1158   0020C0  0E06               	movlw	6
-  1159   0020C2  180D               	xorwf	PORT_Output@first_dig^0,w,c
-  1160   0020C4  A4D8               	btfss	status,2,c
-  1161   0020C6  EF67  F010         	goto	u921
-  1162   0020CA  EF69  F010         	goto	u920
-  1163   0020CE                     u921:
-  1164   0020CE  EF6B  F010         	goto	l1321
-  1165   0020D2                     u920:
-  1166   0020D2  0E82               	movlw	130
-  1167   0020D4  6E0B               	movwf	PORT_Output@display1^0,c
-  1168   0020D6                     l1321:
-  1169                           
-  1170                           ;main.c: 145:     if(first_dig == 7) display1 = 0xF8;
-  1171   0020D6  0E07               	movlw	7
-  1172   0020D8  180D               	xorwf	PORT_Output@first_dig^0,w,c
-  1173   0020DA  A4D8               	btfss	status,2,c
-  1174   0020DC  EF72  F010         	goto	u931
-  1175   0020E0  EF74  F010         	goto	u930
-  1176   0020E4                     u931:
-  1177   0020E4  EF76  F010         	goto	l1325
-  1178   0020E8                     u930:
-  1179   0020E8  0EF8               	movlw	248
-  1180   0020EA  6E0B               	movwf	PORT_Output@display1^0,c
-  1181   0020EC                     l1325:
-  1182                           
-  1183                           ;main.c: 146:     if(first_dig == 8) display1 = 0x80;
-  1184   0020EC  0E08               	movlw	8
-  1185   0020EE  180D               	xorwf	PORT_Output@first_dig^0,w,c
-  1186   0020F0  A4D8               	btfss	status,2,c
-  1187   0020F2  EF7D  F010         	goto	u941
-  1188   0020F6  EF7F  F010         	goto	u940
-  1189   0020FA                     u941:
-  1190   0020FA  EF81  F010         	goto	l1329
-  1191   0020FE                     u940:
-  1192   0020FE  0E80               	movlw	128
-  1193   002100  6E0B               	movwf	PORT_Output@display1^0,c
-  1194   002102                     l1329:
-  1195                           
-  1196                           ;main.c: 147:     if(first_dig == 9) display1 = 0x98;
-  1197   002102  0E09               	movlw	9
-  1198   002104  180D               	xorwf	PORT_Output@first_dig^0,w,c
-  1199   002106  A4D8               	btfss	status,2,c
-  1200   002108  EF88  F010         	goto	u951
-  1201   00210C  EF8A  F010         	goto	u950
-  1202   002110                     u951:
-  1203   002110  EF8C  F010         	goto	l101
-  1204   002114                     u950:
-  1205   002114  0E98               	movlw	152
-  1206   002116  6E0B               	movwf	PORT_Output@display1^0,c
-  1207   002118                     l101:
-  1208                           
-  1209                           ;main.c: 149:     if(second_dig == 0) display2 = 0xC0;
-  1210   002118  500E               	movf	PORT_Output@second_dig^0,w,c
-  1211   00211A  A4D8               	btfss	status,2,c
-  1212   00211C  EF92  F010         	goto	u961
-  1213   002120  EF94  F010         	goto	u960
-  1214   002124                     u961:
-  1215   002124  EF96  F010         	goto	l1335
-  1216   002128                     u960:
-  1217   002128  0EC0               	movlw	192
-  1218   00212A  6E0C               	movwf	PORT_Output@display2^0,c
-  1219   00212C                     l1335:
-  1220                           
-  1221                           ;main.c: 150:     if(second_dig == 1) display2 = 0xF9;
-  1222   00212C  040E               	decf	PORT_Output@second_dig^0,w,c
-  1223   00212E  A4D8               	btfss	status,2,c
-  1224   002130  EF9C  F010         	goto	u971
-  1225   002134  EF9E  F010         	goto	u970
-  1226   002138                     u971:
-  1227   002138  EFA0  F010         	goto	l1339
-  1228   00213C                     u970:
-  1229   00213C  0EF9               	movlw	249
-  1230   00213E  6E0C               	movwf	PORT_Output@display2^0,c
-  1231   002140                     l1339:
-  1232                           
-  1233                           ;main.c: 151:     if(second_dig == 2) display2 = 0xA4;
-  1234   002140  0E02               	movlw	2
-  1235   002142  180E               	xorwf	PORT_Output@second_dig^0,w,c
-  1236   002144  A4D8               	btfss	status,2,c
-  1237   002146  EFA7  F010         	goto	u981
-  1238   00214A  EFA9  F010         	goto	u980
-  1239   00214E                     u981:
-  1240   00214E  EFAB  F010         	goto	l1343
-  1241   002152                     u980:
-  1242   002152  0EA4               	movlw	164
-  1243   002154  6E0C               	movwf	PORT_Output@display2^0,c
-  1244   002156                     l1343:
-  1245                           
-  1246                           ;main.c: 152:     if(second_dig == 3) display2 = 0xB0;
-  1247   002156  0E03               	movlw	3
-  1248   002158  180E               	xorwf	PORT_Output@second_dig^0,w,c
-  1249   00215A  A4D8               	btfss	status,2,c
-  1250   00215C  EFB2  F010         	goto	u991
-  1251   002160  EFB4  F010         	goto	u990
-  1252   002164                     u991:
-  1253   002164  EFB6  F010         	goto	l1347
-  1254   002168                     u990:
-  1255   002168  0EB0               	movlw	176
-  1256   00216A  6E0C               	movwf	PORT_Output@display2^0,c
-  1257   00216C                     l1347:
-  1258                           
-  1259                           ;main.c: 153:     if(second_dig == 4) display2 = 0x99;
-  1260   00216C  0E04               	movlw	4
-  1261   00216E  180E               	xorwf	PORT_Output@second_dig^0,w,c
-  1262   002170  A4D8               	btfss	status,2,c
-  1263   002172  EFBD  F010         	goto	u1001
-  1264   002176  EFBF  F010         	goto	u1000
-  1265   00217A                     u1001:
-  1266   00217A  EFC1  F010         	goto	l1351
-  1267   00217E                     u1000:
-  1268   00217E  0E99               	movlw	153
-  1269   002180  6E0C               	movwf	PORT_Output@display2^0,c
-  1270   002182                     l1351:
-  1271                           
-  1272                           ;main.c: 154:     if(second_dig == 5) display2 = 0x92;
-  1273   002182  0E05               	movlw	5
-  1274   002184  180E               	xorwf	PORT_Output@second_dig^0,w,c
-  1275   002186  A4D8               	btfss	status,2,c
-  1276   002188  EFC8  F010         	goto	u1011
-  1277   00218C  EFCA  F010         	goto	u1010
-  1278   002190                     u1011:
-  1279   002190  EFCC  F010         	goto	l1355
-  1280   002194                     u1010:
-  1281   002194  0E92               	movlw	146
-  1282   002196  6E0C               	movwf	PORT_Output@display2^0,c
-  1283   002198                     l1355:
-  1284                           
-  1285                           ;main.c: 155:     if(second_dig == 6) display2 = 0x82;
-  1286   002198  0E06               	movlw	6
-  1287   00219A  180E               	xorwf	PORT_Output@second_dig^0,w,c
-  1288   00219C  A4D8               	btfss	status,2,c
-  1289   00219E  EFD3  F010         	goto	u1021
-  1290   0021A2  EFD5  F010         	goto	u1020
-  1291   0021A6                     u1021:
-  1292   0021A6  EFD7  F010         	goto	l1359
-  1293   0021AA                     u1020:
-  1294   0021AA  0E82               	movlw	130
-  1295   0021AC  6E0C               	movwf	PORT_Output@display2^0,c
-  1296   0021AE                     l1359:
-  1297                           
-  1298                           ;main.c: 156:     if(second_dig == 7) display2 = 0xF8;
-  1299   0021AE  0E07               	movlw	7
-  1300   0021B0  180E               	xorwf	PORT_Output@second_dig^0,w,c
-  1301   0021B2  A4D8               	btfss	status,2,c
-  1302   0021B4  EFDE  F010         	goto	u1031
-  1303   0021B8  EFE0  F010         	goto	u1030
-  1304   0021BC                     u1031:
-  1305   0021BC  EFE2  F010         	goto	l1363
-  1306   0021C0                     u1030:
-  1307   0021C0  0EF8               	movlw	248
-  1308   0021C2  6E0C               	movwf	PORT_Output@display2^0,c
-  1309   0021C4                     l1363:
-  1310                           
-  1311                           ;main.c: 157:     if(second_dig == 8) display2 = 0x80;
-  1312   0021C4  0E08               	movlw	8
-  1313   0021C6  180E               	xorwf	PORT_Output@second_dig^0,w,c
-  1314   0021C8  A4D8               	btfss	status,2,c
-  1315   0021CA  EFE9  F010         	goto	u1041
-  1316   0021CE  EFEB  F010         	goto	u1040
-  1317   0021D2                     u1041:
-  1318   0021D2  EFED  F010         	goto	l1367
-  1319   0021D6                     u1040:
-  1320   0021D6  0E80               	movlw	128
-  1321   0021D8  6E0C               	movwf	PORT_Output@display2^0,c
-  1322   0021DA                     l1367:
-  1323                           
-  1324                           ;main.c: 158:     if(second_dig == 9) display2 = 0x98;
-  1325   0021DA  0E09               	movlw	9
-  1326   0021DC  180E               	xorwf	PORT_Output@second_dig^0,w,c
-  1327   0021DE  A4D8               	btfss	status,2,c
-  1328   0021E0  EFF4  F010         	goto	u1051
-  1329   0021E4  EFF6  F010         	goto	u1050
-  1330   0021E8                     u1051:
-  1331   0021E8  EFF8  F010         	goto	l1371
-  1332   0021EC                     u1050:
-  1333   0021EC  0E98               	movlw	152
-  1334   0021EE  6E0C               	movwf	PORT_Output@display2^0,c
-  1335   0021F0                     l1371:
-  1336                           
-  1337                           ;main.c: 160:     PORTBbits.RB2 = 1;
-  1338   0021F0  84CB               	bsf	203,2,c	;volatile
-  1339   0021F2                     l112:
-  1340                           
-  1341                           ;main.c: 161:     while (PORTAbits.RA3 == 0){
-  1342   0021F2  A6CA               	btfss	202,3,c	;volatile
-  1343   0021F4  EFFE  F010         	goto	u1061
-  1344   0021F8  EF00  F011         	goto	u1060
-  1345   0021FC                     u1061:
-  1346   0021FC  EFF9  F010         	goto	l112
-  1347   002200                     u1060:
-  1348   002200                     
-  1349                           ;main.c: 164:     for(i = 1; i<10000; i++)
-  1350   002200  0E01               	movlw	1
-  1351   002202  6E09               	movwf	PORT_Output@i^0,c
-  1352   002204                     l115:
-  1353                           
-  1354                           ;main.c: 165:     {;main.c: 166:         PORTBbits.RB5 = 1;
-  1355   002204  8ACB               	bsf	203,5,c	;volatile
-  1356                           
-  1357                           ;main.c: 167:         PORTD = display1;
-  1358   002206  0060  F02F  FFCD   	movff	PORT_Output@display1,16333	;volatile
+  1033 ;;Total ram usage:        6 bytes
+  1034 ;; Hardware stack levels used: 1
+  1035 ;; Hardware stack levels required when called: 1
+  1036 ;; This function calls:
+  1037 ;;		___awdiv
+  1038 ;;		___awmod
+  1039 ;; This function is called by:
+  1040 ;;		_main
+  1041 ;; This function uses a non-reentrant model
+  1042 ;;
+  1043                           
+  1044                           	psect	text5
+  1045   002002                     __ptext5:
+  1046                           	callstack 0
+  1047   002002                     _PORT_Output:
+  1048                           	callstack 29
+  1049                           
+  1050                           ;incstack = 0
+  1051                           ;PORT_Output@answer stored from wreg
+  1052   002002  6E0A               	movwf	PORT_Output@answer^0,c
+  1053   002004                     
+  1054                           ;main.c: 129:     unsigned char second_dig = 0;
+  1055   002004  0E00               	movlw	0
+  1056   002006  6E0E               	movwf	PORT_Output@second_dig^0,c
+  1057                           
+  1058                           ;main.c: 130:     unsigned char i = 0;
+  1059   002008  0E00               	movlw	0
+  1060   00200A  6E09               	movwf	PORT_Output@i^0,c
+  1061                           
+  1062                           ;main.c: 131:     unsigned char display1 = 0;
+  1063   00200C  0E00               	movlw	0
+  1064   00200E  6E0B               	movwf	PORT_Output@display1^0,c
+  1065                           
+  1066                           ;main.c: 132:     unsigned char display2 = 0;
+  1067   002010  0E00               	movlw	0
+  1068   002012  6E0C               	movwf	PORT_Output@display2^0,c
+  1069   002014                     
+  1070                           ;main.c: 136:     first_dig = answer/10;
+  1071   002014  C00A  F001         	movff	PORT_Output@answer,___awdiv@dividend
+  1072   002018  6A02               	clrf	(___awdiv@dividend+1)^0,c
+  1073   00201A  0E00               	movlw	0
+  1074   00201C  6E04               	movwf	(___awdiv@divisor+1)^0,c
+  1075   00201E  0E0A               	movlw	10
+  1076   002020  6E03               	movwf	___awdiv@divisor^0,c
+  1077   002022  EC0A  F012         	call	___awdiv	;wreg free
+  1078   002026  5001               	movf	?___awdiv^0,w,c
+  1079   002028  6E0D               	movwf	PORT_Output@first_dig^0,c
+  1080                           
+  1081                           ;main.c: 137:     second_dig = answer % 10;
+  1082   00202A  C00A  F001         	movff	PORT_Output@answer,___awmod@dividend
+  1083   00202E  6A02               	clrf	(___awmod@dividend+1)^0,c
+  1084   002030  0E00               	movlw	0
+  1085   002032  6E04               	movwf	(___awmod@divisor+1)^0,c
+  1086   002034  0E0A               	movlw	10
+  1087   002036  6E03               	movwf	___awmod@divisor^0,c
+  1088   002038  EC6C  F012         	call	___awmod	;wreg free
+  1089   00203C  5001               	movf	?___awmod^0,w,c
+  1090   00203E  6E0E               	movwf	PORT_Output@second_dig^0,c
+  1091   002040                     
+  1092                           ;main.c: 139:     if(first_dig == 0) display1 = 0xC0;
+  1093   002040  500D               	movf	PORT_Output@first_dig^0,w,c
+  1094   002042  A4D8               	btfss	status,2,c
+  1095   002044  EF26  F010         	goto	u871
+  1096   002048  EF28  F010         	goto	u870
+  1097   00204C                     u871:
+  1098   00204C  EF2A  F010         	goto	l1306
+  1099   002050                     u870:
+  1100   002050  0EC0               	movlw	192
+  1101   002052  6E0B               	movwf	PORT_Output@display1^0,c
+  1102   002054                     l1306:
+  1103                           
+  1104                           ;main.c: 140:     if(first_dig == 1) display1 = 0xF9;
+  1105   002054  040D               	decf	PORT_Output@first_dig^0,w,c
+  1106   002056  A4D8               	btfss	status,2,c
+  1107   002058  EF30  F010         	goto	u881
+  1108   00205C  EF32  F010         	goto	u880
+  1109   002060                     u881:
+  1110   002060  EF34  F010         	goto	l1310
+  1111   002064                     u880:
+  1112   002064  0EF9               	movlw	249
+  1113   002066  6E0B               	movwf	PORT_Output@display1^0,c
+  1114   002068                     l1310:
+  1115                           
+  1116                           ;main.c: 141:     if(first_dig == 2) display1 = 0xA4;
+  1117   002068  0E02               	movlw	2
+  1118   00206A  180D               	xorwf	PORT_Output@first_dig^0,w,c
+  1119   00206C  A4D8               	btfss	status,2,c
+  1120   00206E  EF3B  F010         	goto	u891
+  1121   002072  EF3D  F010         	goto	u890
+  1122   002076                     u891:
+  1123   002076  EF3F  F010         	goto	l1314
+  1124   00207A                     u890:
+  1125   00207A  0EA4               	movlw	164
+  1126   00207C  6E0B               	movwf	PORT_Output@display1^0,c
+  1127   00207E                     l1314:
+  1128                           
+  1129                           ;main.c: 142:     if(first_dig == 3) display1 = 0xB0;
+  1130   00207E  0E03               	movlw	3
+  1131   002080  180D               	xorwf	PORT_Output@first_dig^0,w,c
+  1132   002082  A4D8               	btfss	status,2,c
+  1133   002084  EF46  F010         	goto	u901
+  1134   002088  EF48  F010         	goto	u900
+  1135   00208C                     u901:
+  1136   00208C  EF4A  F010         	goto	l1318
+  1137   002090                     u900:
+  1138   002090  0EB0               	movlw	176
+  1139   002092  6E0B               	movwf	PORT_Output@display1^0,c
+  1140   002094                     l1318:
+  1141                           
+  1142                           ;main.c: 143:     if(first_dig == 4) display1 = 0x99;
+  1143   002094  0E04               	movlw	4
+  1144   002096  180D               	xorwf	PORT_Output@first_dig^0,w,c
+  1145   002098  A4D8               	btfss	status,2,c
+  1146   00209A  EF51  F010         	goto	u911
+  1147   00209E  EF53  F010         	goto	u910
+  1148   0020A2                     u911:
+  1149   0020A2  EF55  F010         	goto	l1322
+  1150   0020A6                     u910:
+  1151   0020A6  0E99               	movlw	153
+  1152   0020A8  6E0B               	movwf	PORT_Output@display1^0,c
+  1153   0020AA                     l1322:
+  1154                           
+  1155                           ;main.c: 144:     if(first_dig == 5) display1 = 0x92;
+  1156   0020AA  0E05               	movlw	5
+  1157   0020AC  180D               	xorwf	PORT_Output@first_dig^0,w,c
+  1158   0020AE  A4D8               	btfss	status,2,c
+  1159   0020B0  EF5C  F010         	goto	u921
+  1160   0020B4  EF5E  F010         	goto	u920
+  1161   0020B8                     u921:
+  1162   0020B8  EF60  F010         	goto	l1326
+  1163   0020BC                     u920:
+  1164   0020BC  0E92               	movlw	146
+  1165   0020BE  6E0B               	movwf	PORT_Output@display1^0,c
+  1166   0020C0                     l1326:
+  1167                           
+  1168                           ;main.c: 145:     if(first_dig == 6) display1 = 0x82;
+  1169   0020C0  0E06               	movlw	6
+  1170   0020C2  180D               	xorwf	PORT_Output@first_dig^0,w,c
+  1171   0020C4  A4D8               	btfss	status,2,c
+  1172   0020C6  EF67  F010         	goto	u931
+  1173   0020CA  EF69  F010         	goto	u930
+  1174   0020CE                     u931:
+  1175   0020CE  EF6B  F010         	goto	l1330
+  1176   0020D2                     u930:
+  1177   0020D2  0E82               	movlw	130
+  1178   0020D4  6E0B               	movwf	PORT_Output@display1^0,c
+  1179   0020D6                     l1330:
+  1180                           
+  1181                           ;main.c: 146:     if(first_dig == 7) display1 = 0xF8;
+  1182   0020D6  0E07               	movlw	7
+  1183   0020D8  180D               	xorwf	PORT_Output@first_dig^0,w,c
+  1184   0020DA  A4D8               	btfss	status,2,c
+  1185   0020DC  EF72  F010         	goto	u941
+  1186   0020E0  EF74  F010         	goto	u940
+  1187   0020E4                     u941:
+  1188   0020E4  EF76  F010         	goto	l1334
+  1189   0020E8                     u940:
+  1190   0020E8  0EF8               	movlw	248
+  1191   0020EA  6E0B               	movwf	PORT_Output@display1^0,c
+  1192   0020EC                     l1334:
+  1193                           
+  1194                           ;main.c: 147:     if(first_dig == 8) display1 = 0x80;
+  1195   0020EC  0E08               	movlw	8
+  1196   0020EE  180D               	xorwf	PORT_Output@first_dig^0,w,c
+  1197   0020F0  A4D8               	btfss	status,2,c
+  1198   0020F2  EF7D  F010         	goto	u951
+  1199   0020F6  EF7F  F010         	goto	u950
+  1200   0020FA                     u951:
+  1201   0020FA  EF81  F010         	goto	l1338
+  1202   0020FE                     u950:
+  1203   0020FE  0E80               	movlw	128
+  1204   002100  6E0B               	movwf	PORT_Output@display1^0,c
+  1205   002102                     l1338:
+  1206                           
+  1207                           ;main.c: 148:     if(first_dig == 9) display1 = 0x98;
+  1208   002102  0E09               	movlw	9
+  1209   002104  180D               	xorwf	PORT_Output@first_dig^0,w,c
+  1210   002106  A4D8               	btfss	status,2,c
+  1211   002108  EF88  F010         	goto	u961
+  1212   00210C  EF8A  F010         	goto	u960
+  1213   002110                     u961:
+  1214   002110  EF8C  F010         	goto	l102
+  1215   002114                     u960:
+  1216   002114  0E98               	movlw	152
+  1217   002116  6E0B               	movwf	PORT_Output@display1^0,c
+  1218   002118                     l102:
+  1219                           
+  1220                           ;main.c: 150:     if(second_dig == 0) display2 = 0xC0;
+  1221   002118  500E               	movf	PORT_Output@second_dig^0,w,c
+  1222   00211A  A4D8               	btfss	status,2,c
+  1223   00211C  EF92  F010         	goto	u971
+  1224   002120  EF94  F010         	goto	u970
+  1225   002124                     u971:
+  1226   002124  EF96  F010         	goto	l1344
+  1227   002128                     u970:
+  1228   002128  0EC0               	movlw	192
+  1229   00212A  6E0C               	movwf	PORT_Output@display2^0,c
+  1230   00212C                     l1344:
+  1231                           
+  1232                           ;main.c: 151:     if(second_dig == 1) display2 = 0xF9;
+  1233   00212C  040E               	decf	PORT_Output@second_dig^0,w,c
+  1234   00212E  A4D8               	btfss	status,2,c
+  1235   002130  EF9C  F010         	goto	u981
+  1236   002134  EF9E  F010         	goto	u980
+  1237   002138                     u981:
+  1238   002138  EFA0  F010         	goto	l1348
+  1239   00213C                     u980:
+  1240   00213C  0EF9               	movlw	249
+  1241   00213E  6E0C               	movwf	PORT_Output@display2^0,c
+  1242   002140                     l1348:
+  1243                           
+  1244                           ;main.c: 152:     if(second_dig == 2) display2 = 0xA4;
+  1245   002140  0E02               	movlw	2
+  1246   002142  180E               	xorwf	PORT_Output@second_dig^0,w,c
+  1247   002144  A4D8               	btfss	status,2,c
+  1248   002146  EFA7  F010         	goto	u991
+  1249   00214A  EFA9  F010         	goto	u990
+  1250   00214E                     u991:
+  1251   00214E  EFAB  F010         	goto	l1352
+  1252   002152                     u990:
+  1253   002152  0EA4               	movlw	164
+  1254   002154  6E0C               	movwf	PORT_Output@display2^0,c
+  1255   002156                     l1352:
+  1256                           
+  1257                           ;main.c: 153:     if(second_dig == 3) display2 = 0xB0;
+  1258   002156  0E03               	movlw	3
+  1259   002158  180E               	xorwf	PORT_Output@second_dig^0,w,c
+  1260   00215A  A4D8               	btfss	status,2,c
+  1261   00215C  EFB2  F010         	goto	u1001
+  1262   002160  EFB4  F010         	goto	u1000
+  1263   002164                     u1001:
+  1264   002164  EFB6  F010         	goto	l1356
+  1265   002168                     u1000:
+  1266   002168  0EB0               	movlw	176
+  1267   00216A  6E0C               	movwf	PORT_Output@display2^0,c
+  1268   00216C                     l1356:
+  1269                           
+  1270                           ;main.c: 154:     if(second_dig == 4) display2 = 0x99;
+  1271   00216C  0E04               	movlw	4
+  1272   00216E  180E               	xorwf	PORT_Output@second_dig^0,w,c
+  1273   002170  A4D8               	btfss	status,2,c
+  1274   002172  EFBD  F010         	goto	u1011
+  1275   002176  EFBF  F010         	goto	u1010
+  1276   00217A                     u1011:
+  1277   00217A  EFC1  F010         	goto	l1360
+  1278   00217E                     u1010:
+  1279   00217E  0E99               	movlw	153
+  1280   002180  6E0C               	movwf	PORT_Output@display2^0,c
+  1281   002182                     l1360:
+  1282                           
+  1283                           ;main.c: 155:     if(second_dig == 5) display2 = 0x92;
+  1284   002182  0E05               	movlw	5
+  1285   002184  180E               	xorwf	PORT_Output@second_dig^0,w,c
+  1286   002186  A4D8               	btfss	status,2,c
+  1287   002188  EFC8  F010         	goto	u1021
+  1288   00218C  EFCA  F010         	goto	u1020
+  1289   002190                     u1021:
+  1290   002190  EFCC  F010         	goto	l1364
+  1291   002194                     u1020:
+  1292   002194  0E92               	movlw	146
+  1293   002196  6E0C               	movwf	PORT_Output@display2^0,c
+  1294   002198                     l1364:
+  1295                           
+  1296                           ;main.c: 156:     if(second_dig == 6) display2 = 0x82;
+  1297   002198  0E06               	movlw	6
+  1298   00219A  180E               	xorwf	PORT_Output@second_dig^0,w,c
+  1299   00219C  A4D8               	btfss	status,2,c
+  1300   00219E  EFD3  F010         	goto	u1031
+  1301   0021A2  EFD5  F010         	goto	u1030
+  1302   0021A6                     u1031:
+  1303   0021A6  EFD7  F010         	goto	l1368
+  1304   0021AA                     u1030:
+  1305   0021AA  0E82               	movlw	130
+  1306   0021AC  6E0C               	movwf	PORT_Output@display2^0,c
+  1307   0021AE                     l1368:
+  1308                           
+  1309                           ;main.c: 157:     if(second_dig == 7) display2 = 0xF8;
+  1310   0021AE  0E07               	movlw	7
+  1311   0021B0  180E               	xorwf	PORT_Output@second_dig^0,w,c
+  1312   0021B2  A4D8               	btfss	status,2,c
+  1313   0021B4  EFDE  F010         	goto	u1041
+  1314   0021B8  EFE0  F010         	goto	u1040
+  1315   0021BC                     u1041:
+  1316   0021BC  EFE2  F010         	goto	l1372
+  1317   0021C0                     u1040:
+  1318   0021C0  0EF8               	movlw	248
+  1319   0021C2  6E0C               	movwf	PORT_Output@display2^0,c
+  1320   0021C4                     l1372:
+  1321                           
+  1322                           ;main.c: 158:     if(second_dig == 8) display2 = 0x80;
+  1323   0021C4  0E08               	movlw	8
+  1324   0021C6  180E               	xorwf	PORT_Output@second_dig^0,w,c
+  1325   0021C8  A4D8               	btfss	status,2,c
+  1326   0021CA  EFE9  F010         	goto	u1051
+  1327   0021CE  EFEB  F010         	goto	u1050
+  1328   0021D2                     u1051:
+  1329   0021D2  EFED  F010         	goto	l1376
+  1330   0021D6                     u1050:
+  1331   0021D6  0E80               	movlw	128
+  1332   0021D8  6E0C               	movwf	PORT_Output@display2^0,c
+  1333   0021DA                     l1376:
+  1334                           
+  1335                           ;main.c: 159:     if(second_dig == 9) display2 = 0x98;
+  1336   0021DA  0E09               	movlw	9
+  1337   0021DC  180E               	xorwf	PORT_Output@second_dig^0,w,c
+  1338   0021DE  A4D8               	btfss	status,2,c
+  1339   0021E0  EFF4  F010         	goto	u1061
+  1340   0021E4  EFF6  F010         	goto	u1060
+  1341   0021E8                     u1061:
+  1342   0021E8  EFF8  F010         	goto	l1380
+  1343   0021EC                     u1060:
+  1344   0021EC  0E98               	movlw	152
+  1345   0021EE  6E0C               	movwf	PORT_Output@display2^0,c
+  1346   0021F0                     l1380:
+  1347                           
+  1348                           ;main.c: 161:     PORTBbits.RB2 = 1;
+  1349   0021F0  84CB               	bsf	203,2,c	;volatile
+  1350                           
+  1351                           ;main.c: 162:     while (PORTAbits.RA3 == 0){
+  1352   0021F2  EFFD  F010         	goto	l1384
+  1353   0021F6                     l1382:
+  1354                           
+  1355                           ;main.c: 163:         PORTD = 0;
+  1356   0021F6  0E00               	movlw	0
+  1357   0021F8  6ECD               	movwf	205,c	;volatile
+  1358   0021FA                     l1384:
   1359                           
-  1360                           ;main.c: 168:         PORTBbits.RB5 = 0;
-  1361   00220C  9ACB               	bcf	203,5,c	;volatile
-  1362                           
-  1363                           ;main.c: 169:         PORTBbits.RB6 = 1;
-  1364   00220E  8CCB               	bsf	203,6,c	;volatile
-  1365                           
-  1366                           ;main.c: 170:         PORTD = display2;
-  1367   002210  0060  F033  FFCD   	movff	PORT_Output@display2,16333	;volatile
-  1368                           
-  1369                           ;main.c: 171:         PORTBbits.RB6 = 0;
-  1370   002216  9CCB               	bcf	203,6,c	;volatile
-  1371   002218                     
-  1372                           ;main.c: 172:     }
-  1373   002218  2A09               	incf	PORT_Output@i^0,f,c
-  1374   00221A  EF02  F011         	goto	l115
-  1375   00221E  0012               	return		;funcret
-  1376   002220                     __end_of_PORT_Output:
-  1377                           	callstack 0
+  1360                           ;main.c: 162:     while (PORTAbits.RA3 == 0){
+  1361   0021FA  A6CA               	btfss	202,3,c	;volatile
+  1362   0021FC  EF02  F011         	goto	u1071
+  1363   002200  EF04  F011         	goto	u1070
+  1364   002204                     u1071:
+  1365   002204  EFFB  F010         	goto	l1382
+  1366   002208                     u1070:
+  1367   002208                     
+  1368                           ;main.c: 166:     for(i = 1; i<10000; i++)
+  1369   002208  0E01               	movlw	1
+  1370   00220A  6E09               	movwf	PORT_Output@i^0,c
+  1371   00220C                     l116:
+  1372                           
+  1373                           ;main.c: 167:     {;main.c: 168:         PORTBbits.RB5 = 1;
+  1374   00220C  8ACB               	bsf	203,5,c	;volatile
+  1375                           
+  1376                           ;main.c: 169:         PORTD = display1;
+  1377   00220E  0060  F02F  FFCD   	movff	PORT_Output@display1,16333	;volatile
   1378                           
-  1379 ;; *************** function ___awmod *****************
-  1380 ;; Defined at:
-  1381 ;;		line 7 in file "C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\awmod.c"
-  1382 ;; Parameters:    Size  Location     Type
-  1383 ;;  dividend        2    0[COMRAM] int 
-  1384 ;;  divisor         2    2[COMRAM] int 
-  1385 ;; Auto vars:     Size  Location     Type
-  1386 ;;  sign            1    5[COMRAM] unsigned char 
-  1387 ;;  counter         1    4[COMRAM] unsigned char 
-  1388 ;; Return value:  Size  Location     Type
-  1389 ;;                  2    0[COMRAM] int 
-  1390 ;; Registers used:
-  1391 ;;		wreg, status,2, status,0
-  1392 ;; Tracked objects:
-  1393 ;;		On entry : 0/0
-  1394 ;;		On exit  : 0/0
-  1395 ;;		Unchanged: 0/0
-  1396 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+  1379                           ;main.c: 170:         PORTBbits.RB5 = 0;
+  1380   002214  9ACB               	bcf	203,5,c	;volatile
+  1381                           
+  1382                           ;main.c: 171:         PORTBbits.RB6 = 1;
+  1383   002216  8CCB               	bsf	203,6,c	;volatile
+  1384                           
+  1385                           ;main.c: 172:         PORTD = display2;
+  1386   002218  0060  F033  FFCD   	movff	PORT_Output@display2,16333	;volatile
+  1387                           
+  1388                           ;main.c: 173:         PORTBbits.RB6 = 0;
+  1389   00221E  9CCB               	bcf	203,6,c	;volatile
+  1390   002220                     
+  1391                           ;main.c: 174:     }
+  1392   002220  2A09               	incf	PORT_Output@i^0,f,c
+  1393   002222  EF06  F011         	goto	l116
+  1394   002226  0012               	return		;funcret
+  1395   002228                     __end_of_PORT_Output:
+  1396                           	callstack 0
+  1397                           
+  1398 ;; *************** function ___awmod *****************
+  1399 ;; Defined at:
+  1400 ;;		line 7 in file "C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\awmod.c"
+  1401 ;; Parameters:    Size  Location     Type
+  1402 ;;  dividend        2    0[COMRAM] int 
+  1403 ;;  divisor         2    2[COMRAM] int 
+  1404 ;; Auto vars:     Size  Location     Type
+  1405 ;;  sign            1    5[COMRAM] unsigned char 
+  1406 ;;  counter         1    4[COMRAM] unsigned char 
+  1407 ;; Return value:  Size  Location     Type
+  1408 ;;                  2    0[COMRAM] int 
+  1409 ;; Registers used:
+  1410 ;;		wreg, status,2, status,0
+  1411 ;; Tracked objects:
+  1412 ;;		On entry : 0/0
+  1413 ;;		On exit  : 0/0
+  1414 ;;		Unchanged: 0/0
+  1415 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
       +1  BANK12  BANK13  BANK14  BANK15  BANK16  BANK17  BANK18  BANK19  BANK20  BANK21  BANK22  BANK23  BANK24  BANK25  BANK2
       +6  BANK27  BANK28  BANK29  BANK30  BANK31
-  1397 ;;      Params:         4       0       0       0       0       0       0       0       0       0       0       0       
+  1416 ;;      Params:         4       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0       0
-  1398 ;;      Locals:         2       0       0       0       0       0       0       0       0       0       0       0       
+  1417 ;;      Locals:         2       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0       0
-  1399 ;;      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       
+  1418 ;;      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0       0
-  1400 ;;      Totals:         6       0       0       0       0       0       0       0       0       0       0       0       
+  1419 ;;      Totals:         6       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0       0
-  1401 ;;Total ram usage:        6 bytes
-  1402 ;; Hardware stack levels used: 1
-  1403 ;; This function calls:
-  1404 ;;		Nothing
-  1405 ;; This function is called by:
-  1406 ;;		_PORT_Output
-  1407 ;; This function uses a non-reentrant model
-  1408 ;;
-  1409                           
-  1410                           	psect	text6
-  1411   0024BE                     __ptext6:
-  1412                           	callstack 0
-  1413   0024BE                     ___awmod:
-  1414                           	callstack 29
-  1415   0024BE  0E00               	movlw	0
-  1416   0024C0  6E06               	movwf	___awmod@sign^0,c
-  1417   0024C2  BE02               	btfsc	(___awmod@dividend+1)^0,7,c
-  1418   0024C4  EF68  F012         	goto	u730
-  1419   0024C8  EF66  F012         	goto	u731
-  1420   0024CC                     u731:
-  1421   0024CC  EF6E  F012         	goto	l1215
-  1422   0024D0                     u730:
-  1423   0024D0  6C01               	negf	___awmod@dividend^0,c
-  1424   0024D2  1E02               	comf	(___awmod@dividend+1)^0,f,c
-  1425   0024D4  B0D8               	btfsc	status,0,c
-  1426   0024D6  2A02               	incf	(___awmod@dividend+1)^0,f,c
-  1427   0024D8  0E01               	movlw	1
-  1428   0024DA  6E06               	movwf	___awmod@sign^0,c
-  1429   0024DC                     l1215:
-  1430   0024DC  BE04               	btfsc	(___awmod@divisor+1)^0,7,c
-  1431   0024DE  EF75  F012         	goto	u740
-  1432   0024E2  EF73  F012         	goto	u741
-  1433   0024E6                     u741:
-  1434   0024E6  EF79  F012         	goto	l1219
-  1435   0024EA                     u740:
-  1436   0024EA  6C03               	negf	___awmod@divisor^0,c
-  1437   0024EC  1E04               	comf	(___awmod@divisor+1)^0,f,c
-  1438   0024EE  B0D8               	btfsc	status,0,c
-  1439   0024F0  2A04               	incf	(___awmod@divisor+1)^0,f,c
-  1440   0024F2                     l1219:
-  1441   0024F2  5003               	movf	___awmod@divisor^0,w,c
-  1442   0024F4  1004               	iorwf	(___awmod@divisor+1)^0,w,c
-  1443   0024F6  B4D8               	btfsc	status,2,c
-  1444   0024F8  EF80  F012         	goto	u751
-  1445   0024FC  EF82  F012         	goto	u750
-  1446   002500                     u751:
-  1447   002500  EFA6  F012         	goto	l1235
-  1448   002504                     u750:
-  1449   002504  0E01               	movlw	1
-  1450   002506  6E05               	movwf	___awmod@counter^0,c
-  1451   002508  EF8A  F012         	goto	l1225
-  1452   00250C                     l1223:
-  1453   00250C  90D8               	bcf	status,0,c
-  1454   00250E  3603               	rlcf	___awmod@divisor^0,f,c
-  1455   002510  3604               	rlcf	(___awmod@divisor+1)^0,f,c
-  1456   002512  2A05               	incf	___awmod@counter^0,f,c
-  1457   002514                     l1225:
-  1458   002514  AE04               	btfss	(___awmod@divisor+1)^0,7,c
-  1459   002516  EF8F  F012         	goto	u761
-  1460   00251A  EF91  F012         	goto	u760
-  1461   00251E                     u761:
-  1462   00251E  EF86  F012         	goto	l1223
-  1463   002522                     u760:
-  1464   002522                     l1227:
-  1465   002522  5003               	movf	___awmod@divisor^0,w,c
-  1466   002524  5C01               	subwf	___awmod@dividend^0,w,c
-  1467   002526  5004               	movf	(___awmod@divisor+1)^0,w,c
-  1468   002528  5802               	subwfb	(___awmod@dividend+1)^0,w,c
-  1469   00252A  A0D8               	btfss	status,0,c
-  1470   00252C  EF9A  F012         	goto	u771
-  1471   002530  EF9C  F012         	goto	u770
-  1472   002534                     u771:
-  1473   002534  EFA0  F012         	goto	l1231
-  1474   002538                     u770:
-  1475   002538  5003               	movf	___awmod@divisor^0,w,c
-  1476   00253A  5E01               	subwf	___awmod@dividend^0,f,c
-  1477   00253C  5004               	movf	(___awmod@divisor+1)^0,w,c
-  1478   00253E  5A02               	subwfb	(___awmod@dividend+1)^0,f,c
-  1479   002540                     l1231:
-  1480   002540  90D8               	bcf	status,0,c
-  1481   002542  3204               	rrcf	(___awmod@divisor+1)^0,f,c
-  1482   002544  3203               	rrcf	___awmod@divisor^0,f,c
-  1483   002546  2E05               	decfsz	___awmod@counter^0,f,c
-  1484   002548  EF91  F012         	goto	l1227
-  1485   00254C                     l1235:
-  1486   00254C  5006               	movf	___awmod@sign^0,w,c
-  1487   00254E  B4D8               	btfsc	status,2,c
-  1488   002550  EFAC  F012         	goto	u781
-  1489   002554  EFAE  F012         	goto	u780
-  1490   002558                     u781:
-  1491   002558  EFB2  F012         	goto	l1239
-  1492   00255C                     u780:
-  1493   00255C  6C01               	negf	___awmod@dividend^0,c
-  1494   00255E  1E02               	comf	(___awmod@dividend+1)^0,f,c
-  1495   002560  B0D8               	btfsc	status,0,c
-  1496   002562  2A02               	incf	(___awmod@dividend+1)^0,f,c
-  1497   002564                     l1239:
-  1498   002564  C001  F001         	movff	___awmod@dividend,?___awmod
-  1499   002568  C002  F002         	movff	___awmod@dividend+1,?___awmod+1
-  1500   00256C  0012               	return		;funcret
-  1501   00256E                     __end_of___awmod:
-  1502                           	callstack 0
-  1503                           
-  1504 ;; *************** function ___awdiv *****************
-  1505 ;; Defined at:
-  1506 ;;		line 7 in file "C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\awdiv.c"
-  1507 ;; Parameters:    Size  Location     Type
-  1508 ;;  dividend        2    0[COMRAM] int 
-  1509 ;;  divisor         2    2[COMRAM] int 
-  1510 ;; Auto vars:     Size  Location     Type
-  1511 ;;  quotient        2    6[COMRAM] int 
-  1512 ;;  sign            1    5[COMRAM] unsigned char 
-  1513 ;;  counter         1    4[COMRAM] unsigned char 
-  1514 ;; Return value:  Size  Location     Type
-  1515 ;;                  2    0[COMRAM] int 
-  1516 ;; Registers used:
-  1517 ;;		wreg, status,2, status,0
-  1518 ;; Tracked objects:
-  1519 ;;		On entry : 0/0
-  1520 ;;		On exit  : 0/0
-  1521 ;;		Unchanged: 0/0
-  1522 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+  1420 ;;Total ram usage:        6 bytes
+  1421 ;; Hardware stack levels used: 1
+  1422 ;; This function calls:
+  1423 ;;		Nothing
+  1424 ;; This function is called by:
+  1425 ;;		_PORT_Output
+  1426 ;; This function uses a non-reentrant model
+  1427 ;;
+  1428                           
+  1429                           	psect	text6
+  1430   0024D8                     __ptext6:
+  1431                           	callstack 0
+  1432   0024D8                     ___awmod:
+  1433                           	callstack 29
+  1434   0024D8  0E00               	movlw	0
+  1435   0024DA  6E06               	movwf	___awmod@sign^0,c
+  1436   0024DC  BE02               	btfsc	(___awmod@dividend+1)^0,7,c
+  1437   0024DE  EF75  F012         	goto	u740
+  1438   0024E2  EF73  F012         	goto	u741
+  1439   0024E6                     u741:
+  1440   0024E6  EF7B  F012         	goto	l1224
+  1441   0024EA                     u740:
+  1442   0024EA  6C01               	negf	___awmod@dividend^0,c
+  1443   0024EC  1E02               	comf	(___awmod@dividend+1)^0,f,c
+  1444   0024EE  B0D8               	btfsc	status,0,c
+  1445   0024F0  2A02               	incf	(___awmod@dividend+1)^0,f,c
+  1446   0024F2  0E01               	movlw	1
+  1447   0024F4  6E06               	movwf	___awmod@sign^0,c
+  1448   0024F6                     l1224:
+  1449   0024F6  BE04               	btfsc	(___awmod@divisor+1)^0,7,c
+  1450   0024F8  EF82  F012         	goto	u750
+  1451   0024FC  EF80  F012         	goto	u751
+  1452   002500                     u751:
+  1453   002500  EF86  F012         	goto	l1228
+  1454   002504                     u750:
+  1455   002504  6C03               	negf	___awmod@divisor^0,c
+  1456   002506  1E04               	comf	(___awmod@divisor+1)^0,f,c
+  1457   002508  B0D8               	btfsc	status,0,c
+  1458   00250A  2A04               	incf	(___awmod@divisor+1)^0,f,c
+  1459   00250C                     l1228:
+  1460   00250C  5003               	movf	___awmod@divisor^0,w,c
+  1461   00250E  1004               	iorwf	(___awmod@divisor+1)^0,w,c
+  1462   002510  B4D8               	btfsc	status,2,c
+  1463   002512  EF8D  F012         	goto	u761
+  1464   002516  EF8F  F012         	goto	u760
+  1465   00251A                     u761:
+  1466   00251A  EFB3  F012         	goto	l1244
+  1467   00251E                     u760:
+  1468   00251E  0E01               	movlw	1
+  1469   002520  6E05               	movwf	___awmod@counter^0,c
+  1470   002522  EF97  F012         	goto	l1234
+  1471   002526                     l1232:
+  1472   002526  90D8               	bcf	status,0,c
+  1473   002528  3603               	rlcf	___awmod@divisor^0,f,c
+  1474   00252A  3604               	rlcf	(___awmod@divisor+1)^0,f,c
+  1475   00252C  2A05               	incf	___awmod@counter^0,f,c
+  1476   00252E                     l1234:
+  1477   00252E  AE04               	btfss	(___awmod@divisor+1)^0,7,c
+  1478   002530  EF9C  F012         	goto	u771
+  1479   002534  EF9E  F012         	goto	u770
+  1480   002538                     u771:
+  1481   002538  EF93  F012         	goto	l1232
+  1482   00253C                     u770:
+  1483   00253C                     l1236:
+  1484   00253C  5003               	movf	___awmod@divisor^0,w,c
+  1485   00253E  5C01               	subwf	___awmod@dividend^0,w,c
+  1486   002540  5004               	movf	(___awmod@divisor+1)^0,w,c
+  1487   002542  5802               	subwfb	(___awmod@dividend+1)^0,w,c
+  1488   002544  A0D8               	btfss	status,0,c
+  1489   002546  EFA7  F012         	goto	u781
+  1490   00254A  EFA9  F012         	goto	u780
+  1491   00254E                     u781:
+  1492   00254E  EFAD  F012         	goto	l1240
+  1493   002552                     u780:
+  1494   002552  5003               	movf	___awmod@divisor^0,w,c
+  1495   002554  5E01               	subwf	___awmod@dividend^0,f,c
+  1496   002556  5004               	movf	(___awmod@divisor+1)^0,w,c
+  1497   002558  5A02               	subwfb	(___awmod@dividend+1)^0,f,c
+  1498   00255A                     l1240:
+  1499   00255A  90D8               	bcf	status,0,c
+  1500   00255C  3204               	rrcf	(___awmod@divisor+1)^0,f,c
+  1501   00255E  3203               	rrcf	___awmod@divisor^0,f,c
+  1502   002560  2E05               	decfsz	___awmod@counter^0,f,c
+  1503   002562  EF9E  F012         	goto	l1236
+  1504   002566                     l1244:
+  1505   002566  5006               	movf	___awmod@sign^0,w,c
+  1506   002568  B4D8               	btfsc	status,2,c
+  1507   00256A  EFB9  F012         	goto	u791
+  1508   00256E  EFBB  F012         	goto	u790
+  1509   002572                     u791:
+  1510   002572  EFBF  F012         	goto	l1248
+  1511   002576                     u790:
+  1512   002576  6C01               	negf	___awmod@dividend^0,c
+  1513   002578  1E02               	comf	(___awmod@dividend+1)^0,f,c
+  1514   00257A  B0D8               	btfsc	status,0,c
+  1515   00257C  2A02               	incf	(___awmod@dividend+1)^0,f,c
+  1516   00257E                     l1248:
+  1517   00257E  C001  F001         	movff	___awmod@dividend,?___awmod
+  1518   002582  C002  F002         	movff	___awmod@dividend+1,?___awmod+1
+  1519   002586  0012               	return		;funcret
+  1520   002588                     __end_of___awmod:
+  1521                           	callstack 0
+  1522                           
+  1523 ;; *************** function ___awdiv *****************
+  1524 ;; Defined at:
+  1525 ;;		line 7 in file "C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\awdiv.c"
+  1526 ;; Parameters:    Size  Location     Type
+  1527 ;;  dividend        2    0[COMRAM] int 
+  1528 ;;  divisor         2    2[COMRAM] int 
+  1529 ;; Auto vars:     Size  Location     Type
+  1530 ;;  quotient        2    6[COMRAM] int 
+  1531 ;;  sign            1    5[COMRAM] unsigned char 
+  1532 ;;  counter         1    4[COMRAM] unsigned char 
+  1533 ;; Return value:  Size  Location     Type
+  1534 ;;                  2    0[COMRAM] int 
+  1535 ;; Registers used:
+  1536 ;;		wreg, status,2, status,0
+  1537 ;; Tracked objects:
+  1538 ;;		On entry : 0/0
+  1539 ;;		On exit  : 0/0
+  1540 ;;		Unchanged: 0/0
+  1541 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
       +1  BANK12  BANK13  BANK14  BANK15  BANK16  BANK17  BANK18  BANK19  BANK20  BANK21  BANK22  BANK23  BANK24  BANK25  BANK2
       +6  BANK27  BANK28  BANK29  BANK30  BANK31
-  1523 ;;      Params:         4       0       0       0       0       0       0       0       0       0       0       0       
+  1542 ;;      Params:         4       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0       0
-  1524 ;;      Locals:         4       0       0       0       0       0       0       0       0       0       0       0       
+  1543 ;;      Locals:         4       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0       0
-  1525 ;;      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       
+  1544 ;;      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0       0
-  1526 ;;      Totals:         8       0       0       0       0       0       0       0       0       0       0       0       
+  1545 ;;      Totals:         8       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0       0
-  1527 ;;Total ram usage:        8 bytes
-  1528 ;; Hardware stack levels used: 1
-  1529 ;; This function calls:
-  1530 ;;		Nothing
-  1531 ;; This function is called by:
-  1532 ;;		_PORT_Output
-  1533 ;; This function uses a non-reentrant model
-  1534 ;;
-  1535                           
-  1536                           	psect	text7
-  1537   0023FA                     __ptext7:
-  1538                           	callstack 0
-  1539   0023FA                     ___awdiv:
-  1540                           	callstack 29
-  1541   0023FA  0E00               	movlw	0
-  1542   0023FC  6E06               	movwf	___awdiv@sign^0,c
-  1543   0023FE  BE04               	btfsc	(___awdiv@divisor+1)^0,7,c
-  1544   002400  EF06  F012         	goto	u670
-  1545   002404  EF04  F012         	goto	u671
-  1546   002408                     u671:
-  1547   002408  EF0C  F012         	goto	l1171
-  1548   00240C                     u670:
-  1549   00240C  6C03               	negf	___awdiv@divisor^0,c
-  1550   00240E  1E04               	comf	(___awdiv@divisor+1)^0,f,c
-  1551   002410  B0D8               	btfsc	status,0,c
-  1552   002412  2A04               	incf	(___awdiv@divisor+1)^0,f,c
-  1553   002414  0E01               	movlw	1
-  1554   002416  6E06               	movwf	___awdiv@sign^0,c
-  1555   002418                     l1171:
-  1556   002418  BE02               	btfsc	(___awdiv@dividend+1)^0,7,c
-  1557   00241A  EF13  F012         	goto	u680
-  1558   00241E  EF11  F012         	goto	u681
-  1559   002422                     u681:
-  1560   002422  EF19  F012         	goto	l1177
-  1561   002426                     u680:
-  1562   002426  6C01               	negf	___awdiv@dividend^0,c
-  1563   002428  1E02               	comf	(___awdiv@dividend+1)^0,f,c
-  1564   00242A  B0D8               	btfsc	status,0,c
-  1565   00242C  2A02               	incf	(___awdiv@dividend+1)^0,f,c
-  1566   00242E  0E01               	movlw	1
-  1567   002430  1A06               	xorwf	___awdiv@sign^0,f,c
-  1568   002432                     l1177:
-  1569   002432  0E00               	movlw	0
-  1570   002434  6E08               	movwf	(___awdiv@quotient+1)^0,c
-  1571   002436  0E00               	movlw	0
-  1572   002438  6E07               	movwf	___awdiv@quotient^0,c
-  1573   00243A  5003               	movf	___awdiv@divisor^0,w,c
-  1574   00243C  1004               	iorwf	(___awdiv@divisor+1)^0,w,c
-  1575   00243E  B4D8               	btfsc	status,2,c
-  1576   002440  EF24  F012         	goto	u691
-  1577   002444  EF26  F012         	goto	u690
-  1578   002448                     u691:
-  1579   002448  EF4E  F012         	goto	l1199
-  1580   00244C                     u690:
-  1581   00244C  0E01               	movlw	1
-  1582   00244E  6E05               	movwf	___awdiv@counter^0,c
-  1583   002450  EF2E  F012         	goto	l1185
-  1584   002454                     l1183:
-  1585   002454  90D8               	bcf	status,0,c
-  1586   002456  3603               	rlcf	___awdiv@divisor^0,f,c
-  1587   002458  3604               	rlcf	(___awdiv@divisor+1)^0,f,c
-  1588   00245A  2A05               	incf	___awdiv@counter^0,f,c
-  1589   00245C                     l1185:
-  1590   00245C  AE04               	btfss	(___awdiv@divisor+1)^0,7,c
-  1591   00245E  EF33  F012         	goto	u701
-  1592   002462  EF35  F012         	goto	u700
-  1593   002466                     u701:
-  1594   002466  EF2A  F012         	goto	l1183
-  1595   00246A                     u700:
-  1596   00246A                     l1187:
-  1597   00246A  90D8               	bcf	status,0,c
-  1598   00246C  3607               	rlcf	___awdiv@quotient^0,f,c
-  1599   00246E  3608               	rlcf	(___awdiv@quotient+1)^0,f,c
-  1600   002470  5003               	movf	___awdiv@divisor^0,w,c
-  1601   002472  5C01               	subwf	___awdiv@dividend^0,w,c
-  1602   002474  5004               	movf	(___awdiv@divisor+1)^0,w,c
-  1603   002476  5802               	subwfb	(___awdiv@dividend+1)^0,w,c
-  1604   002478  A0D8               	btfss	status,0,c
-  1605   00247A  EF41  F012         	goto	u711
-  1606   00247E  EF43  F012         	goto	u710
-  1607   002482                     u711:
-  1608   002482  EF48  F012         	goto	l1195
-  1609   002486                     u710:
-  1610   002486  5003               	movf	___awdiv@divisor^0,w,c
-  1611   002488  5E01               	subwf	___awdiv@dividend^0,f,c
-  1612   00248A  5004               	movf	(___awdiv@divisor+1)^0,w,c
-  1613   00248C  5A02               	subwfb	(___awdiv@dividend+1)^0,f,c
-  1614   00248E  8007               	bsf	___awdiv@quotient^0,0,c
-  1615   002490                     l1195:
-  1616   002490  90D8               	bcf	status,0,c
-  1617   002492  3204               	rrcf	(___awdiv@divisor+1)^0,f,c
-  1618   002494  3203               	rrcf	___awdiv@divisor^0,f,c
-  1619   002496  2E05               	decfsz	___awdiv@counter^0,f,c
-  1620   002498  EF35  F012         	goto	l1187
-  1621   00249C                     l1199:
-  1622   00249C  5006               	movf	___awdiv@sign^0,w,c
-  1623   00249E  B4D8               	btfsc	status,2,c
-  1624   0024A0  EF54  F012         	goto	u721
-  1625   0024A4  EF56  F012         	goto	u720
-  1626   0024A8                     u721:
-  1627   0024A8  EF5A  F012         	goto	l1203
-  1628   0024AC                     u720:
-  1629   0024AC  6C07               	negf	___awdiv@quotient^0,c
-  1630   0024AE  1E08               	comf	(___awdiv@quotient+1)^0,f,c
-  1631   0024B0  B0D8               	btfsc	status,0,c
-  1632   0024B2  2A08               	incf	(___awdiv@quotient+1)^0,f,c
-  1633   0024B4                     l1203:
-  1634   0024B4  C007  F001         	movff	___awdiv@quotient,?___awdiv
-  1635   0024B8  C008  F002         	movff	___awdiv@quotient+1,?___awdiv+1
-  1636   0024BC  0012               	return		;funcret
-  1637   0024BE                     __end_of___awdiv:
-  1638                           	callstack 0
-  1639                           
-  1640                           	psect	smallconst
-  1641   002000                     __psmallconst:
-  1642                           	callstack 0
-  1643   002000  00                 	db	0
-  1644   002001  00                 	db	0	; dummy byte at the end
-  1645   000000                     
-  1646                           	psect	rparam
-  1647   000000                     tosu	equ	0x3FFF
-  1648                           tosh	equ	0x3FFE
-  1649                           tosl	equ	0x3FFD
-  1650                           stkptr	equ	0x3FFC
-  1651                           pclatu	equ	0x3FFB
-  1652                           pclath	equ	0x3FFA
-  1653                           pcl	equ	0x3FF9
-  1654                           tblptru	equ	0x3FF8
-  1655                           tblptrh	equ	0x3FF7
-  1656                           tblptrl	equ	0x3FF6
-  1657                           tablat	equ	0x3FF5
-  1658                           prodh	equ	0x3FF4
-  1659                           prodl	equ	0x3FF3
-  1660                           indf0	equ	0x3FEF
-  1661                           postinc0	equ	0x3FEE
-  1662                           postdec0	equ	0x3FED
-  1663                           preinc0	equ	0x3FEC
-  1664                           plusw0	equ	0x3FEB
-  1665                           fsr0h	equ	0x3FEA
-  1666                           fsr0l	equ	0x3FE9
-  1667                           wreg	equ	0x3FE8
-  1668                           indf1	equ	0x3FE7
-  1669                           postinc1	equ	0x3FE6
-  1670                           postdec1	equ	0x3FE5
-  1671                           preinc1	equ	0x3FE4
-  1672                           plusw1	equ	0x3FE3
-  1673                           fsr1h	equ	0x3FE2
-  1674                           fsr1l	equ	0x3FE1
-  1675                           bsr	equ	0x3FE0
-  1676                           indf2	equ	0x3FDF
-  1677                           postinc2	equ	0x3FDE
-  1678                           postdec2	equ	0x3FDD
-  1679                           preinc2	equ	0x3FDC
-  1680                           plusw2	equ	0x3FDB
-  1681                           fsr2h	equ	0x3FDA
-  1682                           fsr2l	equ	0x3FD9
-  1683                           status	equ	0x3FD8
+  1546 ;;Total ram usage:        8 bytes
+  1547 ;; Hardware stack levels used: 1
+  1548 ;; This function calls:
+  1549 ;;		Nothing
+  1550 ;; This function is called by:
+  1551 ;;		_PORT_Output
+  1552 ;; This function uses a non-reentrant model
+  1553 ;;
+  1554                           
+  1555                           	psect	text7
+  1556   002414                     __ptext7:
+  1557                           	callstack 0
+  1558   002414                     ___awdiv:
+  1559                           	callstack 29
+  1560   002414  0E00               	movlw	0
+  1561   002416  6E06               	movwf	___awdiv@sign^0,c
+  1562   002418  BE04               	btfsc	(___awdiv@divisor+1)^0,7,c
+  1563   00241A  EF13  F012         	goto	u680
+  1564   00241E  EF11  F012         	goto	u681
+  1565   002422                     u681:
+  1566   002422  EF19  F012         	goto	l1180
+  1567   002426                     u680:
+  1568   002426  6C03               	negf	___awdiv@divisor^0,c
+  1569   002428  1E04               	comf	(___awdiv@divisor+1)^0,f,c
+  1570   00242A  B0D8               	btfsc	status,0,c
+  1571   00242C  2A04               	incf	(___awdiv@divisor+1)^0,f,c
+  1572   00242E  0E01               	movlw	1
+  1573   002430  6E06               	movwf	___awdiv@sign^0,c
+  1574   002432                     l1180:
+  1575   002432  BE02               	btfsc	(___awdiv@dividend+1)^0,7,c
+  1576   002434  EF20  F012         	goto	u690
+  1577   002438  EF1E  F012         	goto	u691
+  1578   00243C                     u691:
+  1579   00243C  EF26  F012         	goto	l1186
+  1580   002440                     u690:
+  1581   002440  6C01               	negf	___awdiv@dividend^0,c
+  1582   002442  1E02               	comf	(___awdiv@dividend+1)^0,f,c
+  1583   002444  B0D8               	btfsc	status,0,c
+  1584   002446  2A02               	incf	(___awdiv@dividend+1)^0,f,c
+  1585   002448  0E01               	movlw	1
+  1586   00244A  1A06               	xorwf	___awdiv@sign^0,f,c
+  1587   00244C                     l1186:
+  1588   00244C  0E00               	movlw	0
+  1589   00244E  6E08               	movwf	(___awdiv@quotient+1)^0,c
+  1590   002450  0E00               	movlw	0
+  1591   002452  6E07               	movwf	___awdiv@quotient^0,c
+  1592   002454  5003               	movf	___awdiv@divisor^0,w,c
+  1593   002456  1004               	iorwf	(___awdiv@divisor+1)^0,w,c
+  1594   002458  B4D8               	btfsc	status,2,c
+  1595   00245A  EF31  F012         	goto	u701
+  1596   00245E  EF33  F012         	goto	u700
+  1597   002462                     u701:
+  1598   002462  EF5B  F012         	goto	l1208
+  1599   002466                     u700:
+  1600   002466  0E01               	movlw	1
+  1601   002468  6E05               	movwf	___awdiv@counter^0,c
+  1602   00246A  EF3B  F012         	goto	l1194
+  1603   00246E                     l1192:
+  1604   00246E  90D8               	bcf	status,0,c
+  1605   002470  3603               	rlcf	___awdiv@divisor^0,f,c
+  1606   002472  3604               	rlcf	(___awdiv@divisor+1)^0,f,c
+  1607   002474  2A05               	incf	___awdiv@counter^0,f,c
+  1608   002476                     l1194:
+  1609   002476  AE04               	btfss	(___awdiv@divisor+1)^0,7,c
+  1610   002478  EF40  F012         	goto	u711
+  1611   00247C  EF42  F012         	goto	u710
+  1612   002480                     u711:
+  1613   002480  EF37  F012         	goto	l1192
+  1614   002484                     u710:
+  1615   002484                     l1196:
+  1616   002484  90D8               	bcf	status,0,c
+  1617   002486  3607               	rlcf	___awdiv@quotient^0,f,c
+  1618   002488  3608               	rlcf	(___awdiv@quotient+1)^0,f,c
+  1619   00248A  5003               	movf	___awdiv@divisor^0,w,c
+  1620   00248C  5C01               	subwf	___awdiv@dividend^0,w,c
+  1621   00248E  5004               	movf	(___awdiv@divisor+1)^0,w,c
+  1622   002490  5802               	subwfb	(___awdiv@dividend+1)^0,w,c
+  1623   002492  A0D8               	btfss	status,0,c
+  1624   002494  EF4E  F012         	goto	u721
+  1625   002498  EF50  F012         	goto	u720
+  1626   00249C                     u721:
+  1627   00249C  EF55  F012         	goto	l1204
+  1628   0024A0                     u720:
+  1629   0024A0  5003               	movf	___awdiv@divisor^0,w,c
+  1630   0024A2  5E01               	subwf	___awdiv@dividend^0,f,c
+  1631   0024A4  5004               	movf	(___awdiv@divisor+1)^0,w,c
+  1632   0024A6  5A02               	subwfb	(___awdiv@dividend+1)^0,f,c
+  1633   0024A8  8007               	bsf	___awdiv@quotient^0,0,c
+  1634   0024AA                     l1204:
+  1635   0024AA  90D8               	bcf	status,0,c
+  1636   0024AC  3204               	rrcf	(___awdiv@divisor+1)^0,f,c
+  1637   0024AE  3203               	rrcf	___awdiv@divisor^0,f,c
+  1638   0024B0  2E05               	decfsz	___awdiv@counter^0,f,c
+  1639   0024B2  EF42  F012         	goto	l1196
+  1640   0024B6                     l1208:
+  1641   0024B6  5006               	movf	___awdiv@sign^0,w,c
+  1642   0024B8  B4D8               	btfsc	status,2,c
+  1643   0024BA  EF61  F012         	goto	u731
+  1644   0024BE  EF63  F012         	goto	u730
+  1645   0024C2                     u731:
+  1646   0024C2  EF67  F012         	goto	l1212
+  1647   0024C6                     u730:
+  1648   0024C6  6C07               	negf	___awdiv@quotient^0,c
+  1649   0024C8  1E08               	comf	(___awdiv@quotient+1)^0,f,c
+  1650   0024CA  B0D8               	btfsc	status,0,c
+  1651   0024CC  2A08               	incf	(___awdiv@quotient+1)^0,f,c
+  1652   0024CE                     l1212:
+  1653   0024CE  C007  F001         	movff	___awdiv@quotient,?___awdiv
+  1654   0024D2  C008  F002         	movff	___awdiv@quotient+1,?___awdiv+1
+  1655   0024D6  0012               	return		;funcret
+  1656   0024D8                     __end_of___awdiv:
+  1657                           	callstack 0
+  1658                           
+  1659                           	psect	smallconst
+  1660   002000                     __psmallconst:
+  1661                           	callstack 0
+  1662   002000  00                 	db	0
+  1663   002001  00                 	db	0	; dummy byte at the end
+  1664   000000                     
+  1665                           	psect	rparam
+  1666   000000                     tosu	equ	0x3FFF
+  1667                           tosh	equ	0x3FFE
+  1668                           tosl	equ	0x3FFD
+  1669                           stkptr	equ	0x3FFC
+  1670                           pclatu	equ	0x3FFB
+  1671                           pclath	equ	0x3FFA
+  1672                           pcl	equ	0x3FF9
+  1673                           tblptru	equ	0x3FF8
+  1674                           tblptrh	equ	0x3FF7
+  1675                           tblptrl	equ	0x3FF6
+  1676                           tablat	equ	0x3FF5
+  1677                           prodh	equ	0x3FF4
+  1678                           prodl	equ	0x3FF3
+  1679                           indf0	equ	0x3FEF
+  1680                           postinc0	equ	0x3FEE
+  1681                           postdec0	equ	0x3FED
+  1682                           preinc0	equ	0x3FEC
+  1683                           plusw0	equ	0x3FEB
+  1684                           fsr0h	equ	0x3FEA
+  1685                           fsr0l	equ	0x3FE9
+  1686                           wreg	equ	0x3FE8
+  1687                           indf1	equ	0x3FE7
+  1688                           postinc1	equ	0x3FE6
+  1689                           postdec1	equ	0x3FE5
+  1690                           preinc1	equ	0x3FE4
+  1691                           plusw1	equ	0x3FE3
+  1692                           fsr1h	equ	0x3FE2
+  1693                           fsr1l	equ	0x3FE1
+  1694                           bsr	equ	0x3FE0
+  1695                           indf2	equ	0x3FDF
+  1696                           postinc2	equ	0x3FDE
+  1697                           postdec2	equ	0x3FDD
+  1698                           preinc2	equ	0x3FDC
+  1699                           plusw2	equ	0x3FDB
+  1700                           fsr2h	equ	0x3FDA
+  1701                           fsr2l	equ	0x3FD9
+  1702                           status	equ	0x3FD8
 
 Data Sizes:
     Strings     0
@@ -2112,150 +2131,152 @@ CODE                 0      0       0       0        0.0%
 
 
 Microchip Technology PIC18 Macro Assembler V2.46 build 20240104201356 
-Symbol Table                                                                                   Sat Apr 06 13:35:02 2024
+Symbol Table                                                                                   Sat Apr 06 13:46:06 2024
 
-           PORT_Output@i 0009                       l43 26F0                       l71 23F8  
-                     l47 2230                       l81 25E0                       l74 25C0  
-                     l59 2312                       l75 2576                       l84 25FE  
-                     l85 2616                       l88 2652          ?_scan_operation 0001  
-           ___awdiv@sign 0006                      l101 2118                      l112 21F2  
-                    l115 2204                      l351 24BC                      l364 256C  
-                    l526 26AE                      l901 2240                      l911 2268  
-                    l903 2244                      l921 228C                      l913 226A  
-                    l905 2252                      l931 22A6                      l923 2290  
-                    l915 226C                      l907 2256                      l941 22D8  
-                    l933 22B4                      l925 229E                      l917 227A  
-                    l909 2264                      l951 2306                      l943 22DC  
-                    l935 22B8                      l927 22A2                      l919 227E  
-                    l961 2338                      l953 230A                      l937 22C6  
-                    l929 22A4                      l945 22DE                      l971 235C  
-                    l963 2346                      l955 2322                      l947 22F0  
-                    l939 22CA                      l981 2384                      l973 2360  
-                    l965 234A                      l957 2326                      l949 22FE  
-                    l991 23A8                      l983 2392                      l975 236E  
-                    l967 234C                      l959 2334                      l993 23AC  
-                    l985 2396                      l977 2372                      l969 234E  
-                    l995 23BA                      l987 2398                      l979 2380  
-                    l899 2220                      l997 23BE                      l989 239A  
-                    l999 23CC                      u200 228C                      u201 2288  
-                    u210 229E                      u211 229A                      u300 236E  
-                    u220 22B4                      u301 236A                      u221 22B0  
-                    u310 2380                      u230 22C6                      u311 237C  
-                    u231 22C2                      u320 2392                      u240 22D8  
-                    u160 2240                      u400 25BC                      u321 238E  
-                    u241 22D4                      u161 223C                      u401 25B8  
-                    u330 23A8                      u250 22F0                      u170 2252  
-                    u410 25D0                      u331 23A4                      u251 22EC  
-                    u171 224E                      u411 25CC                      u340 23BA  
-                    u260 2322                      u180 2264                      u341 23B6  
-                    u261 231E                      u181 2260                      u350 23CC  
-                    u270 2334                      u190 227A                      u351 23C8  
-                    u271 2330                      u191 2276                      u360 23E4  
-                    u280 2346                      u361 23E0                      u281 2342  
-                    u290 235C                      u370 2586                      u291 2358  
-                    u371 2582                      u700 246A                      u380 2598  
-                    u701 2466                      u381 2594                      u710 2486  
-                    u390 25AA                      u711 2482                      u391 25A6  
-                    u720 24AC                      u800 2686                      u721 24A8  
-                    u801 2682                      u730 24D0                      u810 269C  
-                    u731 24CC                      u811 2698                      u740 24EA  
-                    u900 20A6                      u820 25F8                      u741 24E6  
-                    u901 20A2                      u821 25F4                      u670 240C  
-                    u750 2504                      u910 20BC                      u830 2610  
-                    u671 2408                      u751 2500                      u911 20B8  
-                    u831 260C                      u680 2426                      u760 2522  
-                    u920 20D2                      u840 2628                      u681 2422  
-                    u761 251E                      u921 20CE                      u841 2624  
-                    u690 244C                      u770 2538                      u930 20E8  
-                    u850 2644                      u691 2448                      u771 2534  
-                    u931 20E4                      u851 2640                      u780 255C  
-                    u940 20FE                      u860 2050                      u781 2558  
-                    u941 20FA                      u861 204C                      u950 2114  
-                    u870 2064                      u790 266A                      u951 2110  
-                    u871 2060                      u791 2666                      u960 2128  
-                    u880 207A                      u961 2124                      u881 2076  
-                    u970 213C                      u890 2090                      u971 2138  
-                    u891 208C                      u980 2152                      u981 214E  
-                    u990 2168                      u991 2164             ___awmod@sign 0006  
-                    wreg 3FE8                     l1001 23D0                     l1003 23D2  
-                   l1005 23E4                     l1021 259C                     l1013 256E  
-                   l1007 23E8                     l1031 25DE                     l1023 25AA  
-                   l1015 2586                     l1201 24AC                     l1009 23F6  
-                   l1025 25AE                     l1017 258A                     l1203 24B4  
-                   l1211 24D0                     l1027 25BC                     l1019 2598  
-                   l1221 2504                     l1213 24D8                     l1301 2068  
-                   l1029 25D0                     l1231 2540                     l1223 250C  
-                   l1215 24DC                     l1207 24BE                     l1311 20A6  
-                   l1303 207A                     l1233 2546                     l1225 2514  
-                   l1217 24EA                     l1209 24C2                     l1321 20D6  
-                   l1313 20AA                     l1305 207E                     l1171 2418  
-                   l1163 23FA                     l1227 2522                     l1235 254C  
-                   l1219 24F2                     l1331 2114                     l1323 20E8  
-                   l1315 20BC                     l1307 2090                     l1251 2676  
-                   l1243 2656                     l1181 244C                     l1173 2426  
-                   l1165 23FE                     l1237 255C                     l1229 2538  
-                   l1341 2152                     l1333 2128                     l1325 20EC  
-                   l1317 20C0                     l1309 2094                     l1261 26A2  
-                   l1253 2678                     l1245 265A                     l1191 2486  
-                   l1183 2454                     l1175 242E                     l1167 240C  
-                   l1239 2564                     l1351 2182                     l1343 2156  
-                   l1335 212C                     l1327 20FE                     l1319 20D2  
-                   l1263 26A6                     l1255 2686                     l1247 266A  
-                   l1271 25E8                     l1193 248E                     l1185 245C  
-                   l1177 2432                     l1169 2414                     l1361 21C0  
-                   l1353 2194                     l1345 2168                     l1337 213C  
-                   l1329 2102                     l1257 269C                     l1249 2672  
-                   l1265 26AC                     l1281 2644                     l1273 25F8  
-                   l1195 2490                     l1187 246A                     l1179 243A  
-                   l1371 21F0                     l1363 21C4                     l1355 2198  
-                   l1347 216C                     l1339 2140                     l1291 2014  
-                   l1259 26A0                     l1283 2650                     l1275 2610  
-                   l1197 2496                     l1189 2470                     l1373 2200  
-                   l1365 21D6                     l1357 21AA                     l1349 217E  
-                   l1293 2040                     l1277 2628                     l1269 25E4  
-                   l1381 26B0                     l1199 249C                     l1367 21DA  
-                   l1359 21AE                     l1295 2050                     l1287 2004  
-                   l1279 2632                     l1391 26DA                     l1383 26B2  
-                   l1377 2218                     l1369 21EC                     l1297 2054  
-                   l1393 26EA                     l1385 26C8                     l1299 2064  
-                   l1387 26CE                     l1389 26D4                     u1000 217E  
-                   u1001 217A                     u1010 2194                     u1011 2190  
-                   u1020 21AA                     u1021 21A6                     u1030 21C0  
-                   u1031 21BC                     u1040 21D6                     u1041 21D2  
-                   u1050 21EC                     u1051 21E8                     u1060 2200  
-                   u1061 21FC                     u1077 25D6                     u1087 22F6  
-                   u1097 23EE                     _main 26B0                     prodl 3FF3  
-                   start FFFC             ___param_bank 0000                    ?_main 0001  
-        __end_of___awdiv 24BE          __end_of___lbdiv 26B0          __end_of___awmod 256E  
-        ___awdiv@divisor 0003          ___awdiv@counter 0005                    _PORTD 3FCD  
-                  _TRISA 3FC2                    _TRISB 3FC3                    _TRISD 3FC5  
-      PORT_Output@answer 000A                    status 3FD8          ___lbdiv@divisor 0001  
-        ___lbdiv@counter 0003             ?_scan_number 0001          __initialization 26F4  
-           __end_of_main 26F4                   ??_main 000F            __activetblptr 0000  
-       ___awdiv@dividend 0001                   _ANSELA 3A40                   _ANSELB 3A50  
-                 _ANSELD 3A70                ??___awdiv 0005                ??___lbdiv 0002  
-              ??___awmod 0005         ___awdiv@quotient 0007          ___awmod@divisor 0003  
-                 isa$std 0001          ___awmod@counter 0005             __mediumconst 0000  
-           ?_PORT_Output 0001         ___lbdiv@dividend 0002               __accesstop 0060  
-__end_of__initialization 26F6            ___rparam_used 0001         ??_scan_operation 0001  
-         __pcstackCOMRAM 0001         scan_number@count 0003         scan_number@input 0005  
-       ___lbdiv@quotient 0004              _X_Input_REG 0012              _Y_Input_REG 0011  
-             __pnvCOMRAM 000F        __end_of_calculate 2654      PORT_Output@display1 000B  
-    PORT_Output@display2 000C                  __Hparam 0000               calculate@x 0008  
-             calculate@y 0005                  __Lparam 0000                  ___awdiv 23FA  
-                ___lbdiv 2654                  ___awmod 24BE             __psmallconst 2000  
-                __pcinit 26F4                  __ramtop 2000                  __ptext0 26B0  
-                __ptext1 256E                  __ptext2 2220                  __ptext3 25E2  
-                __ptext4 2654                  __ptext5 2002                  __ptext6 24BE  
-                __ptext7 23FA         ___awmod@dividend 0001     end_of_initialization 26F6  
-              _PORTAbits 3FCA                _PORTBbits 3FCB            _Operation_REG 0010  
-      scan_number@button 0002      start_initialization 26F4        scan_number@output 0004  
-            _calculation 000F              __pbssCOMRAM 0013    PORT_Output@second_dig 000E  
-              _calculate 25E2            ??_scan_number 0001                 ?___awdiv 0001  
-               ?___lbdiv 0001                 ?___awmod 0001              __smallconst 2000  
-             ?_calculate 0005          calculate@output 0007      __end_of_scan_number 23FA  
-          ??_PORT_Output 0009     PORT_Output@first_dig 000D              calculate@op 0006  
-               __Hrparam 0000                 __Lrparam 0000      __end_of_PORT_Output 2220  
-            ??_calculate 0007              _scan_number 2220                 isa$xinst 0000  
-         _scan_operation 256E       _Display_Result_REG 0013     scan_operation@op_key 0002  
- __end_of_scan_operation 25E2              _PORT_Output 2002  
+           PORT_Output@i 0009                       l43 270A                       l60 232C  
+                     l47 2238                       l72 2412                       l82 25FA  
+                     l75 25DA                       l76 2590                       l85 2618  
+                     l86 2630                       l89 266C          ?_scan_operation 0001  
+           ___awdiv@sign 0006                      l102 2118                      l116 220C  
+                    l352 24D6                      l365 2586                      l527 26C8  
+                    l900 2228                      l910 226C                      l902 2248  
+                    l920 2286                      l912 2270                      l904 224C  
+                    l930 22B8                      l922 2294                      l914 2272  
+                    l906 225A                      l940 22D2                      l932 22BC  
+                    l924 2298                      l916 2274                      l908 225E  
+                    l942 22E0                      l934 22BE                      l926 22A6  
+                    l918 2282                      l950 22F8                      l960 233C  
+                    l952 230A                      l944 22E4                      l936 22C0  
+                    l928 22AA                      l970 2364                      l962 2340  
+                    l954 2318                      l946 22F2                      l938 22CE  
+                    l980 2388                      l972 2366                      l964 234E  
+                    l956 2320                      l948 22F6                      l990 23B0  
+                    l982 238C                      l974 2368                      l966 2352  
+                    l958 2324                      l992 23B2                      l984 239A  
+                    l976 2376                      l968 2360                      l994 23B4  
+                    l986 239E                      l978 237A                      l996 23C2  
+                    l988 23AC                      l998 23C6                      u200 2294  
+                    u201 2290                      u210 22A6                      u211 22A2  
+                    u300 2376                      u220 22B8                      u301 2372  
+                    u221 22B4                      u310 2388                      u230 22CE  
+                    u311 2384                      u231 22CA                      u320 239A  
+                    u240 22E0                      u160 2248                      u400 25C4  
+                    u321 2396                      u241 22DC                      u161 2244  
+                    u401 25C0                      u330 23AC                      u250 22F2  
+                    u170 225A                      u410 25D6                      u331 23A8  
+                    u251 22EE                      u171 2256                      u411 25D2  
+                    u340 23C2                      u260 230A                      u180 226C  
+                    u420 25EA                      u341 23BE                      u261 2306  
+                    u181 2268                      u421 25E6                      u350 23D4  
+                    u270 233C                      u190 2282                      u351 23D0  
+                    u271 2338                      u191 227E                      u360 23E6  
+                    u280 234E                      u361 23E2                      u281 234A  
+                    u370 23FE                      u290 2360                      u371 23FA  
+                    u291 235C                      u700 2466                      u380 25A0  
+                    u701 2462                      u381 259C                      u710 2484  
+                    u390 25B2                      u711 2480                      u391 25AE  
+                    u720 24A0                      u800 2684                      u721 249C  
+                    u801 2680                      u730 24C6                      u810 26A0  
+                    u731 24C2                      u811 269C                      u740 24EA  
+                    u900 2090                      u820 26B6                      u741 24E6  
+                    u901 208C                      u821 26B2                      u750 2504  
+                    u910 20A6                      u830 2612                      u751 2500  
+                    u911 20A2                      u831 260E                      u680 2426  
+                    u760 251E                      u920 20BC                      u840 262A  
+                    u681 2422                      u761 251A                      u921 20B8  
+                    u841 2626                      u690 2440                      u770 253C  
+                    u930 20D2                      u850 2642                      u691 243C  
+                    u771 2538                      u931 20CE                      u851 263E  
+                    u780 2552                      u940 20E8                      u860 265E  
+                    u781 254E                      u941 20E4                      u861 265A  
+                    u790 2576                      u950 20FE                      u870 2050  
+                    u791 2572                      u951 20FA                      u871 204C  
+                    u960 2114                      u880 2064                      u961 2110  
+                    u881 2060                      u970 2128                      u890 207A  
+                    u971 2124                      u891 2076                      u980 213C  
+                    u981 2138                      u990 2152                      u991 214E  
+           ___awmod@sign 0006                      wreg 3FE8                     l1000 23D4  
+                   l1010 23FE                     l1002 23D8                     l1012 2402  
+                   l1004 23E6                     l1020 25A0                     l1014 2410  
+                   l1006 23EA                     l1030 25C8                     l1022 25A4  
+                   l1200 24A0                     l1008 23EC                     l1032 25D6  
+                   l1024 25B2                     l1210 24C6                     l1202 24A8  
+                   l1034 25EA                     l1026 25B6                     l1018 2588  
+                   l1212 24CE                     l1204 24AA                     l1220 24EA  
+                   l1300 2014                     l1036 25F8                     l1028 25C4  
+                   l1206 24B0                     l1230 251E                     l1222 24F2  
+                   l1310 2068                     l1302 2040                     l1208 24B6  
+                   l1240 255A                     l1232 2526                     l1224 24F6  
+                   l1216 24D8                     l1320 20A6                     l1312 207A  
+                   l1304 2050                     l1400 26E8                     l1242 2560  
+                   l1234 252E                     l1226 2504                     l1218 24DC  
+                   l1330 20D6                     l1322 20AA                     l1314 207E  
+                   l1306 2054                     l1402 26EE                     l1180 2432  
+                   l1172 2414                     l1236 253C                     l1244 2566  
+                   l1228 250C                     l1340 2114                     l1332 20E8  
+                   l1324 20BC                     l1316 2090                     l1308 2064  
+                   l1260 2690                     l1252 2670                     l1404 26F4  
+                   l1190 2466                     l1182 2440                     l1174 2418  
+                   l1246 2576                     l1238 2552                     l1350 2152  
+                   l1342 2128                     l1334 20EC                     l1326 20C0  
+                   l1318 2094                     l1270 26BC                     l1262 2692  
+                   l1254 2674                     l1406 2704                     l1192 246E  
+                   l1184 2448                     l1176 2426                     l1248 257E  
+                   l1360 2182                     l1352 2156                     l1344 212C  
+                   l1336 20FE                     l1328 20D2                     l1272 26C0  
+                   l1264 26A0                     l1256 2684                     l1280 2602  
+                   l1194 2476                     l1186 244C                     l1178 242E  
+                   l1370 21C0                     l1362 2194                     l1354 2168  
+                   l1346 213C                     l1338 2102                     l1266 26B6  
+                   l1258 268C                     l1274 26C6                     l1290 265E  
+                   l1282 2612                     l1196 2484                     l1188 2454  
+                   l1380 21F0                     l1372 21C4                     l1364 2198  
+                   l1356 216C                     l1348 2140                     l1268 26BA  
+                   l1292 266A                     l1284 262A                     l1198 248A  
+                   l1390 2220                     l1382 21F6                     l1374 21D6  
+                   l1366 21AA                     l1358 217E                     l1286 2642  
+                   l1278 25FE                     l1384 21FA                     l1376 21DA  
+                   l1368 21AE                     l1296 2004                     l1288 264C  
+                   l1386 2208                     l1378 21EC                     l1394 26CA  
+                   l1396 26CC                     l1398 26E2                     u1000 2168  
+                   u1001 2164                     u1010 217E                     u1011 217A  
+                   u1020 2194                     u1021 2190                     u1030 21AA  
+                   u1031 21A6                     u1040 21C0                     u1041 21BC  
+                   u1050 21D6                     u1051 21D2                     u1107 2408  
+                   u1060 21EC                     u1061 21E8                     u1070 2208  
+                   u1071 2204                     u1087 25F0                     u1097 2310  
+                   _main 26CA                     prodl 3FF3                     start FFFC  
+           ___param_bank 0000                    ?_main 0001          __end_of___awdiv 24D8  
+        __end_of___lbdiv 26CA          __end_of___awmod 2588          ___awdiv@divisor 0003  
+        ___awdiv@counter 0005                    _PORTD 3FCD                    _TRISA 3FC2  
+                  _TRISB 3FC3                    _TRISD 3FC5        PORT_Output@answer 000A  
+                  status 3FD8          ___lbdiv@divisor 0001          ___lbdiv@counter 0003  
+           ?_scan_number 0001          __initialization 270E             __end_of_main 270E  
+                 ??_main 000F            __activetblptr 0000         ___awdiv@dividend 0001  
+                 _ANSELA 3A40                   _ANSELB 3A50                   _ANSELD 3A70  
+              ??___awdiv 0005                ??___lbdiv 0002                ??___awmod 0005  
+       ___awdiv@quotient 0007          ___awmod@divisor 0003                   isa$std 0001  
+        ___awmod@counter 0005             __mediumconst 0000             ?_PORT_Output 0001  
+       ___lbdiv@dividend 0002               __accesstop 0060  __end_of__initialization 2710  
+          ___rparam_used 0001         ??_scan_operation 0001           __pcstackCOMRAM 0001  
+       scan_number@count 0003         scan_number@input 0005         ___lbdiv@quotient 0004  
+            _X_Input_REG 0012              _Y_Input_REG 0011               __pnvCOMRAM 000F  
+      __end_of_calculate 266E      PORT_Output@display1 000B      PORT_Output@display2 000C  
+                __Hparam 0000               calculate@x 0008               calculate@y 0005  
+                __Lparam 0000                  ___awdiv 2414                  ___lbdiv 266E  
+                ___awmod 24D8             __psmallconst 2000                  __pcinit 270E  
+                __ramtop 2000                  __ptext0 26CA                  __ptext1 2588  
+                __ptext2 2228                  __ptext3 25FC                  __ptext4 266E  
+                __ptext5 2002                  __ptext6 24D8                  __ptext7 2414  
+       ___awmod@dividend 0001     end_of_initialization 2710                _PORTAbits 3FCA  
+              _PORTBbits 3FCB            _Operation_REG 0010        scan_number@button 0002  
+    start_initialization 270E        scan_number@output 0004              _calculation 000F  
+            __pbssCOMRAM 0013    PORT_Output@second_dig 000E                _calculate 25FC  
+          ??_scan_number 0001                 ?___awdiv 0001                 ?___lbdiv 0001  
+               ?___awmod 0001              __smallconst 2000               ?_calculate 0005  
+        calculate@output 0007      __end_of_scan_number 2414            ??_PORT_Output 0009  
+   PORT_Output@first_dig 000D              calculate@op 0006                 __Hrparam 0000  
+               __Lrparam 0000      __end_of_PORT_Output 2228              ??_calculate 0007  
+            _scan_number 2228                 isa$xinst 0000           _scan_operation 2588  
+     _Display_Result_REG 0013     scan_operation@op_key 0002   __end_of_scan_operation 25FC  
+            _PORT_Output 2002  
