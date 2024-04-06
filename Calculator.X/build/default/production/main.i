@@ -26943,7 +26943,10 @@ void main(void) {
     TRISD = 0;
     TRISC = 0;
     ANSELC = 0;
-
+    PORTD = 0xFF;
+    PORTD = 0;
+    PORTBbits.RB5 = 1;
+    PORTC = 0xFF;
     while(1){
     X_Input_REG = 0;
     Y_Input_REG = 0;
@@ -27081,18 +27084,21 @@ void PORT_Output(unsigned char answer){
     if(second_dig == 9) display2 = 0x98;
 
     PORTBbits.RB2 = 1;
-    while (PORTAbits.RA3 == 0){
-        PORTD = 0;
+    while (PORTAbits.RA2 == 0){
+        PORTD = 0xFF;
     }
 
     for(i = 1; i<10000; i++)
     {
         PORTBbits.RB5 = 1;
         PORTD = display1;
+        _delay((unsigned long)((200)*(8000000/4000.0)));
         PORTBbits.RB5 = 0;
         PORTBbits.RB6 = 1;
         PORTD = display2;
+        _delay((unsigned long)((200)*(8000000/4000.0)));
         PORTBbits.RB6 = 0;
+
     }
     PORTD = 0;
     PORTB = 0;

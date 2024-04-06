@@ -9,6 +9,7 @@
 
 #include <xc.h>
 #include <stdlib.h>
+#include "Config.h"
 
 unsigned char X_Input_REG;
 unsigned char Y_Input_REG;
@@ -23,13 +24,18 @@ void PORT_Output(unsigned char answer);
 
 
 void main(void) {
-    TRISA = 0xFF;   // make RA0 input
+    TRISA = 0xFF;   // make PORTA input
     ANSELA = 0; //digital
     TRISB  = 0;     // port b output
     ANSELB = 0;
     ANSELD = 0;
     TRISD = 0;
-    
+    TRISC = 0;
+    ANSELC = 0;
+    PORTD = 0xFF;
+    PORTD = 0;
+    PORTBbits.RB5 = 1;
+    PORTC = 0xFF;
     while(1){
     X_Input_REG = 0;
     Y_Input_REG = 0;
@@ -74,7 +80,7 @@ unsigned char scan_number(){
         PORTBbits.RB2 = 0;
        
 }
-    __delay_ms(1); // debounce
+    __delay_ms(200); // debounce
     
     input *=10;     // first digit is 10 to the power 1
     output = input; 
@@ -102,7 +108,7 @@ unsigned char scan_number(){
         PORTBbits.RB2 = 0;
 }
     output += input; 
-    __delay_ms(1);
+    __delay_ms(200);
     return output;
 }       
 
@@ -115,7 +121,7 @@ unsigned char scan_operation(){
         if(PORTAbits.RA2 == 1) op_key = 3;
         if(PORTAbits.RA3 == 1) op_key = 4; 
     }
-        __delay_ms(1);
+        __delay_ms(200);
         return op_key;
 }
 
@@ -140,7 +146,7 @@ void PORT_Output(unsigned char answer){
     unsigned char display2 = 0;
     
     if(answer<0)
-        PORTBbits.RB7 = 0; 
+        PORTCbits.RC7 = 0; 
     first_dig = answer/10;
     second_dig = answer % 10;
     
@@ -167,18 +173,21 @@ void PORT_Output(unsigned char answer){
     if(second_dig == 9) display2 = 0x98;
     
     PORTBbits.RB2 = 1;
-    while (PORTAbits.RA3 == 0){
-        PORTD = 0;
+    while (PORTAbits.RA2 == 0){
+        PORTD = 0xFF;
     }
  
     for(i = 1; i<10000; i++)
     {
         PORTBbits.RB5 = 1;
         PORTD = display1;
+        __delay_ms(200);
         PORTBbits.RB5 = 0;
         PORTBbits.RB6 = 1;
         PORTD = display2; 
+        __delay_ms(200);
         PORTBbits.RB6 = 0;
+        
     }
     PORTD = 0;
     PORTB = 0;
