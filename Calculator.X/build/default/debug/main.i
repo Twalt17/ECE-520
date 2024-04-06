@@ -27017,6 +27017,10 @@ void PORT_Output(unsigned char answer){
     if(second_dig == 8) display2 = 0x80;
     if(second_dig == 9) display2 = 0x98;
 
+    PORTBbits.RB2 = 1;
+    while (PORTAbits.RA3 == 0){
+    }
+
     for(i = 1; i<10000; i++)
     {
         PORTBbits.RB5 = 1;
