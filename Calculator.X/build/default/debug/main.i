@@ -7,7 +7,7 @@
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
 # 1 "main.c" 2
-# 10 "main.c"
+# 16 "main.c"
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\xc.h" 1 3
 # 18 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -26866,7 +26866,7 @@ __attribute__((__unsupported__("The READTIMER" "0" "() macro is not available wi
 unsigned char __t1rd16on(void);
 unsigned char __t3rd16on(void);
 # 33 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\xc.h" 2 3
-# 10 "main.c" 2
+# 16 "main.c" 2
 
 
 # 1 "./Config.h" 1
@@ -26919,7 +26919,7 @@ unsigned char __t3rd16on(void);
 
 
 #pragma config CP = OFF
-# 12 "main.c" 2
+# 18 "main.c" 2
 
 
 signed char X_Input_REG;
@@ -26928,7 +26928,7 @@ signed char Operation_REG;
 signed char calculation;
 signed char Display_Result_REG;
 
-signed char scan_number();
+signed char scan_number(char LED_Count);
 signed char scan_operation();
 signed int calculate(char x, char y, char op);
 void PORT_Output(int answer);
@@ -26951,22 +26951,20 @@ void main(void) {
     Y_Input_REG = 0;
     Operation_REG = 0;
     calculation = 0;
+    char LED_Count = 1;
+
     Display_Result_REG = 0;
-    X_Input_REG = scan_number();
-    PORTBbits.RB5 = 1;
-    PORTCbits.RC7 = 0;
+    X_Input_REG = scan_number(LED_Count);
     Operation_REG = scan_operation();
-    Y_Input_REG = scan_number();
-    PORTCbits.RC7 = 1;
-    PORTBbits.RB6 = 1;
-    PORTCbits.RC6 = 0;
+    LED_Count = 2;
+    Y_Input_REG = scan_number(LED_Count);
     calculation = calculate(X_Input_REG, Y_Input_REG, Operation_REG);
     PORT_Output(calculation);
     }
     return;
 }
 
-signed char scan_number(){
+signed char scan_number(char LED_Count){
     signed char input = 10;
     signed char output = 0;
     signed char button = 0;
@@ -27025,6 +27023,15 @@ signed char scan_number(){
 }
     output += input;
     _delay((unsigned long)((200)*(8000000/4000.0)));
+    if(LED_Count == 1 ){
+            PORTBbits.RB5 = 1;
+            PORTCbits.RC7 = 0;
+    }
+    if(LED_Count == 2){
+            PORTCbits.RC7 = 1;
+            PORTBbits.RB6 = 1;
+            PORTCbits.RC6 = 0;
+    }
     return output;
 }
 

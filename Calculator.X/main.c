@@ -1,10 +1,16 @@
-/*
- * File:   main.c
- * Author: Tyler
- *
- * Created on April 6, 2024, 11:05 AM
+/*-----------------------------
+; Title: Seven Segment Calculator
+;-----------------------------
+; Purpose: Takes two numbers and operation from keypad, performs them then outputs 
+; to two seven segment displays  
+; Dependencies: None
+; Compiler: MPLAB X IDE v6.20
+; Author: Tyler Walters
+; OUTPUTS: Outputs Connected to two seven segment display
+; INPUTS: Connected to keypad
+ Versions:
+	V1.0: 4/8/2024 -First Version
  */
-
 #define _XTAL_FREQ 8000000  // Define your PIC18 clock frequency (e.g., 8 MHz)
 
 #include <xc.h>
@@ -17,7 +23,7 @@ signed char Operation_REG;
 signed char calculation;
 signed char Display_Result_REG;
 // functions
-signed char scan_number();
+signed char scan_number(char LED_Count);
 signed char scan_operation();
 signed int calculate(char x, char y, char op);
 void PORT_Output(int answer);
@@ -40,22 +46,20 @@ void main(void) {
     Y_Input_REG = 0;
     Operation_REG = 0;
     calculation = 0;
+    char LED_Count = 1;
+    
     Display_Result_REG = 0;
-    X_Input_REG = scan_number();
-    PORTBbits.RB5 = 1;
-    PORTCbits.RC7 = 0;
+    X_Input_REG = scan_number(LED_Count);
     Operation_REG = scan_operation();
-    Y_Input_REG = scan_number();
-    PORTCbits.RC7 = 1;
-    PORTBbits.RB6 = 1;
-    PORTCbits.RC6 = 0;
+    LED_Count = 2;
+    Y_Input_REG = scan_number(LED_Count);
     calculation = calculate(X_Input_REG, Y_Input_REG, Operation_REG);
     PORT_Output(calculation);
     }
     return;
 }
 
-signed char scan_number(){
+signed char scan_number(char LED_Count){
     signed char input = 10;
     signed char output = 0;
     signed char button = 0;
@@ -114,6 +118,15 @@ signed char scan_number(){
 }
     output += input; 
     __delay_ms(200);
+    if(LED_Count == 1 ){
+            PORTBbits.RB5 = 1;
+            PORTCbits.RC7 = 0;
+    }
+    if(LED_Count == 2){
+            PORTCbits.RC7 = 1;
+            PORTBbits.RB6 = 1;
+            PORTCbits.RC6 = 0;
+    }
     return output;
 }       
 
