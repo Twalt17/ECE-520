@@ -3017,6 +3017,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 184:     while(enter == 0){
 [e $ == -> _enter `i -> 0 `i 2329  ]
 [e :U 2330 ]
+"189
+[; ;main.c: 189:     PORTCbits.RC6 = 1;
+[e = . . _PORTCbits 0 6 -> -> 1 `i `uc ]
 "190
 [; ;main.c: 190:     for(i = 1; i<1000; i++)
 {

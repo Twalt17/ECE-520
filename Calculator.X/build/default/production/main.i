@@ -27097,7 +27097,7 @@ void PORT_Output(signed int answer){
         if(PORTAbits.RA3 == 1) enter =1;
 
     }
-
+    PORTCbits.RC6 = 1;
     for(i = 1; i<1000; i++)
     {
         PORTBbits.RB5 = 1;

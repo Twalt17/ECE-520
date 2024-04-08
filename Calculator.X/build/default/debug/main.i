@@ -26922,15 +26922,15 @@ unsigned char __t3rd16on(void);
 # 12 "main.c" 2
 
 
-char X_Input_REG;
-char Y_Input_REG;
-char Operation_REG;
-char calculation;
-char Display_Result_REG;
+signed char X_Input_REG;
+signed char Y_Input_REG;
+signed char Operation_REG;
+signed char calculation;
+signed char Display_Result_REG;
 
-char scan_number();
-char scan_operation();
-int calculate(char x, char y, char op);
+signed char scan_number();
+signed char scan_operation();
+signed int calculate(char x, char y, char op);
 void PORT_Output(int answer);
 
 
@@ -26958,18 +26958,19 @@ void main(void) {
     Operation_REG = scan_operation();
     Y_Input_REG = scan_number();
     PORTCbits.RC7 = 1;
-    PORTBbits.RB6 = 0;
+    PORTBbits.RB6 = 1;
+    PORTCbits.RC6 = 0;
     calculation = calculate(X_Input_REG, Y_Input_REG, Operation_REG);
     PORT_Output(calculation);
     }
     return;
 }
 
-char scan_number(){
-    char input = 10;
-    char output = 0;
-    char button = 0;
-    char count = 2;
+signed char scan_number(){
+    signed char input = 10;
+    signed char output = 0;
+    signed char button = 0;
+    signed char count = 2;
 
     while (input == 10)
     {
@@ -26993,7 +26994,7 @@ char scan_number(){
         PORTBbits.RB2 = 0;
 
 }
-
+    _delay((unsigned long)((200)*(8000000/4000.0)));
 
     input *=10;
     output = input;
@@ -27023,12 +27024,12 @@ char scan_number(){
         PORTB = 0;
 }
     output += input;
-
+    _delay((unsigned long)((200)*(8000000/4000.0)));
     return output;
 }
 
-char scan_operation(){
-    char op_key = 0;
+signed char scan_operation(){
+    signed char op_key = 0;
     while (op_key ==0) {
 
      PORTBbits.RB3 = 1;
@@ -27037,12 +27038,12 @@ char scan_operation(){
         if(PORTAbits.RA2 == 1) op_key = 3;
         if(PORTAbits.RA3 == 1) op_key = 4;
     }
-
+        _delay((unsigned long)((200)*(8000000/4000.0)));
         return op_key;
 }
 
-int calculate(char x, char y, char op){
-    char output = 0;
+signed int calculate(char x, char y, char op){
+    signed char output = 0;
     if(op == 1)
         output = x + y;
     if(op == 2)
@@ -27054,18 +27055,23 @@ int calculate(char x, char y, char op){
     return output;
 }
 
-void PORT_Output(int answer){
-    char first_dig = 0;
-    char second_dig = 0;
+void PORT_Output(signed int answer){
+    signed char first_dig = 0;
+    signed char second_dig = 0;
+    signed char enter = 0;
     int i = 0;
     char display1 = 0;
     char display2 = 0;
 
+    if(answer<0){
+        answer*= -1;
+        PORTCbits.RC7 = 0;
+    }
     first_dig = answer/10;
     second_dig = answer % 10;
 
     if(first_dig == 0) display1 = 0xC0;
-    else if(first_dig == 1) display1 = 0xF9;
+    else if(first_dig == 1 || first_dig == -1) display1 = 0xF9;
     else if(first_dig == 2) display1 = 0xA4;
     else if(first_dig == 3) display1 = 0xB0;
     else if(first_dig == 4) display1 = 0x99;
@@ -27086,11 +27092,12 @@ void PORT_Output(int answer){
     else if(second_dig == 8) display2 = 0x80;
     else if(second_dig == 9) display2 = 0x98;
 
+    while(enter == 0){
+        PORTBbits.RB2 = 1;
+        if(PORTAbits.RA3 == 1) enter =1;
 
-
-
-
-
+    }
+    PORTCbits.RC6 = 1;
     for(i = 1; i<1000; i++)
     {
         PORTBbits.RB5 = 1;
