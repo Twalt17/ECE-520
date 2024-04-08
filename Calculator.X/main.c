@@ -47,14 +47,14 @@ void main(void) {
     Operation_REG = 0;
     calculation = 0;
     char LED_Count = 1;
+    Display_Result_REG = 0; // reset all values
     
-    Display_Result_REG = 0;
-    X_Input_REG = scan_number(LED_Count);
-    Operation_REG = scan_operation();
-    LED_Count = 2;
-    Y_Input_REG = scan_number(LED_Count);
-    calculation = calculate(X_Input_REG, Y_Input_REG, Operation_REG);
-    PORT_Output(calculation);
+    X_Input_REG = scan_number(LED_Count); // get first number
+    Operation_REG = scan_operation();   // get operation
+    LED_Count = 2;                      // tell function what LED to light
+    Y_Input_REG = scan_number(LED_Count);   //Get second number
+    calculation = calculate(X_Input_REG, Y_Input_REG, Operation_REG); // Perform calc
+    PORT_Output(calculation);           // Convert and display result
     }
     return;
 }
@@ -65,10 +65,10 @@ signed char scan_number(char LED_Count){
     signed char button = 0;
     signed char count = 2;
     
-    while (input == 10)
+    while (input == 10) // no input for 10 therefore loop till its changed
     {
         PORTBbits.RB0 = 1; 
-        if (PORTAbits.RA0 == 1)input = 1;
+        if (PORTAbits.RA0 == 1)input = 1; // Scanning keypad for corresponding number press 
         if(PORTAbits.RA1 == 1) input = 4;
         if(PORTAbits.RA2 == 1) input = 7;
         PORTBbits.RB0 = 0;
@@ -87,13 +87,13 @@ signed char scan_number(char LED_Count){
         PORTBbits.RB2 = 0;
        
 }
-    __delay_ms(200); // debounce
+   // __delay_ms(200); // debounce
     
     input *=10;     // first digit is 10 to the power 1
     output = input; 
   
     input = 10;
-    while (input == 10)
+    while (input == 10) // get second digit
     {
         PORTBbits.RB0 = 1; 
         if (PORTAbits.RA0 == 1)input = 1;
@@ -117,7 +117,7 @@ signed char scan_number(char LED_Count){
         PORTB = 0;
 }
     output += input; 
-    __delay_ms(200);
+    //__delay_ms(200);
     if(LED_Count == 1 ){
             PORTBbits.RB5 = 1;
             PORTCbits.RC7 = 0;
@@ -131,21 +131,21 @@ signed char scan_number(char LED_Count){
 }       
 
 signed char scan_operation(){
-    signed char op_key = 0;
+    signed char op_key = 0;                 // no op for 0, scan till variable changed
     while (op_key ==0) {
      
      PORTBbits.RB3 = 1; 
-        if(PORTAbits.RA0 == 1) op_key = 1;
+        if(PORTAbits.RA0 == 1) op_key = 1;      // scan abcd only
         if(PORTAbits.RA1 == 1) op_key = 2;
         if(PORTAbits.RA2 == 1) op_key = 3;
         if(PORTAbits.RA3 == 1) op_key = 4; 
     }
-        __delay_ms(200);
+       // __delay_ms(200);
         return op_key;
 }
 
 signed int calculate(char x, char y, char op){
-    signed char output = 0;
+    signed char output = 0; // take in op variable and calc based on that
     if(op == 1)
         output = x + y;
     if(op == 2)
@@ -168,12 +168,12 @@ void PORT_Output(signed int answer){
     if(answer<0){
         answer*= -1;
         PORTCbits.RC7 = 0;
-    }
-    first_dig = answer/10;
-    second_dig = answer % 10;
+    }                           // turn on dot if number is negative
+    first_dig = answer/10;      // get first digit
+    second_dig = answer % 10;   // get second digit
     
-    if(first_dig == 0) display1 = 0xC0;
-    else if(first_dig == 1 || first_dig == -1) display1 = 0xF9;
+    if(first_dig == 0) display1 = 0xC0;     //table for converting to 7 segment 
+    else if(first_dig == 1) display1 = 0xF9;
     else if(first_dig == 2) display1 = 0xA4;
     else if(first_dig == 3) display1 = 0xB0;
     else if(first_dig == 4) display1 = 0x99;
@@ -194,13 +194,13 @@ void PORT_Output(signed int answer){
     else if(second_dig == 8) display2 = 0x80;
     else if(second_dig == 9) display2 = 0x98;
     
-    while(enter == 0){
+    while(enter == 0){          // scan while waiting for # key 
         PORTBbits.RB2 = 1;
         if(PORTAbits.RA3 == 1) enter =1;
  
     }
-    PORTCbits.RC6 = 1;
-    for(i = 1; i<1000; i++)
+    PORTCbits.RC6 = 1;      // turn off second LED lit after second input 
+    for(i = 1; i<1000; i++) // toggle between two 7 Segments fast enough to display both
     {
         PORTBbits.RB5 = 1;
         PORTD = display1;
@@ -212,7 +212,7 @@ void PORT_Output(signed int answer){
         PORTBbits.RB6 = 0;
         
     }
-    PORTD = 0xFF;
-    PORTB = 0;
+    PORTD = 0xFF; // turn off 7 segment 
+    PORTB = 0;     // turn off any scanning 
     return;
 }

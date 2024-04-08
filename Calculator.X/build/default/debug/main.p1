@@ -64,11 +64,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 "46773
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f47k42.h: 46773: extern volatile PORTAbits_t PORTAbits __attribute__((address(0x3FCA)));
 [v _PORTAbits `VS2127 ~T0 @X0 0 e@16330 ]
-[v F205 `(v ~T0 @X0 1 tf1`ul ]
-"20 C:\Program Files\Microchip\xc8\v2.46\pic\include\builtins.h
-[v __delay `JF205 ~T0 @X0 0 e ]
-[p i __delay ]
-"46818 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f47k42.h
+"46818
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f47k42.h: 46818: extern volatile unsigned char PORTB __attribute__((address(0x3FCB)));
 [v _PORTB `Vuc ~T0 @X0 0 e@16331 ]
 "46886
@@ -82,6 +78,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 "46897
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f47k42.h: 46897: extern volatile PORTCbits_t PORTCbits __attribute__((address(0x3FCC)));
 [v _PORTCbits `VS2131 ~T0 @X0 0 e@16332 ]
+[v F205 `(v ~T0 @X0 1 tf1`ul ]
+"20 C:\Program Files\Microchip\xc8\v2.46\pic\include\builtins.h
+[v __delay `JF205 ~T0 @X0 0 e ]
+[p i __delay ]
 "250 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f47k42.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f47k42.h: 250: __asm("STATUS_CSHAD equ 03880h");
 [; <" STATUS_CSHAD equ 03880h ;# ">
@@ -2444,8 +2444,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 49:     char LED_Count = 1;
 [v _LED_Count `uc ~T0 @X0 1 a ]
 [e = _LED_Count -> -> 1 `i `uc ]
-"51
-[; ;main.c: 51:     Display_Result_REG = 0;
+"50
+[; ;main.c: 50:     Display_Result_REG = 0;
 [e = _Display_Result_REG -> -> 0 `i `c ]
 "52
 [; ;main.c: 52:     X_Input_REG = scan_number(LED_Count);
@@ -2584,9 +2584,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 68:     while (input == 10)
 [e $ == -> _input `i -> 10 `i 2250  ]
 [e :U 2251 ]
-"90
-[; ;main.c: 90:     _delay((unsigned long)((200)*(8000000/4000.0)));
-[e ( __delay (1 -> * -> -> 200 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
 "92
 [; ;main.c: 92:     input *=10;
 [e =* _input -> -> 10 `i `c ]
@@ -2685,9 +2682,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "119
 [; ;main.c: 119:     output += input;
 [e =+ _output -> _input `c ]
-"120
-[; ;main.c: 120:     _delay((unsigned long)((200)*(8000000/4000.0)));
-[e ( __delay (1 -> * -> -> 200 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
 "121
 [; ;main.c: 121:     if(LED_Count == 1 ){
 [e $ ! == -> _LED_Count `i -> 1 `i 2275  ]
@@ -2773,9 +2767,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 135:     while (op_key ==0) {
 [e $ == -> _op_key `i -> 0 `i 2279  ]
 [e :U 2280 ]
-"143
-[; ;main.c: 143:         _delay((unsigned long)((200)*(8000000/4000.0)));
-[e ( __delay (1 -> * -> -> 200 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
 "144
 [; ;main.c: 144:         return op_key;
 [e ) _op_key ]
@@ -2890,9 +2881,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _display1 -> -> 192 `i `uc ]
 [e $U 2293  ]
 "176
-[; ;main.c: 176:     else if(first_dig == 1 || first_dig == -1) display1 = 0xF9;
+[; ;main.c: 176:     else if(first_dig == 1) display1 = 0xF9;
 [e :U 2292 ]
-[e $ ! || == -> _first_dig `i -> 1 `i == -> _first_dig `i -U -> 1 `i 2294  ]
+[e $ ! == -> _first_dig `i -> 1 `i 2294  ]
 [e = _display1 -> -> 249 `i `uc ]
 [e $U 2295  ]
 "177

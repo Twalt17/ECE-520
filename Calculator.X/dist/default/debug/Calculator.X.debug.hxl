@@ -1,7 +1,7 @@
 ### HEXMate logfile and output summary ###
 
 ### Command-line arguments ###
- C:\Users\Tyler\AppData\Local\Temp\xcAse70.\driver_tmp_3.o
+ C:\Users\Tyler\AppData\Local\Temp\xcAsn3s.\driver_tmp_3.o
  -Odist/default/debug\Calculator.X.debug.hex
  -logfile=dist/default/debug\Calculator.X.debug.hxl
  -addressing=1
@@ -9,19 +9,19 @@
 
 ### Memory Usage ###
  Input file ranges:
-  0h - 3h		(C:\Users\Tyler\AppData\Local\Temp\xcAse70.\driver_tmp_3.o)
-  2000h - 28ADh		(C:\Users\Tyler\AppData\Local\Temp\xcAse70.\driver_tmp_3.o)
-  1FFFCh - 1FFFFh		(C:\Users\Tyler\AppData\Local\Temp\xcAse70.\driver_tmp_3.o)
-  300000h - 300009h		(C:\Users\Tyler\AppData\Local\Temp\xcAse70.\driver_tmp_3.o)
+  0h - 3h		(C:\Users\Tyler\AppData\Local\Temp\xcAsn3s.\driver_tmp_3.o)
+  2000h - 2855h		(C:\Users\Tyler\AppData\Local\Temp\xcAsn3s.\driver_tmp_3.o)
+  1FFFCh - 1FFFFh		(C:\Users\Tyler\AppData\Local\Temp\xcAsn3s.\driver_tmp_3.o)
+  300000h - 300009h		(C:\Users\Tyler\AppData\Local\Temp\xcAsn3s.\driver_tmp_3.o)
  Unused ranges:
   4h - 1FFFh
-  28AEh - 1FFFBh
+  2856h - 1FFFBh
   20000h - 2FFFFFh
 
 ### Hex Memory Map ###
  Legend:
   -- = Unused memory
-  H1 = Input file             (C:\Users\Tyler\AppData\Local\Temp\xcAse70.\driver_tmp_3.o)
+  H1 = Input file             (C:\Users\Tyler\AppData\Local\Temp\xcAsn3s.\driver_tmp_3.o)
 ----------------------------------------------------------
          | 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
 ----------------------------------------------------------
@@ -160,12 +160,7 @@
 00002820 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 00002830 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 00002840 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
-00002850 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
-00002860 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
-00002870 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
-00002880 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
-00002890 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
-000028A0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 -- --
+00002850 | H1 H1 H1 H1 H1 H1 -- -- -- -- -- -- -- -- -- --
 ----------------------------------------------------------
 0001FFF0 | -- -- -- -- -- -- -- -- -- -- -- -- H1 H1 H1 H1
 ----------------------------------------------------------

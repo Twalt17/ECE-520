@@ -26952,8 +26952,8 @@ void main(void) {
     Operation_REG = 0;
     calculation = 0;
     char LED_Count = 1;
-
     Display_Result_REG = 0;
+
     X_Input_REG = scan_number(LED_Count);
     Operation_REG = scan_operation();
     LED_Count = 2;
@@ -26992,7 +26992,7 @@ signed char scan_number(char LED_Count){
         PORTBbits.RB2 = 0;
 
 }
-    _delay((unsigned long)((200)*(8000000/4000.0)));
+
 
     input *=10;
     output = input;
@@ -27022,7 +27022,7 @@ signed char scan_number(char LED_Count){
         PORTB = 0;
 }
     output += input;
-    _delay((unsigned long)((200)*(8000000/4000.0)));
+
     if(LED_Count == 1 ){
             PORTBbits.RB5 = 1;
             PORTCbits.RC7 = 0;
@@ -27045,7 +27045,7 @@ signed char scan_operation(){
         if(PORTAbits.RA2 == 1) op_key = 3;
         if(PORTAbits.RA3 == 1) op_key = 4;
     }
-        _delay((unsigned long)((200)*(8000000/4000.0)));
+
         return op_key;
 }
 
@@ -27078,7 +27078,7 @@ void PORT_Output(signed int answer){
     second_dig = answer % 10;
 
     if(first_dig == 0) display1 = 0xC0;
-    else if(first_dig == 1 || first_dig == -1) display1 = 0xF9;
+    else if(first_dig == 1) display1 = 0xF9;
     else if(first_dig == 2) display1 = 0xA4;
     else if(first_dig == 3) display1 = 0xB0;
     else if(first_dig == 4) display1 = 0x99;
