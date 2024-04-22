@@ -27178,9 +27178,11 @@ void Decision(unsigned char input1, unsigned char input2);
 void delay_us(unsigned int us);
 unsigned char input = 0;
 unsigned char input2 = 0;
-# 71 "main.c"
+
+
+
 void main(void) {
-# 92 "main.c"
+
     initialize();
     while(1)
     {

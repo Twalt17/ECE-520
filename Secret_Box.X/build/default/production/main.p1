@@ -3188,53 +3188,53 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> -> 0 `i `uc
 ]
 [v $root$_main `(v ~T0 @X0 0 e ]
-"71
-[; ;main.c: 71: void main(void) {
+"28
+[; ;main.c: 28: void main(void) {
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"92
-[; ;main.c: 92:     initialize();
+"30
+[; ;main.c: 30:     initialize();
 [e ( _initialize ..  ]
-"93
-[; ;main.c: 93:     while(1)
+"31
+[; ;main.c: 31:     while(1)
 [e :U 2303 ]
-"94
-[; ;main.c: 94:     {
+"32
+[; ;main.c: 32:     {
 {
-"95
-[; ;main.c: 95:     LCD_Init();
+"33
+[; ;main.c: 33:     LCD_Init();
 [e ( _LCD_Init ..  ]
-"96
-[; ;main.c: 96:     LCD_Clear();
+"34
+[; ;main.c: 34:     LCD_Clear();
 [e ( _LCD_Clear ..  ]
-"97
-[; ;main.c: 97:     input = LightScan(1);
+"35
+[; ;main.c: 35:     input = LightScan(1);
 [e = _input ( _LightScan (1 -> -> 1 `i `uc ]
-"98
-[; ;main.c: 98:     LCD_Char(input + '0');
+"36
+[; ;main.c: 36:     LCD_Char(input + '0');
 [e ( _LCD_Char (1 -> + -> _input `ui -> 48 `ui `uc ]
-"99
-[; ;main.c: 99:     input2 = LightScan(2);
+"37
+[; ;main.c: 37:     input2 = LightScan(2);
 [e = _input2 ( _LightScan (1 -> -> 2 `i `uc ]
-"100
-[; ;main.c: 100:     LCD_Char(input2 + '0');
+"38
+[; ;main.c: 38:     LCD_Char(input2 + '0');
 [e ( _LCD_Char (1 -> + -> _input2 `ui -> 48 `ui `uc ]
-"101
-[; ;main.c: 101:     Decision(input,input2);
+"39
+[; ;main.c: 39:     Decision(input,input2);
 [e ( _Decision (2 , _input _input2 ]
-"103
-[; ;main.c: 103:     }
+"41
+[; ;main.c: 41:     }
 }
 [e :U 2302 ]
 [e $U 2303  ]
 [e :U 2304 ]
-"104
-[; ;main.c: 104:     return;
+"42
+[; ;main.c: 42:     return;
 [e $UE 2301  ]
-"105
-[; ;main.c: 105: }
+"43
+[; ;main.c: 43: }
 [e :UE 2301 ]
 }
 [a 1C 67 111 114 114 101 99 116 33 0 ]
