@@ -113,14 +113,19 @@ unsigned char LightScan(char pinNumber){
     {
     while(counter < 4)
     {
+        if(PORTAbits.RA3 == 1)
+        {
+            MSdelay(500);
+            return counter;
+        }
+                
         if (PORTAbits.RA1 == 1) 
         {
             counter ++;
             PORTCbits.RC7 = 1;
-            MSdelay(1000);
+            MSdelay(500);
             PORTCbits.RC7 = 0;
-            if(PORTAbits.RA3 == 1)
-                return counter;
+            
         }
     }
     }
@@ -128,17 +133,37 @@ unsigned char LightScan(char pinNumber){
     {
          while(counter < 4)
     {
+              if(PORTAbits.RA3 == 1){
+                MSdelay(500);  
+                return counter;
+              }
         if (PORTAbits.RA2 == 1) 
         {
             counter ++;
             PORTCbits.RC7 = 1;
-            MSdelay(1000);
+            MSdelay(500);
             PORTCbits.RC7 = 0;
-            if(PORTAbits.RA3 == 1)
-                return counter;
+  
         }
     }  
     }
     return counter;
     
+}
+
+
+void Decision(unsigned char input1, unsigned char input2){
+    if (input1 == 2 && input2 == 4)
+    {
+        LCD_String_xy(2,0,"congrats");
+        PORTCbits.RC3 = 1;
+        PORTCbits.RC2 = 0;
+        MSdelay(1000);
+        PORTCbits.RC3 = 0;
+        return;
+        
+    }   
+    else
+        LCD_String_xy(2,0,"Wrong Dumb idiot");
+        return;        
 }

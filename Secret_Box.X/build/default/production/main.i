@@ -27015,14 +27015,19 @@ unsigned char LightScan(char pinNumber){
     {
     while(counter < 4)
     {
+        if(PORTAbits.RA3 == 1)
+        {
+            MSdelay(500);
+            return counter;
+        }
+
         if (PORTAbits.RA1 == 1)
         {
             counter ++;
             PORTCbits.RC7 = 1;
-            MSdelay(1000);
+            MSdelay(500);
             PORTCbits.RC7 = 0;
-            if(PORTAbits.RA3 == 1)
-                return counter;
+
         }
     }
     }
@@ -27030,19 +27035,39 @@ unsigned char LightScan(char pinNumber){
     {
          while(counter < 4)
     {
+              if(PORTAbits.RA3 == 1){
+                MSdelay(500);
+                return counter;
+              }
         if (PORTAbits.RA2 == 1)
         {
             counter ++;
             PORTCbits.RC7 = 1;
-            MSdelay(1000);
+            MSdelay(500);
             PORTCbits.RC7 = 0;
-            if(PORTAbits.RA3 == 1)
-                return counter;
+
         }
     }
     }
     return counter;
 
+}
+
+
+void Decision(unsigned char input1, unsigned char input2){
+    if (input1 == 2 && input2 == 4)
+    {
+        LCD_String_xy(2,0,"congrats");
+        PORTCbits.RC3 = 1;
+        PORTCbits.RC2 = 0;
+        MSdelay(1000);
+        PORTCbits.RC3 = 0;
+        return;
+
+    }
+    else
+        LCD_String_xy(2,0,"Wrong Dumb idiot");
+        return;
 }
 # 10 "main.c" 2
 
@@ -27053,14 +27078,15 @@ void LCD_String_xy(char row,char pos,const char *msg);
 void LCD_Char(char x);
 void LCD_Clear();
 unsigned char LightScan(char pinNumber);
+void Decision(unsigned char input1, unsigned char input2);
 unsigned char input = 0;
 unsigned char input2 = 0;
 
 void __attribute__((picinterrupt(("irq(8),base(0x4008)")))) INT0_ISR(void)
 {
-    PORTCbits.RC7 = 1;
-    MSdelay(1000);
     LCD_String_xy(2,0,"interrupt son");
+    MSdelay(1000);
+    LCD_Clear();
     PIR1bits.INT0IF = 0;
     }
 
@@ -27069,8 +27095,10 @@ void main(void) {
 
     TRISA = 0xFF;
     ANSELA = 0;
+    PORTA = 0;
     TRISC = 0x00;
     ANSELC = 0;
+    PORTC = 0;
     INTCON0bits.INT0EDG = 1;
     INT0PPS = PORTAbits.RA0;
     WPUA=0xFF;
@@ -27083,15 +27111,16 @@ void main(void) {
 
     PIR1bits.INT0IF = 0;
 
-
+    while(1)
+    {
     LCD_Init();
     LCD_Clear();
     input = LightScan(1);
     LCD_Char(input + '0');
-    input2 = LightScan(1);
+    input2 = LightScan(2);
     LCD_Char(input2 + '0');
-    LCD_String_xy(2,0,"out of scan");
+    Decision(input,input2);
     _delay((unsigned long)((10000)*(4000000/4000.0)));
-
+    }
     return;
 }
