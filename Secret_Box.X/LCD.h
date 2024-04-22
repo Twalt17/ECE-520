@@ -155,15 +155,86 @@ unsigned char LightScan(char pinNumber){
 void Decision(unsigned char input1, unsigned char input2){
     if (input1 == 2 && input2 == 4)
     {
-        LCD_String_xy(2,0,"congrats");
+        LCD_String_xy(2,0,"Correct!");
         PORTCbits.RC3 = 1;
         PORTCbits.RC2 = 0;
-        MSdelay(1000);
+        MSdelay(500);
         PORTCbits.RC3 = 0;
         return;
         
     }   
     else
-        LCD_String_xy(2,0,"Wrong Dumb idiot");
+    {
+        LCD_String_xy(2,0,"Wrong!");
+        unsigned int timer = 1000;
+   
+        while(timer >0)
+         {
+            MSdelay(1);
+            PORTCbits.RC4 = 1;
+            MSdelay(1);
+            PORTCbits.RC4 = 0;
+            timer--;
+    }
+    }
         return;        
 }
+
+void delay_us(unsigned int us) {
+    
+    for (unsigned int i = 0; i < us; i++) {
+        __asm__ volatile ("nop"); //  assembly NOP instruction
+        __asm__ volatile ("nop");
+        __asm__ volatile ("nop");
+        __asm__ volatile ("nop");
+        __asm__ volatile ("nop");
+        __asm__ volatile ("nop");
+        __asm__ volatile ("nop");
+        __asm__ volatile ("nop");
+    }
+    return;
+}
+
+void __interrupt(irq(IRQ_INT0),base(0x4008)) INT0_ISR(void)
+{
+    for(char i =0; i<3;i++)
+    {
+    unsigned int timer = 100;
+    
+    while(timer >0)
+    {
+    delay_us(100);
+    PORTCbits.RC4 = 1;
+    delay_us(100);
+    PORTCbits.RC4 = 0;
+    timer--;
+    }
+    
+    timer = 200;
+    
+    while(timer >0)
+    {
+    delay_us(50);
+    PORTCbits.RC4 = 1;
+    delay_us(50);
+    PORTCbits.RC4 = 0;
+    timer--;
+    }
+    
+    timer = 400;
+    
+    while(timer >0)
+    {
+    delay_us(25);
+    PORTCbits.RC4 = 1;
+    delay_us(25);
+    PORTCbits.RC4 = 0;
+    timer--;
+    }
+    }
+    
+    PORTCbits.RC4 = 1;
+    PIR1bits.INT0IF = 0;  // always clear the interrupt flag when done
+    return;
+    }
+

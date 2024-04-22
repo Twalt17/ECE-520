@@ -27057,41 +27057,93 @@ unsigned char LightScan(char pinNumber){
 void Decision(unsigned char input1, unsigned char input2){
     if (input1 == 2 && input2 == 4)
     {
-        LCD_String_xy(2,0,"congrats");
+        LCD_String_xy(2,0,"Correct!");
         PORTCbits.RC3 = 1;
         PORTCbits.RC2 = 0;
-        MSdelay(1000);
+        MSdelay(500);
         PORTCbits.RC3 = 0;
         return;
 
     }
     else
-        LCD_String_xy(2,0,"Wrong Dumb idiot");
+    {
+        LCD_String_xy(2,0,"Wrong!");
+        unsigned int timer = 1000;
+
+        while(timer >0)
+         {
+            MSdelay(1);
+            PORTCbits.RC4 = 1;
+            MSdelay(1);
+            PORTCbits.RC4 = 0;
+            timer--;
+    }
+    }
         return;
 }
-# 10 "main.c" 2
 
+void delay_us(unsigned int us) {
 
-void LCD_Init();
-void LCD_String(const char *msg);
-void LCD_String_xy(char row,char pos,const char *msg);
-void LCD_Char(char x);
-void LCD_Clear();
-unsigned char LightScan(char pinNumber);
-void Decision(unsigned char input1, unsigned char input2);
-unsigned char input = 0;
-unsigned char input2 = 0;
+    for (unsigned int i = 0; i < us; i++) {
+        __asm__ volatile ("nop");
+        __asm__ volatile ("nop");
+        __asm__ volatile ("nop");
+        __asm__ volatile ("nop");
+        __asm__ volatile ("nop");
+        __asm__ volatile ("nop");
+        __asm__ volatile ("nop");
+        __asm__ volatile ("nop");
+    }
+    return;
+}
 
 void __attribute__((picinterrupt(("irq(8),base(0x4008)")))) INT0_ISR(void)
 {
-    LCD_String_xy(2,0,"interrupt son");
-    MSdelay(1000);
-    LCD_Clear();
-    PIR1bits.INT0IF = 0;
+    for(char i =0; i<3;i++)
+    {
+    unsigned int timer = 100;
+
+    while(timer >0)
+    {
+    delay_us(100);
+    PORTCbits.RC4 = 1;
+    delay_us(100);
+    PORTCbits.RC4 = 0;
+    timer--;
     }
 
+    timer = 200;
 
-void main(void) {
+    while(timer >0)
+    {
+    delay_us(50);
+    PORTCbits.RC4 = 1;
+    delay_us(50);
+    PORTCbits.RC4 = 0;
+    timer--;
+    }
+
+    timer = 400;
+
+    while(timer >0)
+    {
+    delay_us(25);
+    PORTCbits.RC4 = 1;
+    delay_us(25);
+    PORTCbits.RC4 = 0;
+    timer--;
+    }
+    }
+
+    PORTCbits.RC4 = 1;
+    PIR1bits.INT0IF = 0;
+    return;
+    }
+# 10 "main.c" 2
+
+
+# 1 "./Initialization.h" 1
+void initialize(){
 
     TRISA = 0xFF;
     ANSELA = 0;
@@ -27099,6 +27151,7 @@ void main(void) {
     TRISC = 0x00;
     ANSELC = 0;
     PORTC = 0;
+    PORTCbits.RC4 = 1;
     INTCON0bits.INT0EDG = 1;
     INT0PPS = PORTAbits.RA0;
     WPUA=0xFF;
@@ -27110,7 +27163,25 @@ void main(void) {
     PIE1bits.INT0IE = 1;
 
     PIR1bits.INT0IF = 0;
+}
+# 12 "main.c" 2
 
+void initialize();
+void __attribute__((picinterrupt(("irq(8),base(0x4008)")))) INT0_ISR(void);
+void LCD_Init();
+void LCD_String(const char *msg);
+void LCD_String_xy(char row,char pos,const char *msg);
+void LCD_Char(char x);
+void LCD_Clear();
+unsigned char LightScan(char pinNumber);
+void Decision(unsigned char input1, unsigned char input2);
+void delay_us(unsigned int us);
+unsigned char input = 0;
+unsigned char input2 = 0;
+# 71 "main.c"
+void main(void) {
+# 92 "main.c"
+    initialize();
     while(1)
     {
     LCD_Init();
@@ -27120,7 +27191,7 @@ void main(void) {
     input2 = LightScan(2);
     LCD_Char(input2 + '0');
     Decision(input,input2);
-    _delay((unsigned long)((10000)*(4000000/4000.0)));
+
     }
     return;
 }
