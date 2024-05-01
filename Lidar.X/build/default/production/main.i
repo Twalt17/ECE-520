@@ -27765,8 +27765,8 @@ int main(void)
     MSdelay(100);
     LCD_String_xy(1,0,"start");
     MSdelay(500);
-    TF_Luna_Send_Freq(header,length,freq_ID,freq,freq_decimal,checksum);
-    TF_Luna_Trigger(header, trigger, trigger,payload);
+
+
     distance = read_distance();
     sprintf(data,"%u",distance);
     strcat(data," CM");

@@ -66,12 +66,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "12
 [; ;main.c: 12: void LCD_String_xy(char ,char ,const char*);
 [v _LCD_String_xy `(v ~T0 @X0 0 ef3`uc`uc`*Cuc ]
-"9
-[; ;main.c: 9: void TF_Luna_Send_Freq(uint8_t header, uint8_t length, uint8_t id, uint8_t freq, uint8_t freq_dec, uint8_t checksum);
-[v _TF_Luna_Send_Freq `(v ~T0 @X0 0 ef6`uc`uc`uc`uc`uc`uc ]
-"10
-[; ;main.c: 10: void TF_Luna_Trigger(uint8_t header, uint8_t length, uint8_t id, uint8_t trigger );
-[v _TF_Luna_Trigger `(v ~T0 @X0 0 ef4`uc`uc`uc`uc ]
 "11
 [; ;main.c: 11: uint16_t read_distance();
 [v _read_distance `(us ~T0 @X0 0 e? ]
@@ -2947,12 +2941,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "39
 [; ;main.c: 39:     MSdelay(500);
 [e ( _MSdelay (1 -> -> 500 `i `ui ]
-"40
-[; ;main.c: 40:     TF_Luna_Send_Freq(header,length,freq_ID,freq,freq_decimal,checksum);
-[e ( _TF_Luna_Send_Freq (4 , , , , , _header -> _length `uc _freq_ID _freq _freq_decimal _checksum ]
-"41
-[; ;main.c: 41:     TF_Luna_Trigger(header, trigger, trigger,payload);
-[e ( _TF_Luna_Trigger (4 , , , _header _trigger _trigger _payload ]
 "42
 [; ;main.c: 42:     distance = read_distance();
 [e = _distance ( _read_distance ..  ]
