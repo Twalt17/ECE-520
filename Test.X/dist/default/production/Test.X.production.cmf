@@ -11,22 +11,25 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$C:\Users\Tyler\AppData\Local\Temp\xcAsja8.\driver_tmp_9.o
-init CODE 0 1FFFC 1FFFC 4 1 2
+$C:\Users\Tyler\AppData\Local\Temp\xcAs9ok.\driver_tmp_9.o
+init CODE 0 40AE 40AE 4 1 2
 reset_vec CODE 0 0 0 4 1 2
 config CONFIG 4 300000 300000 A 1 1
 $dist/default/production\Test.X.production.o
-cinit CODE 0 217C 217C E 1 2
-text0 CODE 0 2068 2068 3E 1 2
-text1 CODE 0 20A6 20A6 3C 1 2
-text2 CODE 0 20E2 20E2 30 1 2
-text3 CODE 0 2140 2140 1E 1 2
-text4 CODE 0 2112 2112 2E 1 2
-text5 CODE 0 215E 215E 1E 1 2
-text6 CODE 0 201E 201E 4A 1 2
-cstackCOMRAM COMRAM 1 1 1 E 1 1
-smallconst SMALLCONST 0 2000 2000 1E 1 2
+cinit CODE 0 4312 4312 1A 1 2
+text0 CODE 0 42AE 42AE 28 1 2
+text1 CODE 0 41DC 41DC 3C 1 2
+text2 CODE 0 4250 4250 30 1 2
+text3 CODE 0 42D6 42D6 1E 1 2
+text4 CODE 0 4280 4280 2E 1 2
+text5 CODE 0 42F4 42F4 1E 1 2
+text6 CODE 0 4192 4192 4A 1 2
+text7 CODE 0 40B4 40B4 DE 1 4
+text8 CODE 0 4218 4218 38 1 2
+cstackCOMRAM COMRAM 1 1 1 13 1 1
+smallconst SMALLCONST 0 2000 2000 2E 1 2
 config CONFIG 4 300000 300000 A 1 1
+ivt0x4008 CODE 0 4008 4008 A6 1 2
 # %UNUSED Section
 # This section enumerates the unused ranges of each CLASS. Each entry
 # is described on a single line as follows:
@@ -46,11 +49,17 @@ BANK7 700-7FF 1
 BANK8 800-8FF 1
 BANK9 900-9FF 1
 CONST 4-1FFF 1
-CONST 218A-1FFFB 1
+CONST 202E-4007 1
+CONST 40B2-40B3 1
+CONST 432C-1FFFF 1
 IDLOC 200000-20000F 1
-SMALLCONST 218A-1FFFB 1
+SMALLCONST 202E-4007 1
+SMALLCONST 40B2-40B3 1
+SMALLCONST 432C-1FFFF 1
 CODE 4-1FFF 1
-CODE 218A-1FFFB 1
+CODE 202E-4007 1
+CODE 40B2-40B3 1
+CODE 432C-1FFFF 1
 BANK10 A00-AFF 1
 BANK11 B00-BFF 1
 BANK12 C00-CFF 1
@@ -73,12 +82,14 @@ BANK28 1C00-1CFF 1
 BANK29 1D00-1DFF 1
 BANK30 1E00-1EFF 1
 BANK31 1F00-1FFF 1
-BIGRAM F-1FFF 1
+BIGRAM 14-1FFF 1
 BIGSFR 3800-3FFF 1
-COMRAM F-5F 1
+COMRAM 14-5F 1
 EEDATA 310000-3103FF 1
-MEDIUMCONST 218A-FFFF 1
-MEDIUMCONST 12000-1FFFB 1
+MEDIUMCONST 202E-4007 1
+MEDIUMCONST 40B2-40B3 1
+MEDIUMCONST 432C-FFFF 1
+MEDIUMCONST 12000-1FFFF 1
 # %LINETAB Section
 # This section enumerates the file/line to address mappings.
 # The beginning of the section is indicated by %LINETAB.
@@ -93,67 +104,115 @@ MEDIUMCONST 12000-1FFFB 1
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\Test.X.production.o
-201E text6 CODE >169:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Test.X\newmain.c
-201E text6 CODE >172:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Test.X\newmain.c
-202A text6 CODE >173:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Test.X\newmain.c
-2066 text6 CODE >174:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Test.X\newmain.c
-215E text5 CODE >122:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Test.X\newmain.c
-2160 text5 CODE >124:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Test.X\newmain.c
-2166 text5 CODE >125:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Test.X\newmain.c
-2168 text5 CODE >126:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Test.X\newmain.c
-216A text5 CODE >127:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Test.X\newmain.c
-216C text5 CODE >128:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Test.X\newmain.c
-216E text5 CODE >129:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Test.X\newmain.c
-217A text5 CODE >130:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Test.X\newmain.c
-2112 text4 CODE >103:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Test.X\newmain.c
-2112 text4 CODE >105:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Test.X\newmain.c
-211E text4 CODE >106:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Test.X\newmain.c
-2122 text4 CODE >107:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Test.X\newmain.c
-2126 text4 CODE >108:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Test.X\newmain.c
-212C text4 CODE >110:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Test.X\newmain.c
-2132 text4 CODE >112:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Test.X\newmain.c
-2138 text4 CODE >114:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Test.X\newmain.c
-213E text4 CODE >115:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Test.X\newmain.c
-2140 text3 CODE >132:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Test.X\newmain.c
-2142 text3 CODE >134:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Test.X\newmain.c
-2148 text3 CODE >135:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Test.X\newmain.c
-214A text3 CODE >136:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Test.X\newmain.c
-214C text3 CODE >137:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Test.X\newmain.c
-214E text3 CODE >138:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Test.X\newmain.c
-2150 text3 CODE >139:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Test.X\newmain.c
-215C text3 CODE >140:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Test.X\newmain.c
-20E2 text2 CODE >143:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Test.X\newmain.c
-20E2 text2 CODE >145:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Test.X\newmain.c
-20E6 text2 CODE >147:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Test.X\newmain.c
-20F4 text2 CODE >148:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Test.X\newmain.c
-20F6 text2 CODE >145:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Test.X\newmain.c
-2110 text2 CODE >150:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Test.X\newmain.c
-20A6 text1 CODE >152:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Test.X\newmain.c
-20A8 text1 CODE >154:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Test.X\newmain.c
-20A8 text1 CODE >155:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Test.X\newmain.c
-20B8 text1 CODE >157:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Test.X\newmain.c
-20C0 text1 CODE >158:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Test.X\newmain.c
-20C6 text1 CODE >159:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Test.X\newmain.c
-20CA text1 CODE >162:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Test.X\newmain.c
-20D2 text1 CODE >163:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Test.X\newmain.c
-20D8 text1 CODE >165:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Test.X\newmain.c
-20E0 text1 CODE >167:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Test.X\newmain.c
-2068 text0 CODE >87:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Test.X\newmain.c
-2068 text0 CODE >90:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Test.X\newmain.c
-2068 text0 CODE >92:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Test.X\newmain.c
-206C text0 CODE >93:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Test.X\newmain.c
-207A text0 CODE >95:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Test.X\newmain.c
-2088 text0 CODE >97:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Test.X\newmain.c
-217C cinit CODE >1690:C:\Users\Tyler\AppData\Local\Temp\xcAsja8.\driver_tmp_1.s
-217C cinit CODE >1692:C:\Users\Tyler\AppData\Local\Temp\xcAsja8.\driver_tmp_1.s
-217C cinit CODE >1695:C:\Users\Tyler\AppData\Local\Temp\xcAsja8.\driver_tmp_1.s
-217C cinit CODE >1701:C:\Users\Tyler\AppData\Local\Temp\xcAsja8.\driver_tmp_1.s
-217C cinit CODE >1704:C:\Users\Tyler\AppData\Local\Temp\xcAsja8.\driver_tmp_1.s
-217E cinit CODE >1705:C:\Users\Tyler\AppData\Local\Temp\xcAsja8.\driver_tmp_1.s
-2180 cinit CODE >1706:C:\Users\Tyler\AppData\Local\Temp\xcAsja8.\driver_tmp_1.s
-2182 cinit CODE >1707:C:\Users\Tyler\AppData\Local\Temp\xcAsja8.\driver_tmp_1.s
-2184 cinit CODE >1708:C:\Users\Tyler\AppData\Local\Temp\xcAsja8.\driver_tmp_1.s
-2186 cinit CODE >1709:C:\Users\Tyler\AppData\Local\Temp\xcAsja8.\driver_tmp_1.s
+4218 text8 CODE >236:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Test.X\newmain.c
+4218 text8 CODE >238:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Test.X\newmain.c
+4224 text8 CODE >239:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Test.X\newmain.c
+4226 text8 CODE >240:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Test.X\newmain.c
+4228 text8 CODE >241:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Test.X\newmain.c
+422A text8 CODE >242:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Test.X\newmain.c
+422C text8 CODE >243:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Test.X\newmain.c
+422E text8 CODE >244:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Test.X\newmain.c
+4230 text8 CODE >245:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Test.X\newmain.c
+4232 text8 CODE >246:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Test.X\newmain.c
+4234 text8 CODE >247:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Test.X\newmain.c
+424E text8 CODE >249:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Test.X\newmain.c
+40B4 text7 CODE >159:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Test.X\newmain.c
+40B4 text7 CODE >251:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Test.X\newmain.c
+40B4 text7 CODE >253:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Test.X\newmain.c
+40B8 text7 CODE >255:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Test.X\newmain.c
+40C0 text7 CODE >257:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Test.X\newmain.c
+40C4 text7 CODE >259:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Test.X\newmain.c
+40D0 text7 CODE >260:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Test.X\newmain.c
+40D2 text7 CODE >261:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Test.X\newmain.c
+40DE text7 CODE >262:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Test.X\newmain.c
+40E0 text7 CODE >263:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Test.X\newmain.c
+40E6 text7 CODE >257:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Test.X\newmain.c
+40F8 text7 CODE >266:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Test.X\newmain.c
+4100 text7 CODE >268:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Test.X\newmain.c
+4104 text7 CODE >270:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Test.X\newmain.c
+4110 text7 CODE >271:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Test.X\newmain.c
+4112 text7 CODE >272:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Test.X\newmain.c
+411E text7 CODE >273:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Test.X\newmain.c
+4120 text7 CODE >274:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Test.X\newmain.c
+4126 text7 CODE >268:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Test.X\newmain.c
+4138 text7 CODE >277:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Test.X\newmain.c
+4140 text7 CODE >279:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Test.X\newmain.c
+4144 text7 CODE >281:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Test.X\newmain.c
+4150 text7 CODE >282:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Test.X\newmain.c
+4152 text7 CODE >283:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Test.X\newmain.c
+415E text7 CODE >284:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Test.X\newmain.c
+4160 text7 CODE >285:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Test.X\newmain.c
+4166 text7 CODE >279:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Test.X\newmain.c
+4178 text7 CODE >287:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Test.X\newmain.c
+418A text7 CODE >289:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Test.X\newmain.c
+418C text7 CODE >290:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Test.X\newmain.c
+4190 text7 CODE >292:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Test.X\newmain.c
+4192 text6 CODE >154:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Test.X\newmain.c
+4192 text6 CODE >157:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Test.X\newmain.c
+419E text6 CODE >158:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Test.X\newmain.c
+41DA text6 CODE >159:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Test.X\newmain.c
+42F4 text5 CODE >107:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Test.X\newmain.c
+42F6 text5 CODE >109:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Test.X\newmain.c
+42FC text5 CODE >110:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Test.X\newmain.c
+42FE text5 CODE >111:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Test.X\newmain.c
+4300 text5 CODE >112:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Test.X\newmain.c
+4302 text5 CODE >113:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Test.X\newmain.c
+4304 text5 CODE >114:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Test.X\newmain.c
+4310 text5 CODE >115:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Test.X\newmain.c
+4280 text4 CODE >91:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Test.X\newmain.c
+4280 text4 CODE >93:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Test.X\newmain.c
+428C text4 CODE >94:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Test.X\newmain.c
+4290 text4 CODE >95:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Test.X\newmain.c
+4294 text4 CODE >96:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Test.X\newmain.c
+429A text4 CODE >97:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Test.X\newmain.c
+42A0 text4 CODE >98:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Test.X\newmain.c
+42A6 text4 CODE >99:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Test.X\newmain.c
+42AC text4 CODE >100:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Test.X\newmain.c
+42D6 text3 CODE >117:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Test.X\newmain.c
+42D8 text3 CODE >119:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Test.X\newmain.c
+42DE text3 CODE >120:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Test.X\newmain.c
+42E0 text3 CODE >121:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Test.X\newmain.c
+42E2 text3 CODE >122:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Test.X\newmain.c
+42E4 text3 CODE >123:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Test.X\newmain.c
+42E6 text3 CODE >124:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Test.X\newmain.c
+42F2 text3 CODE >125:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Test.X\newmain.c
+4250 text2 CODE >128:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Test.X\newmain.c
+4250 text2 CODE >130:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Test.X\newmain.c
+4254 text2 CODE >132:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Test.X\newmain.c
+4262 text2 CODE >133:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Test.X\newmain.c
+4264 text2 CODE >130:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Test.X\newmain.c
+427E text2 CODE >135:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Test.X\newmain.c
+41DC text1 CODE >137:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Test.X\newmain.c
+41DE text1 CODE >139:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Test.X\newmain.c
+41DE text1 CODE >140:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Test.X\newmain.c
+41EE text1 CODE >142:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Test.X\newmain.c
+41F6 text1 CODE >143:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Test.X\newmain.c
+41FC text1 CODE >144:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Test.X\newmain.c
+4200 text1 CODE >147:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Test.X\newmain.c
+4208 text1 CODE >148:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Test.X\newmain.c
+420E text1 CODE >150:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Test.X\newmain.c
+4216 text1 CODE >152:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Test.X\newmain.c
+42AE text0 CODE >78:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Test.X\newmain.c
+42AE text0 CODE >81:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Test.X\newmain.c
+42B2 text0 CODE >82:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Test.X\newmain.c
+42C0 text0 CODE >84:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Test.X\newmain.c
+42CE text0 CODE >87:C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Test.X\newmain.c
+4312 cinit CODE >1720:C:\Users\Tyler\AppData\Local\Temp\xcAs9ok.\driver_tmp_1.s
+4312 cinit CODE >1722:C:\Users\Tyler\AppData\Local\Temp\xcAs9ok.\driver_tmp_1.s
+4312 cinit CODE >1725:C:\Users\Tyler\AppData\Local\Temp\xcAs9ok.\driver_tmp_1.s
+4312 cinit CODE >1733:C:\Users\Tyler\AppData\Local\Temp\xcAs9ok.\driver_tmp_1.s
+4314 cinit CODE >1734:C:\Users\Tyler\AppData\Local\Temp\xcAs9ok.\driver_tmp_1.s
+4316 cinit CODE >1735:C:\Users\Tyler\AppData\Local\Temp\xcAs9ok.\driver_tmp_1.s
+4318 cinit CODE >1736:C:\Users\Tyler\AppData\Local\Temp\xcAs9ok.\driver_tmp_1.s
+431A cinit CODE >1737:C:\Users\Tyler\AppData\Local\Temp\xcAs9ok.\driver_tmp_1.s
+431C cinit CODE >1738:C:\Users\Tyler\AppData\Local\Temp\xcAs9ok.\driver_tmp_1.s
+431E cinit CODE >1744:C:\Users\Tyler\AppData\Local\Temp\xcAs9ok.\driver_tmp_1.s
+431E cinit CODE >1747:C:\Users\Tyler\AppData\Local\Temp\xcAs9ok.\driver_tmp_1.s
+4320 cinit CODE >1748:C:\Users\Tyler\AppData\Local\Temp\xcAs9ok.\driver_tmp_1.s
+4322 cinit CODE >1749:C:\Users\Tyler\AppData\Local\Temp\xcAs9ok.\driver_tmp_1.s
+4324 cinit CODE >1750:C:\Users\Tyler\AppData\Local\Temp\xcAs9ok.\driver_tmp_1.s
+4326 cinit CODE >1751:C:\Users\Tyler\AppData\Local\Temp\xcAs9ok.\driver_tmp_1.s
+4328 cinit CODE >1752:C:\Users\Tyler\AppData\Local\Temp\xcAs9ok.\driver_tmp_1.s
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -167,50 +226,53 @@ $dist/default/production\Test.X.production.o
 # is the name of the object file in which the symbol was defined.
 %SYMTAB
 __Lmediumconst 0 0 MEDIUMCONST 0 mediumconst dist/default/production\Test.X.production.o
-__Hspace_0 20000 0 ABS 0 - dist/default/production\Test.X.production.o
-__Hspace_1 F 0 ABS 0 - dist/default/production\Test.X.production.o
+__Hspace_0 432C 0 ABS 0 - dist/default/production\Test.X.production.o
+__Hspace_1 14 0 ABS 0 - dist/default/production\Test.X.production.o
 __Hspace_2 0 0 ABS 0 - dist/default/production\Test.X.production.o
 __Hspace_4 60000A 0 ABS 0 - dist/default/production\Test.X.production.o
 __Hibigdata 0 0 CODE 0 ibigdata dist/default/production\Test.X.production.o
-__mediumconst 0 0 MEDIUMCONST 0 mediumconst C:\Users\Tyler\AppData\Local\Temp\xcAsja8.\driver_tmp_9.o
+__mediumconst 0 0 MEDIUMCONST 0 mediumconst C:\Users\Tyler\AppData\Local\Temp\xcAs9ok.\driver_tmp_9.o
 __Heeprom_data 0 0 EEDATA 0 eeprom_data dist/default/production\Test.X.production.o
+ivt0x4008_undefint 40AC 0 CODE 0 ivt0x4008 dist/default/production\Test.X.production.o
 __L__absolute__ 0 0 ABS 0 __absolute__ dist/default/production\Test.X.production.o
 __Lsmallconst 2000 0 SMALLCONST 0 smallconst dist/default/production\Test.X.production.o
 _LATB 3FBB 0 ABS 0 - dist/default/production\Test.X.production.o
-___sp 0 0 STACK 2 stack C:\Users\Tyler\AppData\Local\Temp\xcAsja8.\driver_tmp_9.o
-_main 2068 0 CODE 0 text0 dist/default/production\Test.X.production.o
-___stack_hi 0 0 STACK 2 stack C:\Users\Tyler\AppData\Local\Temp\xcAsja8.\driver_tmp_9.o
-___stack_lo 0 0 STACK 2 stack C:\Users\Tyler\AppData\Local\Temp\xcAsja8.\driver_tmp_9.o
-start 1FFFC 0 CODE 0 init C:\Users\Tyler\AppData\Local\Temp\xcAsja8.\driver_tmp_9.o
-_MSdelay 201E 0 CODE 0 text6 dist/default/production\Test.X.production.o
-LCD_Char@dat 7 0 COMRAM 1 cstackCOMRAM dist/default/production\Test.X.production.o
-_LCD_Char 2140 0 CODE 0 text3 dist/default/production\Test.X.production.o
-_LCD_Init 2112 0 CODE 0 text4 dist/default/production\Test.X.production.o
+___sp 0 0 STACK 2 stack C:\Users\Tyler\AppData\Local\Temp\xcAs9ok.\driver_tmp_9.o
+_main 42AE 0 CODE 0 text0 dist/default/production\Test.X.production.o
+___stack_hi 0 0 STACK 2 stack C:\Users\Tyler\AppData\Local\Temp\xcAs9ok.\driver_tmp_9.o
+___stack_lo 0 0 STACK 2 stack C:\Users\Tyler\AppData\Local\Temp\xcAs9ok.\driver_tmp_9.o
+start 40AE 0 CODE 0 init C:\Users\Tyler\AppData\Local\Temp\xcAs9ok.\driver_tmp_9.o
+_MSdelay 4192 0 CODE 0 text6 dist/default/production\Test.X.production.o
+LCD_Char@dat E 0 COMRAM 1 cstackCOMRAM dist/default/production\Test.X.production.o
+_LCD_Char 42D6 0 CODE 0 text3 dist/default/production\Test.X.production.o
+_LCD_Init 4280 0 CODE 0 text4 dist/default/production\Test.X.production.o
 __Hpowerup 0 0 CODE 0 powerup dist/default/production\Test.X.production.o
-__accesstop 60 0 ABS 0 - C:\Users\Tyler\AppData\Local\Temp\xcAsja8.\driver_tmp_9.o
-__end_of_LCD_Char 215E 0 CODE 0 text3 dist/default/production\Test.X.production.o
-__end_of_LCD_Init 2140 0 CODE 0 text4 dist/default/production\Test.X.production.o
-intlevel0 0 0 CODE 0 text C:\Users\Tyler\AppData\Local\Temp\xcAsja8.\driver_tmp_9.o
-intlevel1 0 0 CODE 0 text C:\Users\Tyler\AppData\Local\Temp\xcAsja8.\driver_tmp_9.o
-intlevel2 0 0 CODE 0 text C:\Users\Tyler\AppData\Local\Temp\xcAsja8.\driver_tmp_9.o
-intlevel3 0 0 CODE 0 text C:\Users\Tyler\AppData\Local\Temp\xcAsja8.\driver_tmp_9.o
+__accesstop 60 0 ABS 0 - C:\Users\Tyler\AppData\Local\Temp\xcAs9ok.\driver_tmp_9.o
+__end_of_LCD_Char 42F4 0 CODE 0 text3 dist/default/production\Test.X.production.o
+__end_of_LCD_Init 42AE 0 CODE 0 text4 dist/default/production\Test.X.production.o
+intlevel0 0 0 CODE 0 text C:\Users\Tyler\AppData\Local\Temp\xcAs9ok.\driver_tmp_9.o
+intlevel1 0 0 CODE 0 text C:\Users\Tyler\AppData\Local\Temp\xcAs9ok.\driver_tmp_9.o
+intlevel2 0 0 CODE 0 text C:\Users\Tyler\AppData\Local\Temp\xcAs9ok.\driver_tmp_9.o
+intlevel3 0 0 CODE 0 text C:\Users\Tyler\AppData\Local\Temp\xcAs9ok.\driver_tmp_9.o
 __LnvFARRAM 0 0 FARRAM 0 nvFARRAM dist/default/production\Test.X.production.o
 __Hifardata 0 0 CODE 0 ifardata dist/default/production\Test.X.production.o
+__Hivt0x4008 40AE 0 CODE 0 ivt0x4008 dist/default/production\Test.X.production.o
 __Hclrtext 0 0 ABS 0 clrtext dist/default/production\Test.X.production.o
-___inthi_sp 0 0 STACK 2 stack C:\Users\Tyler\AppData\Local\Temp\xcAsja8.\driver_tmp_9.o
-___intlo_sp 0 0 STACK 2 stack C:\Users\Tyler\AppData\Local\Temp\xcAsja8.\driver_tmp_9.o
-_LCD_String 20E2 0 CODE 0 text2 dist/default/production\Test.X.production.o
+___inthi_sp 0 0 STACK 2 stack C:\Users\Tyler\AppData\Local\Temp\xcAs9ok.\driver_tmp_9.o
+___intlo_sp 0 0 STACK 2 stack C:\Users\Tyler\AppData\Local\Temp\xcAs9ok.\driver_tmp_9.o
+_LCD_String 4250 0 CODE 0 text2 dist/default/production\Test.X.production.o
+__Livt0x4008 4008 0 CODE 0 ivt0x4008 dist/default/production\Test.X.production.o
 __Lintsave_regs 0 0 BIGRAM 1 intsave_regs dist/default/production\Test.X.production.o
 __Hmediumconst 0 0 MEDIUMCONST 0 mediumconst dist/default/production\Test.X.production.o
-start_initialization 217C 0 CODE 0 cinit dist/default/production\Test.X.production.o
+start_initialization 4312 0 CODE 0 cinit dist/default/production\Test.X.production.o
 __HnvFARRAM 0 0 FARRAM 0 nvFARRAM dist/default/production\Test.X.production.o
-__end_of_LCD_String 2112 0 CODE 0 text2 dist/default/production\Test.X.production.o
+__end_of_LCD_String 4280 0 CODE 0 text2 dist/default/production\Test.X.production.o
 ___rparam_used 1 0 ABS 0 - dist/default/production\Test.X.production.o
-__end_of_LCD_Command 217C 0 CODE 0 text5 dist/default/production\Test.X.production.o
-LCD_String_xy@msg A 0 COMRAM 1 cstackCOMRAM dist/default/production\Test.X.production.o
-LCD_String_xy@pos 9 0 COMRAM 1 cstackCOMRAM dist/default/production\Test.X.production.o
-LCD_String_xy@row B 0 COMRAM 1 cstackCOMRAM dist/default/production\Test.X.production.o
-isa$xinst 0 0 ABS 0 - C:\Users\Tyler\AppData\Local\Temp\xcAsja8.\driver_tmp_9.o
+__end_of_LCD_Command 4312 0 CODE 0 text5 dist/default/production\Test.X.production.o
+LCD_String_xy@msg 11 0 COMRAM 1 cstackCOMRAM dist/default/production\Test.X.production.o
+LCD_String_xy@pos 10 0 COMRAM 1 cstackCOMRAM dist/default/production\Test.X.production.o
+LCD_String_xy@row 12 0 COMRAM 1 cstackCOMRAM dist/default/production\Test.X.production.o
+isa$xinst 0 0 ABS 0 - C:\Users\Tyler\AppData\Local\Temp\xcAs9ok.\driver_tmp_9.o
 __Hbank0 0 0 ABS 0 bank0 dist/default/production\Test.X.production.o
 __Hbank1 0 0 ABS 0 bank1 dist/default/production\Test.X.production.o
 __Hbank2 0 0 ABS 0 bank2 dist/default/production\Test.X.production.o
@@ -236,6 +298,8 @@ __Htext3 0 0 ABS 0 text3 dist/default/production\Test.X.production.o
 __Htext4 0 0 ABS 0 text4 dist/default/production\Test.X.production.o
 __Htext5 0 0 ABS 0 text5 dist/default/production\Test.X.production.o
 __Htext6 0 0 ABS 0 text6 dist/default/production\Test.X.production.o
+__Htext7 0 0 ABS 0 text7 dist/default/production\Test.X.production.o
+__Htext8 0 0 ABS 0 text8 dist/default/production\Test.X.production.o
 __Hbank10 0 0 ABS 0 bank10 dist/default/production\Test.X.production.o
 __Hbank11 0 0 ABS 0 bank11 dist/default/production\Test.X.production.o
 __Hbank12 0 0 ABS 0 bank12 dist/default/production\Test.X.production.o
@@ -261,8 +325,8 @@ __Hbank31 0 0 ABS 0 bank31 dist/default/production\Test.X.production.o
 __Hbigbss 0 0 BIGRAM 1 bigbss dist/default/production\Test.X.production.o
 __Hbigram 0 0 ABS 0 bigram dist/default/production\Test.X.production.o
 __Hbigsfr 0 0 ABS 0 bigsfr dist/default/production\Test.X.production.o
-__smallconst 2000 0 SMALLCONST 0 smallconst C:\Users\Tyler\AppData\Local\Temp\xcAsja8.\driver_tmp_9.o
-_LCD_String_xy 20A6 0 CODE 0 text1 dist/default/production\Test.X.production.o
+__smallconst 2000 0 SMALLCONST 0 smallconst C:\Users\Tyler\AppData\Local\Temp\xcAs9ok.\driver_tmp_9.o
+_LCD_String_xy 41DC 0 CODE 0 text1 dist/default/production\Test.X.production.o
 __Hcomram 0 0 ABS 0 comram dist/default/production\Test.X.production.o
 __Hconfig 30000A 0 CONFIG 4 config dist/default/production\Test.X.production.o
 __Lbank0 0 0 ABS 0 bank0 dist/default/production\Test.X.production.o
@@ -290,12 +354,16 @@ __Ltext3 0 0 ABS 0 text3 dist/default/production\Test.X.production.o
 __Ltext4 0 0 ABS 0 text4 dist/default/production\Test.X.production.o
 __Ltext5 0 0 ABS 0 text5 dist/default/production\Test.X.production.o
 __Ltext6 0 0 ABS 0 text6 dist/default/production\Test.X.production.o
-MSdelay@val 1 0 COMRAM 1 cstackCOMRAM dist/default/production\Test.X.production.o
+__Ltext7 0 0 ABS 0 text7 dist/default/production\Test.X.production.o
+__Ltext8 0 0 ABS 0 text8 dist/default/production\Test.X.production.o
+MSdelay@val 8 0 COMRAM 1 cstackCOMRAM dist/default/production\Test.X.production.o
 __Hfarbss 0 0 FARRAM 0 farbss dist/default/production\Test.X.production.o
+_PORTAbits 3FCA 0 ABS 0 - dist/default/production\Test.X.production.o
+_PORTCbits 3FCC 0 ABS 0 - dist/default/production\Test.X.production.o
 __Habs1 0 0 ABS 0 abs1 dist/default/production\Test.X.production.o
 __Hdata 0 0 ABS 0 data dist/default/production\Test.X.production.o
 __Hheap 0 0 HEAP 7 heap dist/default/production\Test.X.production.o
-__Hinit 20000 0 CODE 0 init dist/default/production\Test.X.production.o
+__Hinit 40B2 0 CODE 0 init dist/default/production\Test.X.production.o
 __Hrbit 0 0 COMRAM 1 rbit dist/default/production\Test.X.production.o
 __Hrbss 0 0 COMRAM 1 rbss dist/default/production\Test.X.production.o
 __Htemp 0 0 COMRAM 1 temp dist/default/production\Test.X.production.o
@@ -303,25 +371,29 @@ __Htext 0 0 ABS 0 text dist/default/production\Test.X.production.o
 __Labs1 0 0 ABS 0 abs1 dist/default/production\Test.X.production.o
 __Ldata 0 0 ABS 0 data dist/default/production\Test.X.production.o
 __Lheap 0 0 HEAP 7 heap dist/default/production\Test.X.production.o
-__Linit 1FFFC 0 CODE 0 init dist/default/production\Test.X.production.o
+__Linit 40AE 0 CODE 0 init dist/default/production\Test.X.production.o
 __Lrbit 0 0 COMRAM 1 rbit dist/default/production\Test.X.production.o
 __Lrbss 0 0 COMRAM 1 rbss dist/default/production\Test.X.production.o
 __Ltemp 0 0 COMRAM 1 temp dist/default/production\Test.X.production.o
 __Ltext 0 0 ABS 0 text dist/default/production\Test.X.production.o
 __HcstackCOMRAM 0 0 ABS 0 cstackCOMRAM dist/default/production\Test.X.production.o
 __Hirdata 0 0 CODE 0 irdata dist/default/production\Test.X.production.o
-__S0 20000 0 ABS 0 - dist/default/production\Test.X.production.o
-__S1 F 0 ABS 0 - dist/default/production\Test.X.production.o
+__S0 432C 0 ABS 0 - dist/default/production\Test.X.production.o
+__S1 14 0 ABS 0 - dist/default/production\Test.X.production.o
 __S4 0 0 ABS 0 - dist/default/production\Test.X.production.o
 __S5 0 0 ABS 0 - dist/default/production\Test.X.production.o
+IVTBASEH 3FD6 0 ABS 0 - dist/default/production\Test.X.production.o
+IVTBASEL 3FD5 0 ABS 0 - dist/default/production\Test.X.production.o
+IVTBASEU 3FD7 0 ABS 0 - dist/default/production\Test.X.production.o
 __Lbigdata 0 0 BIGRAM 1 bigdata dist/default/production\Test.X.production.o
 __Hnvrram 0 0 COMRAM 1 nvrram dist/default/production\Test.X.production.o
+delay_us@us 1 0 COMRAM 1 cstackCOMRAM dist/default/production\Test.X.production.o
 __Hramtop 2000 0 RAM 0 ramtop dist/default/production\Test.X.production.o
 __Hrparam 0 0 COMRAM 1 rparam dist/default/production\Test.X.production.o
 __activetblptr 1 0 ABS 0 - dist/default/production\Test.X.production.o
 __Hstruct 0 0 COMRAM 1 struct dist/default/production\Test.X.production.o
-MSdelay@i 3 0 COMRAM 1 cstackCOMRAM dist/default/production\Test.X.production.o
-MSdelay@j 5 0 COMRAM 1 cstackCOMRAM dist/default/production\Test.X.production.o
+MSdelay@i A 0 COMRAM 1 cstackCOMRAM dist/default/production\Test.X.production.o
+MSdelay@j C 0 COMRAM 1 cstackCOMRAM dist/default/production\Test.X.production.o
 __Lbank10 0 0 ABS 0 bank10 dist/default/production\Test.X.production.o
 __Lbank11 0 0 ABS 0 bank11 dist/default/production\Test.X.production.o
 __Lbank12 0 0 ABS 0 bank12 dist/default/production\Test.X.production.o
@@ -349,59 +421,70 @@ __Lbigram 0 0 ABS 0 bigram dist/default/production\Test.X.production.o
 __Lbigsfr 0 0 ABS 0 bigsfr dist/default/production\Test.X.production.o
 __Lcomram 0 0 ABS 0 comram dist/default/production\Test.X.production.o
 __Lconfig 0 0 CONFIG 4 config dist/default/production\Test.X.production.o
-LCD_String_xy@location C 0 COMRAM 1 cstackCOMRAM dist/default/production\Test.X.production.o
+LCD_String_xy@location 13 0 COMRAM 1 cstackCOMRAM dist/default/production\Test.X.production.o
 __Lfarbss 0 0 FARRAM 0 farbss dist/default/production\Test.X.production.o
-___inthi_stack_hi 0 0 STACK 2 stack C:\Users\Tyler\AppData\Local\Temp\xcAsja8.\driver_tmp_9.o
-___inthi_stack_lo 0 0 STACK 2 stack C:\Users\Tyler\AppData\Local\Temp\xcAsja8.\driver_tmp_9.o
+___inthi_stack_hi 0 0 STACK 2 stack C:\Users\Tyler\AppData\Local\Temp\xcAs9ok.\driver_tmp_9.o
+___inthi_stack_lo 0 0 STACK 2 stack C:\Users\Tyler\AppData\Local\Temp\xcAs9ok.\driver_tmp_9.o
 __Lfardata 0 0 FARRAM 0 fardata dist/default/production\Test.X.production.o
-isa$std 1 0 ABS 0 - C:\Users\Tyler\AppData\Local\Temp\xcAsja8.\driver_tmp_9.o
-stackhi 0 0 ABS 0 - C:\Users\Tyler\AppData\Local\Temp\xcAsja8.\driver_tmp_9.o
-stacklo 0 0 ABS 0 - C:\Users\Tyler\AppData\Local\Temp\xcAsja8.\driver_tmp_9.o
+isa$std 1 0 ABS 0 - C:\Users\Tyler\AppData\Local\Temp\xcAs9ok.\driver_tmp_9.o
+stackhi 0 0 ABS 0 - C:\Users\Tyler\AppData\Local\Temp\xcAs9ok.\driver_tmp_9.o
+stacklo 0 0 ABS 0 - C:\Users\Tyler\AppData\Local\Temp\xcAs9ok.\driver_tmp_9.o
 __Lirdata 0 0 CODE 0 irdata dist/default/production\Test.X.production.o
-__end_of_LCD_String_xy 20E2 0 CODE 0 text1 dist/default/production\Test.X.production.o
+INT0_ISR@i 5 0 COMRAM 1 cstackCOMRAM dist/default/production\Test.X.production.o
+__end_of_LCD_String_xy 4218 0 CODE 0 text1 dist/default/production\Test.X.production.o
 __Lspace_0 0 0 ABS 0 - dist/default/production\Test.X.production.o
 __Lspace_1 0 0 ABS 0 - dist/default/production\Test.X.production.o
 __Lspace_2 0 0 ABS 0 - dist/default/production\Test.X.production.o
 __Lspace_4 0 0 ABS 0 - dist/default/production\Test.X.production.o
+delay_us@i 3 0 COMRAM 1 cstackCOMRAM dist/default/production\Test.X.production.o
+_PIR1bits 39A1 0 ABS 0 - dist/default/production\Test.X.production.o
 __LcstackCOMRAM 0 0 ABS 0 cstackCOMRAM dist/default/production\Test.X.production.o
-end_of_initialization 217C 0 CODE 0 cinit dist/default/production\Test.X.production.o
-__end_of_MSdelay 2068 0 CODE 0 text6 dist/default/production\Test.X.production.o
+end_of_initialization 431E 0 CODE 0 cinit dist/default/production\Test.X.production.o
+__end_of_MSdelay 41DC 0 CODE 0 text6 dist/default/production\Test.X.production.o
 __Lnvrram 0 0 COMRAM 1 nvrram dist/default/production\Test.X.production.o
 __Hreset_vec 4 0 CODE 0 reset_vec dist/default/production\Test.X.production.o
 __Lramtop 2000 0 RAM 0 ramtop dist/default/production\Test.X.production.o
 __Lrparam 0 0 COMRAM 1 rparam dist/default/production\Test.X.production.o
-__pcinit 217C 0 CODE 0 cinit dist/default/production\Test.X.production.o
-__ptext0 2068 0 CODE 0 text0 dist/default/production\Test.X.production.o
-__ptext1 20A6 0 CODE 0 text1 dist/default/production\Test.X.production.o
-__ptext2 20E2 0 CODE 0 text2 dist/default/production\Test.X.production.o
-__ptext3 2140 0 CODE 0 text3 dist/default/production\Test.X.production.o
-__ptext4 2112 0 CODE 0 text4 dist/default/production\Test.X.production.o
-__ptext5 215E 0 CODE 0 text5 dist/default/production\Test.X.production.o
-__ptext6 201E 0 CODE 0 text6 dist/default/production\Test.X.production.o
+__pcinit 4312 0 CODE 0 cinit dist/default/production\Test.X.production.o
+__ptext0 42AE 0 CODE 0 text0 dist/default/production\Test.X.production.o
+__ptext1 41DC 0 CODE 0 text1 dist/default/production\Test.X.production.o
+__ptext2 4250 0 CODE 0 text2 dist/default/production\Test.X.production.o
+__ptext3 42D6 0 CODE 0 text3 dist/default/production\Test.X.production.o
+__ptext4 4280 0 CODE 0 text4 dist/default/production\Test.X.production.o
+__ptext5 42F4 0 CODE 0 text5 dist/default/production\Test.X.production.o
+__ptext6 4192 0 CODE 0 text6 dist/default/production\Test.X.production.o
+__ptext7 40B4 0 CODE 0 text7 dist/default/production\Test.X.production.o
+__ptext8 4218 0 CODE 0 text8 dist/default/production\Test.X.production.o
+_INT0_ISR 40B4 0 CODE 0 text7 dist/default/production\Test.X.production.o
 __Lstruct 0 0 COMRAM 1 struct dist/default/production\Test.X.production.o
-__ramtop 2000 0 RAM 0 ramtop C:\Users\Tyler\AppData\Local\Temp\xcAsja8.\driver_tmp_9.o
+INT0_ISR@timer 6 0 COMRAM 1 cstackCOMRAM dist/default/production\Test.X.production.o
+__ramtop 2000 0 RAM 0 ramtop C:\Users\Tyler\AppData\Local\Temp\xcAs9ok.\driver_tmp_9.o
+__pivt0x4008 4008 0 CODE 0 ivt0x4008 dist/default/production\Test.X.production.o
 __Lpowerup 0 0 CODE 0 powerup dist/default/production\Test.X.production.o
 __Leeprom_data 0 0 EEDATA 0 eeprom_data dist/default/production\Test.X.production.o
 __H__absolute__ 0 0 ABS 0 __absolute__ dist/default/production\Test.X.production.o
-LCD_String@msg 8 0 COMRAM 1 cstackCOMRAM dist/default/production\Test.X.production.o
+__end_of_INT0_ISR 4192 0 CODE 0 text7 dist/default/production\Test.X.production.o
+LCD_String@msg F 0 COMRAM 1 cstackCOMRAM dist/default/production\Test.X.production.o
 __psmallconst 2000 0 SMALLCONST 0 smallconst dist/default/production\Test.X.production.o
 __Lreset_vec 0 0 CODE 0 reset_vec dist/default/production\Test.X.production.o
-___heap_hi 0 0 ABS 0 - C:\Users\Tyler\AppData\Local\Temp\xcAsja8.\driver_tmp_9.o
-___heap_lo 0 0 ABS 0 - C:\Users\Tyler\AppData\Local\Temp\xcAsja8.\driver_tmp_9.o
+___heap_hi 0 0 ABS 0 - C:\Users\Tyler\AppData\Local\Temp\xcAs9ok.\driver_tmp_9.o
+___heap_lo 0 0 ABS 0 - C:\Users\Tyler\AppData\Local\Temp\xcAs9ok.\driver_tmp_9.o
 ___param_bank 0 0 ABS 0 - dist/default/production\Test.X.production.o
-___intlo_stack_hi 0 0 STACK 2 stack C:\Users\Tyler\AppData\Local\Temp\xcAsja8.\driver_tmp_9.o
-___intlo_stack_lo 0 0 STACK 2 stack C:\Users\Tyler\AppData\Local\Temp\xcAsja8.\driver_tmp_9.o
+___intlo_stack_hi 0 0 STACK 2 stack C:\Users\Tyler\AppData\Local\Temp\xcAs9ok.\driver_tmp_9.o
+___intlo_stack_lo 0 0 STACK 2 stack C:\Users\Tyler\AppData\Local\Temp\xcAs9ok.\driver_tmp_9.o
 __Hbigdata 0 0 BIGRAM 1 bigdata dist/default/production\Test.X.production.o
-__end_of__initialization 217C 0 CODE 0 cinit dist/default/production\Test.X.production.o
+__end_of__initialization 431E 0 CODE 0 cinit dist/default/production\Test.X.production.o
+_delay_us 4218 0 CODE 0 text8 dist/default/production\Test.X.production.o
 __Libigdata 0 0 CODE 0 ibigdata dist/default/production\Test.X.production.o
 __Lclrtext 0 0 ABS 0 clrtext dist/default/production\Test.X.production.o
-LCD_Command@cmd 7 0 COMRAM 1 cstackCOMRAM dist/default/production\Test.X.production.o
+__end_of_delay_us 4250 0 CODE 0 text8 dist/default/production\Test.X.production.o
+LCD_Command@cmd E 0 COMRAM 1 cstackCOMRAM dist/default/production\Test.X.production.o
 __pcstackCOMRAM 1 0 COMRAM 1 cstackCOMRAM dist/default/production\Test.X.production.o
-__end_of_main 20A6 0 CODE 0 text0 dist/default/production\Test.X.production.o
-_LATD0 1FDE8 0 ABS 0 - dist/default/production\Test.X.production.o
-_LATD1 1FDE9 0 ABS 0 - dist/default/production\Test.X.production.o
+__end_of_main 42D6 0 CODE 0 text0 dist/default/production\Test.X.production.o
+_LATA0 1FDD0 0 ABS 0 - dist/default/production\Test.X.production.o
+_LATA1 1FDD1 0 ABS 0 - dist/default/production\Test.X.production.o
+_TRISA 3FC2 0 ABS 0 - dist/default/production\Test.X.production.o
 _TRISB 3FC3 0 ABS 0 - dist/default/production\Test.X.production.o
-_TRISD 3FC5 0 ABS 0 - dist/default/production\Test.X.production.o
 __HRAM 0 0 ABS 0 - dist/default/production\Test.X.production.o
 __Hbss 0 0 RAM 1 bss dist/default/production\Test.X.production.o
 __Hram 0 0 ABS 0 ram dist/default/production\Test.X.production.o
@@ -410,10 +493,11 @@ __LRAM 1 0 ABS 0 - dist/default/production\Test.X.production.o
 __Lbss 0 0 RAM 1 bss dist/default/production\Test.X.production.o
 __Lram 0 0 ABS 0 ram dist/default/production\Test.X.production.o
 __Lsfr 0 0 ABS 0 sfr dist/default/production\Test.X.production.o
-__initialization 217C 0 CODE 0 cinit dist/default/production\Test.X.production.o
-_LCD_Command 215E 0 CODE 0 text5 dist/default/production\Test.X.production.o
+ivt0x4008_base 4008 0 CODE 0 ivt0x4008 dist/default/production\Test.X.production.o
+__initialization 4312 0 CODE 0 cinit dist/default/production\Test.X.production.o
+_LCD_Command 42F4 0 CODE 0 text5 dist/default/production\Test.X.production.o
 __Hfardata 0 0 FARRAM 0 fardata dist/default/production\Test.X.production.o
-__Hsmallconst 201E 0 SMALLCONST 0 smallconst dist/default/production\Test.X.production.o
+__Hsmallconst 202E 0 SMALLCONST 0 smallconst dist/default/production\Test.X.production.o
 __Lifardata 0 0 CODE 0 ifardata dist/default/production\Test.X.production.o
 __Hintsave_regs 0 0 BIGRAM 1 intsave_regs dist/default/production\Test.X.production.o
 # %SPLITSTAB Section
@@ -440,11 +524,11 @@ __Hintsave_regs 0 0 BIGRAM 1 intsave_regs dist/default/production\Test.X.product
 # and size are in units of delta. The file address is in units of bytes.
 # All other numeric quantities are in decimal.
 %SEGMENTS
-text6 0 201E 201E 16C 1
-cstackCOMRAM 1 1 1 E 1
-init 0 1FFFC 1FFFC 4 1
+text7 0 40B4 40B4 278 1
+cstackCOMRAM 1 1 1 13 1
 reset_vec 0 0 0 4 1
-smallconst 0 2000 2000 1E 1
+smallconst 0 2000 2000 2E 1
+ivt0x4008 0 4008 4008 AA 1
 # %NOTES Section
 # This section contains data of all the note-psects.  The beginning of the section
 # is indicated by %NOTES. The first line indicates the name and decimal

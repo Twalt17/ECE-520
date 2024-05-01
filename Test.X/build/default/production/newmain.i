@@ -7,57 +7,6 @@
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
 # 1 "newmain.c" 2
-# 14 "newmain.c"
-#pragma config FEXTOSC = LP
-#pragma config RSTOSC = EXTOSC
-
-
-#pragma config CLKOUTEN = OFF
-#pragma config PR1WAY = ON
-#pragma config CSWEN = ON
-#pragma config FCMEN = ON
-
-
-#pragma config MCLRE = EXTMCLR
-#pragma config PWRTS = PWRT_OFF
-#pragma config MVECEN = ON
-#pragma config IVT1WAY = ON
-#pragma config LPBOREN = OFF
-#pragma config BOREN = SBORDIS
-
-
-#pragma config BORV = VBOR_2P45
-#pragma config ZCD = OFF
-#pragma config PPS1WAY = ON
-#pragma config STVREN = ON
-#pragma config DEBUG = OFF
-#pragma config XINST = OFF
-
-
-#pragma config WDTCPS = WDTCPS_31
-#pragma config WDTE = OFF
-
-
-#pragma config WDTCWS = WDTCWS_7
-#pragma config WDTCCS = SC
-
-
-#pragma config BBSIZE = BBSIZE_512
-#pragma config BBEN = OFF
-#pragma config SAFEN = OFF
-#pragma config WRTAPP = OFF
-
-
-#pragma config WRTB = OFF
-#pragma config WRTC = OFF
-#pragma config WRTD = OFF
-#pragma config WRTSAF = OFF
-#pragma config LVP = ON
-
-
-#pragma config CP = OFF
-
-
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\xc.h" 1 3
 # 18 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -26916,8 +26865,274 @@ __attribute__((__unsupported__("The READTIMER" "0" "() macro is not available wi
 unsigned char __t1rd16on(void);
 unsigned char __t3rd16on(void);
 # 33 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\xc.h" 2 3
-# 63 "newmain.c" 2
-# 77 "newmain.c"
+# 1 "newmain.c" 2
+
+
+
+#pragma config FEXTOSC = LP
+#pragma config RSTOSC = EXTOSC
+
+
+#pragma config CLKOUTEN = OFF
+#pragma config PR1WAY = ON
+#pragma config CSWEN = ON
+#pragma config FCMEN = ON
+
+
+#pragma config MCLRE = EXTMCLR
+#pragma config PWRTS = PWRT_OFF
+#pragma config MVECEN = ON
+#pragma config IVT1WAY = ON
+#pragma config LPBOREN = OFF
+#pragma config BOREN = SBORDIS
+
+
+#pragma config BORV = VBOR_2P45
+#pragma config ZCD = OFF
+#pragma config PPS1WAY = ON
+#pragma config STVREN = ON
+#pragma config DEBUG = OFF
+#pragma config XINST = OFF
+
+
+#pragma config WDTCPS = WDTCPS_31
+#pragma config WDTE = OFF
+
+
+#pragma config WDTCWS = WDTCWS_7
+#pragma config WDTCCS = SC
+
+
+#pragma config BBSIZE = BBSIZE_512
+#pragma config BBEN = OFF
+#pragma config SAFEN = OFF
+#pragma config WRTAPP = OFF
+
+
+#pragma config WRTB = OFF
+#pragma config WRTC = OFF
+#pragma config WRTD = OFF
+#pragma config WRTSAF = OFF
+#pragma config LVP = ON
+
+
+#pragma config CP = OFF
+
+
+
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\stdio.h" 1 3
+# 24 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\stdio.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\bits/alltypes.h" 1 3
+# 12 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef void * va_list[1];
+
+
+
+
+typedef void * __isoc_va_list[1];
+# 143 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef __int24 ssize_t;
+# 255 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef long long off_t;
+# 409 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef struct _IO_FILE FILE;
+# 25 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\stdio.h" 2 3
+# 52 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\stdio.h" 3
+typedef union _G_fpos64_t {
+ char __opaque[16];
+ double __align;
+} fpos_t;
+
+extern FILE *const stdin;
+extern FILE *const stdout;
+extern FILE *const stderr;
+
+
+
+
+
+FILE *fopen(const char *restrict, const char *restrict);
+FILE *freopen(const char *restrict, const char *restrict, FILE *restrict);
+int fclose(FILE *);
+
+int remove(const char *);
+int rename(const char *, const char *);
+
+int feof(FILE *);
+int ferror(FILE *);
+int fflush(FILE *);
+void clearerr(FILE *);
+
+int fseek(FILE *, long, int);
+long ftell(FILE *);
+void rewind(FILE *);
+
+int fgetpos(FILE *restrict, fpos_t *restrict);
+int fsetpos(FILE *, const fpos_t *);
+
+size_t fread(void *restrict, size_t, size_t, FILE *restrict);
+size_t fwrite(const void *restrict, size_t, size_t, FILE *restrict);
+
+int fgetc(FILE *);
+int getc(FILE *);
+int getchar(void);
+
+
+
+
+
+int ungetc(int, FILE *);
+int getch(void);
+
+int fputc(int, FILE *);
+int putc(int, FILE *);
+int putchar(int);
+
+
+
+
+
+void putch(char);
+
+char *fgets(char *restrict, int, FILE *restrict);
+
+char *gets(char *);
+
+
+int fputs(const char *restrict, FILE *restrict);
+int puts(const char *);
+
+__attribute__((__format__(__printf__, 1, 2)))
+int printf(const char *restrict, ...);
+__attribute__((__format__(__printf__, 2, 3)))
+int fprintf(FILE *restrict, const char *restrict, ...);
+__attribute__((__format__(__printf__, 2, 3)))
+int sprintf(char *restrict, const char *restrict, ...);
+__attribute__((__format__(__printf__, 3, 4)))
+int snprintf(char *restrict, size_t, const char *restrict, ...);
+
+__attribute__((__format__(__printf__, 1, 0)))
+int vprintf(const char *restrict, __isoc_va_list);
+int vfprintf(FILE *restrict, const char *restrict, __isoc_va_list);
+__attribute__((__format__(__printf__, 2, 0)))
+int vsprintf(char *restrict, const char *restrict, __isoc_va_list);
+__attribute__((__format__(__printf__, 3, 0)))
+int vsnprintf(char *restrict, size_t, const char *restrict, __isoc_va_list);
+
+__attribute__((__format__(__scanf__, 1, 2)))
+int scanf(const char *restrict, ...);
+__attribute__((__format__(__scanf__, 2, 3)))
+int fscanf(FILE *restrict, const char *restrict, ...);
+__attribute__((__format__(__scanf__, 2, 3)))
+int sscanf(const char *restrict, const char *restrict, ...);
+
+__attribute__((__format__(__scanf__, 1, 0)))
+int vscanf(const char *restrict, __isoc_va_list);
+int vfscanf(FILE *restrict, const char *restrict, __isoc_va_list);
+__attribute__((__format__(__scanf__, 2, 0)))
+int vsscanf(const char *restrict, const char *restrict, __isoc_va_list);
+
+void perror(const char *);
+
+int setvbuf(FILE *restrict, char *restrict, int, size_t);
+void setbuf(FILE *restrict, char *restrict);
+
+char *tmpnam(char *);
+FILE *tmpfile(void);
+
+
+
+
+FILE *fmemopen(void *restrict, size_t, const char *restrict);
+FILE *open_memstream(char **, size_t *);
+FILE *fdopen(int, const char *);
+FILE *popen(const char *, const char *);
+int pclose(FILE *);
+int fileno(FILE *);
+int fseeko(FILE *, off_t, int);
+off_t ftello(FILE *);
+int dprintf(int, const char *restrict, ...);
+int vdprintf(int, const char *restrict, __isoc_va_list);
+void flockfile(FILE *);
+int ftrylockfile(FILE *);
+void funlockfile(FILE *);
+int getc_unlocked(FILE *);
+int getchar_unlocked(void);
+int putc_unlocked(int, FILE *);
+int putchar_unlocked(int);
+ssize_t getdelim(char **restrict, size_t *restrict, int, FILE *restrict);
+ssize_t getline(char **restrict, size_t *restrict, FILE *restrict);
+int renameat(int, const char *, int, const char *);
+char *ctermid(char *);
+
+
+
+
+
+
+
+char *tempnam(const char *, const char *);
+# 54 "newmain.c" 2
+
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\string.h" 1 3
+# 25 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\string.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\bits/alltypes.h" 1 3
+# 421 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef struct __locale_struct * locale_t;
+# 26 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\string.h" 2 3
+
+void *memcpy (void *restrict, const void *restrict, size_t);
+void *memmove (void *, const void *, size_t);
+void *memset (void *, int, size_t);
+int memcmp (const void *, const void *, size_t);
+void *memchr (const void *, int, size_t);
+
+char *strcpy (char *restrict, const char *restrict);
+char *strncpy (char *restrict, const char *restrict, size_t);
+
+char *strcat (char *restrict, const char *restrict);
+char *strncat (char *restrict, const char *restrict, size_t);
+
+int strcmp (const char *, const char *);
+int strncmp (const char *, const char *, size_t);
+
+int strcoll (const char *, const char *);
+size_t strxfrm (char *restrict, const char *restrict, size_t);
+
+char *strchr (const char *, int);
+char *strrchr (const char *, int);
+
+size_t strcspn (const char *, const char *);
+size_t strspn (const char *, const char *);
+char *strpbrk (const char *, const char *);
+char *strstr (const char *, const char *);
+char *strtok (char *restrict, const char *restrict);
+
+size_t strlen (const char *);
+
+char *strerror (int);
+
+
+
+
+char *strtok_r (char *restrict, const char *restrict, char **restrict);
+int strerror_r (int, char *, size_t);
+char *stpcpy(char *restrict, const char *restrict);
+char *stpncpy(char *restrict, const char *restrict, size_t);
+size_t strnlen (const char *, size_t);
+char *strdup (const char *);
+char *strndup (const char *, size_t);
+char *strsignal(int);
+char *strerror_l (int, locale_t);
+int strcoll_l (const char *, const char *, locale_t);
+size_t strxfrm_l (char *restrict, const char *restrict, size_t, locale_t);
+
+
+
+
+void *memccpy (void *restrict, const void *restrict, int, size_t);
+# 55 "newmain.c" 2
+# 68 "newmain.c"
 void LCD_Init();
 void LCD_Command(char );
 void LCD_Char(char x);
@@ -26931,16 +27146,13 @@ void MSdelay(unsigned int );
 void main(void)
 {
 
-    while(1)
-    {
     LCD_Init();
     LCD_String_xy(1,0,"Embedded System!");
 
     LCD_String_xy(2,0,"EE310@SSU");
 
-    _delay((unsigned long)((1000)*(4000000/4000.0)));
-    }
 
+  while(1);
 }
 
 
@@ -26948,13 +27160,10 @@ void LCD_Init()
 {
     MSdelay(15);
     TRISB = 0x00;
-    TRISD = 0x00;
+    TRISA = 0x00;
     LCD_Command(0x01);
-
     LCD_Command(0x38);
-
     LCD_Command(0x0c);
-
     LCD_Command(0x06);
 }
 
@@ -26966,20 +27175,20 @@ void LCD_Clear()
 void LCD_Command(char cmd )
 {
     LATB= cmd;
-    LATD0 = 0;
-    LATD1 = 1;
+    LATA0 = 0;
+    LATA1 = 1;
     __nop();
-    LATD1 = 0;
+    LATA1 = 0;
     MSdelay(3);
 }
 
 void LCD_Char(char dat)
 {
     LATB= dat;
-    LATD0 = 1;
-    LATD1=1;
+    LATA0 = 1;
+    LATA1=1;
     __nop();
-    LATD1=0;
+    LATA1=0;
     MSdelay(1);
 }
 
@@ -27016,3 +27225,136 @@ void MSdelay(unsigned int val)
         for(i=0;i<val;i++)
             for(j=0;j<165;j++);
 }
+
+unsigned char LightScan(char pinNumber){
+
+    unsigned char counter =0;
+
+    if (pinNumber == 1)
+    {
+    while(counter < 4)
+    {
+        if(PORTAbits.RA3 == 1)
+        {
+            MSdelay(500);
+            return counter;
+        }
+
+        if (PORTAbits.RA1 == 1)
+        {
+            counter ++;
+            PORTCbits.RC7 = 1;
+            MSdelay(500);
+            PORTCbits.RC7 = 0;
+
+        }
+    }
+    }
+    else
+    {
+         while(counter < 4)
+    {
+              if(PORTAbits.RA3 == 1){
+                MSdelay(500);
+                return counter;
+              }
+        if (PORTAbits.RA2 == 1)
+        {
+            counter ++;
+            PORTCbits.RC7 = 1;
+            MSdelay(500);
+            PORTCbits.RC7 = 0;
+
+        }
+    }
+    }
+    return counter;
+
+}
+
+
+void Decision(unsigned char input1, unsigned char input2){
+    if (input1 == 2 && input2 == 4)
+    {
+        LCD_String_xy(2,0,"Correct!");
+        PORTCbits.RC3 = 1;
+        PORTCbits.RC2 = 0;
+        MSdelay(500);
+        PORTCbits.RC3 = 0;
+        return;
+
+    }
+    else
+    {
+        LCD_String_xy(2,0,"Wrong!");
+        unsigned int timer = 1000;
+
+        while(timer >0)
+         {
+            MSdelay(1);
+            PORTCbits.RC4 = 1;
+            MSdelay(1);
+            PORTCbits.RC4 = 0;
+            timer--;
+    }
+    }
+        return;
+}
+
+void delay_us(unsigned int us) {
+
+    for (unsigned int i = 0; i < us; i++) {
+        __asm__ volatile ("nop");
+        __asm__ volatile ("nop");
+        __asm__ volatile ("nop");
+        __asm__ volatile ("nop");
+        __asm__ volatile ("nop");
+        __asm__ volatile ("nop");
+        __asm__ volatile ("nop");
+        __asm__ volatile ("nop");
+    }
+    return;
+}
+
+void __attribute__((picinterrupt(("irq(8),base(0x4008)")))) INT0_ISR(void)
+{
+    for(char i =0; i<3;i++)
+    {
+    unsigned int timer = 100;
+
+    while(timer >0)
+    {
+    delay_us(100);
+    PORTCbits.RC4 = 1;
+    delay_us(100);
+    PORTCbits.RC4 = 0;
+    timer--;
+    }
+
+    timer = 200;
+
+    while(timer >0)
+    {
+    delay_us(50);
+    PORTCbits.RC4 = 1;
+    delay_us(50);
+    PORTCbits.RC4 = 0;
+    timer--;
+    }
+
+    timer = 400;
+
+    while(timer >0)
+    {
+    delay_us(25);
+    PORTCbits.RC4 = 1;
+    delay_us(25);
+    PORTCbits.RC4 = 0;
+    timer--;
+    }
+    }
+
+    PORTCbits.RC4 = 1;
+    PIR1bits.INT0IF = 0;
+    return;
+    }

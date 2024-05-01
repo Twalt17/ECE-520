@@ -27,85 +27,147 @@
 [v ___lmul __lmul `(ul  1 e 4 0 ]
 "91 C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\Umul64.c
 [v ___omul __omul `(uo  1 e 8 0 ]
-"87 C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Test.X\newmain.c
+"78 C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Test.X\newmain.c
 [v _main main `(v  1 e 1 0 ]
-"103
+"91
 [v _LCD_Init LCD_Init `(v  1 e 1 0 ]
-"122
+"107
 [v _LCD_Command LCD_Command `(v  1 e 1 0 ]
-"132
+"117
 [v _LCD_Char LCD_Char `(v  1 e 1 0 ]
-"143
+"128
 [v _LCD_String LCD_String `(v  1 e 1 0 ]
-"152
+"137
 [v _LCD_String_xy LCD_String_xy `(v  1 e 1 0 ]
-"169
+"154
 [v _MSdelay MSdelay `(v  1 e 1 0 ]
-"46088 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f47k42.h
+"236
+[v _delay_us delay_us `(v  1 e 1 0 ]
+"251
+[v _INT0_ISR INT0_ISR `IIH(v  1 e 1 0 ]
+[s S96 . 1 `uc 1 INT0IF 1 0 :1:0 
+`uc 1 ZCDIF 1 0 :1:1 
+`uc 1 ADIF 1 0 :1:2 
+`uc 1 ADTIF 1 0 :1:3 
+`uc 1 C1IF 1 0 :1:4 
+`uc 1 SMT1IF 1 0 :1:5 
+`uc 1 SMT1PRAIF 1 0 :1:6 
+`uc 1 SMT1PWAIF 1 0 :1:7 
+]
+"3974 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f47k42.h
+[u S105 . 1 `S96 1 . 1 0 ]
+[v _PIR1bits PIR1bits `VES105  1 e 1 @14753 ]
+"46088
 "46088
 [v _LATB LATB `VEuc  1 e 1 @16315 ]
+"46476
+[v _TRISA TRISA `VEuc  1 e 1 @16322 ]
 "46538
 [v _TRISB TRISB `VEuc  1 e 1 @16323 ]
-"46662
-[v _TRISD TRISD `VEuc  1 e 1 @16325 ]
-"53087
-[v _LATD0 LATD0 `VEb  1 e 0 @130536 ]
-"53090
-[v _LATD1 LATD1 `VEb  1 e 0 @130537 ]
-"87 C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Test.X\newmain.c
+[s S54 . 1 `uc 1 RA0 1 0 :1:0 
+`uc 1 RA1 1 0 :1:1 
+`uc 1 RA2 1 0 :1:2 
+`uc 1 RA3 1 0 :1:3 
+`uc 1 RA4 1 0 :1:4 
+`uc 1 RA5 1 0 :1:5 
+`uc 1 RA6 1 0 :1:6 
+`uc 1 RA7 1 0 :1:7 
+]
+"46773
+[u S63 . 1 `S54 1 . 1 0 ]
+"46773
+"46773
+[v _PORTAbits PORTAbits `VES63  1 e 1 @16330 ]
+[s S75 . 1 `uc 1 RC0 1 0 :1:0 
+`uc 1 RC1 1 0 :1:1 
+`uc 1 RC2 1 0 :1:2 
+`uc 1 RC3 1 0 :1:3 
+`uc 1 RC4 1 0 :1:4 
+`uc 1 RC5 1 0 :1:5 
+`uc 1 RC6 1 0 :1:6 
+`uc 1 RC7 1 0 :1:7 
+]
+"46897
+[u S84 . 1 `S75 1 . 1 0 ]
+"46897
+"46897
+[v _PORTCbits PORTCbits `VES84  1 e 1 @16332 ]
+"53015
+[v _LATA0 LATA0 `VEb  1 e 0 @130512 ]
+"53018
+[v _LATA1 LATA1 `VEb  1 e 0 @130513 ]
+"78 C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Test.X\newmain.c
 [v _main main `(v  1 e 1 0 ]
+{
+"88
+} 0
+"137
+[v _LCD_String_xy LCD_String_xy `(v  1 e 1 0 ]
+{
+[v LCD_String_xy@row row `uc  1 a 1 wreg ]
+"139
+[v LCD_String_xy@location location `uc  1 a 1 18 ]
+"137
+[v LCD_String_xy@row row `uc  1 a 1 wreg ]
+[v LCD_String_xy@pos pos `uc  1 p 1 15 ]
+[v LCD_String_xy@msg msg `*.31Cuc  1 p 1 16 ]
+[v LCD_String_xy@row row `uc  1 a 1 17 ]
+"152
+} 0
+"128
+[v _LCD_String LCD_String `(v  1 e 1 0 ]
+{
+[v LCD_String@msg msg `*.31Cuc  1 p 1 14 ]
+"135
+} 0
+"117
+[v _LCD_Char LCD_Char `(v  1 e 1 0 ]
+{
+[v LCD_Char@dat dat `uc  1 a 1 wreg ]
+[v LCD_Char@dat dat `uc  1 a 1 wreg ]
+"119
+[v LCD_Char@dat dat `uc  1 a 1 13 ]
+"125
+} 0
+"91
+[v _LCD_Init LCD_Init `(v  1 e 1 0 ]
 {
 "100
 } 0
-"152
-[v _LCD_String_xy LCD_String_xy `(v  1 e 1 0 ]
-{
-[v LCD_String_xy@row row `uc  1 a 1 wreg ]
-"154
-[v LCD_String_xy@location location `uc  1 a 1 11 ]
-"152
-[v LCD_String_xy@row row `uc  1 a 1 wreg ]
-[v LCD_String_xy@pos pos `uc  1 p 1 8 ]
-[v LCD_String_xy@msg msg `*.31Cuc  1 p 1 9 ]
-[v LCD_String_xy@row row `uc  1 a 1 10 ]
-"167
-} 0
-"143
-[v _LCD_String LCD_String `(v  1 e 1 0 ]
-{
-[v LCD_String@msg msg `*.31Cuc  1 p 1 7 ]
-"150
-} 0
-"132
-[v _LCD_Char LCD_Char `(v  1 e 1 0 ]
-{
-[v LCD_Char@dat dat `uc  1 a 1 wreg ]
-[v LCD_Char@dat dat `uc  1 a 1 wreg ]
-"134
-[v LCD_Char@dat dat `uc  1 a 1 6 ]
-"140
-} 0
-"103
-[v _LCD_Init LCD_Init `(v  1 e 1 0 ]
-{
-"115
-} 0
-"122
+"107
 [v _LCD_Command LCD_Command `(v  1 e 1 0 ]
 {
 [v LCD_Command@cmd cmd `uc  1 a 1 wreg ]
 [v LCD_Command@cmd cmd `uc  1 a 1 wreg ]
-"124
-[v LCD_Command@cmd cmd `uc  1 a 1 6 ]
-"130
+"109
+[v LCD_Command@cmd cmd `uc  1 a 1 13 ]
+"115
 } 0
-"169
+"154
 [v _MSdelay MSdelay `(v  1 e 1 0 ]
 {
-"171
-[v MSdelay@j j `ui  1 a 2 4 ]
-[v MSdelay@i i `ui  1 a 2 2 ]
-"169
-[v MSdelay@val val `ui  1 p 2 0 ]
-"174
+"156
+[v MSdelay@j j `ui  1 a 2 11 ]
+[v MSdelay@i i `ui  1 a 2 9 ]
+"154
+[v MSdelay@val val `ui  1 p 2 7 ]
+"159
+} 0
+"251
+[v _INT0_ISR INT0_ISR `IIH(v  1 e 1 0 ]
+{
+"255
+[v INT0_ISR@timer timer `ui  1 a 2 5 ]
+"253
+[v INT0_ISR@i i `uc  1 a 1 4 ]
+"292
+} 0
+"236
+[v _delay_us delay_us `(v  1 e 1 0 ]
+{
+"238
+[v delay_us@i i `ui  1 a 2 2 ]
+"236
+[v delay_us@us us `ui  1 p 2 0 ]
+"249
 } 0

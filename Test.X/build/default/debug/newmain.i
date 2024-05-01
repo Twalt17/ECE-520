@@ -7,57 +7,6 @@
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
 # 1 "newmain.c" 2
-# 16 "newmain.c"
-#pragma config FEXTOSC = LP
-#pragma config RSTOSC = EXTOSC
-
-
-#pragma config CLKOUTEN = OFF
-#pragma config PR1WAY = ON
-#pragma config CSWEN = ON
-#pragma config FCMEN = ON
-
-
-#pragma config MCLRE = EXTMCLR
-#pragma config PWRTS = PWRT_OFF
-#pragma config MVECEN = ON
-#pragma config IVT1WAY = ON
-#pragma config LPBOREN = OFF
-#pragma config BOREN = SBORDIS
-
-
-#pragma config BORV = VBOR_2P45
-#pragma config ZCD = OFF
-#pragma config PPS1WAY = ON
-#pragma config STVREN = ON
-#pragma config DEBUG = OFF
-#pragma config XINST = OFF
-
-
-#pragma config WDTCPS = WDTCPS_31
-#pragma config WDTE = OFF
-
-
-#pragma config WDTCWS = WDTCWS_7
-#pragma config WDTCCS = SC
-
-
-#pragma config BBSIZE = BBSIZE_512
-#pragma config BBEN = OFF
-#pragma config SAFEN = OFF
-#pragma config WRTAPP = OFF
-
-
-#pragma config WRTB = OFF
-#pragma config WRTC = OFF
-#pragma config WRTD = OFF
-#pragma config WRTSAF = OFF
-#pragma config LVP = ON
-
-
-#pragma config CP = OFF
-
-
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\xc.h" 1 3
 # 18 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -26916,7 +26865,58 @@ __attribute__((__unsupported__("The READTIMER" "0" "() macro is not available wi
 unsigned char __t1rd16on(void);
 unsigned char __t3rd16on(void);
 # 33 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\xc.h" 2 3
-# 65 "newmain.c" 2
+# 1 "newmain.c" 2
+
+
+
+#pragma config FEXTOSC = LP
+#pragma config RSTOSC = EXTOSC
+
+
+#pragma config CLKOUTEN = OFF
+#pragma config PR1WAY = ON
+#pragma config CSWEN = ON
+#pragma config FCMEN = ON
+
+
+#pragma config MCLRE = EXTMCLR
+#pragma config PWRTS = PWRT_OFF
+#pragma config MVECEN = ON
+#pragma config IVT1WAY = ON
+#pragma config LPBOREN = OFF
+#pragma config BOREN = SBORDIS
+
+
+#pragma config BORV = VBOR_2P45
+#pragma config ZCD = OFF
+#pragma config PPS1WAY = ON
+#pragma config STVREN = ON
+#pragma config DEBUG = OFF
+#pragma config XINST = OFF
+
+
+#pragma config WDTCPS = WDTCPS_31
+#pragma config WDTE = OFF
+
+
+#pragma config WDTCWS = WDTCWS_7
+#pragma config WDTCCS = SC
+
+
+#pragma config BBSIZE = BBSIZE_512
+#pragma config BBEN = OFF
+#pragma config SAFEN = OFF
+#pragma config WRTAPP = OFF
+
+
+#pragma config WRTB = OFF
+#pragma config WRTC = OFF
+#pragma config WRTD = OFF
+#pragma config WRTSAF = OFF
+#pragma config LVP = ON
+
+
+#pragma config CP = OFF
 
 
 
@@ -27072,7 +27072,7 @@ char *ctermid(char *);
 
 
 char *tempnam(const char *, const char *);
-# 68 "newmain.c" 2
+# 54 "newmain.c" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\string.h" 1 3
 # 25 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\string.h" 3
@@ -27131,64 +27131,230 @@ size_t strxfrm_l (char *restrict, const char *restrict, size_t, locale_t);
 
 
 void *memccpy (void *restrict, const void *restrict, int, size_t);
-# 69 "newmain.c" 2
+# 55 "newmain.c" 2
+# 68 "newmain.c"
+void LCD_Init();
+void LCD_Command(char );
+void LCD_Char(char x);
+void LCD_String(const char *);
+void LCD_String_xy(char ,char ,const char*);
+void MSdelay(unsigned int );
 
 
 
 
-
-
-
-
-int digital;
-float voltage;
-char data[10];
-void ADC_Init(void);
-
-
-
-
-
-
-
-void main() {
-
-    ADC_Init();
-    while (1) {
-        ADCON0bits.GO = 1;
-        while (ADCON0bits.GO);
-        digital = (ADRESH*256) | (ADRESL);
-        voltage= digital*((float)5.0/(float)(4096));
-
-
-
-        sprintf(data,"%.2f",voltage);
-
-        strcat(data," V");
-
-    }
-}
-
-void ADC_Init(void)
+void main(void)
 {
 
-    ADCON0bits.FM = 1;
-    ADCON0bits.CS = 1;
+    LCD_Init();
+    LCD_String_xy(1,0,"Embedded System!");
 
-    TRISAbits.TRISA0 = 1;
-    ANSELAbits.ANSELA0 = 1;
+    LCD_String_xy(2,0,"EE310@SSU");
 
-    ADPCH = 0x00;
-    ADCLK = 0x00;
 
-    ADRESH = 0x00;
-    ADRESL = 0x00;
-
-    ADPREL = 0x00;
-    ADPREH = 0x00;
-
-    ADACQL = 0x00;
-    ADACQH = 0x00;
-
-    ADCON0bits.ON = 1;
+  while(1);
 }
+
+
+void LCD_Init()
+{
+    MSdelay(15);
+    TRISB = 0x00;
+    TRISA = 0x00;
+    LCD_Command(0x01);
+    LCD_Command(0x38);
+    LCD_Command(0x0c);
+    LCD_Command(0x06);
+}
+
+void LCD_Clear()
+{
+        LCD_Command(0x01);
+}
+
+void LCD_Command(char cmd )
+{
+    LATB= cmd;
+    LATA0 = 0;
+    LATA1 = 1;
+    __nop();
+    LATA1 = 0;
+    MSdelay(3);
+}
+
+void LCD_Char(char dat)
+{
+    LATB= dat;
+    LATA0 = 1;
+    LATA1=1;
+    __nop();
+    LATA1=0;
+    MSdelay(1);
+}
+
+
+void LCD_String(const char *msg)
+{
+    while((*msg)!=0)
+    {
+      LCD_Char(*msg);
+      msg++;
+        }
+}
+
+void LCD_String_xy(char row,char pos,const char *msg)
+{
+    char location=0;
+    if(row<=1)
+    {
+        location=(0x80) | ((pos) & 0x0f);
+        LCD_Command(location);
+    }
+    else
+    {
+        location=(0xC0) | ((pos) & 0x0f);
+        LCD_Command(location);
+    }
+    LCD_String(msg);
+
+}
+
+void MSdelay(unsigned int val)
+{
+     unsigned int i,j;
+        for(i=0;i<val;i++)
+            for(j=0;j<165;j++);
+}
+
+unsigned char LightScan(char pinNumber){
+
+    unsigned char counter =0;
+
+    if (pinNumber == 1)
+    {
+    while(counter < 4)
+    {
+        if(PORTAbits.RA3 == 1)
+        {
+            MSdelay(500);
+            return counter;
+        }
+
+        if (PORTAbits.RA1 == 1)
+        {
+            counter ++;
+            PORTCbits.RC7 = 1;
+            MSdelay(500);
+            PORTCbits.RC7 = 0;
+
+        }
+    }
+    }
+    else
+    {
+         while(counter < 4)
+    {
+              if(PORTAbits.RA3 == 1){
+                MSdelay(500);
+                return counter;
+              }
+        if (PORTAbits.RA2 == 1)
+        {
+            counter ++;
+            PORTCbits.RC7 = 1;
+            MSdelay(500);
+            PORTCbits.RC7 = 0;
+
+        }
+    }
+    }
+    return counter;
+
+}
+
+
+void Decision(unsigned char input1, unsigned char input2){
+    if (input1 == 2 && input2 == 4)
+    {
+        LCD_String_xy(2,0,"Correct!");
+        PORTCbits.RC3 = 1;
+        PORTCbits.RC2 = 0;
+        MSdelay(500);
+        PORTCbits.RC3 = 0;
+        return;
+
+    }
+    else
+    {
+        LCD_String_xy(2,0,"Wrong!");
+        unsigned int timer = 1000;
+
+        while(timer >0)
+         {
+            MSdelay(1);
+            PORTCbits.RC4 = 1;
+            MSdelay(1);
+            PORTCbits.RC4 = 0;
+            timer--;
+    }
+    }
+        return;
+}
+
+void delay_us(unsigned int us) {
+
+    for (unsigned int i = 0; i < us; i++) {
+        __asm__ volatile ("nop");
+        __asm__ volatile ("nop");
+        __asm__ volatile ("nop");
+        __asm__ volatile ("nop");
+        __asm__ volatile ("nop");
+        __asm__ volatile ("nop");
+        __asm__ volatile ("nop");
+        __asm__ volatile ("nop");
+    }
+    return;
+}
+
+void __attribute__((picinterrupt(("irq(8),base(0x4008)")))) INT0_ISR(void)
+{
+    for(char i =0; i<3;i++)
+    {
+    unsigned int timer = 100;
+
+    while(timer >0)
+    {
+    delay_us(100);
+    PORTCbits.RC4 = 1;
+    delay_us(100);
+    PORTCbits.RC4 = 0;
+    timer--;
+    }
+
+    timer = 200;
+
+    while(timer >0)
+    {
+    delay_us(50);
+    PORTCbits.RC4 = 1;
+    delay_us(50);
+    PORTCbits.RC4 = 0;
+    timer--;
+    }
+
+    timer = 400;
+
+    while(timer >0)
+    {
+    delay_us(25);
+    PORTCbits.RC4 = 1;
+    delay_us(25);
+    PORTCbits.RC4 = 0;
+    timer--;
+    }
+    }
+
+    PORTCbits.RC4 = 1;
+    PIR1bits.INT0IF = 0;
+    return;
+    }
