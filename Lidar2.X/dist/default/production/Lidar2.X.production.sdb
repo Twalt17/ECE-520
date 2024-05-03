@@ -3,11 +3,7 @@
 [d edition pro ]
 [d chip 18F47K42 ]
 [d frameptr 16353 ]
-"38 C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Lidar2.X/LCD.h
-[v _LCD_Init LCD_Init `(v  1 e 1 0 ]
-"49
-[v _LCD_Clear LCD_Clear `(v  1 e 1 0 ]
-"54
+"54 C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Lidar2.X/LCD.h
 [v _LCD_Command LCD_Command `(v  1 e 1 0 ]
 "64
 [v _LCD_Char LCD_Char `(v  1 e 1 0 ]
@@ -43,6 +39,8 @@
 [v _fputs fputs `(i  1 e 2 0 ]
 "9 C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\nf_sprintf.c
 [v _sprintf sprintf `(i  1 e 2 0 ]
+"5 C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\printf.c
+[v _printf printf `(i  1 e 2 0 ]
 "10 C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\sprcadd.c
 [v ___fladd __fladd `(d  1 e 4 0 ]
 "245
@@ -55,12 +53,8 @@
 [v ___lmul __lmul `(ul  1 e 4 0 ]
 "91 C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\Umul64.c
 [v ___omul __omul `(uo  1 e 8 0 ]
-"61 C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Lidar2.X\main.c
+"62 C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Lidar2.X\main.c
 [v _main main `(i  1 e 2 0 ]
-"138
-[v _TF_Luna_Send_Freq TF_Luna_Send_Freq `(v  1 e 1 0 ]
-"161
-[v _TF_Luna_Trigger TF_Luna_Trigger `(v  1 e 1 0 ]
 "37 C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Lidar2.X\mcc_generated_files/system/src/clock.c
 [v _CLOCK_Initialize CLOCK_Initialize `(v  1 e 1 0 ]
 "42 C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Lidar2.X\mcc_generated_files/system/src/interrupt.c
@@ -95,8 +89,6 @@
 [v _UART2_TransmitEnable UART2_TransmitEnable `T(v  1 e 1 0 ]
 "169
 [v _UART2_TransmitDisable UART2_TransmitDisable `T(v  1 e 1 0 ]
-"174
-[v _UART2_ReceiveEnable UART2_ReceiveEnable `T(v  1 e 1 0 ]
 "194
 [v _UART2_AutoBaudSet UART2_AutoBaudSet `T(v  1 e 1 0 ]
 "207
@@ -493,76 +485,55 @@
 [v _UART2_OverrunErrorHandler UART2_OverrunErrorHandler `*.38(v  1 e 3 0 ]
 "85
 [v _UART2_ParityErrorHandler UART2_ParityErrorHandler `*.38(v  1 e 3 0 ]
-"61 C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Lidar2.X\main.c
+"62 C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Lidar2.X\main.c
 [v _main main `(i  1 e 2 0 ]
 {
-"101
-[v main@i i `uc  1 a 1 78 ]
-"86
-[v main@received_bytes received_bytes `[9]uc  1 a 9 63 ]
-"89
-[v main@byte_count byte_count `uc  1 a 1 77 ]
-"63
-[v main@data data `[20]uc  1 a 20 43 ]
-"77
-[v main@distance distance `us  1 a 2 72 ]
-"73
-[v main@Read_header Read_header `uc  1 a 1 76 ]
-"75
-[v main@distance_H distance_H `uc  1 a 1 75 ]
-"74
-[v main@distance_L distance_L `uc  1 a 1 74 ]
-"116
+"85
 } 0
-"9 C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\nf_sprintf.c
-[v _sprintf sprintf `(i  1 e 2 0 ]
+"5 C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\printf.c
+[v _printf printf `(i  1 e 2 0 ]
 {
-[u S1634 . 3 `*.2uc 1 buffer 3 0 `*.2Cuc 1 source 3 0 ]
+"8
+[v printf@ap ap `[1]*.30v  1 a 1 30 ]
+"5
+[v printf@fmt fmt `*.31Cuc  1 p 1 27 ]
 "13
-[s S1637 _IO_FILE 12 `S1634 1 . 3 0 `i 1 count 2 3 `[3]uc 1 ungetbuf 3 5 `i 1 ungetcnt 2 8 `i 1 limit 2 10 ]
-[v sprintf@f f `S1637  1 a 12 29 ]
-"12
-[v sprintf@ap ap `[1]*.30v  1 a 1 28 ]
-"9
-[v sprintf@s s `*.30uc  1 p 1 24 ]
-[v sprintf@fmt fmt `*.31Cuc  1 p 1 25 ]
-"23
 } 0
 "1817 C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\doprnt.c
 [v _vfprintf vfprintf `(i  1 e 2 0 ]
 {
 "1820
-[v vfprintf@cfmt cfmt `*.31uc  1 a 1 23 ]
-[s S1669 _IO_FILE 0 ]
+[v vfprintf@cfmt cfmt `*.31uc  1 a 1 26 ]
+[s S1604 _IO_FILE 0 ]
 "1817
-[v vfprintf@fp fp `*.30S1669  1 p 1 20 ]
-[v vfprintf@fmt fmt `*.31Cuc  1 p 1 21 ]
-[v vfprintf@ap ap `*.30*.30v  1 p 1 22 ]
+[v vfprintf@fp fp `*.39S1604  1 p 2 22 ]
+[v vfprintf@fmt fmt `*.31Cuc  1 p 1 24 ]
+[v vfprintf@ap ap `*.30*.30v  1 p 1 25 ]
 "1840
 } 0
 "1177
 [v _vfpfcnvrt vfpfcnvrt `(v  1 s 1 vfpfcnvrt ]
 {
-[u S1682 . 4 `i 1 sint 2 0 `ui 1 uint 2 0 `d 1 f 4 0 ]
+[u S1617 . 4 `i 1 sint 2 0 `ui 1 uint 2 0 `d 1 f 4 0 ]
 "1188
-[v vfpfcnvrt@convarg convarg `S1682  1 a 4 14 ]
+[v vfpfcnvrt@convarg convarg `S1617  1 a 4 16 ]
 "1179
-[v vfpfcnvrt@c c `uc  1 a 1 19 ]
-[v vfpfcnvrt@cp cp `*.31uc  1 a 1 18 ]
-[s S1669 _IO_FILE 0 ]
+[v vfpfcnvrt@c c `uc  1 a 1 21 ]
+[v vfpfcnvrt@cp cp `*.31uc  1 a 1 20 ]
+[s S1604 _IO_FILE 0 ]
 "1177
-[v vfpfcnvrt@fp fp `*.30S1669  1 p 1 10 ]
-[v vfpfcnvrt@fmt fmt `*.30*.31uc  1 p 1 11 ]
-[v vfpfcnvrt@ap ap `*.30*.30v  1 p 1 12 ]
+[v vfpfcnvrt@fp fp `*.39S1604  1 p 2 11 ]
+[v vfpfcnvrt@fmt fmt `*.30*.31uc  1 p 1 13 ]
+[v vfpfcnvrt@ap ap `*.30*.30v  1 p 1 14 ]
 "1814
 } 0
 "8 C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\nf_fputc.c
 [v _fputc fputc `(i  1 e 2 0 ]
 {
 [v fputc@c c `i  1 p 2 2 ]
-[u S1634 . 3 `*.2uc 1 buffer 3 0 `*.2Cuc 1 source 3 0 ]
-[s S1637 _IO_FILE 12 `S1634 1 . 3 0 `i 1 count 2 3 `[3]uc 1 ungetbuf 3 5 `i 1 ungetcnt 2 8 `i 1 limit 2 10 ]
-[v fputc@fp fp `*.30S1637  1 p 1 4 ]
+[u S1569 . 3 `*.2uc 1 buffer 3 0 `*.2Cuc 1 source 3 0 ]
+[s S1572 _IO_FILE 12 `S1569 1 . 3 0 `i 1 count 2 3 `[3]uc 1 ungetbuf 3 5 `i 1 ungetcnt 2 8 `i 1 limit 2 10 ]
+[v fputc@fp fp `*.39S1572  1 p 2 4 ]
 "24
 } 0
 "284 C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Lidar2.X\mcc_generated_files/uart/src/uart2.c
@@ -572,6 +543,20 @@
 [v putch@txData txData `uc  1 a 1 wreg ]
 [v putch@txData txData `uc  1 a 1 1 ]
 "288
+} 0
+"272
+[v _UART2_Write UART2_Write `(v  1 e 1 0 ]
+{
+[v UART2_Write@txData txData `uc  1 a 1 wreg ]
+[v UART2_Write@txData txData `uc  1 a 1 wreg ]
+"274
+[v UART2_Write@txData txData `uc  1 a 1 0 ]
+"275
+} 0
+"232
+[v _UART2_IsTxReady UART2_IsTxReady `(a  1 e 1 0 ]
+{
+"235
 } 0
 "7 C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\lwmod.c
 [v ___lwmod __lwmod `(ui  1 e 2 0 ]
@@ -594,71 +579,6 @@
 [v ___lwdiv@dividend dividend `ui  1 p 2 0 ]
 [v ___lwdiv@divisor divisor `ui  1 p 2 2 ]
 "30
-} 0
-"174 C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Lidar2.X\mcc_generated_files/uart/src/uart2.c
-[v _UART2_ReceiveEnable UART2_ReceiveEnable `T(v  1 e 1 0 ]
-{
-"177
-} 0
-"266
-[v _UART2_Read UART2_Read `(uc  1 e 1 0 ]
-{
-"269
-} 0
-"227
-[v _UART2_IsRxReady UART2_IsRxReady `(a  1 e 1 0 ]
-{
-"230
-} 0
-"161 C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Lidar2.X\main.c
-[v _TF_Luna_Trigger TF_Luna_Trigger `(v  1 e 1 0 ]
-{
-[v TF_Luna_Trigger@header header `uc  1 a 1 wreg ]
-"162
-[v TF_Luna_Trigger@bytes bytes `[6]uc  1 a 6 4 ]
-"163
-[v TF_Luna_Trigger@bytes_sent bytes_sent `uc  1 a 1 11 ]
-"161
-[v TF_Luna_Trigger@header header `uc  1 a 1 wreg ]
-[v TF_Luna_Trigger@length length `uc  1 p 1 1 ]
-[v TF_Luna_Trigger@id id `uc  1 p 1 2 ]
-[v TF_Luna_Trigger@payload payload `uc  1 p 1 3 ]
-"163
-[v TF_Luna_Trigger@header header `uc  1 a 1 10 ]
-"176
-} 0
-"138
-[v _TF_Luna_Send_Freq TF_Luna_Send_Freq `(v  1 e 1 0 ]
-{
-[v TF_Luna_Send_Freq@header header `uc  1 a 1 wreg ]
-"139
-[v TF_Luna_Send_Freq@bytes bytes `[6]uc  1 a 6 6 ]
-"142
-[v TF_Luna_Send_Freq@bytes_sent bytes_sent `uc  1 a 1 13 ]
-"138
-[v TF_Luna_Send_Freq@header header `uc  1 a 1 wreg ]
-[v TF_Luna_Send_Freq@length length `uc  1 p 1 1 ]
-[v TF_Luna_Send_Freq@id id `uc  1 p 1 2 ]
-[v TF_Luna_Send_Freq@freq freq `uc  1 p 1 3 ]
-[v TF_Luna_Send_Freq@freq_dec freq_dec `uc  1 p 1 4 ]
-[v TF_Luna_Send_Freq@checksum checksum `uc  1 p 1 5 ]
-"142
-[v TF_Luna_Send_Freq@header header `uc  1 a 1 12 ]
-"157
-} 0
-"272 C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Lidar2.X\mcc_generated_files/uart/src/uart2.c
-[v _UART2_Write UART2_Write `(v  1 e 1 0 ]
-{
-[v UART2_Write@txData txData `uc  1 a 1 wreg ]
-[v UART2_Write@txData txData `uc  1 a 1 wreg ]
-"274
-[v UART2_Write@txData txData `uc  1 a 1 0 ]
-"275
-} 0
-"232
-[v _UART2_IsTxReady UART2_IsTxReady `(a  1 e 1 0 ]
-{
-"235
 } 0
 "40 C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Lidar2.X\mcc_generated_files/system/src/system.c
 [v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
@@ -720,61 +640,4 @@
 [v _CLOCK_Initialize CLOCK_Initialize `(v  1 e 1 0 ]
 {
 "51
-} 0
-"84 C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Lidar2.X/LCD.h
-[v _LCD_String_xy LCD_String_xy `(v  1 e 1 0 ]
-{
-[v LCD_String_xy@row row `uc  1 a 1 wreg ]
-"86
-[v LCD_String_xy@location location `uc  1 a 1 13 ]
-"84
-[v LCD_String_xy@row row `uc  1 a 1 wreg ]
-[v LCD_String_xy@pos pos `uc  1 p 1 9 ]
-[v LCD_String_xy@msg msg `*.34Cuc  1 p 2 10 ]
-[v LCD_String_xy@row row `uc  1 a 1 12 ]
-"99
-} 0
-"75
-[v _LCD_String LCD_String `(v  1 e 1 0 ]
-{
-[v LCD_String@msg msg `*.34Cuc  1 p 2 7 ]
-"82
-} 0
-"64
-[v _LCD_Char LCD_Char `(v  1 e 1 0 ]
-{
-[v LCD_Char@dat dat `uc  1 a 1 wreg ]
-[v LCD_Char@dat dat `uc  1 a 1 wreg ]
-"66
-[v LCD_Char@dat dat `uc  1 a 1 6 ]
-"72
-} 0
-"38
-[v _LCD_Init LCD_Init `(v  1 e 1 0 ]
-{
-"47
-} 0
-"49
-[v _LCD_Clear LCD_Clear `(v  1 e 1 0 ]
-{
-"52
-} 0
-"54
-[v _LCD_Command LCD_Command `(v  1 e 1 0 ]
-{
-[v LCD_Command@cmd cmd `uc  1 a 1 wreg ]
-[v LCD_Command@cmd cmd `uc  1 a 1 wreg ]
-"56
-[v LCD_Command@cmd cmd `uc  1 a 1 6 ]
-"62
-} 0
-"101
-[v _MSdelay MSdelay `(v  1 e 1 0 ]
-{
-"103
-[v MSdelay@j j `ui  1 a 2 4 ]
-[v MSdelay@i i `ui  1 a 2 2 ]
-"101
-[v MSdelay@val val `ui  1 p 2 0 ]
-"106
 } 0

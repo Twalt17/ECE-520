@@ -52,60 +52,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "116 ./mcc_generated_files/system/../uart/uart2.h
 [; ;./mcc_generated_files/system/../uart/uart2.h: 116: void UART2_Initialize(void);
 [v _UART2_Initialize `(v ~T0 @X0 0 ef ]
-"25242 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f47k42.h
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f47k42.h: 25242:     struct {
-[s S1124 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
-[n S1124 . SENDB BRKOVR . RXBIMD WUE . ON ]
-"25251
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f47k42.h: 25251:     struct {
-[s S1125 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
-[n S1125 . U2SENDB U2BRKOVR . U2RXBIMD U2WUE . U2ON ]
-"25241
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f47k42.h: 25241: typedef union {
-[u S1123 `S1124 1 `S1125 1 ]
-[n S1123 . . . ]
-"25261
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f47k42.h: 25261: extern volatile U2CON1bits_t U2CON1bits __attribute__((address(0x3DDB)));
-[v _U2CON1bits `VS1123 ~T0 @X0 0 e@15835 ]
-"25126
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f47k42.h: 25126:     struct {
-[s S1119 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S1119 . MODE0 MODE1 MODE2 ]
-"25131
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f47k42.h: 25131:     struct {
-[s S1120 :4 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S1120 . U2MODE U2RXEN U2TXEN U2ABDEN U2BRGS ]
-"25138
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f47k42.h: 25138:     struct {
-[s S1121 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S1121 . U2MODE0 U2MODE1 U2MODE2 ]
-"25143
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f47k42.h: 25143:     struct {
-[s S1122 :4 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S1122 . MODE RXEN TXEN ABDEN BRGS ]
-"25125
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f47k42.h: 25125: typedef union {
-[u S1118 `S1119 1 `S1120 1 `S1121 1 `S1122 1 ]
-[n S1118 . . . . . ]
-"25151
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f47k42.h: 25151: extern volatile U2CON0bits_t U2CON0bits __attribute__((address(0x3DDA)));
-[v _U2CON0bits `VS1118 ~T0 @X0 0 e@15834 ]
-[v F16449 `(v ~T0 @X0 1 tf ]
-"167 ./mcc_generated_files/system/../uart/uart2.h
-[; ;./mcc_generated_files/system/../uart/uart2.h: 167: __attribute__((inline)) void UART2_ReceiveEnable(void);
-[v _UART2_ReceiveEnable `TF16449 ~T0 @X0 0 e ]
-"47 main.c
-[; ;main.c: 47: void LCD_Init();
-[v _LCD_Init `(v ~T0 @X0 0 e? ]
-"46
-[; ;main.c: 46: void LCD_String_xy(char ,char ,const char*);
-[v _LCD_String_xy `(v ~T0 @X0 0 ef3`uc`uc`*Cuc ]
-"48
-[; ;main.c: 48: void TF_Luna_Send_Freq(uint8_t header, uint8_t length, uint8_t id, uint8_t freq, uint8_t freq_dec, uint8_t checksum);
-[v _TF_Luna_Send_Freq `(v ~T0 @X0 0 ef6`uc`uc`uc`uc`uc`uc ]
-"49
-[; ;main.c: 49: void TF_Luna_Trigger(uint8_t header, uint8_t length, uint8_t id, uint8_t payload );
-[v _TF_Luna_Trigger `(v ~T0 @X0 0 ef4`uc`uc`uc`uc ]
+"117 C:\Program Files\Microchip\xc8\v2.46\pic\include\c99\stdio.h
+[; ;C:\Program Files\Microchip\xc8\v2.46\pic\include\c99\stdio.h: 117: int printf(const char *restrict, ...);
+[v _printf `(i ~T0 @X0 0 ev`*Cuc ]
 [v F16362 `(v ~T0 @X0 0 tf ]
 [v F16364 `(v ~T0 @X0 0 tf ]
 [v F16366 `(uc ~T0 @X0 0 tf ]
@@ -147,6 +96,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "121 C:\Program Files\Microchip\xc8\v2.46\pic\include\c99\stdio.h
 [; ;C:\Program Files\Microchip\xc8\v2.46\pic\include\c99\stdio.h: 121: int sprintf(char *restrict, const char *restrict, ...);
 [v _sprintf `(i ~T0 @X0 0 e1v`*uc`*Cuc ]
+"46 main.c
+[; ;main.c: 46: void LCD_String_xy(char ,char ,const char*);
+[v _LCD_String_xy `(v ~T0 @X0 0 ef3`uc`uc`*Cuc ]
 "250 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f47k42.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f47k42.h: 250: __asm("STATUS_CSHAD equ 03880h");
 [; <" STATUS_CSHAD equ 03880h ;# ">
@@ -2919,160 +2871,145 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;./LCD.h: 196: }
 [e :UE 2287 ]
 }
-"50 main.c
-[; ;main.c: 50: uint8_t received_data;
+"51 main.c
+[; ;main.c: 51: uint8_t received_data;
 [v _received_data `uc ~T0 @X0 1 e ]
-"51
-[; ;main.c: 51: uint8_t header = 0x5A;
+"52
+[; ;main.c: 52: uint8_t header = 0x5A;
 [v _header `uc ~T0 @X0 1 e ]
 [i _header
 -> -> 90 `i `uc
 ]
-"52
-[; ;main.c: 52: uint8_t freq = 0x0;
+"53
+[; ;main.c: 53: uint8_t freq = 0x0;
 [v _freq `uc ~T0 @X0 1 e ]
 [i _freq
 -> -> 0 `i `uc
 ]
-"53
-[; ;main.c: 53: uint8_t freq_dec = 0x0;
+"54
+[; ;main.c: 54: uint8_t freq_dec = 0x0;
 [v _freq_dec `uc ~T0 @X0 1 e ]
 [i _freq_dec
 -> -> 0 `i `uc
 ]
-"54
-[; ;main.c: 54: uint8_t checksum = 0x00;
+"55
+[; ;main.c: 55: uint8_t checksum = 0x00;
 [v _checksum `uc ~T0 @X0 1 e ]
 [i _checksum
 -> -> 0 `i `uc
 ]
-"55
-[; ;main.c: 55: uint8_t freq_ID = 0x03;
+"56
+[; ;main.c: 56: uint8_t freq_ID = 0x03;
 [v _freq_ID `uc ~T0 @X0 1 e ]
 [i _freq_ID
 -> -> 3 `i `uc
 ]
-"56
-[; ;main.c: 56: uint8_t trigger = 0x04;
+"57
+[; ;main.c: 57: uint8_t trigger = 0x04;
 [v _trigger `uc ~T0 @X0 1 e ]
 [i _trigger
 -> -> 4 `i `uc
 ]
 [v $root$_main `(v ~T0 @X0 0 e ]
-"61
-[; ;main.c: 61: int main(void)
-[v _main `(i ~T0 @X0 1 ef ]
 "62
-[; ;main.c: 62: {
+[; ;main.c: 62: int main(void)
+[v _main `(i ~T0 @X0 1 ef ]
+"63
+[; ;main.c: 63: {
 {
 [e :U _main ]
 [f ]
-"63
-[; ;main.c: 63:     char data[20];
-[v _data `uc ~T0 @X0 -> 20 `i a ]
-"64
-[; ;main.c: 64:     SYSTEM_Initialize();
-[e ( _SYSTEM_Initialize ..  ]
 "65
-[; ;main.c: 65:     UART2_Initialize();
-[e ( _UART2_Initialize ..  ]
+[; ;main.c: 65:     SYSTEM_Initialize();
+[e ( _SYSTEM_Initialize ..  ]
 "66
-[; ;main.c: 66:     U2CON1bits.ON = 1;
-[e = . . _U2CON1bits 0 6 -> -> 1 `i `uc ]
-"67
-[; ;main.c: 67:     U2CON0bits.RXEN = 1;
-[e = . . _U2CON0bits 3 1 -> -> 1 `i `uc ]
-"68
-[; ;main.c: 68:     U2CON0bits.TXEN = 1;
-[e = . . _U2CON0bits 3 2 -> -> 1 `i `uc ]
-"69
-[; ;main.c: 69:     UART2_ReceiveEnable();
-[e ( _UART2_ReceiveEnable ..  ]
-"70
-[; ;main.c: 70:     LCD_Init();
-[e ( _LCD_Init ..  ]
-"71
-[; ;main.c: 71:     LCD_String_xy(1,0,"programmed");
-[e ( _LCD_String_xy (3 , , -> -> 1 `i `uc -> -> 0 `i `uc :s 3C ]
-"72
-[; ;main.c: 72:     MSdelay(1000);
-[e ( _MSdelay (1 -> -> 1000 `i `ui ]
-"73
-[; ;main.c: 73:     uint8_t Read_header = 0x59;
-[v _Read_header `uc ~T0 @X0 1 a ]
-[e = _Read_header -> -> 89 `i `uc ]
-"74
-[; ;main.c: 74:     uint8_t distance_L = 0;
-[v _distance_L `uc ~T0 @X0 1 a ]
-[e = _distance_L -> -> 0 `i `uc ]
-"75
-[; ;main.c: 75:     uint8_t distance_H = 0;
-[v _distance_H `uc ~T0 @X0 1 a ]
-[e = _distance_H -> -> 0 `i `uc ]
-"76
-[; ;main.c: 76:     _Bool header_received = 0;
-[v _header_received `a ~T0 @X0 1 a ]
-[e = _header_received -> -> 0 `i `a ]
+[; ;main.c: 66:     UART2_Initialize();
+[e ( _UART2_Initialize ..  ]
 "77
-[; ;main.c: 77:     uint16_t distance = 0;
-[v _distance `us ~T0 @X0 1 a ]
-[e = _distance -> -> 0 `i `us ]
-"80
-[; ;main.c: 80:    LCD_Clear();
-[e ( _LCD_Clear ..  ]
-"81
-[; ;main.c: 81:    TF_Luna_Send_Freq(header, 0x6, freq_ID, freq, freq_dec, checksum);
-[e ( _TF_Luna_Send_Freq (4 , , , , , _header -> -> 6 `i `uc _freq_ID _freq _freq_dec _checksum ]
-"82
-[; ;main.c: 82:    TF_Luna_Trigger(header, 0x4, trigger, 0x00);
-[e ( _TF_Luna_Trigger (4 , , , _header -> -> 4 `i `uc _trigger -> -> 0 `i `uc ]
-"84
-[; ;main.c: 84:    while(1){
+[; ;main.c: 77:    while(1){
 [e :U 2295 ]
 {
-"86
-[; ;main.c: 86:     uint8_t received_bytes[9];
-[v _received_bytes `uc ~T0 @X0 -> 9 `i a ]
+"81
+[; ;main.c: 81:    printf("hello..\r\n");
+[e ( _printf :s 3C ]
+"84
+[; ;main.c: 84: }
+}
+[e :U 2294 ]
+[e $U 2295  ]
+[e :U 2296 ]
+"85
+[; ;main.c: 85: }
+[e :UE 2293 ]
+}
 "87
-[; ;main.c: 87:     char hex_string[37];
-[v _hex_string `uc ~T0 @X0 -> 37 `i a ]
+[; ;main.c: 87:    void read(){
+[v _read `(v ~T0 @X0 1 ef ]
+{
+[e :U _read ]
+[f ]
+"88
+[; ;main.c: 88:     uint8_t Read_header = 0x59;
+[v _Read_header `uc ~T0 @X0 1 a ]
+[e = _Read_header -> -> 89 `i `uc ]
 "89
-[; ;main.c: 89:     uint8_t byte_count = 0;
+[; ;main.c: 89:     uint8_t distance_L = 0;
+[v _distance_L `uc ~T0 @X0 1 a ]
+[e = _distance_L -> -> 0 `i `uc ]
+"90
+[; ;main.c: 90:     uint8_t distance_H = 0;
+[v _distance_H `uc ~T0 @X0 1 a ]
+[e = _distance_H -> -> 0 `i `uc ]
+"91
+[; ;main.c: 91:     uint16_t distance = 0;
+[v _distance `us ~T0 @X0 1 a ]
+[e = _distance -> -> 0 `i `us ]
+"92
+[; ;main.c: 92:     unsigned char count = 0;
+[v _count `uc ~T0 @X0 1 a ]
+[e = _count -> -> 0 `i `uc ]
+"93
+[; ;main.c: 93:     char data[20];
+[v _data `uc ~T0 @X0 -> 20 `i a ]
+"96
+[; ;main.c: 96:     uint8_t received_bytes[9];
+[v _received_bytes `uc ~T0 @X0 -> 9 `i a ]
+"97
+[; ;main.c: 97:     char hex_string[37];
+[v _hex_string `uc ~T0 @X0 -> 37 `i a ]
+"99
+[; ;main.c: 99:     uint8_t byte_count = 0;
 [v _byte_count `uc ~T0 @X0 1 a ]
 [e = _byte_count -> -> 0 `i `uc ]
-"91
-[; ;main.c: 91:     while (byte_count < 9){
-[e $U 2297  ]
-[e :U 2298 ]
-{
-"93
-[; ;main.c: 93:         if (UART2.IsRxReady()) {
-[e $ ! != -> ( *U . _UART2 4 ..  `i -> 0 `i 2300  ]
-{
-"94
-[; ;main.c: 94:             received_bytes[byte_count] = UART2.Read();
-[e = *U + &U _received_bytes * -> _byte_count `ux -> -> # *U &U _received_bytes `ui `ux ( *U . _UART2 2 ..  ]
-"95
-[; ;main.c: 95:             byte_count++;
-[e ++ _byte_count -> -> 1 `i `uc ]
-"98
-[; ;main.c: 98:         }
-}
-[e :U 2300 ]
-"99
-[; ;main.c: 99:     }
-}
-[e :U 2297 ]
-"91
-[; ;main.c: 91:     while (byte_count < 9){
-[e $ < -> _byte_count `i -> 9 `i 2298  ]
-[e :U 2299 ]
-"100
-[; ;main.c: 100:     if (byte_count == 9){
-[e $ ! == -> _byte_count `i -> 9 `i 2301  ]
-{
 "101
-[; ;main.c: 101:         for(uint8_t i = 0; i<6;i++){
+[; ;main.c: 101:     while (byte_count < 9){
+[e $U 2298  ]
+[e :U 2299 ]
+{
+"103
+[; ;main.c: 103:         if (UART2.IsRxReady()) {
+[e $ ! != -> ( *U . _UART2 4 ..  `i -> 0 `i 2301  ]
+{
+"104
+[; ;main.c: 104:             received_bytes[byte_count] = UART2.Read();
+[e = *U + &U _received_bytes * -> _byte_count `ux -> -> # *U &U _received_bytes `ui `ux ( *U . _UART2 2 ..  ]
+"105
+[; ;main.c: 105:             byte_count++;
+[e ++ _byte_count -> -> 1 `i `uc ]
+"108
+[; ;main.c: 108:         }
+}
+[e :U 2301 ]
+"109
+[; ;main.c: 109:     }
+}
+[e :U 2298 ]
+"101
+[; ;main.c: 101:     while (byte_count < 9){
+[e $ < -> _byte_count `i -> 9 `i 2299  ]
+[e :U 2300 ]
+"110
+[; ;main.c: 110:         for(uint8_t i = 0; i<6;i++){
 {
 [v _i `uc ~T0 @X0 1 a ]
 [e = _i -> -> 0 `i `uc ]
@@ -3080,58 +3017,54 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $U 2303  ]
 [e :U 2302 ]
 {
-"102
-[; ;main.c: 102:             if(received_bytes[i] == Read_header && received_bytes[i+1] == Read_header){
+"111
+[; ;main.c: 111:             if(received_bytes[i] == Read_header && received_bytes[i+1] == Read_header){
 [e $ ! && == -> *U + &U _received_bytes * -> _i `ux -> -> # *U &U _received_bytes `ui `ux `i -> _Read_header `i == -> *U + &U _received_bytes * -> -> + -> _i `i -> 1 `i `ui `ux -> -> # *U &U _received_bytes `ui `ux `i -> _Read_header `i 2305  ]
 {
-"103
-[; ;main.c: 103:                 distance_L = received_bytes[i+2];
+"112
+[; ;main.c: 112:                 distance_L = received_bytes[i+2];
 [e = _distance_L *U + &U _received_bytes * -> -> + -> _i `i -> 2 `i `ui `ux -> -> # *U &U _received_bytes `ui `ux ]
-"104
-[; ;main.c: 104:                 distance_H = received_bytes[i+3];
+"113
+[; ;main.c: 113:                 distance_H = received_bytes[i+3];
 [e = _distance_H *U + &U _received_bytes * -> -> + -> _i `i -> 3 `i `ui `ux -> -> # *U &U _received_bytes `ui `ux ]
-"105
-[; ;main.c: 105:                 distance = ((uint16_t)distance_H << 8) | distance_L;
+"114
+[; ;main.c: 114:                 distance = ((uint16_t)distance_H << 8) | distance_L;
 [e = _distance -> | << -> -> _distance_H `us `ui -> 8 `i -> _distance_L `ui `us ]
-"106
-[; ;main.c: 106:                 sprintf(data, "%u  ", distance);
+"115
+[; ;main.c: 115:                 sprintf(data, "%u   ", distance);
 [e ( _sprintf (1 , (. , &U _data :s 4C -> _distance `ui ]
-"107
-[; ;main.c: 107:                 LCD_String_xy(2,0,data);
+"116
+[; ;main.c: 116:                 LCD_String_xy(2,0,data);
 [e ( _LCD_String_xy (3 , , -> -> 2 `i `uc -> -> 0 `i `uc -> &U _data `*Cuc ]
-"108
-[; ;main.c: 108:                 LCD_String_xy(2,5,"CM");
+"117
+[; ;main.c: 117:                 LCD_String_xy(2,5,"CM");
 [e ( _LCD_String_xy (3 , , -> -> 2 `i `uc -> -> 5 `i `uc :s 5C ]
-"109
-[; ;main.c: 109:                 break;
+"119
+[; ;main.c: 119:                 printf("Distance: %u CM\r\n", distance);
+[e ( _printf , (. :s 6C -> _distance `ui ]
+"120
+[; ;main.c: 120:                 break;
 [e $U 2303  ]
-"110
-[; ;main.c: 110:             }
+"121
+[; ;main.c: 121:             }
 }
 [e :U 2305 ]
-"112
-[; ;main.c: 112:         }
+"123
+[; ;main.c: 123:         }
 }
 [e ++ _i -> -> 1 `i `uc ]
 [e $ < -> _i `i -> 6 `i 2302  ]
 [e :U 2303 ]
 }
-"113
-[; ;main.c: 113:     }
+"125
+[; ;main.c: 125:     return;
+[e $UE 2297  ]
+"126
+[; ;main.c: 126:     }
+[e :UE 2297 ]
 }
-[e :U 2301 ]
-"115
-[; ;main.c: 115:         }
-}
-[e :U 2294 ]
-[e $U 2295  ]
-[e :U 2296 ]
-"116
-[; ;main.c: 116:     }
-[e :UE 2293 ]
-}
-"138
-[; ;main.c: 138: void TF_Luna_Send_Freq(uint8_t header, uint8_t length, uint8_t id, uint8_t freq, uint8_t freq_dec, uint8_t checksum) {
+"148
+[; ;main.c: 148: void TF_Luna_Send_Freq(uint8_t header, uint8_t length, uint8_t id, uint8_t freq, uint8_t freq_dec, uint8_t checksum) {
 [v _TF_Luna_Send_Freq `(v ~T0 @X0 1 ef6`uc`uc`uc`uc`uc`uc ]
 {
 [e :U _TF_Luna_Send_Freq ]
@@ -3142,64 +3075,64 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _freq_dec `uc ~T0 @X0 1 r5 ]
 [v _checksum `uc ~T0 @X0 1 r6 ]
 [f ]
-"139
-[; ;main.c: 139:     uint8_t bytes[6];
+"149
+[; ;main.c: 149:     uint8_t bytes[6];
 [v _bytes `uc ~T0 @X0 -> 6 `i a ]
-"142
-[; ;main.c: 142:     char bytes_sent = 0;
+"152
+[; ;main.c: 152:     char bytes_sent = 0;
 [v _bytes_sent `uc ~T0 @X0 1 a ]
 [e = _bytes_sent -> -> 0 `i `uc ]
-"143
-[; ;main.c: 143:     bytes[0] = header;
+"153
+[; ;main.c: 153:     bytes[0] = header;
 [e = *U + &U _bytes * -> -> -> 0 `i `ui `ux -> -> # *U &U _bytes `ui `ux _header ]
-"144
-[; ;main.c: 144:     bytes[1] = length;
+"154
+[; ;main.c: 154:     bytes[1] = length;
 [e = *U + &U _bytes * -> -> -> 1 `i `ui `ux -> -> # *U &U _bytes `ui `ux _length ]
-"145
-[; ;main.c: 145:     bytes[2] = id;
+"155
+[; ;main.c: 155:     bytes[2] = id;
 [e = *U + &U _bytes * -> -> -> 2 `i `ui `ux -> -> # *U &U _bytes `ui `ux _id ]
-"146
-[; ;main.c: 146:     bytes[3] = freq;
+"156
+[; ;main.c: 156:     bytes[3] = freq;
 [e = *U + &U _bytes * -> -> -> 3 `i `ui `ux -> -> # *U &U _bytes `ui `ux _freq ]
-"147
-[; ;main.c: 147:     bytes[4] = freq_dec;
+"157
+[; ;main.c: 157:     bytes[4] = freq_dec;
 [e = *U + &U _bytes * -> -> -> 4 `i `ui `ux -> -> # *U &U _bytes `ui `ux _freq_dec ]
-"148
-[; ;main.c: 148:     bytes[5] = checksum;
+"158
+[; ;main.c: 158:     bytes[5] = checksum;
 [e = *U + &U _bytes * -> -> -> 5 `i `ui `ux -> -> # *U &U _bytes `ui `ux _checksum ]
-"151
-[; ;main.c: 151:     while(bytes_sent < 6){
+"161
+[; ;main.c: 161:     while(bytes_sent < 6){
 [e $U 2307  ]
 [e :U 2308 ]
 {
-"152
-[; ;main.c: 152:         if (UART2.IsTxReady()) {
+"162
+[; ;main.c: 162:         if (UART2.IsTxReady()) {
 [e $ ! != -> ( *U . _UART2 5 ..  `i -> 0 `i 2310  ]
 {
-"153
-[; ;main.c: 153:             UART2.Write(bytes[bytes_sent]);
+"163
+[; ;main.c: 163:             UART2.Write(bytes[bytes_sent]);
 [e ( *U . _UART2 3 (1 *U + &U _bytes * -> _bytes_sent `ux -> -> # *U &U _bytes `ui `ux ]
-"154
-[; ;main.c: 154:             bytes_sent++;
+"164
+[; ;main.c: 164:             bytes_sent++;
 [e ++ _bytes_sent -> -> 1 `i `uc ]
-"155
-[; ;main.c: 155:         }
+"165
+[; ;main.c: 165:         }
 }
 [e :U 2310 ]
-"156
-[; ;main.c: 156:     }
+"166
+[; ;main.c: 166:     }
 }
 [e :U 2307 ]
-"151
-[; ;main.c: 151:     while(bytes_sent < 6){
+"161
+[; ;main.c: 161:     while(bytes_sent < 6){
 [e $ < -> _bytes_sent `i -> 6 `i 2308  ]
 [e :U 2309 ]
-"157
-[; ;main.c: 157:     }
+"167
+[; ;main.c: 167:     }
 [e :UE 2306 ]
 }
-"161
-[; ;main.c: 161: void TF_Luna_Trigger(uint8_t header, uint8_t length, uint8_t id, uint8_t payload ){
+"171
+[; ;main.c: 171: void TF_Luna_Trigger(uint8_t header, uint8_t length, uint8_t id, uint8_t payload ){
 [v _TF_Luna_Trigger `(v ~T0 @X0 1 ef4`uc`uc`uc`uc ]
 {
 [e :U _TF_Luna_Trigger ]
@@ -3208,59 +3141,61 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _id `uc ~T0 @X0 1 r3 ]
 [v _payload `uc ~T0 @X0 1 r4 ]
 [f ]
-"162
-[; ;main.c: 162:     uint8_t bytes[6];
+"172
+[; ;main.c: 172:     uint8_t bytes[6];
 [v _bytes `uc ~T0 @X0 -> 6 `i a ]
-"163
-[; ;main.c: 163:     char bytes_sent = 0;
+"173
+[; ;main.c: 173:     char bytes_sent = 0;
 [v _bytes_sent `uc ~T0 @X0 1 a ]
 [e = _bytes_sent -> -> 0 `i `uc ]
-"165
-[; ;main.c: 165:     bytes[0] = header;
+"175
+[; ;main.c: 175:     bytes[0] = header;
 [e = *U + &U _bytes * -> -> -> 0 `i `ui `ux -> -> # *U &U _bytes `ui `ux _header ]
-"166
-[; ;main.c: 166:     bytes[1] = length;
+"176
+[; ;main.c: 176:     bytes[1] = length;
 [e = *U + &U _bytes * -> -> -> 1 `i `ui `ux -> -> # *U &U _bytes `ui `ux _length ]
-"167
-[; ;main.c: 167:     bytes[2] = id;
+"177
+[; ;main.c: 177:     bytes[2] = id;
 [e = *U + &U _bytes * -> -> -> 2 `i `ui `ux -> -> # *U &U _bytes `ui `ux _id ]
-"168
-[; ;main.c: 168:     bytes[3] = payload;
+"178
+[; ;main.c: 178:     bytes[3] = payload;
 [e = *U + &U _bytes * -> -> -> 3 `i `ui `ux -> -> # *U &U _bytes `ui `ux _payload ]
-"170
-[; ;main.c: 170:     while(bytes_sent < 4){
+"180
+[; ;main.c: 180:     while(bytes_sent < 4){
 [e $U 2312  ]
 [e :U 2313 ]
 {
-"171
-[; ;main.c: 171:         if (UART2.IsTxReady()) {
+"181
+[; ;main.c: 181:         if (UART2.IsTxReady()) {
 [e $ ! != -> ( *U . _UART2 5 ..  `i -> 0 `i 2315  ]
 {
-"172
-[; ;main.c: 172:             UART2.Write(bytes[bytes_sent]);
+"182
+[; ;main.c: 182:             UART2.Write(bytes[bytes_sent]);
 [e ( *U . _UART2 3 (1 *U + &U _bytes * -> _bytes_sent `ux -> -> # *U &U _bytes `ui `ux ]
-"173
-[; ;main.c: 173:             bytes_sent++;
+"183
+[; ;main.c: 183:             bytes_sent++;
 [e ++ _bytes_sent -> -> 1 `i `uc ]
-"174
-[; ;main.c: 174:         }
+"184
+[; ;main.c: 184:         }
 }
 [e :U 2315 ]
-"175
-[; ;main.c: 175:     }
+"187
+[; ;main.c: 187:     }
 }
 [e :U 2312 ]
-"170
-[; ;main.c: 170:     while(bytes_sent < 4){
+"180
+[; ;main.c: 180:     while(bytes_sent < 4){
 [e $ < -> _bytes_sent `i -> 4 `i 2313  ]
 [e :U 2314 ]
-"176
-[; ;main.c: 176: }
+"188
+[; ;main.c: 188: }
 [e :UE 2311 ]
 }
+[p f _printf 8389632 ]
 [p f _sprintf 8389632 ]
-[a 3C 112 114 111 103 114 97 109 109 101 100 0 ]
 [a 5C 67 77 0 ]
 [a 1C 67 111 114 114 101 99 116 33 0 ]
 [a 2C 87 114 111 110 103 33 0 ]
-[a 4C 37 117 32 32 0 ]
+[a 4C 37 117 32 32 32 0 ]
+[a 6C 68 105 115 116 97 110 99 101 58 32 37 117 32 67 77 13 10 0 ]
+[a 3C 104 101 108 108 111 46 46 13 10 0 ]

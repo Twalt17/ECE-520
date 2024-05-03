@@ -27522,58 +27522,123 @@ void *memccpy (void *restrict, const void *restrict, int, size_t);
 # 46 "main.c"
 void LCD_String_xy(char ,char ,const char*);
 void LCD_Init();
+void TF_Luna_Send_Freq(uint8_t header, uint8_t length, uint8_t id, uint8_t freq, uint8_t freq_dec, uint8_t checksum);
+void TF_Luna_Trigger(uint8_t header, uint8_t length, uint8_t id, uint8_t payload );
+void read();
 uint8_t received_data;
+uint8_t header = 0x5A;
+uint8_t freq = 0x0;
+uint8_t freq_dec = 0x0;
+uint8_t checksum = 0x00;
+uint8_t freq_ID = 0x03;
+uint8_t trigger = 0x04;
 
 
 
 
 int main(void)
 {
-    char data[20];
+
     SYSTEM_Initialize();
     UART2_Initialize();
     U2CON1bits.ON = 1;
     U2CON0bits.RXEN = 1;
+    U2CON0bits.TXEN = 1;
     UART2_ReceiveEnable();
     LCD_Init();
-    LCD_String_xy(1,0,"Programmed2");
-    uint8_t header = 0x59;
-    uint8_t temp1 = 0;
-    uint8_t temp2 = 0;
-    _Bool header_received = 0;
-# 105 "main.c"
+    LCD_String_xy(1,0,"tits");
+    MSdelay(1000);
+
+   TF_Luna_Send_Freq(header, 0x6, freq_ID, freq, freq_dec, checksum);
+
+   while(1){
+   LCD_Clear();
+   MSdelay(200);
+   TF_Luna_Trigger(header, 0x4, trigger, 0x00);
+   read();
+   MSdelay(1000);
+}
+}
+
+   void read(){
+    uint8_t Read_header = 0x59;
+    uint8_t distance_L = 0;
+    uint8_t distance_H = 0;
+    uint16_t distance = 0;
+    unsigned char count = 0;
+    char data[20];
+
+
     uint8_t received_bytes[9];
     char hex_string[37];
 
     uint8_t byte_count = 0;
 
-    while (byte_count < 9) {
+    while (byte_count < 9){
 
-        if (UART2_IsRxReady()) {
-            received_bytes[byte_count] = UART2_Read();
+        if (UART2.IsRxReady()) {
+            received_bytes[byte_count] = UART2.Read();
             byte_count++;
 
 
-            if (byte_count == 9) {
-
-                hex_string[0] = '\0';
-                for (uint8_t i = 0; i < 9; i++) {
-                    sprintf(hex_string + strlen(hex_string), "%02X ", received_bytes[i]);
-                }
-
-
-                LCD_Clear();
-
-
-
-                LCD_String_xy(1, 0, hex_string);
-                LCD_String_xy(2, 0, hex_string + 16);
-            }
         }
     }
+        for(uint8_t i = 0; i<6;i++){
+            if(received_bytes[i] == Read_header && received_bytes[i+1] == Read_header){
+                distance_L = received_bytes[i+2];
+                distance_H = received_bytes[i+3];
+                distance = ((uint16_t)distance_H << 8) | distance_L;
+                sprintf(data, "%u   ", distance);
+                LCD_String_xy(2,0,data);
+                LCD_String_xy(2,5,"CM");
 
-    while(1){
+                printf("Distance: %u CM\r\n", distance);
+                break;
+            }
 
+        }
+
+    return;
+    }
+# 147 "main.c"
+void TF_Luna_Send_Freq(uint8_t header, uint8_t length, uint8_t id, uint8_t freq, uint8_t freq_dec, uint8_t checksum) {
+    uint8_t bytes[6];
+
+
+    char bytes_sent = 0;
+    bytes[0] = header;
+    bytes[1] = length;
+    bytes[2] = id;
+    bytes[3] = freq;
+    bytes[4] = freq_dec;
+    bytes[5] = checksum;
+
+
+    while(bytes_sent < 6){
+        if (UART2.IsTxReady()) {
+            UART2.Write(bytes[bytes_sent]);
+            bytes_sent++;
+        }
+    }
     }
 
+
+
+void TF_Luna_Trigger(uint8_t header, uint8_t length, uint8_t id, uint8_t payload ){
+    uint8_t bytes[6];
+    char bytes_sent = 0;
+
+    bytes[0] = header;
+    bytes[1] = length;
+    bytes[2] = id;
+    bytes[3] = payload;
+
+    while(bytes_sent < 4){
+        if (UART2.IsTxReady()) {
+            UART2.Write(bytes[bytes_sent]);
+            bytes_sent++;
+        }
+        LCD_String_xy(1,0,"tran lost");
+        printf("stuck with no transmission \n");
     }
+}

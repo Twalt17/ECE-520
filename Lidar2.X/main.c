@@ -47,6 +47,7 @@ void LCD_String_xy(char ,char ,const char*);
 void LCD_Init();
 void TF_Luna_Send_Freq(uint8_t header, uint8_t length, uint8_t id, uint8_t freq, uint8_t freq_dec, uint8_t checksum);
 void TF_Luna_Trigger(uint8_t header, uint8_t length, uint8_t id, uint8_t payload );
+void read();
 uint8_t received_data;
 uint8_t header = 0x5A;
 uint8_t freq = 0x0;
@@ -60,29 +61,38 @@ uint8_t trigger = 0x04;
 
 int main(void)
 {
-    char data[20];
+    
     SYSTEM_Initialize();
     UART2_Initialize();
-    U2CON1bits.ON = 1;
-    U2CON0bits.RXEN = 1;
-    U2CON0bits.TXEN = 1;
-    UART2_ReceiveEnable();
-    LCD_Init();
-    LCD_String_xy(1,0,"programmed");
-    MSdelay(1000);
+   // U2CON1bits.ON = 1;
+   // U2CON0bits.RXEN = 1;
+   // U2CON0bits.TXEN = 1;
+   // UART2_ReceiveEnable();
+    //LCD_Init();
+    //LCD_String_xy(1,0,"programmed2");
+    //MSdelay(1000);
+    
+   //TF_Luna_Send_Freq(header, 0x6, freq_ID, freq, freq_dec, checksum);
+   
+   while(1){  
+  // LCD_Clear();
+   //MSdelay(200);
+   //TF_Luna_Trigger(header, 0x4, trigger, 0x00);
+   printf("hello..\r\n");
+   //read();
+  // MSdelay(1000);
+}
+}
+
+   void read(){
     uint8_t Read_header = 0x59;
     uint8_t distance_L = 0;
     uint8_t distance_H = 0;
-    bool header_received = false;
     uint16_t distance = 0;
-   
-     
-   LCD_Clear();
-   TF_Luna_Send_Freq(header, 0x6, freq_ID, freq, freq_dec, checksum);
-   TF_Luna_Trigger(header, 0x4, trigger, 0x00);
-   
-   while(1){
-       
+    unsigned char count = 0;
+    char data[20];
+    
+    //while(count < 254){
     uint8_t received_bytes[9]; // Array to store received bytes
     char hex_string[37]; // String to hold hexadecimal representation (9 bytes * 2 characters per byte + 8 spaces + 1 for null terminator)
     
@@ -97,22 +107,22 @@ int main(void)
             // Display received bytes in hexadecimal when all 9 bytes are received
         }
     }
-    if (byte_count == 9){
         for(uint8_t i = 0; i<6;i++){
             if(received_bytes[i] == Read_header && received_bytes[i+1] == Read_header){
                 distance_L = received_bytes[i+2];
                 distance_H = received_bytes[i+3];
                 distance = ((uint16_t)distance_H << 8) | distance_L;
-                sprintf(data, "%u  ", distance);
+                sprintf(data, "%u   ", distance);
                 LCD_String_xy(2,0,data);
                 LCD_String_xy(2,5,"CM");
+                
+                printf("Distance: %u CM\r\n", distance);
                 break;
             }
             
         }
-    }
-        
-        }
+    
+    return;
     }
    
 
@@ -172,6 +182,8 @@ void TF_Luna_Trigger(uint8_t header, uint8_t length, uint8_t id, uint8_t payload
             UART2.Write(bytes[bytes_sent]);
             bytes_sent++;
         } 
+       
+        
     }
 }
     
