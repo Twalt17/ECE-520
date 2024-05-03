@@ -52,11 +52,53 @@ Version 4.0 HI-TECH Software Intermediate Code
 "116 ./mcc_generated_files/system/../uart/uart2.h
 [; ;./mcc_generated_files/system/../uart/uart2.h: 116: void UART2_Initialize(void);
 [v _UART2_Initialize `(v ~T0 @X0 0 ef ]
-"43 main.c
-[; ;main.c: 43: void LCD_Init();
+"25242 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f47k42.h
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f47k42.h: 25242:     struct {
+[s S1124 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S1124 . SENDB BRKOVR . RXBIMD WUE . ON ]
+"25251
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f47k42.h: 25251:     struct {
+[s S1125 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S1125 . U2SENDB U2BRKOVR . U2RXBIMD U2WUE . U2ON ]
+"25241
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f47k42.h: 25241: typedef union {
+[u S1123 `S1124 1 `S1125 1 ]
+[n S1123 . . . ]
+"25261
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f47k42.h: 25261: extern volatile U2CON1bits_t U2CON1bits __attribute__((address(0x3DDB)));
+[v _U2CON1bits `VS1123 ~T0 @X0 0 e@15835 ]
+"25126
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f47k42.h: 25126:     struct {
+[s S1119 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S1119 . MODE0 MODE1 MODE2 ]
+"25131
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f47k42.h: 25131:     struct {
+[s S1120 :4 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S1120 . U2MODE U2RXEN U2TXEN U2ABDEN U2BRGS ]
+"25138
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f47k42.h: 25138:     struct {
+[s S1121 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S1121 . U2MODE0 U2MODE1 U2MODE2 ]
+"25143
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f47k42.h: 25143:     struct {
+[s S1122 :4 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S1122 . MODE RXEN TXEN ABDEN BRGS ]
+"25125
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f47k42.h: 25125: typedef union {
+[u S1118 `S1119 1 `S1120 1 `S1121 1 `S1122 1 ]
+[n S1118 . . . . . ]
+"25151
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f47k42.h: 25151: extern volatile U2CON0bits_t U2CON0bits __attribute__((address(0x3DDA)));
+[v _U2CON0bits `VS1118 ~T0 @X0 0 e@15834 ]
+[v F16449 `(v ~T0 @X0 1 tf ]
+"167 ./mcc_generated_files/system/../uart/uart2.h
+[; ;./mcc_generated_files/system/../uart/uart2.h: 167: __attribute__((inline)) void UART2_ReceiveEnable(void);
+[v _UART2_ReceiveEnable `TF16449 ~T0 @X0 0 e ]
+"47 main.c
+[; ;main.c: 47: void LCD_Init();
 [v _LCD_Init `(v ~T0 @X0 0 e? ]
-"42
-[; ;main.c: 42: void LCD_String_xy(char ,char ,const char*);
+"46
+[; ;main.c: 46: void LCD_String_xy(char ,char ,const char*);
 [v _LCD_String_xy `(v ~T0 @X0 0 ef3`uc`uc`*Cuc ]
 [v F16362 `(v ~T0 @X0 0 tf ]
 [v F16364 `(v ~T0 @X0 0 tf ]
@@ -99,9 +141,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "121 C:\Program Files\Microchip\xc8\v2.46\pic\include\c99\stdio.h
 [; ;C:\Program Files\Microchip\xc8\v2.46\pic\include\c99\stdio.h: 121: int sprintf(char *restrict, const char *restrict, ...);
 [v _sprintf `(i ~T0 @X0 0 e1v`*uc`*Cuc ]
-"36 C:\Program Files\Microchip\xc8\v2.46\pic\include\c99\string.h
-[; ;C:\Program Files\Microchip\xc8\v2.46\pic\include\c99\string.h: 36: char *strcat (char *restrict, const char *restrict);
-[v _strcat `(*uc ~T0 @X0 0 ef2`*uc`*Cuc ]
 "250 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f47k42.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f47k42.h: 250: __asm("STATUS_CSHAD equ 03880h");
 [; <" STATUS_CSHAD equ 03880h ;# ">
@@ -2874,70 +2913,175 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;./LCD.h: 196: }
 [e :UE 2287 ]
 }
-[v $root$_main `(v ~T0 @X0 0 e ]
 "48 main.c
-[; ;main.c: 48: int main(void)
+[; ;main.c: 48: uint8_t received_data;
+[v _received_data `uc ~T0 @X0 1 e ]
+[v $root$_main `(v ~T0 @X0 0 e ]
+"53
+[; ;main.c: 53: int main(void)
 [v _main `(i ~T0 @X0 1 ef ]
-"49
-[; ;main.c: 49: {
+"54
+[; ;main.c: 54: {
 {
 [e :U _main ]
 [f ]
-"50
-[; ;main.c: 50:     char data[10];
-[v _data `uc ~T0 @X0 -> 10 `i a ]
-"51
-[; ;main.c: 51:     SYSTEM_Initialize();
-[e ( _SYSTEM_Initialize ..  ]
-"52
-[; ;main.c: 52:     UART2_Initialize();
-[e ( _UART2_Initialize ..  ]
-"53
-[; ;main.c: 53:     LCD_Init();
-[e ( _LCD_Init ..  ]
-"54
-[; ;main.c: 54:     LCD_String_xy(1,0,"Programmed");
-[e ( _LCD_String_xy (3 , , -> -> 1 `i `uc -> -> 0 `i `uc :s 3C ]
 "55
-[; ;main.c: 55:     if (UART2.IsRxReady()) {
-[e $ ! != -> ( *U . _UART2 4 ..  `i -> 0 `i 2294  ]
-{
+[; ;main.c: 55:     char data[20];
+[v _data `uc ~T0 @X0 -> 20 `i a ]
 "56
-[; ;main.c: 56:         uint8_t received_data = UART2.Read();
-[v _received_data `uc ~T0 @X0 1 a ]
-[e = _received_data ( *U . _UART2 2 ..  ]
+[; ;main.c: 56:     SYSTEM_Initialize();
+[e ( _SYSTEM_Initialize ..  ]
 "57
-[; ;main.c: 57:         sprintf(data,"%u",received_data);
-[e ( _sprintf (1 , (. , &U _data :s 4C -> _received_data `i ]
+[; ;main.c: 57:     UART2_Initialize();
+[e ( _UART2_Initialize ..  ]
 "58
-[; ;main.c: 58:         strcat(data," CM");
-[e ( _strcat (2 , &U _data :s 5C ]
+[; ;main.c: 58:     U2CON1bits.ON = 1;
+[e = . . _U2CON1bits 0 6 -> -> 1 `i `uc ]
 "59
-[; ;main.c: 59:         LCD_String_xy(2,4,data);
-[e ( _LCD_String_xy (3 , , -> -> 2 `i `uc -> -> 4 `i `uc -> &U _data `*Cuc ]
+[; ;main.c: 59:     U2CON0bits.RXEN = 1;
+[e = . . _U2CON0bits 3 1 -> -> 1 `i `uc ]
 "60
-[; ;main.c: 60:     }
+[; ;main.c: 60:     UART2_ReceiveEnable();
+[e ( _UART2_ReceiveEnable ..  ]
+"61
+[; ;main.c: 61:     LCD_Init();
+[e ( _LCD_Init ..  ]
+"62
+[; ;main.c: 62:     LCD_String_xy(1,0,"programmed");
+[e ( _LCD_String_xy (3 , , -> -> 1 `i `uc -> -> 0 `i `uc :s 3C ]
+"63
+[; ;main.c: 63:     MSdelay(1000);
+[e ( _MSdelay (1 -> -> 1000 `i `ui ]
+"64
+[; ;main.c: 64:     uint8_t header = 0x59;
+[v _header `uc ~T0 @X0 1 a ]
+[e = _header -> -> 89 `i `uc ]
+"65
+[; ;main.c: 65:     uint8_t distance_L = 0;
+[v _distance_L `uc ~T0 @X0 1 a ]
+[e = _distance_L -> -> 0 `i `uc ]
+"66
+[; ;main.c: 66:     uint8_t distance_H = 0;
+[v _distance_H `uc ~T0 @X0 1 a ]
+[e = _distance_H -> -> 0 `i `uc ]
+"67
+[; ;main.c: 67:     _Bool header_received = 0;
+[v _header_received `a ~T0 @X0 1 a ]
+[e = _header_received -> -> 0 `i `a ]
+"68
+[; ;main.c: 68:     uint16_t distance = 0;
+[v _distance `us ~T0 @X0 1 a ]
+[e = _distance -> -> 0 `i `us ]
+"71
+[; ;main.c: 71:    LCD_Clear();
+[e ( _LCD_Clear ..  ]
+"72
+[; ;main.c: 72:    while(1){
+[e :U 2295 ]
+{
+"74
+[; ;main.c: 74:     uint8_t received_bytes[9];
+[v _received_bytes `uc ~T0 @X0 -> 9 `i a ]
+"75
+[; ;main.c: 75:     char hex_string[37];
+[v _hex_string `uc ~T0 @X0 -> 37 `i a ]
+"77
+[; ;main.c: 77:     uint8_t byte_count = 0;
+[v _byte_count `uc ~T0 @X0 1 a ]
+[e = _byte_count -> -> 0 `i `uc ]
+"79
+[; ;main.c: 79:     while (byte_count < 9){
+[e $U 2297  ]
+[e :U 2298 ]
+{
+"81
+[; ;main.c: 81:         if (UART2.IsRxReady()) {
+[e $ ! != -> ( *U . _UART2 4 ..  `i -> 0 `i 2300  ]
+{
+"82
+[; ;main.c: 82:             received_bytes[byte_count] = UART2.Read();
+[e = *U + &U _received_bytes * -> _byte_count `ux -> -> # *U &U _received_bytes `ui `ux ( *U . _UART2 2 ..  ]
+"83
+[; ;main.c: 83:             byte_count++;
+[e ++ _byte_count -> -> 1 `i `uc ]
+"86
+[; ;main.c: 86:         }
+}
+[e :U 2300 ]
+"87
+[; ;main.c: 87:     }
+}
+[e :U 2297 ]
+"79
+[; ;main.c: 79:     while (byte_count < 9){
+[e $ < -> _byte_count `i -> 9 `i 2298  ]
+[e :U 2299 ]
+"88
+[; ;main.c: 88:     if (byte_count == 9){
+[e $ ! == -> _byte_count `i -> 9 `i 2301  ]
+{
+"89
+[; ;main.c: 89:         for(uint8_t i = 0; i<6;i++){
+{
+[v _i `uc ~T0 @X0 1 a ]
+[e = _i -> -> 0 `i `uc ]
+[e $ < -> _i `i -> 6 `i 2302  ]
+[e $U 2303  ]
+[e :U 2302 ]
+{
+"90
+[; ;main.c: 90:             if(received_bytes[i] == header && received_bytes[i+1] == header){
+[e $ ! && == -> *U + &U _received_bytes * -> _i `ux -> -> # *U &U _received_bytes `ui `ux `i -> _header `i == -> *U + &U _received_bytes * -> -> + -> _i `i -> 1 `i `ui `ux -> -> # *U &U _received_bytes `ui `ux `i -> _header `i 2305  ]
+{
+"91
+[; ;main.c: 91:                 distance_L = received_bytes[i+2];
+[e = _distance_L *U + &U _received_bytes * -> -> + -> _i `i -> 2 `i `ui `ux -> -> # *U &U _received_bytes `ui `ux ]
+"92
+[; ;main.c: 92:                 distance_H = received_bytes[i+3];
+[e = _distance_H *U + &U _received_bytes * -> -> + -> _i `i -> 3 `i `ui `ux -> -> # *U &U _received_bytes `ui `ux ]
+"93
+[; ;main.c: 93:                 distance = ((uint16_t)distance_H << 8) | distance_L;
+[e = _distance -> | << -> -> _distance_H `us `ui -> 8 `i -> _distance_L `ui `us ]
+"94
+[; ;main.c: 94:                 sprintf(data, "%u  ", distance);
+[e ( _sprintf (1 , (. , &U _data :s 4C -> _distance `ui ]
+"95
+[; ;main.c: 95:                 LCD_String_xy(2,0,data);
+[e ( _LCD_String_xy (3 , , -> -> 2 `i `uc -> -> 0 `i `uc -> &U _data `*Cuc ]
+"96
+[; ;main.c: 96:                 LCD_String_xy(2,5,"CM");
+[e ( _LCD_String_xy (3 , , -> -> 2 `i `uc -> -> 5 `i `uc :s 5C ]
+"97
+[; ;main.c: 97:                 break;
+[e $U 2303  ]
+"98
+[; ;main.c: 98:             }
+}
+[e :U 2305 ]
+"100
+[; ;main.c: 100:         }
+}
+[e ++ _i -> -> 1 `i `uc ]
+[e $ < -> _i `i -> 6 `i 2302  ]
+[e :U 2303 ]
+}
+"101
+[; ;main.c: 101:     }
+}
+[e :U 2301 ]
+"119
+[; ;main.c: 119:         }
 }
 [e :U 2294 ]
-"73
-[; ;main.c: 73:     while(1)
+[e $U 2295  ]
 [e :U 2296 ]
-"74
-[; ;main.c: 74:     {
-{
-"75
-[; ;main.c: 75:     }
-}
-[e :U 2295 ]
-[e $U 2296  ]
-[e :U 2297 ]
-"76
-[; ;main.c: 76: }
+"120
+[; ;main.c: 120:     }
 [e :UE 2293 ]
 }
 [p f _sprintf 8389632 ]
-[a 4C 37 117 0 ]
-[a 3C 80 114 111 103 114 97 109 109 101 100 0 ]
-[a 5C 32 67 77 0 ]
+[a 3C 112 114 111 103 114 97 109 109 101 100 0 ]
+[a 5C 67 77 0 ]
 [a 1C 67 111 114 114 101 99 116 33 0 ]
 [a 2C 87 114 111 110 103 33 0 ]
+[a 4C 37 117 32 32 0 ]

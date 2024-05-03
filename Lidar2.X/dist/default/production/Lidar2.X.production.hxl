@@ -1,7 +1,7 @@
 ### HEXMate logfile and output summary ###
 
 ### Command-line arguments ###
- C:\Users\Tyler\AppData\Local\Temp\xcAsm08.\driver_tmp_3.o
+ C:\Users\Tyler\AppData\Local\Temp\xcAsa04.\driver_tmp_3.o
  -Odist/default/production\Lidar2.X.production.hex
  -logfile=dist/default/production\Lidar2.X.production.hxl
  -addressing=1
@@ -9,19 +9,21 @@
 
 ### Memory Usage ###
  Input file ranges:
-  0h - 3h		(C:\Users\Tyler\AppData\Local\Temp\xcAsm08.\driver_tmp_3.o)
-  2000h - 28E5h		(C:\Users\Tyler\AppData\Local\Temp\xcAsm08.\driver_tmp_3.o)
-  1FFFCh - 1FFFFh		(C:\Users\Tyler\AppData\Local\Temp\xcAsm08.\driver_tmp_3.o)
-  300000h - 300009h		(C:\Users\Tyler\AppData\Local\Temp\xcAsm08.\driver_tmp_3.o)
+  0h - 3h		(C:\Users\Tyler\AppData\Local\Temp\xcAsa04.\driver_tmp_3.o)
+  2000h - 206Ch		(C:\Users\Tyler\AppData\Local\Temp\xcAsa04.\driver_tmp_3.o)
+  206Eh - 29D3h		(C:\Users\Tyler\AppData\Local\Temp\xcAsa04.\driver_tmp_3.o)
+  1FFFCh - 1FFFFh		(C:\Users\Tyler\AppData\Local\Temp\xcAsa04.\driver_tmp_3.o)
+  300000h - 300009h		(C:\Users\Tyler\AppData\Local\Temp\xcAsa04.\driver_tmp_3.o)
  Unused ranges:
   4h - 1FFFh
-  28E6h - 1FFFBh
+  206Dh - 206Dh
+  29D4h - 1FFFBh
   20000h - 2FFFFFh
 
 ### Hex Memory Map ###
  Legend:
   -- = Unused memory
-  H1 = Input file             (C:\Users\Tyler\AppData\Local\Temp\xcAsm08.\driver_tmp_3.o)
+  H1 = Input file             (C:\Users\Tyler\AppData\Local\Temp\xcAsa04.\driver_tmp_3.o)
 ----------------------------------------------------------
          | 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
 ----------------------------------------------------------
@@ -33,7 +35,7 @@
 00002030 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 00002040 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 00002050 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
-00002060 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+00002060 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 -- H1 H1
 00002070 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 00002080 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 00002090 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
@@ -169,7 +171,22 @@
 000028B0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 000028C0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 000028D0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
-000028E0 | H1 H1 H1 H1 H1 H1 -- -- -- -- -- -- -- -- -- --
+000028E0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+000028F0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+00002900 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+00002910 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+00002920 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+00002930 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+00002940 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+00002950 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+00002960 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+00002970 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+00002980 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+00002990 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+000029A0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+000029B0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+000029C0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+000029D0 | H1 H1 H1 H1 -- -- -- -- -- -- -- -- -- -- -- --
 ----------------------------------------------------------
 0001FFF0 | -- -- -- -- -- -- -- -- -- -- -- -- H1 H1 H1 H1
 ----------------------------------------------------------

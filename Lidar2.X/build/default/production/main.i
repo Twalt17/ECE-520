@@ -26884,7 +26884,7 @@ void CLOCK_Initialize(void);
 
 
 # 1 "./mcc_generated_files/system/../system/pins.h" 1
-# 78 "./mcc_generated_files/system/../system/pins.h"
+# 98 "./mcc_generated_files/system/../system/pins.h"
 void PIN_MANAGER_Initialize (void);
 
 
@@ -27519,33 +27519,63 @@ size_t strxfrm_l (char *restrict, const char *restrict, size_t, locale_t);
 
 void *memccpy (void *restrict, const void *restrict, int, size_t);
 # 36 "main.c" 2
-
-
-
-
-
-
+# 46 "main.c"
 void LCD_String_xy(char ,char ,const char*);
 void LCD_Init();
+uint8_t received_data;
 
 
 
 
 int main(void)
 {
-    char data[10];
+    char data[20];
     SYSTEM_Initialize();
     UART2_Initialize();
+    U2CON1bits.ON = 1;
+    U2CON0bits.RXEN = 1;
+    UART2_ReceiveEnable();
     LCD_Init();
-    LCD_String_xy(1,0,"Programmed");
-    if (UART2.IsRxReady()) {
-        uint8_t received_data = UART2.Read();
-        sprintf(data,"%u",received_data);
-        strcat(data," CM");
-        LCD_String_xy(2,4,data);
+    LCD_String_xy(1,0,"programmed");
+    MSdelay(1000);
+    uint8_t header = 0x59;
+    uint8_t distance_L = 0;
+    uint8_t distance_H = 0;
+    _Bool header_received = 0;
+    uint16_t distance = 0;
+
+
+   LCD_Clear();
+   while(1){
+
+    uint8_t received_bytes[9];
+    char hex_string[37];
+
+    uint8_t byte_count = 0;
+
+    while (byte_count < 9){
+
+        if (UART2.IsRxReady()) {
+            received_bytes[byte_count] = UART2.Read();
+            byte_count++;
+
+
+        }
     }
-# 73 "main.c"
-    while(1)
-    {
+    if (byte_count == 9){
+        for(uint8_t i = 0; i<6;i++){
+            if(received_bytes[i] == header && received_bytes[i+1] == header){
+                distance_L = received_bytes[i+2];
+                distance_H = received_bytes[i+3];
+                distance = ((uint16_t)distance_H << 8) | distance_L;
+                sprintf(data, "%u  ", distance);
+                LCD_String_xy(2,0,data);
+                LCD_String_xy(2,5,"CM");
+                break;
+            }
+
+        }
     }
-}
+# 119 "main.c"
+        }
+    }

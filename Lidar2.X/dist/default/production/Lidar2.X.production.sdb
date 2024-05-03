@@ -5,6 +5,8 @@
 [d frameptr 16353 ]
 "38 C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Lidar2.X/LCD.h
 [v _LCD_Init LCD_Init `(v  1 e 1 0 ]
+"49
+[v _LCD_Clear LCD_Clear `(v  1 e 1 0 ]
 "54
 [v _LCD_Command LCD_Command `(v  1 e 1 0 ]
 "64
@@ -41,8 +43,6 @@
 [v _fputs fputs `(i  1 e 2 0 ]
 "9 C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\nf_sprintf.c
 [v _sprintf sprintf `(i  1 e 2 0 ]
-"7 C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\putch.c
-[v _putch putch `(v  1 e 1 0 ]
 "10 C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\sprcadd.c
 [v ___fladd __fladd `(d  1 e 4 0 ]
 "245
@@ -51,13 +51,11 @@
 [v ___fldiv __fldiv `(d  1 e 4 0 ]
 "8 C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\sprcmul.c
 [v ___flmul __flmul `(d  1 e 4 0 ]
-"3 C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\strcat.c
-[v _strcat strcat `(*.30uc  1 e 2 0 ]
 "15 C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\Umul32.c
 [v ___lmul __lmul `(ul  1 e 4 0 ]
 "91 C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\Umul64.c
 [v ___omul __omul `(uo  1 e 8 0 ]
-"48 C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Lidar2.X\main.c
+"53 C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Lidar2.X\main.c
 [v _main main `(i  1 e 2 0 ]
 "37 C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Lidar2.X\mcc_generated_files/system/src/clock.c
 [v _CLOCK_Initialize CLOCK_Initialize `(v  1 e 1 0 ]
@@ -93,6 +91,8 @@
 [v _UART2_TransmitEnable UART2_TransmitEnable `T(v  1 e 1 0 ]
 "169
 [v _UART2_TransmitDisable UART2_TransmitDisable `T(v  1 e 1 0 ]
+"174
+[v _UART2_ReceiveEnable UART2_ReceiveEnable `T(v  1 e 1 0 ]
 "194
 [v _UART2_AutoBaudSet UART2_AutoBaudSet `T(v  1 e 1 0 ]
 "207
@@ -109,19 +109,21 @@
 [v _UART2_Read UART2_Read `(uc  1 e 1 0 ]
 "272
 [v _UART2_Write UART2_Write `(v  1 e 1 0 ]
-"282
+"284
+[v _putch putch `(v  1 e 1 0 ]
+"294
 [v _UART2_DefaultFramingErrorCallback UART2_DefaultFramingErrorCallback `(v  1 s 1 UART2_DefaultFramingErrorCallback ]
-"287
+"299
 [v _UART2_DefaultOverrunErrorCallback UART2_DefaultOverrunErrorCallback `(v  1 s 1 UART2_DefaultOverrunErrorCallback ]
-"292
+"304
 [v _UART2_DefaultParityErrorCallback UART2_DefaultParityErrorCallback `(v  1 s 1 UART2_DefaultParityErrorCallback ]
-"297
+"309
 [v _UART2_FramingErrorCallbackRegister UART2_FramingErrorCallbackRegister `(v  1 e 1 0 ]
-"305
+"317
 [v _UART2_OverrunErrorCallbackRegister UART2_OverrunErrorCallbackRegister `(v  1 e 1 0 ]
-"313
+"325
 [v _UART2_ParityErrorCallbackRegister UART2_ParityErrorCallbackRegister `(v  1 e 1 0 ]
-[s S397 . 1 `uc 1 INT0IF 1 0 :1:0 
+[s S127 . 1 `uc 1 INT0IF 1 0 :1:0 
 `uc 1 ZCDIF 1 0 :1:1 
 `uc 1 ADIF 1 0 :1:2 
 `uc 1 ADTIF 1 0 :1:3 
@@ -131,9 +133,9 @@
 `uc 1 SMT1PWAIF 1 0 :1:7 
 ]
 "3974 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f47k42.h
-[u S406 . 1 `S397 1 . 1 0 ]
-[v _PIR1bits PIR1bits `VES406  1 e 1 @14753 ]
-[s S428 . 1 `uc 1 INT1IF 1 0 :1:0 
+[u S136 . 1 `S127 1 . 1 0 ]
+[v _PIR1bits PIR1bits `VES136  1 e 1 @14753 ]
+[s S158 . 1 `uc 1 INT1IF 1 0 :1:0 
 `uc 1 C2IF 1 0 :1:1 
 `uc 1 DMA2SCNTIF 1 0 :1:2 
 `uc 1 DMA2DCNTIF 1 0 :1:3 
@@ -143,9 +145,9 @@
 `uc 1 I2C2TXIF 1 0 :1:7 
 ]
 "4217
-[u S437 . 1 `S428 1 . 1 0 ]
-[v _PIR5bits PIR5bits `VES437  1 e 1 @14757 ]
-[s S459 . 1 `uc 1 TMR4IF 1 0 :1:0 
+[u S167 . 1 `S158 1 . 1 0 ]
+[v _PIR5bits PIR5bits `VES167  1 e 1 @14757 ]
+[s S189 . 1 `uc 1 TMR4IF 1 0 :1:0 
 `uc 1 CCP2IF 1 0 :1:1 
 `uc 1 . 1 0 :1:2 
 `uc 1 CWG2IF 1 0 :1:3 
@@ -153,8 +155,8 @@
 `uc 1 INT2IF 1 0 :1:5 
 ]
 "4339
-[u S466 . 1 `S459 1 . 1 0 ]
-[v _PIR7bits PIR7bits `VES466  1 e 1 @14759 ]
+[u S196 . 1 `S189 1 . 1 0 ]
+[v _PIR7bits PIR7bits `VES196  1 e 1 @14759 ]
 "4958
 [v _OSCCON1 OSCCON1 `VEuc  1 e 1 @14809 ]
 "5098
@@ -165,6 +167,8 @@
 [v _OSCTUNE OSCTUNE `VEuc  1 e 1 @14814 ]
 "5405
 [v _OSCFRQ OSCFRQ `VEuc  1 e 1 @14815 ]
+"7517
+[v _RD1PPS RD1PPS `VEuc  1 e 1 @14873 ]
 "8017
 [v _ANSELA ANSELA `VEuc  1 e 1 @14912 ]
 "8079
@@ -265,32 +269,32 @@
 [v _U2P3L U2P3L `VEuc  1 e 1 @15832 ]
 "25120
 [v _U2CON0 U2CON0 `VEuc  1 e 1 @15834 ]
-[s S817 . 1 `uc 1 MODE0 1 0 :1:0 
+[s S553 . 1 `uc 1 MODE0 1 0 :1:0 
 `uc 1 MODE1 1 0 :1:1 
 `uc 1 MODE2 1 0 :1:2 
 ]
 "25151
-[s S821 . 1 `uc 1 U2MODE 1 0 :4:0 
+[s S557 . 1 `uc 1 U2MODE 1 0 :4:0 
 `uc 1 U2RXEN 1 0 :1:4 
 `uc 1 U2TXEN 1 0 :1:5 
 `uc 1 U2ABDEN 1 0 :1:6 
 `uc 1 U2BRGS 1 0 :1:7 
 ]
-[s S827 . 1 `uc 1 U2MODE0 1 0 :1:0 
+[s S563 . 1 `uc 1 U2MODE0 1 0 :1:0 
 `uc 1 U2MODE1 1 0 :1:1 
 `uc 1 U2MODE2 1 0 :1:2 
 ]
-[s S831 . 1 `uc 1 MODE 1 0 :4:0 
+[s S567 . 1 `uc 1 MODE 1 0 :4:0 
 `uc 1 RXEN 1 0 :1:4 
 `uc 1 TXEN 1 0 :1:5 
 `uc 1 ABDEN 1 0 :1:6 
 `uc 1 BRGS 1 0 :1:7 
 ]
-[u S837 . 1 `S817 1 . 1 0 `S821 1 . 1 0 `S827 1 . 1 0 `S831 1 . 1 0 ]
-[v _U2CON0bits U2CON0bits `VES837  1 e 1 @15834 ]
+[u S573 . 1 `S553 1 . 1 0 `S557 1 . 1 0 `S563 1 . 1 0 `S567 1 . 1 0 ]
+[v _U2CON0bits U2CON0bits `VES573  1 e 1 @15834 ]
 "25236
 [v _U2CON1 U2CON1 `VEuc  1 e 1 @15835 ]
-[s S781 . 1 `uc 1 SENDB 1 0 :1:0 
+[s S517 . 1 `uc 1 SENDB 1 0 :1:0 
 `uc 1 BRKOVR 1 0 :1:1 
 `uc 1 . 1 0 :1:2 
 `uc 1 RXBIMD 1 0 :1:3 
@@ -299,7 +303,7 @@
 `uc 1 ON 1 0 :1:7 
 ]
 "25261
-[s S789 . 1 `uc 1 U2SENDB 1 0 :1:0 
+[s S525 . 1 `uc 1 U2SENDB 1 0 :1:0 
 `uc 1 U2BRKOVR 1 0 :1:1 
 `uc 1 . 1 0 :1:2 
 `uc 1 U2RXBIMD 1 0 :1:3 
@@ -307,8 +311,8 @@
 `uc 1 . 1 0 :2:5 
 `uc 1 U2ON 1 0 :1:7 
 ]
-[u S797 . 1 `S781 1 . 1 0 `S789 1 . 1 0 ]
-[v _U2CON1bits U2CON1bits `VES797  1 e 1 @15835 ]
+[u S533 . 1 `S517 1 . 1 0 `S525 1 . 1 0 ]
+[v _U2CON1bits U2CON1bits `VES533  1 e 1 @15835 ]
 "25316
 [v _U2CON2 U2CON2 `VEuc  1 e 1 @15836 ]
 "25455
@@ -317,7 +321,7 @@
 [v _U2BRGH U2BRGH `VEuc  1 e 1 @15838 ]
 "25495
 [v _U2FIFO U2FIFO `VEuc  1 e 1 @15839 ]
-[s S931 . 1 `uc 1 RXBF 1 0 :1:0 
+[s S667 . 1 `uc 1 RXBF 1 0 :1:0 
 `uc 1 RXBE 1 0 :1:1 
 `uc 1 XON 1 0 :1:2 
 `uc 1 RXIDL 1 0 :1:3 
@@ -327,7 +331,7 @@
 `uc 1 TXWRE 1 0 :1:7 
 ]
 "25530
-[s S940 . 1 `uc 1 U2RXBF 1 0 :1:0 
+[s S676 . 1 `uc 1 U2RXBF 1 0 :1:0 
 `uc 1 U2RXBE 1 0 :1:1 
 `uc 1 U2XON 1 0 :1:2 
 `uc 1 U2RXIDL 1 0 :1:3 
@@ -336,34 +340,34 @@
 `uc 1 U2STPMD 1 0 :1:6 
 `uc 1 U2TXWRE 1 0 :1:7 
 ]
-[s S949 . 1 `uc 1 . 1 0 :3:0 
+[s S685 . 1 `uc 1 . 1 0 :3:0 
 `uc 1 U2RCIDL 1 0 :1:3 
 ]
-[s S952 . 1 `uc 1 . 1 0 :3:0 
+[s S688 . 1 `uc 1 . 1 0 :3:0 
 `uc 1 RCIDL 1 0 :1:3 
 ]
-[u S955 . 1 `S931 1 . 1 0 `S940 1 . 1 0 `S949 1 . 1 0 `S952 1 . 1 0 ]
-[v _U2FIFObits U2FIFObits `VES955  1 e 1 @15839 ]
+[u S691 . 1 `S667 1 . 1 0 `S676 1 . 1 0 `S685 1 . 1 0 `S688 1 . 1 0 ]
+[v _U2FIFObits U2FIFObits `VES691  1 e 1 @15839 ]
 "25625
 [v _U2UIR U2UIR `VEuc  1 e 1 @15840 ]
-[s S863 . 1 `uc 1 . 1 0 :2:0 
+[s S599 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 ABDIE 1 0 :1:2 
 `uc 1 . 1 0 :3:3 
 `uc 1 ABDIF 1 0 :1:6 
 `uc 1 WUIF 1 0 :1:7 
 ]
 "25646
-[s S869 . 1 `uc 1 . 1 0 :2:0 
+[s S605 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 U2ABDIE 1 0 :1:2 
 `uc 1 . 1 0 :3:3 
 `uc 1 U2ABDIF 1 0 :1:6 
 `uc 1 U2WUIF 1 0 :1:7 
 ]
-[u S875 . 1 `S863 1 . 1 0 `S869 1 . 1 0 ]
-[v _U2UIRbits U2UIRbits `VES875  1 e 1 @15840 ]
+[u S611 . 1 `S599 1 . 1 0 `S605 1 . 1 0 ]
+[v _U2UIRbits U2UIRbits `VES611  1 e 1 @15840 ]
 "25681
 [v _U2ERRIR U2ERRIR `VEuc  1 e 1 @15841 ]
-[s S891 . 1 `uc 1 TXCIF 1 0 :1:0 
+[s S627 . 1 `uc 1 TXCIF 1 0 :1:0 
 `uc 1 RXFOIF 1 0 :1:1 
 `uc 1 RXBKIF 1 0 :1:2 
 `uc 1 FERIF 1 0 :1:3 
@@ -373,7 +377,7 @@
 `uc 1 TXMTIF 1 0 :1:7 
 ]
 "25708
-[s S900 . 1 `uc 1 U2TXCIF 1 0 :1:0 
+[s S636 . 1 `uc 1 U2TXCIF 1 0 :1:0 
 `uc 1 U2RXFOIF 1 0 :1:1 
 `uc 1 U2RXBKIF 1 0 :1:2 
 `uc 1 U2FERIF 1 0 :1:3 
@@ -382,8 +386,8 @@
 `uc 1 U2PERIF 1 0 :1:6 
 `uc 1 U2TXMTIF 1 0 :1:7 
 ]
-[u S909 . 1 `S891 1 . 1 0 `S900 1 . 1 0 ]
-[v _U2ERRIRbits U2ERRIRbits `VES909  1 e 1 @15841 ]
+[u S645 . 1 `S627 1 . 1 0 `S636 1 . 1 0 ]
+[v _U2ERRIRbits U2ERRIRbits `VES645  1 e 1 @15841 ]
 "25793
 [v _U2ERRIE U2ERRIE `VEuc  1 e 1 @15842 ]
 "45976
@@ -406,7 +410,7 @@
 [v _TRISD TRISD `VEuc  1 e 1 @16325 ]
 "46724
 [v _TRISE TRISE `VEuc  1 e 1 @16326 ]
-[s S116 . 1 `uc 1 RA0 1 0 :1:0 
+[s S875 . 1 `uc 1 RA0 1 0 :1:0 
 `uc 1 RA1 1 0 :1:1 
 `uc 1 RA2 1 0 :1:2 
 `uc 1 RA3 1 0 :1:3 
@@ -416,11 +420,11 @@
 `uc 1 RA7 1 0 :1:7 
 ]
 "46773
-[u S125 . 1 `S116 1 . 1 0 ]
+[u S884 . 1 `S875 1 . 1 0 ]
 "46773
 "46773
-[v _PORTAbits PORTAbits `VES125  1 e 1 @16330 ]
-[s S137 . 1 `uc 1 RC0 1 0 :1:0 
+[v _PORTAbits PORTAbits `VES884  1 e 1 @16330 ]
+[s S896 . 1 `uc 1 RC0 1 0 :1:0 
 `uc 1 RC1 1 0 :1:1 
 `uc 1 RC2 1 0 :1:2 
 `uc 1 RC3 1 0 :1:3 
@@ -430,11 +434,11 @@
 `uc 1 RC7 1 0 :1:7 
 ]
 "46897
-[u S146 . 1 `S137 1 . 1 0 ]
+[u S905 . 1 `S896 1 . 1 0 ]
 "46897
 "46897
-[v _PORTCbits PORTCbits `VES146  1 e 1 @16332 ]
-[s S371 . 1 `uc 1 INT0EDG 1 0 :1:0 
+[v _PORTCbits PORTCbits `VES905  1 e 1 @16332 ]
+[s S101 . 1 `uc 1 INT0EDG 1 0 :1:0 
 `uc 1 INT1EDG 1 0 :1:1 
 `uc 1 INT2EDG 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
@@ -443,14 +447,14 @@
 `uc 1 GIE 1 0 :1:7 
 ]
 "47062
-[s S379 . 1 `uc 1 . 1 0 :7:0 
+[s S109 . 1 `uc 1 . 1 0 :7:0 
 `uc 1 GIEH 1 0 :1:7 
 ]
 "47062
-[u S382 . 1 `S371 1 . 1 0 `S379 1 . 1 0 ]
+[u S112 . 1 `S101 1 . 1 0 `S109 1 . 1 0 ]
 "47062
 "47062
-[v _INTCON0bits INTCON0bits `VES382  1 e 1 @16338 ]
+[v _INTCON0bits INTCON0bits `VES112  1 e 1 @16338 ]
 "53015
 [v _LATA0 LATA0 `VEb  1 e 0 @130512 ]
 "53018
@@ -468,97 +472,116 @@
 [v _INT1_InterruptHandler INT1_InterruptHandler `*.38(v  1 e 3 0 ]
 "40
 [v _INT2_InterruptHandler INT2_InterruptHandler `*.38(v  1 e 3 0 ]
-[s S202 . 72 `*.38(v 1 Initialize 3 0 `*.38(v 1 Deinitialize 3 3 `*.38(uc 1 Read 3 6 `*.38(v 1 Write 3 9 `*.38(a 1 IsRxReady 3 12 `*.38(a 1 IsTxReady 3 15 `*.38(a 1 IsTxDone 3 18 `*.38(v 1 TransmitEnable 3 21 `*.38(v 1 TransmitDisable 3 24 `*.38(v 1 AutoBaudSet 3 27 `*.38(a 1 AutoBaudQuery 3 30 `*.38(a 1 AutoBaudEventEnableGet 3 33 `*.38(v 1 BRGCountSet 3 36 `*.38(ul 1 BRGCountGet 3 39 `*.38(v 1 BaudRateSet 3 42 `*.38(ul 1 BaudRateGet 3 45 `*.38(ui 1 ErrorGet 3 48 `*.38(v 1 TxCompleteCallbackRegister 3 51 `*.38(v 1 RxCompleteCallbackRegister 3 54 `*.38(v 1 TxCollisionCallbackRegister 3 57 `*.38(v 1 FramingErrorCallbackRegister 3 60 `*.38(v 1 OverrunErrorCallbackRegister 3 63 `*.38(v 1 ParityErrorCallbackRegister 3 66 `*.38(v 1 EventCallbackRegister 3 69 ]
+[s S329 . 72 `*.38(v 1 Initialize 3 0 `*.38(v 1 Deinitialize 3 3 `*.38(uc 1 Read 3 6 `*.38(v 1 Write 3 9 `*.38(a 1 IsRxReady 3 12 `*.38(a 1 IsTxReady 3 15 `*.38(a 1 IsTxDone 3 18 `*.38(v 1 TransmitEnable 3 21 `*.38(v 1 TransmitDisable 3 24 `*.38(v 1 AutoBaudSet 3 27 `*.38(a 1 AutoBaudQuery 3 30 `*.38(a 1 AutoBaudEventEnableGet 3 33 `*.38(v 1 BRGCountSet 3 36 `*.38(ul 1 BRGCountGet 3 39 `*.38(v 1 BaudRateSet 3 42 `*.38(ul 1 BaudRateGet 3 45 `*.38(ui 1 ErrorGet 3 48 `*.38(v 1 TxCompleteCallbackRegister 3 51 `*.38(v 1 RxCompleteCallbackRegister 3 54 `*.38(v 1 TxCollisionCallbackRegister 3 57 `*.38(v 1 FramingErrorCallbackRegister 3 60 `*.38(v 1 OverrunErrorCallbackRegister 3 63 `*.38(v 1 ParityErrorCallbackRegister 3 66 `*.38(v 1 EventCallbackRegister 3 69 ]
 "47 C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Lidar2.X\mcc_generated_files/uart/src/uart2.c
-[v _UART2 UART2 `CS202  1 e 72 0 ]
-[s S744 . 1 `uc 1 perr 1 0 :1:0 
+[v _UART2 UART2 `CS329  1 e 72 0 ]
+[s S480 . 1 `uc 1 perr 1 0 :1:0 
 `uc 1 ferr 1 0 :1:1 
 `uc 1 oerr 1 0 :1:2 
 `uc 1 reserved 1 0 :5:3 
 ]
 "77
-[u S749 . 2 `S744 1 . 1 0 `ui 1 status 2 0 ]
-[v _uart2RxLastError uart2RxLastError `VES749  1 e 2 0 ]
+[u S485 . 2 `S480 1 . 1 0 `ui 1 status 2 0 ]
+[v _uart2RxLastError uart2RxLastError `VES485  1 e 2 0 ]
 "83
 [v _UART2_FramingErrorHandler UART2_FramingErrorHandler `*.38(v  1 e 3 0 ]
 "84
 [v _UART2_OverrunErrorHandler UART2_OverrunErrorHandler `*.38(v  1 e 3 0 ]
 "85
 [v _UART2_ParityErrorHandler UART2_ParityErrorHandler `*.38(v  1 e 3 0 ]
-"48 C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Lidar2.X\main.c
+"53 C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Lidar2.X\main.c
 [v _main main `(i  1 e 2 0 ]
 {
-"56
-[v main@received_data received_data `uc  1 a 1 49 ]
-"50
-[v main@data data `[10]uc  1 a 10 39 ]
-"76
-} 0
-"3 C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\strcat.c
-[v _strcat strcat `(*.30uc  1 e 2 0 ]
-{
-"5
-[v strcat@i i `ui  1 a 2 2 ]
-"3
-[v strcat@dest dest `*.30uc  1 p 1 0 ]
-[v strcat@src src `*.31Cuc  1 p 1 1 ]
-"14
+"89
+[v main@i i `uc  1 a 1 78 ]
+"74
+[v main@received_bytes received_bytes `[9]uc  1 a 9 63 ]
+"77
+[v main@byte_count byte_count `uc  1 a 1 77 ]
+"55
+[v main@data data `[20]uc  1 a 20 43 ]
+"68
+[v main@distance distance `us  1 a 2 72 ]
+"64
+[v main@header header `uc  1 a 1 76 ]
+"66
+[v main@distance_H distance_H `uc  1 a 1 75 ]
+"65
+[v main@distance_L distance_L `uc  1 a 1 74 ]
+"120
 } 0
 "9 C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\nf_sprintf.c
 [v _sprintf sprintf `(i  1 e 2 0 ]
 {
-[u S1536 . 3 `*.2uc 1 buffer 3 0 `*.2Cuc 1 source 3 0 ]
+[u S1593 . 3 `*.2uc 1 buffer 3 0 `*.2Cuc 1 source 3 0 ]
 "13
-[s S1539 _IO_FILE 12 `S1536 1 . 3 0 `i 1 count 2 3 `[3]uc 1 ungetbuf 3 5 `i 1 ungetcnt 2 8 `i 1 limit 2 10 ]
-[v sprintf@f f `S1539  1 a 12 27 ]
+[s S1596 _IO_FILE 12 `S1593 1 . 3 0 `i 1 count 2 3 `[3]uc 1 ungetbuf 3 5 `i 1 ungetcnt 2 8 `i 1 limit 2 10 ]
+[v sprintf@f f `S1596  1 a 12 29 ]
 "12
-[v sprintf@ap ap `[1]*.30v  1 a 1 26 ]
+[v sprintf@ap ap `[1]*.30v  1 a 1 28 ]
 "9
-[v sprintf@s s `*.30uc  1 p 1 22 ]
-[v sprintf@fmt fmt `*.31Cuc  1 p 1 23 ]
+[v sprintf@s s `*.30uc  1 p 1 24 ]
+[v sprintf@fmt fmt `*.31Cuc  1 p 1 25 ]
 "23
 } 0
 "1817 C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\doprnt.c
 [v _vfprintf vfprintf `(i  1 e 2 0 ]
 {
 "1820
-[v vfprintf@cfmt cfmt `*.31uc  1 a 1 21 ]
-[s S1571 _IO_FILE 0 ]
+[v vfprintf@cfmt cfmt `*.31uc  1 a 1 23 ]
+[s S1628 _IO_FILE 0 ]
 "1817
-[v vfprintf@fp fp `*.30S1571  1 p 1 18 ]
-[v vfprintf@fmt fmt `*.31Cuc  1 p 1 19 ]
-[v vfprintf@ap ap `*.30*.30v  1 p 1 20 ]
+[v vfprintf@fp fp `*.30S1628  1 p 1 20 ]
+[v vfprintf@fmt fmt `*.31Cuc  1 p 1 21 ]
+[v vfprintf@ap ap `*.30*.30v  1 p 1 22 ]
 "1840
 } 0
 "1177
 [v _vfpfcnvrt vfpfcnvrt `(v  1 s 1 vfpfcnvrt ]
 {
-[u S1584 . 4 `i 1 sint 2 0 `ui 1 uint 2 0 `d 1 f 4 0 ]
+[u S1641 . 4 `i 1 sint 2 0 `ui 1 uint 2 0 `d 1 f 4 0 ]
 "1188
-[v vfpfcnvrt@convarg convarg `S1584  1 a 4 12 ]
+[v vfpfcnvrt@convarg convarg `S1641  1 a 4 14 ]
 "1179
-[v vfpfcnvrt@c c `uc  1 a 1 17 ]
-[v vfpfcnvrt@cp cp `*.31uc  1 a 1 16 ]
-[s S1571 _IO_FILE 0 ]
+[v vfpfcnvrt@c c `uc  1 a 1 19 ]
+[v vfpfcnvrt@cp cp `*.31uc  1 a 1 18 ]
+[s S1628 _IO_FILE 0 ]
 "1177
-[v vfpfcnvrt@fp fp `*.30S1571  1 p 1 8 ]
-[v vfpfcnvrt@fmt fmt `*.30*.31uc  1 p 1 9 ]
-[v vfpfcnvrt@ap ap `*.30*.30v  1 p 1 10 ]
+[v vfpfcnvrt@fp fp `*.30S1628  1 p 1 10 ]
+[v vfpfcnvrt@fmt fmt `*.30*.31uc  1 p 1 11 ]
+[v vfpfcnvrt@ap ap `*.30*.30v  1 p 1 12 ]
 "1814
 } 0
 "8 C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\nf_fputc.c
 [v _fputc fputc `(i  1 e 2 0 ]
 {
-[v fputc@c c `i  1 p 2 0 ]
-[u S1536 . 3 `*.2uc 1 buffer 3 0 `*.2Cuc 1 source 3 0 ]
-[s S1539 _IO_FILE 12 `S1536 1 . 3 0 `i 1 count 2 3 `[3]uc 1 ungetbuf 3 5 `i 1 ungetcnt 2 8 `i 1 limit 2 10 ]
-[v fputc@fp fp `*.30S1539  1 p 1 2 ]
+[v fputc@c c `i  1 p 2 2 ]
+[u S1593 . 3 `*.2uc 1 buffer 3 0 `*.2Cuc 1 source 3 0 ]
+[s S1596 _IO_FILE 12 `S1593 1 . 3 0 `i 1 count 2 3 `[3]uc 1 ungetbuf 3 5 `i 1 ungetcnt 2 8 `i 1 limit 2 10 ]
+[v fputc@fp fp `*.30S1596  1 p 1 4 ]
 "24
 } 0
-"7 C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\putch.c
+"284 C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Lidar2.X\mcc_generated_files/uart/src/uart2.c
 [v _putch putch `(v  1 e 1 0 ]
 {
-"9
+[v putch@txData txData `uc  1 a 1 wreg ]
+[v putch@txData txData `uc  1 a 1 wreg ]
+[v putch@txData txData `uc  1 a 1 1 ]
+"288
+} 0
+"272
+[v _UART2_Write UART2_Write `(v  1 e 1 0 ]
+{
+[v UART2_Write@txData txData `uc  1 a 1 wreg ]
+[v UART2_Write@txData txData `uc  1 a 1 wreg ]
+"274
+[v UART2_Write@txData txData `uc  1 a 1 0 ]
+"275
+} 0
+"232
+[v _UART2_IsTxReady UART2_IsTxReady `(a  1 e 1 0 ]
+{
+"235
 } 0
 "7 C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\lwmod.c
 [v ___lwmod __lwmod `(ui  1 e 2 0 ]
@@ -582,7 +605,12 @@
 [v ___lwdiv@divisor divisor `ui  1 p 2 2 ]
 "30
 } 0
-"266 C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Lidar2.X\mcc_generated_files/uart/src/uart2.c
+"174 C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Lidar2.X\mcc_generated_files/uart/src/uart2.c
+[v _UART2_ReceiveEnable UART2_ReceiveEnable `T(v  1 e 1 0 ]
+{
+"177
+} 0
+"266
 [v _UART2_Read UART2_Read `(uc  1 e 1 0 ]
 {
 "269
@@ -602,28 +630,28 @@
 {
 "134
 } 0
-"313
+"325
 [v _UART2_ParityErrorCallbackRegister UART2_ParityErrorCallbackRegister `(v  1 e 1 0 ]
 {
 [v UART2_ParityErrorCallbackRegister@callbackHandler callbackHandler `*.38(v  1 p 3 0 ]
-"319
+"331
 } 0
-"305
+"317
 [v _UART2_OverrunErrorCallbackRegister UART2_OverrunErrorCallbackRegister `(v  1 e 1 0 ]
 {
 [v UART2_OverrunErrorCallbackRegister@callbackHandler callbackHandler `*.38(v  1 p 3 0 ]
-"311
+"323
 } 0
-"297
+"309
 [v _UART2_FramingErrorCallbackRegister UART2_FramingErrorCallbackRegister `(v  1 e 1 0 ]
 {
 [v UART2_FramingErrorCallbackRegister@callbackHandler callbackHandler `*.38(v  1 p 3 0 ]
-"303
+"315
 } 0
 "38 C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Lidar2.X\mcc_generated_files/system/src/pins.c
 [v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
 {
-"134
+"135
 } 0
 "42 C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Lidar2.X\mcc_generated_files/system/src/interrupt.c
 [v _INTERRUPT_Initialize INTERRUPT_Initialize `(v  1 e 1 0 ]
@@ -685,6 +713,11 @@
 [v _LCD_Init LCD_Init `(v  1 e 1 0 ]
 {
 "47
+} 0
+"49
+[v _LCD_Clear LCD_Clear `(v  1 e 1 0 ]
+{
+"52
 } 0
 "54
 [v _LCD_Command LCD_Command `(v  1 e 1 0 ]
