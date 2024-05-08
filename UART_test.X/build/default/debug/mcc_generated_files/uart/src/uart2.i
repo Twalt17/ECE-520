@@ -27370,7 +27370,7 @@ void UART2_Initialize(void)
 
     U2CON2 = 0x0;
 
-    U2BRGL = 0x1;
+    U2BRGL = 0x10;
 
     U2BRGH = 0x0;
 

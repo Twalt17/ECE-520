@@ -31,30 +31,47 @@
     THIS SOFTWARE.
 */
 #include "mcc_generated_files/system/system.h"
-
+#include <stdio.h>
+#include <time.h>
+int random_number (int min_num, int max_num);
 /*
     Main application
 */
+
 
 int main(void)
 {
     SYSTEM_Initialize();
     UART2_Initialize();
-    
-
-    // If using interrupts in PIC18 High/Low Priority Mode you need to enable the Global High and Low Interrupts 
-    // If using interrupts in PIC Mid-Range Compatibility Mode you need to enable the Global Interrupts 
-    // Use the following macros to: 
-
-    // Enable the Global Interrupts 
-    //INTERRUPT_GlobalInterruptEnable(); 
-
-    // Disable the Global Interrupts 
-    //INTERRUPT_GlobalInterruptDisable(); 
-
-
+    srand(time(NULL));
+    ANSELB = 0;
+    TRISB = 0;
+    PORTB = 0;
+  
     while(1)
     {
-        printf("hello \r\n");
+       // printf("hello \r\n");
+        printf("%d\r\n", random_number(1,100));
+        //printf("Min : 100 Max 1000 %d\r\n", random_number(100,1000));
+        __delay_ms(1000);
+        
+        //PORTBbits.RB1 ^=1;
     }    
+}
+
+int random_number (int min_num, int max_num){
+    
+    int result = 0, low_num = 0, hi_num = 0;
+    if(min_num < max_num)
+    {
+        low_num = min_num;
+        hi_num = max_num + 1;
+    }
+    else 
+    {
+        low_num = max_num +1;
+        hi_num = min_num;
+    }
+    result = (rand() % (hi_num - low_num)) + low_num;
+    return result;
 }
