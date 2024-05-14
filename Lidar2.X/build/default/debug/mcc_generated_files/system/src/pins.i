@@ -26900,7 +26900,7 @@ void PIN_MANAGER_Initialize(void)
     TRISA = 0xFF;
     TRISB = 0xFF;
     TRISC = 0xFF;
-    TRISD = 0xFD;
+    TRISD = 0xFE;
     TRISE = 0x7;
 
 
@@ -26960,8 +26960,8 @@ void PIN_MANAGER_Initialize(void)
 
 
 
-    U2RXPPS = 0x18;
-    RD1PPS = 0x16;
+    U2RXPPS = 0x19;
+    RD0PPS = 0x16;
 
 
 

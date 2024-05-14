@@ -125,9 +125,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "11498
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f47k42.h: 11498: extern volatile unsigned char U2RXPPS __attribute__((address(0x3AE8)));
 [v _U2RXPPS `Vuc ~T0 @X0 0 e@15080 ]
-"7517
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f47k42.h: 7517: extern volatile unsigned char RD1PPS __attribute__((address(0x3A19)));
-[v _RD1PPS `Vuc ~T0 @X0 0 e@14873 ]
+"7467
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f47k42.h: 7467: extern volatile unsigned char RD0PPS __attribute__((address(0x3A18)));
+[v _RD0PPS `Vuc ~T0 @X0 0 e@14872 ]
 "8327
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f47k42.h: 8327: extern volatile unsigned char IOCAP __attribute__((address(0x3A45)));
 [v _IOCAP `Vuc ~T0 @X0 0 e@14917 ]
@@ -2423,8 +2423,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;mcc_generated_files/system/src/pins.c: 54:     TRISC = 0xFF;
 [e = _TRISC -> -> 255 `i `uc ]
 "55
-[; ;mcc_generated_files/system/src/pins.c: 55:     TRISD = 0xFD;
-[e = _TRISD -> -> 253 `i `uc ]
+[; ;mcc_generated_files/system/src/pins.c: 55:     TRISD = 0xFE;
+[e = _TRISD -> -> 254 `i `uc ]
 "56
 [; ;mcc_generated_files/system/src/pins.c: 56:     TRISE = 0x7;
 [e = _TRISE -> -> 7 `i `uc ]
@@ -2522,11 +2522,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;mcc_generated_files/system/src/pins.c: 111:     RD1I2C = 0x0;
 [e = _RD1I2C -> -> 0 `i `uc ]
 "115
-[; ;mcc_generated_files/system/src/pins.c: 115:     U2RXPPS = 0x18;
-[e = _U2RXPPS -> -> 24 `i `uc ]
+[; ;mcc_generated_files/system/src/pins.c: 115:     U2RXPPS = 0x19;
+[e = _U2RXPPS -> -> 25 `i `uc ]
 "116
-[; ;mcc_generated_files/system/src/pins.c: 116:     RD1PPS = 0x16;
-[e = _RD1PPS -> -> 22 `i `uc ]
+[; ;mcc_generated_files/system/src/pins.c: 116:     RD0PPS = 0x16;
+[e = _RD0PPS -> -> 22 `i `uc ]
 "121
 [; ;mcc_generated_files/system/src/pins.c: 121:     IOCAP = 0x0;
 [e = _IOCAP -> -> 0 `i `uc ]

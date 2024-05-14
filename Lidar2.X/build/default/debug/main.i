@@ -27546,7 +27546,7 @@ int main(void)
     U2CON0bits.TXEN = 1;
     UART2_ReceiveEnable();
     LCD_Init();
-    LCD_String_xy(1,0,"tits");
+    LCD_String_xy(1,0,"programmed2");
     MSdelay(1000);
 
    TF_Luna_Send_Freq(header, 0x6, freq_ID, freq, freq_dec, checksum);
@@ -27555,6 +27555,7 @@ int main(void)
    LCD_Clear();
    MSdelay(200);
    TF_Luna_Trigger(header, 0x4, trigger, 0x00);
+   printf("hello..\r\n");
    read();
    MSdelay(1000);
 }
@@ -27600,7 +27601,7 @@ int main(void)
 
     return;
     }
-# 147 "main.c"
+# 148 "main.c"
 void TF_Luna_Send_Freq(uint8_t header, uint8_t length, uint8_t id, uint8_t freq, uint8_t freq_dec, uint8_t checksum) {
     uint8_t bytes[6];
 
@@ -27638,7 +27639,7 @@ void TF_Luna_Trigger(uint8_t header, uint8_t length, uint8_t id, uint8_t payload
             UART2.Write(bytes[bytes_sent]);
             bytes_sent++;
         }
-        LCD_String_xy(1,0,"tran lost");
-        printf("stuck with no transmission \n");
+
+
     }
 }

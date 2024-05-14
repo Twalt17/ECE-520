@@ -64,23 +64,23 @@ int main(void)
     
     SYSTEM_Initialize();
     UART2_Initialize();
-   // U2CON1bits.ON = 1;
-   // U2CON0bits.RXEN = 1;
-   // U2CON0bits.TXEN = 1;
-   // UART2_ReceiveEnable();
-    //LCD_Init();
-    //LCD_String_xy(1,0,"programmed2");
-    //MSdelay(1000);
+    U2CON1bits.ON = 1;
+    U2CON0bits.RXEN = 1;
+    U2CON0bits.TXEN = 1;
+    UART2_ReceiveEnable();
+    LCD_Init();
+    LCD_String_xy(1,0,"programmed2");
+    MSdelay(1000);
     
-   //TF_Luna_Send_Freq(header, 0x6, freq_ID, freq, freq_dec, checksum);
+   TF_Luna_Send_Freq(header, 0x6, freq_ID, freq, freq_dec, checksum);
    
    while(1){  
-  // LCD_Clear();
-   //MSdelay(200);
-   //TF_Luna_Trigger(header, 0x4, trigger, 0x00);
+   //LCD_Clear();
+   MSdelay(200);
+   TF_Luna_Trigger(header, 0x4, trigger, 0x00);
    printf("hello..\r\n");
-   //read();
-  // MSdelay(1000);
+   read();
+   MSdelay(1000);
 }
 }
 
@@ -94,14 +94,14 @@ int main(void)
     
     //while(count < 254){
     uint8_t received_bytes[9]; // Array to store received bytes
-    char hex_string[37]; // String to hold hexadecimal representation (9 bytes * 2 characters per byte + 8 spaces + 1 for null terminator)
+    char hex_string[37]; // String to hold hex format
     
     uint8_t byte_count = 0; // Counter to track number of received bytes
 
     while (byte_count < 9){
         // Continuously check for UART receive data
-        if (UART2.IsRxReady()) {
-            received_bytes[byte_count] = UART2.Read(); // Read byte and store in array
+        if (UART1.IsRxReady()) {
+            received_bytes[byte_count] = UART1.Read(); // Read byte and store in array
             byte_count++; // Increment byte count
 
             // Display received bytes in hexadecimal when all 9 bytes are received
@@ -159,8 +159,8 @@ void TF_Luna_Send_Freq(uint8_t header, uint8_t length, uint8_t id, uint8_t freq,
 
     
     while(bytes_sent < 6){
-        if (UART2.IsTxReady()) {
-            UART2.Write(bytes[bytes_sent]);
+        if (UART1.IsTxReady()) {
+            UART1.Write(bytes[bytes_sent]);
             bytes_sent++;
         } 
     }
@@ -178,8 +178,8 @@ void TF_Luna_Trigger(uint8_t header, uint8_t length, uint8_t id, uint8_t payload
     bytes[3] = payload;
     
     while(bytes_sent < 4){
-        if (UART2.IsTxReady()) {
-            UART2.Write(bytes[bytes_sent]);
+        if (UART1.IsTxReady()) {
+            UART1.Write(bytes[bytes_sent]);
             bytes_sent++;
         } 
        

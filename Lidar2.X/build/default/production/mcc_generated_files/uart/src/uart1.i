@@ -1,4 +1,4 @@
-# 1 "main.c"
+# 1 "mcc_generated_files/uart/src/uart1.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,10 +6,281 @@
 # 1 "<built-in>" 2
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "main.c" 2
-# 33 "main.c"
-# 1 "./mcc_generated_files/system/system.h" 1
-# 38 "./mcc_generated_files/system/system.h"
+# 1 "mcc_generated_files/uart/src/uart1.c" 2
+# 37 "mcc_generated_files/uart/src/uart1.c"
+# 1 "mcc_generated_files/uart/src/../uart1.h" 1
+# 40 "mcc_generated_files/uart/src/../uart1.h"
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\stdbool.h" 1 3
+# 40 "mcc_generated_files/uart/src/../uart1.h" 2
+
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\stdint.h" 1 3
+
+
+
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\musl_xc8.h" 1 3
+# 5 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\stdint.h" 2 3
+# 26 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\stdint.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\bits/alltypes.h" 1 3
+# 133 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef unsigned __int24 uintptr_t;
+# 148 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef __int24 intptr_t;
+# 164 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef signed char int8_t;
+
+
+
+
+typedef short int16_t;
+
+
+
+
+typedef __int24 int24_t;
+
+
+
+
+typedef long int32_t;
+
+
+
+
+
+typedef long long int64_t;
+# 194 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef long long intmax_t;
+
+
+
+
+
+typedef unsigned char uint8_t;
+
+
+
+
+typedef unsigned short uint16_t;
+
+
+
+
+typedef __uint24 uint24_t;
+
+
+
+
+typedef unsigned long uint32_t;
+
+
+
+
+
+typedef unsigned long long uint64_t;
+# 235 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef unsigned long long uintmax_t;
+# 27 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\stdint.h" 2 3
+
+typedef int8_t int_fast8_t;
+
+typedef int64_t int_fast64_t;
+
+
+typedef int8_t int_least8_t;
+typedef int16_t int_least16_t;
+
+typedef int24_t int_least24_t;
+typedef int24_t int_fast24_t;
+
+typedef int32_t int_least32_t;
+
+typedef int64_t int_least64_t;
+
+
+typedef uint8_t uint_fast8_t;
+
+typedef uint64_t uint_fast64_t;
+
+
+typedef uint8_t uint_least8_t;
+typedef uint16_t uint_least16_t;
+
+typedef uint24_t uint_least24_t;
+typedef uint24_t uint_fast24_t;
+
+typedef uint32_t uint_least32_t;
+
+typedef uint64_t uint_least64_t;
+# 148 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\stdint.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\bits/stdint.h" 1 3
+typedef int16_t int_fast16_t;
+typedef int32_t int_fast32_t;
+typedef uint16_t uint_fast16_t;
+typedef uint32_t uint_fast32_t;
+# 149 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\stdint.h" 2 3
+# 41 "mcc_generated_files/uart/src/../uart1.h" 2
+
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\stdio.h" 1 3
+# 10 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\stdio.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\features.h" 1 3
+# 11 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\stdio.h" 2 3
+# 24 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\stdio.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\bits/alltypes.h" 1 3
+# 12 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef void * va_list[1];
+
+
+
+
+typedef void * __isoc_va_list[1];
+# 128 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef unsigned size_t;
+# 143 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef __int24 ssize_t;
+# 255 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef long long off_t;
+# 409 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef struct _IO_FILE FILE;
+# 25 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\stdio.h" 2 3
+# 52 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\stdio.h" 3
+typedef union _G_fpos64_t {
+ char __opaque[16];
+ double __align;
+} fpos_t;
+
+extern FILE *const stdin;
+extern FILE *const stdout;
+extern FILE *const stderr;
+
+
+
+
+
+FILE *fopen(const char *restrict, const char *restrict);
+FILE *freopen(const char *restrict, const char *restrict, FILE *restrict);
+int fclose(FILE *);
+
+int remove(const char *);
+int rename(const char *, const char *);
+
+int feof(FILE *);
+int ferror(FILE *);
+int fflush(FILE *);
+void clearerr(FILE *);
+
+int fseek(FILE *, long, int);
+long ftell(FILE *);
+void rewind(FILE *);
+
+int fgetpos(FILE *restrict, fpos_t *restrict);
+int fsetpos(FILE *, const fpos_t *);
+
+size_t fread(void *restrict, size_t, size_t, FILE *restrict);
+size_t fwrite(const void *restrict, size_t, size_t, FILE *restrict);
+
+int fgetc(FILE *);
+int getc(FILE *);
+int getchar(void);
+
+
+
+
+
+int ungetc(int, FILE *);
+int getch(void);
+
+int fputc(int, FILE *);
+int putc(int, FILE *);
+int putchar(int);
+
+
+
+
+
+void putch(char);
+
+char *fgets(char *restrict, int, FILE *restrict);
+
+char *gets(char *);
+
+
+int fputs(const char *restrict, FILE *restrict);
+int puts(const char *);
+
+__attribute__((__format__(__printf__, 1, 2)))
+int printf(const char *restrict, ...);
+__attribute__((__format__(__printf__, 2, 3)))
+int fprintf(FILE *restrict, const char *restrict, ...);
+__attribute__((__format__(__printf__, 2, 3)))
+int sprintf(char *restrict, const char *restrict, ...);
+__attribute__((__format__(__printf__, 3, 4)))
+int snprintf(char *restrict, size_t, const char *restrict, ...);
+
+__attribute__((__format__(__printf__, 1, 0)))
+int vprintf(const char *restrict, __isoc_va_list);
+int vfprintf(FILE *restrict, const char *restrict, __isoc_va_list);
+__attribute__((__format__(__printf__, 2, 0)))
+int vsprintf(char *restrict, const char *restrict, __isoc_va_list);
+__attribute__((__format__(__printf__, 3, 0)))
+int vsnprintf(char *restrict, size_t, const char *restrict, __isoc_va_list);
+
+__attribute__((__format__(__scanf__, 1, 2)))
+int scanf(const char *restrict, ...);
+__attribute__((__format__(__scanf__, 2, 3)))
+int fscanf(FILE *restrict, const char *restrict, ...);
+__attribute__((__format__(__scanf__, 2, 3)))
+int sscanf(const char *restrict, const char *restrict, ...);
+
+__attribute__((__format__(__scanf__, 1, 0)))
+int vscanf(const char *restrict, __isoc_va_list);
+int vfscanf(FILE *restrict, const char *restrict, __isoc_va_list);
+__attribute__((__format__(__scanf__, 2, 0)))
+int vsscanf(const char *restrict, const char *restrict, __isoc_va_list);
+
+void perror(const char *);
+
+int setvbuf(FILE *restrict, char *restrict, int, size_t);
+void setbuf(FILE *restrict, char *restrict);
+
+char *tmpnam(char *);
+FILE *tmpfile(void);
+
+
+
+
+FILE *fmemopen(void *restrict, size_t, const char *restrict);
+FILE *open_memstream(char **, size_t *);
+FILE *fdopen(int, const char *);
+FILE *popen(const char *, const char *);
+int pclose(FILE *);
+int fileno(FILE *);
+int fseeko(FILE *, off_t, int);
+off_t ftello(FILE *);
+int dprintf(int, const char *restrict, ...);
+int vdprintf(int, const char *restrict, __isoc_va_list);
+void flockfile(FILE *);
+int ftrylockfile(FILE *);
+void funlockfile(FILE *);
+int getc_unlocked(FILE *);
+int getchar_unlocked(void);
+int putc_unlocked(int, FILE *);
+int putchar_unlocked(int);
+ssize_t getdelim(char **restrict, size_t *restrict, int, FILE *restrict);
+ssize_t getline(char **restrict, size_t *restrict, FILE *restrict);
+int renameat(int, const char *, int, const char *);
+char *ctermid(char *);
+
+
+
+
+
+
+
+char *tempnam(const char *, const char *);
+# 42 "mcc_generated_files/uart/src/../uart1.h" 2
+
+# 1 "mcc_generated_files/uart/src/../../system/system.h" 1
+# 38 "mcc_generated_files/uart/src/../../system/system.h"
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\xc.h" 1 3
 # 18 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -23,28 +294,10 @@ extern double __fpnormalize(double);
 
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\stdlib.h" 1 3
-
-
-
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\musl_xc8.h" 1 3
-# 5 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\stdlib.h" 2 3
-
-
-
-
-
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\features.h" 1 3
-# 11 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\stdlib.h" 2 3
 # 21 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\stdlib.h" 3
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\bits/alltypes.h" 1 3
 # 24 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\bits/alltypes.h" 3
 typedef long int wchar_t;
-# 128 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef unsigned size_t;
-# 174 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef __int24 int24_t;
-# 210 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef __uint24 uint24_t;
 # 22 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\stdlib.h" 2 3
 
 int atoi (const char *);
@@ -133,91 +386,6 @@ extern void __builtin_software_breakpoint(void);
 
 
 
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\stdint.h" 1 3
-# 26 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\stdint.h" 3
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\bits/alltypes.h" 1 3
-# 133 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef unsigned __int24 uintptr_t;
-# 148 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef __int24 intptr_t;
-# 164 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef signed char int8_t;
-
-
-
-
-typedef short int16_t;
-# 179 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef long int32_t;
-
-
-
-
-
-typedef long long int64_t;
-# 194 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef long long intmax_t;
-
-
-
-
-
-typedef unsigned char uint8_t;
-
-
-
-
-typedef unsigned short uint16_t;
-# 215 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef unsigned long uint32_t;
-
-
-
-
-
-typedef unsigned long long uint64_t;
-# 235 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef unsigned long long uintmax_t;
-# 27 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\stdint.h" 2 3
-
-typedef int8_t int_fast8_t;
-
-typedef int64_t int_fast64_t;
-
-
-typedef int8_t int_least8_t;
-typedef int16_t int_least16_t;
-
-typedef int24_t int_least24_t;
-typedef int24_t int_fast24_t;
-
-typedef int32_t int_least32_t;
-
-typedef int64_t int_least64_t;
-
-
-typedef uint8_t uint_fast8_t;
-
-typedef uint64_t uint_fast64_t;
-
-
-typedef uint8_t uint_least8_t;
-typedef uint16_t uint_least16_t;
-
-typedef uint24_t uint_least24_t;
-typedef uint24_t uint_fast24_t;
-
-typedef uint32_t uint_least32_t;
-
-typedef uint64_t uint_least64_t;
-# 148 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\stdint.h" 3
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\bits/stdint.h" 1 3
-typedef int16_t int_fast16_t;
-typedef int32_t int_fast32_t;
-typedef uint16_t uint_fast16_t;
-typedef uint32_t uint_fast32_t;
-# 149 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\stdint.h" 2 3
-# 4 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\builtins.h" 2 3
 
 
 
@@ -26868,23 +27036,21 @@ __attribute__((__unsupported__("The READTIMER" "0" "() macro is not available wi
 unsigned char __t1rd16on(void);
 unsigned char __t3rd16on(void);
 # 33 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\xc.h" 2 3
-# 38 "./mcc_generated_files/system/system.h" 2
+# 38 "mcc_generated_files/uart/src/../../system/system.h" 2
 
 
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\stdbool.h" 1 3
-# 40 "./mcc_generated_files/system/system.h" 2
 
-# 1 "./mcc_generated_files/system/config_bits.h" 1
-# 39 "./mcc_generated_files/system/config_bits.h"
-# 1 "./mcc_generated_files/system/../system/clock.h" 1
-# 48 "./mcc_generated_files/system/../system/clock.h"
+# 1 "mcc_generated_files/uart/src/../../system/config_bits.h" 1
+# 39 "mcc_generated_files/uart/src/../../system/config_bits.h"
+# 1 "mcc_generated_files/uart/src/../../system/../system/clock.h" 1
+# 48 "mcc_generated_files/uart/src/../../system/../system/clock.h"
 void CLOCK_Initialize(void);
-# 39 "./mcc_generated_files/system/config_bits.h" 2
-# 41 "./mcc_generated_files/system/system.h" 2
+# 39 "mcc_generated_files/uart/src/../../system/config_bits.h" 2
+# 41 "mcc_generated_files/uart/src/../../system/system.h" 2
 
 
-# 1 "./mcc_generated_files/system/../system/pins.h" 1
-# 98 "./mcc_generated_files/system/../system/pins.h"
+# 1 "mcc_generated_files/uart/src/../../system/../system/pins.h" 1
+# 138 "mcc_generated_files/uart/src/../../system/../system/pins.h"
 void PIN_MANAGER_Initialize (void);
 
 
@@ -26894,171 +27060,20 @@ void PIN_MANAGER_Initialize (void);
 
 
 void PIN_MANAGER_IOC(void);
-# 43 "./mcc_generated_files/system/system.h" 2
+# 43 "mcc_generated_files/uart/src/../../system/system.h" 2
 
-# 1 "./mcc_generated_files/system/../uart/uart2.h" 1
-# 42 "./mcc_generated_files/system/../uart/uart2.h"
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\stdio.h" 1 3
-# 24 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\stdio.h" 3
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\bits/alltypes.h" 1 3
-# 12 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef void * va_list[1];
+# 1 "mcc_generated_files/uart/src/../../system/../uart/uart1.h" 1
+# 44 "mcc_generated_files/uart/src/../../system/system.h" 2
 
+# 1 "mcc_generated_files/uart/src/../../system/../uart/uart2.h" 1
+# 43 "mcc_generated_files/uart/src/../../system/../uart/uart2.h"
+# 1 "mcc_generated_files/uart/src/../../system/system.h" 1
+# 43 "mcc_generated_files/uart/src/../../system/../uart/uart2.h" 2
 
-
-
-typedef void * __isoc_va_list[1];
-# 143 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef __int24 ssize_t;
-# 255 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef long long off_t;
-# 409 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef struct _IO_FILE FILE;
-# 25 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\stdio.h" 2 3
-# 52 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\stdio.h" 3
-typedef union _G_fpos64_t {
- char __opaque[16];
- double __align;
-} fpos_t;
-
-extern FILE *const stdin;
-extern FILE *const stdout;
-extern FILE *const stderr;
-
-
-
-
-
-FILE *fopen(const char *restrict, const char *restrict);
-FILE *freopen(const char *restrict, const char *restrict, FILE *restrict);
-int fclose(FILE *);
-
-int remove(const char *);
-int rename(const char *, const char *);
-
-int feof(FILE *);
-int ferror(FILE *);
-int fflush(FILE *);
-void clearerr(FILE *);
-
-int fseek(FILE *, long, int);
-long ftell(FILE *);
-void rewind(FILE *);
-
-int fgetpos(FILE *restrict, fpos_t *restrict);
-int fsetpos(FILE *, const fpos_t *);
-
-size_t fread(void *restrict, size_t, size_t, FILE *restrict);
-size_t fwrite(const void *restrict, size_t, size_t, FILE *restrict);
-
-int fgetc(FILE *);
-int getc(FILE *);
-int getchar(void);
-
-
-
-
-
-int ungetc(int, FILE *);
-int getch(void);
-
-int fputc(int, FILE *);
-int putc(int, FILE *);
-int putchar(int);
-
-
-
-
-
-void putch(char);
-
-char *fgets(char *restrict, int, FILE *restrict);
-
-char *gets(char *);
-
-
-int fputs(const char *restrict, FILE *restrict);
-int puts(const char *);
-
-__attribute__((__format__(__printf__, 1, 2)))
-int printf(const char *restrict, ...);
-__attribute__((__format__(__printf__, 2, 3)))
-int fprintf(FILE *restrict, const char *restrict, ...);
-__attribute__((__format__(__printf__, 2, 3)))
-int sprintf(char *restrict, const char *restrict, ...);
-__attribute__((__format__(__printf__, 3, 4)))
-int snprintf(char *restrict, size_t, const char *restrict, ...);
-
-__attribute__((__format__(__printf__, 1, 0)))
-int vprintf(const char *restrict, __isoc_va_list);
-int vfprintf(FILE *restrict, const char *restrict, __isoc_va_list);
-__attribute__((__format__(__printf__, 2, 0)))
-int vsprintf(char *restrict, const char *restrict, __isoc_va_list);
-__attribute__((__format__(__printf__, 3, 0)))
-int vsnprintf(char *restrict, size_t, const char *restrict, __isoc_va_list);
-
-__attribute__((__format__(__scanf__, 1, 2)))
-int scanf(const char *restrict, ...);
-__attribute__((__format__(__scanf__, 2, 3)))
-int fscanf(FILE *restrict, const char *restrict, ...);
-__attribute__((__format__(__scanf__, 2, 3)))
-int sscanf(const char *restrict, const char *restrict, ...);
-
-__attribute__((__format__(__scanf__, 1, 0)))
-int vscanf(const char *restrict, __isoc_va_list);
-int vfscanf(FILE *restrict, const char *restrict, __isoc_va_list);
-__attribute__((__format__(__scanf__, 2, 0)))
-int vsscanf(const char *restrict, const char *restrict, __isoc_va_list);
-
-void perror(const char *);
-
-int setvbuf(FILE *restrict, char *restrict, int, size_t);
-void setbuf(FILE *restrict, char *restrict);
-
-char *tmpnam(char *);
-FILE *tmpfile(void);
-
-
-
-
-FILE *fmemopen(void *restrict, size_t, const char *restrict);
-FILE *open_memstream(char **, size_t *);
-FILE *fdopen(int, const char *);
-FILE *popen(const char *, const char *);
-int pclose(FILE *);
-int fileno(FILE *);
-int fseeko(FILE *, off_t, int);
-off_t ftello(FILE *);
-int dprintf(int, const char *restrict, ...);
-int vdprintf(int, const char *restrict, __isoc_va_list);
-void flockfile(FILE *);
-int ftrylockfile(FILE *);
-void funlockfile(FILE *);
-int getc_unlocked(FILE *);
-int getchar_unlocked(void);
-int putc_unlocked(int, FILE *);
-int putchar_unlocked(int);
-ssize_t getdelim(char **restrict, size_t *restrict, int, FILE *restrict);
-ssize_t getline(char **restrict, size_t *restrict, FILE *restrict);
-int renameat(int, const char *, int, const char *);
-char *ctermid(char *);
-
-
-
-
-
-
-
-char *tempnam(const char *, const char *);
-# 42 "./mcc_generated_files/system/../uart/uart2.h" 2
-
-# 1 "./mcc_generated_files/system/../uart/../system/system.h" 1
-# 43 "./mcc_generated_files/system/../uart/uart2.h" 2
-
-# 1 "./mcc_generated_files/system/../uart/uart_drv_interface.h" 1
-# 41 "./mcc_generated_files/system/../uart/uart_drv_interface.h"
-# 1 "./mcc_generated_files/system/../uart/uart_types.h" 1
-# 57 "./mcc_generated_files/system/../uart/uart_types.h"
+# 1 "mcc_generated_files/uart/src/../uart_drv_interface.h" 1
+# 41 "mcc_generated_files/uart/src/../uart_drv_interface.h"
+# 1 "mcc_generated_files/uart/src/../uart_types.h" 1
+# 57 "mcc_generated_files/uart/src/../uart_types.h"
 enum UART_STANDARD_BAUDS{
 UART_110 = 0,
 UART_300 = 1,
@@ -27076,8 +27091,8 @@ UART_230400 = 12,
 UART_460800 = 13,
 UART_921600 = 14,
 };
-# 41 "./mcc_generated_files/system/../uart/uart_drv_interface.h" 2
-# 57 "./mcc_generated_files/system/../uart/uart_drv_interface.h"
+# 41 "mcc_generated_files/uart/src/../uart_drv_interface.h" 2
+# 57 "mcc_generated_files/uart/src/../uart_drv_interface.h"
 typedef struct {
 void (*Initialize)(void);
 void (*Deinitialize)(void);
@@ -27104,8 +27119,8 @@ void (*OverrunErrorCallbackRegister)(void (*CallbackHandler) (void));
 void (*ParityErrorCallbackRegister)(void (*CallbackHandler) (void));
 void (*EventCallbackRegister)(void (*CallbackHandler) (void));
 }uart_drv_interface_t;
-# 44 "./mcc_generated_files/system/../uart/uart2.h" 2
-# 87 "./mcc_generated_files/system/../uart/uart2.h"
+# 44 "mcc_generated_files/uart/src/../../system/../uart/uart2.h" 2
+# 87 "mcc_generated_files/uart/src/../../system/../uart/uart2.h"
 typedef union {
     struct {
         uint8_t perr : 1;
@@ -27115,11 +27130,11 @@ typedef union {
     };
     size_t status;
 }uart2_status_t;
-# 105 "./mcc_generated_files/system/../uart/uart2.h"
+# 105 "mcc_generated_files/uart/src/../../system/../uart/uart2.h"
 extern const uart_drv_interface_t UART2;
-# 116 "./mcc_generated_files/system/../uart/uart2.h"
+# 116 "mcc_generated_files/uart/src/../../system/../uart/uart2.h"
 void UART2_Initialize(void);
-# 125 "./mcc_generated_files/system/../uart/uart2.h"
+# 125 "mcc_generated_files/uart/src/../../system/../uart/uart2.h"
 void UART2_Deinitialize(void);
 
 
@@ -27137,7 +27152,7 @@ __attribute__((inline)) void UART2_Enable(void);
 
 
 __attribute__((inline)) void UART2_Disable(void);
-# 150 "./mcc_generated_files/system/../uart/uart2.h"
+# 150 "mcc_generated_files/uart/src/../../system/../uart/uart2.h"
 __attribute__((inline)) void UART2_TransmitEnable(void);
 
 
@@ -27147,7 +27162,7 @@ __attribute__((inline)) void UART2_TransmitEnable(void);
 
 
 __attribute__((inline)) void UART2_TransmitDisable(void);
-# 167 "./mcc_generated_files/system/../uart/uart2.h"
+# 167 "mcc_generated_files/uart/src/../../system/../uart/uart2.h"
 __attribute__((inline)) void UART2_ReceiveEnable(void);
 
 
@@ -27181,7 +27196,7 @@ __attribute__((inline)) void UART2_SendBreakControlDisable(void);
 
 
 __attribute__((inline)) void UART2_AutoBaudSet(_Bool enable);
-# 208 "./mcc_generated_files/system/../uart/uart2.h"
+# 208 "mcc_generated_files/uart/src/../../system/../uart/uart2.h"
 __attribute__((inline)) _Bool UART2_AutoBaudQuery(void);
 
 
@@ -27207,17 +27222,17 @@ __attribute__((inline)) _Bool UART2_IsAutoBaudDetectOverflow(void);
 
 
 __attribute__((inline)) void UART2_AutoBaudDetectOverflowReset(void);
-# 241 "./mcc_generated_files/system/../uart/uart2.h"
+# 241 "mcc_generated_files/uart/src/../../system/../uart/uart2.h"
 _Bool UART2_IsRxReady(void);
-# 250 "./mcc_generated_files/system/../uart/uart2.h"
+# 250 "mcc_generated_files/uart/src/../../system/../uart/uart2.h"
 _Bool UART2_IsTxReady(void);
-# 259 "./mcc_generated_files/system/../uart/uart2.h"
+# 259 "mcc_generated_files/uart/src/../../system/../uart/uart2.h"
 _Bool UART2_IsTxDone(void);
-# 269 "./mcc_generated_files/system/../uart/uart2.h"
+# 269 "mcc_generated_files/uart/src/../../system/../uart/uart2.h"
 size_t UART2_ErrorGet(void);
-# 279 "./mcc_generated_files/system/../uart/uart2.h"
+# 279 "mcc_generated_files/uart/src/../../system/../uart/uart2.h"
 uint8_t UART2_Read(void);
-# 289 "./mcc_generated_files/system/../uart/uart2.h"
+# 289 "mcc_generated_files/uart/src/../../system/../uart/uart2.h"
 void UART2_Write(uint8_t txData);
 
 
@@ -27243,42 +27258,42 @@ void UART2_OverrunErrorCallbackRegister(void (* callbackHandler)(void));
 
 
 void UART2_ParityErrorCallbackRegister(void (* callbackHandler)(void));
-# 44 "./mcc_generated_files/system/../uart/../system/system.h" 2
+# 45 "mcc_generated_files/uart/src/../../system/system.h" 2
 
-# 1 "./mcc_generated_files/system/../system/interrupt.h" 1
-# 69 "./mcc_generated_files/system/../system/interrupt.h"
+# 1 "mcc_generated_files/uart/src/../../system/../system/interrupt.h" 1
+# 69 "mcc_generated_files/uart/src/../../system/../system/interrupt.h"
 void INTERRUPT_Initialize (void);
-# 218 "./mcc_generated_files/system/../system/interrupt.h"
+# 218 "mcc_generated_files/uart/src/../../system/../system/interrupt.h"
 void INT0_ISR(void);
-# 227 "./mcc_generated_files/system/../system/interrupt.h"
+# 227 "mcc_generated_files/uart/src/../../system/../system/interrupt.h"
 void INT0_CallBack(void);
-# 236 "./mcc_generated_files/system/../system/interrupt.h"
+# 236 "mcc_generated_files/uart/src/../../system/../system/interrupt.h"
 void INT0_SetInterruptHandler(void (* InterruptHandler)(void));
-# 246 "./mcc_generated_files/system/../system/interrupt.h"
+# 246 "mcc_generated_files/uart/src/../../system/../system/interrupt.h"
 extern void (*INT0_InterruptHandler)(void);
-# 255 "./mcc_generated_files/system/../system/interrupt.h"
+# 255 "mcc_generated_files/uart/src/../../system/../system/interrupt.h"
 void INT0_DefaultInterruptHandler(void);
-# 264 "./mcc_generated_files/system/../system/interrupt.h"
+# 264 "mcc_generated_files/uart/src/../../system/../system/interrupt.h"
 void INT1_ISR(void);
-# 273 "./mcc_generated_files/system/../system/interrupt.h"
+# 273 "mcc_generated_files/uart/src/../../system/../system/interrupt.h"
 void INT1_CallBack(void);
-# 282 "./mcc_generated_files/system/../system/interrupt.h"
+# 282 "mcc_generated_files/uart/src/../../system/../system/interrupt.h"
 void INT1_SetInterruptHandler(void (* InterruptHandler)(void));
-# 292 "./mcc_generated_files/system/../system/interrupt.h"
+# 292 "mcc_generated_files/uart/src/../../system/../system/interrupt.h"
 extern void (*INT1_InterruptHandler)(void);
-# 301 "./mcc_generated_files/system/../system/interrupt.h"
+# 301 "mcc_generated_files/uart/src/../../system/../system/interrupt.h"
 void INT1_DefaultInterruptHandler(void);
-# 310 "./mcc_generated_files/system/../system/interrupt.h"
+# 310 "mcc_generated_files/uart/src/../../system/../system/interrupt.h"
 void INT2_ISR(void);
-# 319 "./mcc_generated_files/system/../system/interrupt.h"
+# 319 "mcc_generated_files/uart/src/../../system/../system/interrupt.h"
 void INT2_CallBack(void);
-# 328 "./mcc_generated_files/system/../system/interrupt.h"
+# 328 "mcc_generated_files/uart/src/../../system/../system/interrupt.h"
 void INT2_SetInterruptHandler(void (* InterruptHandler)(void));
-# 338 "./mcc_generated_files/system/../system/interrupt.h"
+# 338 "mcc_generated_files/uart/src/../../system/../system/interrupt.h"
 extern void (*INT2_InterruptHandler)(void);
-# 347 "./mcc_generated_files/system/../system/interrupt.h"
+# 347 "mcc_generated_files/uart/src/../../system/../system/interrupt.h"
 void INT2_DefaultInterruptHandler(void);
-# 45 "./mcc_generated_files/system/../uart/../system/system.h" 2
+# 46 "mcc_generated_files/uart/src/../../system/system.h" 2
 
 
 
@@ -27288,353 +27303,432 @@ void INT2_DefaultInterruptHandler(void);
 
 
 void SYSTEM_Initialize(void);
-# 33 "main.c" 2
+# 43 "mcc_generated_files/uart/src/../../system/../uart/uart1.h" 2
+# 87 "mcc_generated_files/uart/src/../../system/../uart/uart1.h"
+typedef union {
+    struct {
+        uint8_t perr : 1;
+        uint8_t ferr : 1;
+        uint8_t oerr : 1;
+        uint8_t reserved : 5;
+    };
+    size_t status;
+}uart1_status_t;
+# 105 "mcc_generated_files/uart/src/../../system/../uart/uart1.h"
+extern const uart_drv_interface_t UART1;
+# 116 "mcc_generated_files/uart/src/../../system/../uart/uart1.h"
+void UART1_Initialize(void);
+# 125 "mcc_generated_files/uart/src/../../system/../uart/uart1.h"
+void UART1_Deinitialize(void);
 
-# 1 "./LCD.h" 1
-# 15 "./LCD.h"
-void LCD_Init();
-void LCD_Command(char );
-void LCD_Char(char x);
-void LCD_String(const char *);
-void LCD_String_xy(char ,char ,const char*);
-void MSdelay(unsigned int );
-# 38 "./LCD.h"
-void LCD_Init()
+
+
+
+
+
+
+__attribute__((inline)) void UART1_Enable(void);
+
+
+
+
+
+
+
+__attribute__((inline)) void UART1_Disable(void);
+# 150 "mcc_generated_files/uart/src/../../system/../uart/uart1.h"
+__attribute__((inline)) void UART1_TransmitEnable(void);
+
+
+
+
+
+
+
+__attribute__((inline)) void UART1_TransmitDisable(void);
+# 167 "mcc_generated_files/uart/src/../../system/../uart/uart1.h"
+__attribute__((inline)) void UART1_ReceiveEnable(void);
+
+
+
+
+
+
+
+__attribute__((inline)) void UART1_ReceiveDisable(void);
+
+
+
+
+
+
+
+__attribute__((inline)) void UART1_SendBreakControlEnable(void);
+
+
+
+
+
+
+
+__attribute__((inline)) void UART1_SendBreakControlDisable(void);
+
+
+
+
+
+
+
+__attribute__((inline)) void UART1_AutoBaudSet(_Bool enable);
+# 208 "mcc_generated_files/uart/src/../../system/../uart/uart1.h"
+__attribute__((inline)) _Bool UART1_AutoBaudQuery(void);
+
+
+
+
+
+
+
+__attribute__((inline)) void UART1_AutoBaudDetectCompleteReset(void);
+
+
+
+
+
+
+
+__attribute__((inline)) _Bool UART1_IsAutoBaudDetectOverflow(void);
+
+
+
+
+
+
+
+__attribute__((inline)) void UART1_AutoBaudDetectOverflowReset(void);
+# 241 "mcc_generated_files/uart/src/../../system/../uart/uart1.h"
+_Bool UART1_IsRxReady(void);
+# 250 "mcc_generated_files/uart/src/../../system/../uart/uart1.h"
+_Bool UART1_IsTxReady(void);
+# 259 "mcc_generated_files/uart/src/../../system/../uart/uart1.h"
+_Bool UART1_IsTxDone(void);
+# 269 "mcc_generated_files/uart/src/../../system/../uart/uart1.h"
+size_t UART1_ErrorGet(void);
+# 279 "mcc_generated_files/uart/src/../../system/../uart/uart1.h"
+uint8_t UART1_Read(void);
+# 289 "mcc_generated_files/uart/src/../../system/../uart/uart1.h"
+void UART1_Write(uint8_t txData);
+
+
+
+
+
+
+
+void UART1_FramingErrorCallbackRegister(void (* callbackHandler)(void));
+
+
+
+
+
+
+
+void UART1_OverrunErrorCallbackRegister(void (* callbackHandler)(void));
+
+
+
+
+
+
+
+void UART1_ParityErrorCallbackRegister(void (* callbackHandler)(void));
+# 37 "mcc_generated_files/uart/src/uart1.c" 2
+# 47 "mcc_generated_files/uart/src/uart1.c"
+const uart_drv_interface_t UART1 = {
+    .Initialize = &UART1_Initialize,
+    .Deinitialize = &UART1_Deinitialize,
+    .Read = &UART1_Read,
+    .Write = &UART1_Write,
+    .IsRxReady = &UART1_IsRxReady,
+    .IsTxReady = &UART1_IsTxReady,
+    .IsTxDone = &UART1_IsTxDone,
+    .TransmitEnable = &UART1_TransmitEnable,
+    .TransmitDisable = &UART1_TransmitDisable,
+    .AutoBaudSet = &UART1_AutoBaudSet,
+    .AutoBaudQuery = &UART1_AutoBaudQuery,
+    .BRGCountSet = ((void*)0),
+    .BRGCountGet = ((void*)0),
+    .BaudRateSet = ((void*)0),
+    .BaudRateGet = ((void*)0),
+    .AutoBaudEventEnableGet = ((void*)0),
+    .ErrorGet = &UART1_ErrorGet,
+    .TxCompleteCallbackRegister = ((void*)0),
+    .RxCompleteCallbackRegister = ((void*)0),
+    .TxCollisionCallbackRegister = ((void*)0),
+    .FramingErrorCallbackRegister = &UART1_FramingErrorCallbackRegister,
+    .OverrunErrorCallbackRegister = &UART1_OverrunErrorCallbackRegister,
+    .ParityErrorCallbackRegister = &UART1_ParityErrorCallbackRegister,
+    .EventCallbackRegister = ((void*)0),
+};
+
+
+
+
+volatile uart1_status_t uart1RxLastError;
+
+
+
+
+
+void (*UART1_FramingErrorHandler)(void);
+void (*UART1_OverrunErrorHandler)(void);
+void (*UART1_ParityErrorHandler)(void);
+
+static void UART1_DefaultFramingErrorCallback(void);
+static void UART1_DefaultOverrunErrorCallback(void);
+static void UART1_DefaultParityErrorCallback(void);
+
+
+
+
+
+void UART1_Initialize(void)
 {
-    MSdelay(15);
-    TRISB = 0x00;
-    TRISA = 0x00;
-    LCD_Command(0x01);
-    LCD_Command(0x38);
-    LCD_Command(0x0c);
-    LCD_Command(0x06);
+
+
+
+
+    U1RXB = 0x0;
+
+    U1RXCHK = 0x0;
+
+    U1TXB = 0x0;
+
+    U1TXCHK = 0x0;
+
+    U1P1L = 0x0;
+
+    U1P1H = 0x0;
+
+    U1P2L = 0x0;
+
+    U1P2H = 0x0;
+
+    U1P3L = 0x0;
+
+    U1P3H = 0x0;
+
+    U1CON0 = 0xB0;
+
+    U1CON1 = 0x80;
+
+    U1CON2 = 0x8;
+
+    U1BRGL = 0x19;
+
+    U1BRGH = 0x0;
+
+    U1FIFO = 0x2E;
+
+    U1UIR = 0x0;
+
+    U1ERRIR = 0x80;
+
+    U1ERRIE = 0x0;
+
+    UART1_FramingErrorCallbackRegister(UART1_DefaultFramingErrorCallback);
+    UART1_OverrunErrorCallbackRegister(UART1_DefaultOverrunErrorCallback);
+    UART1_ParityErrorCallbackRegister(UART1_DefaultParityErrorCallback);
+
+    uart1RxLastError.status = 0;
 }
 
-void LCD_Clear()
+void UART1_Deinitialize(void)
 {
-        LCD_Command(0x01);
+    U1RXB = 0x00;
+    U1RXCHK = 0x00;
+    U1TXB = 0x00;
+    U1TXCHK = 0x00;
+    U1P1L = 0x00;
+    U1P1H = 0x00;
+    U1P2L = 0x00;
+    U1P2H = 0x00;
+    U1P3L = 0x00;
+    U1P3H = 0x00;
+    U1CON0 = 0x00;
+    U1CON1 = 0x00;
+    U1CON2 = 0x00;
+    U1BRGL = 0x00;
+    U1BRGH = 0x00;
+    U1FIFO = 0x00;
+    U1UIR = 0x00;
+    U1ERRIR = 0x00;
+    U1ERRIE = 0x00;
 }
 
-void LCD_Command(char cmd )
+__attribute__((inline)) void UART1_Enable(void)
 {
-    LATB= cmd;
-    LATA0 = 0;
-    LATA1 = 1;
-    __nop();
-    LATA1 = 0;
-    MSdelay(3);
+    U1CON1bits.ON = 1;
 }
 
-void LCD_Char(char dat)
+__attribute__((inline)) void UART1_Disable(void)
 {
-    LATB= dat;
-    LATA0 = 1;
-    LATA1=1;
-    __nop();
-    LATA1=0;
-    MSdelay(1);
+    U1CON1bits.ON = 0;
 }
 
-
-void LCD_String(const char *msg)
+__attribute__((inline)) void UART1_TransmitEnable(void)
 {
-    while((*msg)!=0)
+    U1CON0bits.TXEN = 1;
+}
+
+__attribute__((inline)) void UART1_TransmitDisable(void)
+{
+    U1CON0bits.TXEN = 0;
+}
+
+__attribute__((inline)) void UART1_ReceiveEnable(void)
+{
+    U1CON0bits.RXEN = 1;
+}
+
+__attribute__((inline)) void UART1_ReceiveDisable(void)
+{
+    U1CON0bits.RXEN = 0;
+}
+
+__attribute__((inline)) void UART1_SendBreakControlEnable(void)
+{
+    U1CON1bits.SENDB = 1;
+}
+
+__attribute__((inline)) void UART1_SendBreakControlDisable(void)
+{
+    U1CON1bits.SENDB = 0;
+}
+
+__attribute__((inline)) void UART1_AutoBaudSet(_Bool enable)
+{
+    if(enable)
     {
-      LCD_Char(*msg);
-      msg++;
-        }
-}
-
-void LCD_String_xy(char row,char pos,const char *msg)
-{
-    char location=0;
-    if(row<=1)
-    {
-        location=(0x80) | ((pos) & 0x0f);
-        LCD_Command(location);
+        U1CON0bits.ABDEN = 1;
     }
     else
     {
-        location=(0xC0) | ((pos) & 0x0f);
-        LCD_Command(location);
+      U1CON0bits.ABDEN = 0;
     }
-    LCD_String(msg);
-
 }
 
-void MSdelay(unsigned int val)
+
+__attribute__((inline)) _Bool UART1_AutoBaudQuery(void)
 {
-     unsigned int i,j;
-        for(i=0;i<val;i++)
-            for(j=0;j<165;j++);
+    return (_Bool)U1UIRbits.ABDIF;
 }
 
-unsigned char LightScan(char pinNumber){
+__attribute__((inline)) void UART1_AutoBaudDetectCompleteReset(void)
+{
+    U1UIRbits.ABDIF = 0;
+}
 
-    unsigned char counter =0;
+__attribute__((inline)) _Bool UART1_IsAutoBaudDetectOverflow(void)
+{
+    return (_Bool)U1ERRIRbits.ABDOVF;
+}
 
-    if (pinNumber == 1)
+__attribute__((inline)) void UART1_AutoBaudDetectOverflowReset(void)
+{
+    U1ERRIRbits.ABDOVF = 0;
+}
+
+_Bool UART1_IsRxReady(void)
+{
+    return (_Bool)(!U1FIFObits.RXBE);
+}
+
+_Bool UART1_IsTxReady(void)
+{
+    return (_Bool)(U1FIFObits.TXBE && U1CON0bits.TXEN);
+}
+
+_Bool UART1_IsTxDone(void)
+{
+    return U1ERRIRbits.TXMTIF;
+}
+
+size_t UART1_ErrorGet(void)
+{
+    uart1RxLastError.status = 0;
+
+    if(U1ERRIRbits.FERIF)
     {
-    while(counter < 4)
-    {
-        if(PORTAbits.RA3 == 1)
+        uart1RxLastError.ferr = 1;
+        if(((void*)0) != UART1_FramingErrorHandler)
         {
-            MSdelay(500);
-            return counter;
+            UART1_FramingErrorHandler();
         }
-
-        if (PORTAbits.RA1 == 1)
+    }
+    if(U1ERRIRbits.RXFOIF)
+    {
+        uart1RxLastError.oerr = 1;
+        if(((void*)0) != UART1_OverrunErrorHandler)
         {
-            counter ++;
-            PORTCbits.RC7 = 1;
-            MSdelay(500);
-            PORTCbits.RC7 = 0;
-
+            UART1_OverrunErrorHandler();
         }
     }
-    }
-    else
-    {
-         while(counter < 4)
-    {
-              if(PORTAbits.RA3 == 1){
-                MSdelay(500);
-                return counter;
-              }
-        if (PORTAbits.RA2 == 1)
-        {
-            counter ++;
-            PORTCbits.RC7 = 1;
-            MSdelay(500);
-            PORTCbits.RC7 = 0;
 
-        }
-    }
-    }
-    return counter;
+    return uart1RxLastError.status;
+}
 
+uint8_t UART1_Read(void)
+{
+    return U1RXB;
 }
 
 
-void Decision(unsigned char input1, unsigned char input2){
-    if (input1 == 2 && input2 == 4)
-    {
-        LCD_String_xy(2,0,"Correct!");
-        PORTCbits.RC3 = 1;
-        PORTCbits.RC2 = 0;
-        MSdelay(500);
-        PORTCbits.RC3 = 0;
-        return;
-
-    }
-    else
-    {
-        LCD_String_xy(2,0,"Wrong!");
-        unsigned int timer = 1000;
-
-        while(timer >0)
-         {
-            MSdelay(1);
-            PORTCbits.RC4 = 1;
-            MSdelay(1);
-            PORTCbits.RC4 = 0;
-            timer--;
-    }
-    }
-        return;
+void UART1_Write(uint8_t txData)
+{
+    U1TXB = txData;
 }
 
-void delay_us(unsigned int us) {
-
-    for (unsigned int i = 0; i < us; i++) {
-        __asm__ volatile ("nop");
-        __asm__ volatile ("nop");
-        __asm__ volatile ("nop");
-        __asm__ volatile ("nop");
-        __asm__ volatile ("nop");
-        __asm__ volatile ("nop");
-        __asm__ volatile ("nop");
-        __asm__ volatile ("nop");
-    }
-    return;
-}
-# 34 "main.c" 2
-
-
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\string.h" 1 3
-# 25 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\string.h" 3
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\bits/alltypes.h" 1 3
-# 421 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef struct __locale_struct * locale_t;
-# 26 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\string.h" 2 3
-
-void *memcpy (void *restrict, const void *restrict, size_t);
-void *memmove (void *, const void *, size_t);
-void *memset (void *, int, size_t);
-int memcmp (const void *, const void *, size_t);
-void *memchr (const void *, int, size_t);
-
-char *strcpy (char *restrict, const char *restrict);
-char *strncpy (char *restrict, const char *restrict, size_t);
-
-char *strcat (char *restrict, const char *restrict);
-char *strncat (char *restrict, const char *restrict, size_t);
-
-int strcmp (const char *, const char *);
-int strncmp (const char *, const char *, size_t);
-
-int strcoll (const char *, const char *);
-size_t strxfrm (char *restrict, const char *restrict, size_t);
-
-char *strchr (const char *, int);
-char *strrchr (const char *, int);
-
-size_t strcspn (const char *, const char *);
-size_t strspn (const char *, const char *);
-char *strpbrk (const char *, const char *);
-char *strstr (const char *, const char *);
-char *strtok (char *restrict, const char *restrict);
-
-size_t strlen (const char *);
-
-char *strerror (int);
 
 
 
 
-char *strtok_r (char *restrict, const char *restrict, char **restrict);
-int strerror_r (int, char *, size_t);
-char *stpcpy(char *restrict, const char *restrict);
-char *stpncpy(char *restrict, const char *restrict, size_t);
-size_t strnlen (const char *, size_t);
-char *strdup (const char *);
-char *strndup (const char *, size_t);
-char *strsignal(int);
-char *strerror_l (int, locale_t);
-int strcoll_l (const char *, const char *, locale_t);
-size_t strxfrm_l (char *restrict, const char *restrict, size_t, locale_t);
 
-
-
-
-void *memccpy (void *restrict, const void *restrict, int, size_t);
-# 36 "main.c" 2
-# 46 "main.c"
-void LCD_String_xy(char ,char ,const char*);
-void LCD_Init();
-void TF_Luna_Send_Freq(uint8_t header, uint8_t length, uint8_t id, uint8_t freq, uint8_t freq_dec, uint8_t checksum);
-void TF_Luna_Trigger(uint8_t header, uint8_t length, uint8_t id, uint8_t payload );
-void read_display_distance();
-uint8_t received_data;
-uint8_t header = 0x5A;
-uint8_t freq = 0x0;
-uint8_t freq_dec = 0x0;
-uint8_t checksum = 0x00;
-uint8_t freq_ID = 0x03;
-uint8_t trigger = 0x04;
-
-
-
-
-int main(void)
+static void UART1_DefaultFramingErrorCallback(void)
 {
 
-    SYSTEM_Initialize();
-    UART2_Initialize();
-    U2CON1bits.ON = 1;
-    U2CON0bits.RXEN = 1;
-    U2CON0bits.TXEN = 1;
-    UART2_ReceiveEnable();
-    LCD_Init();
-    LCD_String_xy(1,0,"prog");
-    MSdelay(1000);
-
-
-   while(1){
-   LCD_Clear();
-   TF_Luna_Send_Freq(header, 0x6, freq_ID, freq, freq_dec, checksum);
-   TF_Luna_Trigger(header, 0x4, trigger, 0x00);
-   read_display_distance();
-   MSdelay(1000);
-
-
-   }
 }
 
+static void UART1_DefaultOverrunErrorCallback(void)
+{
 
+}
 
-    void read_display_distance(){
-    uint8_t Read_header = 0x59;
-    uint8_t distance_L = 0;
-    uint8_t distance_H = 0;
-    uint16_t distance = 0;
-    char data[20];
-    uint8_t received_bytes[9];
-    char hex_string[37];
-    uint8_t byte_count = 0;
+static void UART1_DefaultParityErrorCallback(void)
+{
 
-    while (byte_count < 9){
+}
 
-        if (UART2.IsRxReady()) {
-            received_bytes[byte_count] = UART2.Read();
-            byte_count++;
-
-
-        }
-    }
-    if (byte_count == 9){
-        for(uint8_t i = 0; i<6;i++){
-            if(received_bytes[i] == Read_header && received_bytes[i+1] == Read_header){
-                distance_L = received_bytes[i+2];
-                distance_H = received_bytes[i+3];
-                distance = ((uint16_t)distance_H << 8) | distance_L;
-                sprintf(data, "%u  ", distance);
-                LCD_String_xy(2,0,data);
-                LCD_String_xy(2,5,"CM");
-                break;
-            }
-
-        }
-    }
-
-        }
-# 146 "main.c"
-void TF_Luna_Send_Freq(uint8_t header, uint8_t length, uint8_t id, uint8_t freq, uint8_t freq_dec, uint8_t checksum) {
-    uint8_t bytes[6];
-
-
-    char bytes_sent = 0;
-    bytes[0] = header;
-    bytes[1] = length;
-    bytes[2] = id;
-    bytes[3] = freq;
-    bytes[4] = freq_dec;
-    bytes[5] = checksum;
-
-
-    while(bytes_sent < 6){
-        if (UART2.IsTxReady()) {
-            UART2.Write(bytes[bytes_sent]);
-            bytes_sent++;
-        }
+void UART1_FramingErrorCallbackRegister(void (* callbackHandler)(void))
+{
+    if(((void*)0) != callbackHandler)
+    {
+        UART1_FramingErrorHandler = callbackHandler;
     }
 }
 
+void UART1_OverrunErrorCallbackRegister(void (* callbackHandler)(void))
+{
+    if(((void*)0) != callbackHandler)
+    {
+        UART1_OverrunErrorHandler = callbackHandler;
+    }
+}
 
-
-void TF_Luna_Trigger(uint8_t header, uint8_t length, uint8_t id, uint8_t payload ){
-    uint8_t bytes[6];
-    char bytes_sent = 0;
-
-    bytes[0] = header;
-    bytes[1] = length;
-    bytes[2] = id;
-    bytes[3] = payload;
-
-    while(bytes_sent < 4){
-        if (UART2.IsTxReady()) {
-            UART2.Write(bytes[bytes_sent]);
-            bytes_sent++;
-        }
+void UART1_ParityErrorCallbackRegister(void (* callbackHandler)(void))
+{
+    if(((void*)0) != callbackHandler)
+    {
+        UART1_ParityErrorHandler = callbackHandler;
     }
 }

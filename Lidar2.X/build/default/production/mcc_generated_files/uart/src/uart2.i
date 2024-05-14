@@ -27050,7 +27050,7 @@ void CLOCK_Initialize(void);
 
 
 # 1 "mcc_generated_files/uart/src/../../system/../system/pins.h" 1
-# 98 "mcc_generated_files/uart/src/../../system/../system/pins.h"
+# 138 "mcc_generated_files/uart/src/../../system/../system/pins.h"
 void PIN_MANAGER_Initialize (void);
 
 
@@ -27062,53 +27062,10 @@ void PIN_MANAGER_Initialize (void);
 void PIN_MANAGER_IOC(void);
 # 43 "mcc_generated_files/uart/src/../../system/system.h" 2
 
-# 1 "mcc_generated_files/uart/src/../../system/../uart/uart2.h" 1
-# 44 "mcc_generated_files/uart/src/../../system/system.h" 2
-
-# 1 "mcc_generated_files/uart/src/../../system/../system/interrupt.h" 1
-# 69 "mcc_generated_files/uart/src/../../system/../system/interrupt.h"
-void INTERRUPT_Initialize (void);
-# 218 "mcc_generated_files/uart/src/../../system/../system/interrupt.h"
-void INT0_ISR(void);
-# 227 "mcc_generated_files/uart/src/../../system/../system/interrupt.h"
-void INT0_CallBack(void);
-# 236 "mcc_generated_files/uart/src/../../system/../system/interrupt.h"
-void INT0_SetInterruptHandler(void (* InterruptHandler)(void));
-# 246 "mcc_generated_files/uart/src/../../system/../system/interrupt.h"
-extern void (*INT0_InterruptHandler)(void);
-# 255 "mcc_generated_files/uart/src/../../system/../system/interrupt.h"
-void INT0_DefaultInterruptHandler(void);
-# 264 "mcc_generated_files/uart/src/../../system/../system/interrupt.h"
-void INT1_ISR(void);
-# 273 "mcc_generated_files/uart/src/../../system/../system/interrupt.h"
-void INT1_CallBack(void);
-# 282 "mcc_generated_files/uart/src/../../system/../system/interrupt.h"
-void INT1_SetInterruptHandler(void (* InterruptHandler)(void));
-# 292 "mcc_generated_files/uart/src/../../system/../system/interrupt.h"
-extern void (*INT1_InterruptHandler)(void);
-# 301 "mcc_generated_files/uart/src/../../system/../system/interrupt.h"
-void INT1_DefaultInterruptHandler(void);
-# 310 "mcc_generated_files/uart/src/../../system/../system/interrupt.h"
-void INT2_ISR(void);
-# 319 "mcc_generated_files/uart/src/../../system/../system/interrupt.h"
-void INT2_CallBack(void);
-# 328 "mcc_generated_files/uart/src/../../system/../system/interrupt.h"
-void INT2_SetInterruptHandler(void (* InterruptHandler)(void));
-# 338 "mcc_generated_files/uart/src/../../system/../system/interrupt.h"
-extern void (*INT2_InterruptHandler)(void);
-# 347 "mcc_generated_files/uart/src/../../system/../system/interrupt.h"
-void INT2_DefaultInterruptHandler(void);
-# 45 "mcc_generated_files/uart/src/../../system/system.h" 2
-
-
-
-
-
-
-
-
-void SYSTEM_Initialize(void);
-# 43 "mcc_generated_files/uart/src/../../system/../uart/uart2.h" 2
+# 1 "mcc_generated_files/uart/src/../../system/../uart/uart1.h" 1
+# 43 "mcc_generated_files/uart/src/../../system/../uart/uart1.h"
+# 1 "mcc_generated_files/uart/src/../../system/system.h" 1
+# 43 "mcc_generated_files/uart/src/../../system/../uart/uart1.h" 2
 
 # 1 "mcc_generated_files/uart/src/../uart_drv_interface.h" 1
 # 41 "mcc_generated_files/uart/src/../uart_drv_interface.h"
@@ -27159,7 +27116,194 @@ void (*OverrunErrorCallbackRegister)(void (*CallbackHandler) (void));
 void (*ParityErrorCallbackRegister)(void (*CallbackHandler) (void));
 void (*EventCallbackRegister)(void (*CallbackHandler) (void));
 }uart_drv_interface_t;
-# 44 "mcc_generated_files/uart/src/../../system/../uart/uart2.h" 2
+# 44 "mcc_generated_files/uart/src/../../system/../uart/uart1.h" 2
+# 87 "mcc_generated_files/uart/src/../../system/../uart/uart1.h"
+typedef union {
+    struct {
+        uint8_t perr : 1;
+        uint8_t ferr : 1;
+        uint8_t oerr : 1;
+        uint8_t reserved : 5;
+    };
+    size_t status;
+}uart1_status_t;
+# 105 "mcc_generated_files/uart/src/../../system/../uart/uart1.h"
+extern const uart_drv_interface_t UART1;
+# 116 "mcc_generated_files/uart/src/../../system/../uart/uart1.h"
+void UART1_Initialize(void);
+# 125 "mcc_generated_files/uart/src/../../system/../uart/uart1.h"
+void UART1_Deinitialize(void);
+
+
+
+
+
+
+
+__attribute__((inline)) void UART1_Enable(void);
+
+
+
+
+
+
+
+__attribute__((inline)) void UART1_Disable(void);
+# 150 "mcc_generated_files/uart/src/../../system/../uart/uart1.h"
+__attribute__((inline)) void UART1_TransmitEnable(void);
+
+
+
+
+
+
+
+__attribute__((inline)) void UART1_TransmitDisable(void);
+# 167 "mcc_generated_files/uart/src/../../system/../uart/uart1.h"
+__attribute__((inline)) void UART1_ReceiveEnable(void);
+
+
+
+
+
+
+
+__attribute__((inline)) void UART1_ReceiveDisable(void);
+
+
+
+
+
+
+
+__attribute__((inline)) void UART1_SendBreakControlEnable(void);
+
+
+
+
+
+
+
+__attribute__((inline)) void UART1_SendBreakControlDisable(void);
+
+
+
+
+
+
+
+__attribute__((inline)) void UART1_AutoBaudSet(_Bool enable);
+# 208 "mcc_generated_files/uart/src/../../system/../uart/uart1.h"
+__attribute__((inline)) _Bool UART1_AutoBaudQuery(void);
+
+
+
+
+
+
+
+__attribute__((inline)) void UART1_AutoBaudDetectCompleteReset(void);
+
+
+
+
+
+
+
+__attribute__((inline)) _Bool UART1_IsAutoBaudDetectOverflow(void);
+
+
+
+
+
+
+
+__attribute__((inline)) void UART1_AutoBaudDetectOverflowReset(void);
+# 241 "mcc_generated_files/uart/src/../../system/../uart/uart1.h"
+_Bool UART1_IsRxReady(void);
+# 250 "mcc_generated_files/uart/src/../../system/../uart/uart1.h"
+_Bool UART1_IsTxReady(void);
+# 259 "mcc_generated_files/uart/src/../../system/../uart/uart1.h"
+_Bool UART1_IsTxDone(void);
+# 269 "mcc_generated_files/uart/src/../../system/../uart/uart1.h"
+size_t UART1_ErrorGet(void);
+# 279 "mcc_generated_files/uart/src/../../system/../uart/uart1.h"
+uint8_t UART1_Read(void);
+# 289 "mcc_generated_files/uart/src/../../system/../uart/uart1.h"
+void UART1_Write(uint8_t txData);
+
+
+
+
+
+
+
+void UART1_FramingErrorCallbackRegister(void (* callbackHandler)(void));
+
+
+
+
+
+
+
+void UART1_OverrunErrorCallbackRegister(void (* callbackHandler)(void));
+
+
+
+
+
+
+
+void UART1_ParityErrorCallbackRegister(void (* callbackHandler)(void));
+# 44 "mcc_generated_files/uart/src/../../system/system.h" 2
+
+# 1 "mcc_generated_files/uart/src/../../system/../uart/uart2.h" 1
+# 45 "mcc_generated_files/uart/src/../../system/system.h" 2
+
+# 1 "mcc_generated_files/uart/src/../../system/../system/interrupt.h" 1
+# 69 "mcc_generated_files/uart/src/../../system/../system/interrupt.h"
+void INTERRUPT_Initialize (void);
+# 218 "mcc_generated_files/uart/src/../../system/../system/interrupt.h"
+void INT0_ISR(void);
+# 227 "mcc_generated_files/uart/src/../../system/../system/interrupt.h"
+void INT0_CallBack(void);
+# 236 "mcc_generated_files/uart/src/../../system/../system/interrupt.h"
+void INT0_SetInterruptHandler(void (* InterruptHandler)(void));
+# 246 "mcc_generated_files/uart/src/../../system/../system/interrupt.h"
+extern void (*INT0_InterruptHandler)(void);
+# 255 "mcc_generated_files/uart/src/../../system/../system/interrupt.h"
+void INT0_DefaultInterruptHandler(void);
+# 264 "mcc_generated_files/uart/src/../../system/../system/interrupt.h"
+void INT1_ISR(void);
+# 273 "mcc_generated_files/uart/src/../../system/../system/interrupt.h"
+void INT1_CallBack(void);
+# 282 "mcc_generated_files/uart/src/../../system/../system/interrupt.h"
+void INT1_SetInterruptHandler(void (* InterruptHandler)(void));
+# 292 "mcc_generated_files/uart/src/../../system/../system/interrupt.h"
+extern void (*INT1_InterruptHandler)(void);
+# 301 "mcc_generated_files/uart/src/../../system/../system/interrupt.h"
+void INT1_DefaultInterruptHandler(void);
+# 310 "mcc_generated_files/uart/src/../../system/../system/interrupt.h"
+void INT2_ISR(void);
+# 319 "mcc_generated_files/uart/src/../../system/../system/interrupt.h"
+void INT2_CallBack(void);
+# 328 "mcc_generated_files/uart/src/../../system/../system/interrupt.h"
+void INT2_SetInterruptHandler(void (* InterruptHandler)(void));
+# 338 "mcc_generated_files/uart/src/../../system/../system/interrupt.h"
+extern void (*INT2_InterruptHandler)(void);
+# 347 "mcc_generated_files/uart/src/../../system/../system/interrupt.h"
+void INT2_DefaultInterruptHandler(void);
+# 46 "mcc_generated_files/uart/src/../../system/system.h" 2
+
+
+
+
+
+
+
+
+void SYSTEM_Initialize(void);
+# 43 "mcc_generated_files/uart/src/../../system/../uart/uart2.h" 2
 # 87 "mcc_generated_files/uart/src/../../system/../uart/uart2.h"
 typedef union {
     struct {
@@ -27370,9 +27514,9 @@ void UART2_Initialize(void)
 
     U2CON2 = 0x0;
 
-    U2BRGL = 0x10;
+    U2BRGL = 0x38;
 
-    U2BRGH = 0x0;
+    U2BRGH = 0x1;
 
     U2FIFO = 0x2E;
 

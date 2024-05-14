@@ -41,6 +41,7 @@
 #include "config_bits.h"
 #include "../system/clock.h"
 #include "../system/pins.h"
+#include "../uart/uart1.h"
 #include "../uart/uart2.h"
 #include "../system/interrupt.h"
 

@@ -2567,8 +2567,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;mcc_generated_files/uart/src/uart2.c: 115:     U2CON2 = 0x0;
 [e = _U2CON2 -> -> 0 `i `uc ]
 "117
-[; ;mcc_generated_files/uart/src/uart2.c: 117:     U2BRGL = 0x10;
-[e = _U2BRGL -> -> 16 `i `uc ]
+[; ;mcc_generated_files/uart/src/uart2.c: 117:     U2BRGL = 0x19;
+[e = _U2BRGL -> -> 25 `i `uc ]
 "119
 [; ;mcc_generated_files/uart/src/uart2.c: 119:     U2BRGH = 0x0;
 [e = _U2BRGH -> -> 0 `i `uc ]

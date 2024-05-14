@@ -59,11 +59,11 @@
 [v ___omul __omul `(uo  1 e 8 0 ]
 "62 C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Lidar2.X\main.c
 [v _main main `(i  1 e 2 0 ]
-"86
+"87
 [v _read read `(v  1 e 1 0 ]
-"147
+"148
 [v _TF_Luna_Send_Freq TF_Luna_Send_Freq `(v  1 e 1 0 ]
-"170
+"171
 [v _TF_Luna_Trigger TF_Luna_Trigger `(v  1 e 1 0 ]
 "37 C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Lidar2.X\mcc_generated_files/system/src/clock.c
 [v _CLOCK_Initialize CLOCK_Initialize `(v  1 e 1 0 ]
@@ -175,8 +175,8 @@
 [v _OSCTUNE OSCTUNE `VEuc  1 e 1 @14814 ]
 "5405
 [v _OSCFRQ OSCFRQ `VEuc  1 e 1 @14815 ]
-"7517
-[v _RD1PPS RD1PPS `VEuc  1 e 1 @14873 ]
+"7467
+[v _RD0PPS RD0PPS `VEuc  1 e 1 @14872 ]
 "8017
 [v _ANSELA ANSELA `VEuc  1 e 1 @14912 ]
 "8079
@@ -500,76 +500,44 @@
 "62 C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Lidar2.X\main.c
 [v _main main `(i  1 e 2 0 ]
 {
-"84
+"85
 } 0
-"86
+"87
 [v _read read `(v  1 e 1 0 ]
 {
-"109
+"110
 [v read@i i `uc  1 a 1 82 ]
-"92
+"93
 [v read@data data `[20]uc  1 a 20 46 ]
-"95
+"96
 [v read@received_bytes received_bytes `[9]uc  1 a 9 66 ]
-"90
-[v read@distance distance `us  1 a 2 78 ]
-"98
-[v read@byte_count byte_count `uc  1 a 1 81 ]
-"87
-[v read@Read_header Read_header `uc  1 a 1 80 ]
-"89
-[v read@distance_H distance_H `uc  1 a 1 77 ]
-"88
-[v read@distance_L distance_L `uc  1 a 1 76 ]
 "91
+[v read@distance distance `us  1 a 2 78 ]
+"99
+[v read@byte_count byte_count `uc  1 a 1 81 ]
+"88
+[v read@Read_header Read_header `uc  1 a 1 80 ]
+"90
+[v read@distance_H distance_H `uc  1 a 1 77 ]
+"89
+[v read@distance_L distance_L `uc  1 a 1 76 ]
+"92
 [v read@count count `uc  1 a 1 75 ]
-"125
+"126
 } 0
 "9 C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\nf_sprintf.c
 [v _sprintf sprintf `(i  1 e 2 0 ]
 {
-[u S1647 . 3 `*.2uc 1 buffer 3 0 `*.2Cuc 1 source 3 0 ]
+[u S1646 . 3 `*.2uc 1 buffer 3 0 `*.2Cuc 1 source 3 0 ]
 "13
-[s S1650 _IO_FILE 12 `S1647 1 . 3 0 `i 1 count 2 3 `[3]uc 1 ungetbuf 3 5 `i 1 ungetcnt 2 8 `i 1 limit 2 10 ]
-[v sprintf@f f `S1650  1 a 12 32 ]
+[s S1649 _IO_FILE 12 `S1646 1 . 3 0 `i 1 count 2 3 `[3]uc 1 ungetbuf 3 5 `i 1 ungetcnt 2 8 `i 1 limit 2 10 ]
+[v sprintf@f f `S1649  1 a 12 32 ]
 "12
 [v sprintf@ap ap `[1]*.30v  1 a 1 31 ]
 "9
 [v sprintf@s s `*.30uc  1 p 1 27 ]
 [v sprintf@fmt fmt `*.31Cuc  1 p 1 28 ]
 "23
-} 0
-"266 C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Lidar2.X\mcc_generated_files/uart/src/uart2.c
-[v _UART2_Read UART2_Read `(uc  1 e 1 0 ]
-{
-"269
-} 0
-"227
-[v _UART2_IsRxReady UART2_IsRxReady `(a  1 e 1 0 ]
-{
-"230
-} 0
-"174
-[v _UART2_ReceiveEnable UART2_ReceiveEnable `T(v  1 e 1 0 ]
-{
-"177
-} 0
-"170 C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Lidar2.X\main.c
-[v _TF_Luna_Trigger TF_Luna_Trigger `(v  1 e 1 0 ]
-{
-[v TF_Luna_Trigger@header header `uc  1 a 1 wreg ]
-"171
-[v TF_Luna_Trigger@bytes bytes `[6]uc  1 a 6 34 ]
-"172
-[v TF_Luna_Trigger@bytes_sent bytes_sent `uc  1 a 1 41 ]
-"170
-[v TF_Luna_Trigger@header header `uc  1 a 1 wreg ]
-[v TF_Luna_Trigger@length length `uc  1 p 1 31 ]
-[v TF_Luna_Trigger@id id `uc  1 p 1 32 ]
-[v TF_Luna_Trigger@payload payload `uc  1 p 1 33 ]
-"172
-[v TF_Luna_Trigger@header header `uc  1 a 1 40 ]
-"187
 } 0
 "5 C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\printf.c
 [v _printf printf `(i  1 e 2 0 ]
@@ -585,9 +553,9 @@
 {
 "1820
 [v vfprintf@cfmt cfmt `*.31uc  1 a 1 26 ]
-[s S1682 _IO_FILE 0 ]
+[s S1681 _IO_FILE 0 ]
 "1817
-[v vfprintf@fp fp `*.39S1682  1 p 2 22 ]
+[v vfprintf@fp fp `*.39S1681  1 p 2 22 ]
 [v vfprintf@fmt fmt `*.31Cuc  1 p 1 24 ]
 [v vfprintf@ap ap `*.30*.30v  1 p 1 25 ]
 "1840
@@ -595,15 +563,15 @@
 "1177
 [v _vfpfcnvrt vfpfcnvrt `(v  1 s 1 vfpfcnvrt ]
 {
-[u S1695 . 4 `i 1 sint 2 0 `ui 1 uint 2 0 `d 1 f 4 0 ]
+[u S1694 . 4 `i 1 sint 2 0 `ui 1 uint 2 0 `d 1 f 4 0 ]
 "1188
-[v vfpfcnvrt@convarg convarg `S1695  1 a 4 16 ]
+[v vfpfcnvrt@convarg convarg `S1694  1 a 4 16 ]
 "1179
 [v vfpfcnvrt@c c `uc  1 a 1 21 ]
 [v vfpfcnvrt@cp cp `*.31uc  1 a 1 20 ]
-[s S1682 _IO_FILE 0 ]
+[s S1681 _IO_FILE 0 ]
 "1177
-[v vfpfcnvrt@fp fp `*.39S1682  1 p 2 11 ]
+[v vfpfcnvrt@fp fp `*.39S1681  1 p 2 11 ]
 [v vfpfcnvrt@fmt fmt `*.30*.31uc  1 p 1 13 ]
 [v vfpfcnvrt@ap ap `*.30*.30v  1 p 1 14 ]
 "1814
@@ -612,9 +580,9 @@
 [v _fputc fputc `(i  1 e 2 0 ]
 {
 [v fputc@c c `i  1 p 2 2 ]
-[u S1647 . 3 `*.2uc 1 buffer 3 0 `*.2Cuc 1 source 3 0 ]
-[s S1650 _IO_FILE 12 `S1647 1 . 3 0 `i 1 count 2 3 `[3]uc 1 ungetbuf 3 5 `i 1 ungetcnt 2 8 `i 1 limit 2 10 ]
-[v fputc@fp fp `*.39S1650  1 p 2 4 ]
+[u S1646 . 3 `*.2uc 1 buffer 3 0 `*.2Cuc 1 source 3 0 ]
+[s S1649 _IO_FILE 12 `S1646 1 . 3 0 `i 1 count 2 3 `[3]uc 1 ungetbuf 3 5 `i 1 ungetcnt 2 8 `i 1 limit 2 10 ]
+[v fputc@fp fp `*.39S1649  1 p 2 4 ]
 "24
 } 0
 "284 C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Lidar2.X\mcc_generated_files/uart/src/uart2.c
@@ -647,6 +615,16 @@
 [v ___lwdiv@divisor divisor `ui  1 p 2 2 ]
 "30
 } 0
+"266 C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Lidar2.X\mcc_generated_files/uart/src/uart2.c
+[v _UART2_Read UART2_Read `(uc  1 e 1 0 ]
+{
+"269
+} 0
+"227
+[v _UART2_IsRxReady UART2_IsRxReady `(a  1 e 1 0 ]
+{
+"230
+} 0
 "84 C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Lidar2.X/LCD.h
 [v _LCD_String_xy LCD_String_xy `(v  1 e 1 0 ]
 {
@@ -675,24 +653,46 @@
 [v LCD_Char@dat dat `uc  1 a 1 6 ]
 "72
 } 0
-"147 C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Lidar2.X\main.c
+"174 C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Lidar2.X\mcc_generated_files/uart/src/uart2.c
+[v _UART2_ReceiveEnable UART2_ReceiveEnable `T(v  1 e 1 0 ]
+{
+"177
+} 0
+"171 C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Lidar2.X\main.c
+[v _TF_Luna_Trigger TF_Luna_Trigger `(v  1 e 1 0 ]
+{
+[v TF_Luna_Trigger@header header `uc  1 a 1 wreg ]
+"172
+[v TF_Luna_Trigger@bytes bytes `[6]uc  1 a 6 4 ]
+"173
+[v TF_Luna_Trigger@bytes_sent bytes_sent `uc  1 a 1 11 ]
+"171
+[v TF_Luna_Trigger@header header `uc  1 a 1 wreg ]
+[v TF_Luna_Trigger@length length `uc  1 p 1 1 ]
+[v TF_Luna_Trigger@id id `uc  1 p 1 2 ]
+[v TF_Luna_Trigger@payload payload `uc  1 p 1 3 ]
+"173
+[v TF_Luna_Trigger@header header `uc  1 a 1 10 ]
+"188
+} 0
+"148
 [v _TF_Luna_Send_Freq TF_Luna_Send_Freq `(v  1 e 1 0 ]
 {
 [v TF_Luna_Send_Freq@header header `uc  1 a 1 wreg ]
-"148
+"149
 [v TF_Luna_Send_Freq@bytes bytes `[6]uc  1 a 6 6 ]
-"151
+"152
 [v TF_Luna_Send_Freq@bytes_sent bytes_sent `uc  1 a 1 13 ]
-"147
+"148
 [v TF_Luna_Send_Freq@header header `uc  1 a 1 wreg ]
 [v TF_Luna_Send_Freq@length length `uc  1 p 1 1 ]
 [v TF_Luna_Send_Freq@id id `uc  1 p 1 2 ]
 [v TF_Luna_Send_Freq@freq freq `uc  1 p 1 3 ]
 [v TF_Luna_Send_Freq@freq_dec freq_dec `uc  1 p 1 4 ]
 [v TF_Luna_Send_Freq@checksum checksum `uc  1 p 1 5 ]
-"151
+"152
 [v TF_Luna_Send_Freq@header header `uc  1 a 1 12 ]
-"166
+"167
 } 0
 "272 C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Lidar2.X\mcc_generated_files/uart/src/uart2.c
 [v _UART2_Write UART2_Write `(v  1 e 1 0 ]
