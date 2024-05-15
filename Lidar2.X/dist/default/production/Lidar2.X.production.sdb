@@ -15,6 +15,12 @@
 [v _LCD_String_xy LCD_String_xy `(v  1 e 1 0 ]
 "101
 [v _MSdelay MSdelay `(v  1 e 1 0 ]
+"1 C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\abs.c
+[v _abs abs `(i  1 e 2 0 ]
+"7 C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
+"7 C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\awmod.c
+[v ___awmod __awmod `(i  1 e 2 0 ]
 "1177 C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\doprnt.c
 [v _vfpfcnvrt vfpfcnvrt `(v  1 s 1 vfpfcnvrt ]
 "1817
@@ -55,13 +61,13 @@
 [v ___lmul __lmul `(ul  1 e 4 0 ]
 "91 C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\Umul64.c
 [v ___omul __omul `(uo  1 e 8 0 ]
-"62 C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Lidar2.X\main.c
+"63 C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Lidar2.X\main.c
 [v _main main `(i  1 e 2 0 ]
-"87
+"101
 [v _read read `(v  1 e 1 0 ]
-"148
+"162
 [v _TF_Luna_Send_Freq TF_Luna_Send_Freq `(v  1 e 1 0 ]
-"171
+"185
 [v _TF_Luna_Trigger TF_Luna_Trigger `(v  1 e 1 0 ]
 "37 C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Lidar2.X\mcc_generated_files/system/src/clock.c
 [v _CLOCK_Initialize CLOCK_Initialize `(v  1 e 1 0 ]
@@ -458,29 +464,29 @@
 [v _U1P3H U1P3H `VEuc  1 e 1 @15857 ]
 "26162
 [v _U1CON0 U1CON0 `VEuc  1 e 1 @15858 ]
-[s S1498 . 1 `uc 1 MODE0 1 0 :1:0 
+[s S1122 . 1 `uc 1 MODE0 1 0 :1:0 
 `uc 1 MODE1 1 0 :1:1 
 `uc 1 MODE2 1 0 :1:2 
 `uc 1 MODE3 1 0 :1:3 
 ]
 "26195
-[s S1503 . 1 `uc 1 U1MODE 1 0 :4:0 
+[s S1127 . 1 `uc 1 U1MODE 1 0 :4:0 
 `uc 1 U1RXEN 1 0 :1:4 
 `uc 1 U1TXEN 1 0 :1:5 
 `uc 1 U1ABDEN 1 0 :1:6 
 `uc 1 U1BRGS 1 0 :1:7 
 ]
-[s S1509 . 1 `uc 1 U1MODE0 1 0 :1:0 
+[s S1133 . 1 `uc 1 U1MODE0 1 0 :1:0 
 `uc 1 U1MODE1 1 0 :1:1 
 `uc 1 U1MODE2 1 0 :1:2 
 `uc 1 U1MODE3 1 0 :1:3 
 ]
-[u S1520 . 1 `S1498 1 . 1 0 `S1503 1 . 1 0 `S1509 1 . 1 0 `S573 1 . 1 0 ]
-[v _U1CON0bits U1CON0bits `VES1520  1 e 1 @15858 ]
+[u S1144 . 1 `S1122 1 . 1 0 `S1127 1 . 1 0 `S1133 1 . 1 0 `S573 1 . 1 0 ]
+[v _U1CON0bits U1CON0bits `VES1144  1 e 1 @15858 ]
 "26290
 [v _U1CON1 U1CON1 `VEuc  1 e 1 @15859 ]
 "26315
-[s S1470 . 1 `uc 1 U1SENDB 1 0 :1:0 
+[s S1094 . 1 `uc 1 U1SENDB 1 0 :1:0 
 `uc 1 U1BRKOVR 1 0 :1:1 
 `uc 1 . 1 0 :1:2 
 `uc 1 U1RXBIMD 1 0 :1:3 
@@ -488,8 +494,8 @@
 `uc 1 . 1 0 :2:5 
 `uc 1 U1ON 1 0 :1:7 
 ]
-[u S1478 . 1 `S523 1 . 1 0 `S1470 1 . 1 0 ]
-[v _U1CON1bits U1CON1bits `VES1478  1 e 1 @15859 ]
+[u S1102 . 1 `S523 1 . 1 0 `S1094 1 . 1 0 ]
+[v _U1CON1bits U1CON1bits `VES1102  1 e 1 @15859 ]
 "26370
 [v _U1CON2 U1CON2 `VEuc  1 e 1 @15860 ]
 "26519
@@ -499,7 +505,7 @@
 "26559
 [v _U1FIFO U1FIFO `VEuc  1 e 1 @15863 ]
 "26594
-[s S1625 . 1 `uc 1 U1RXBF 1 0 :1:0 
+[s S1249 . 1 `uc 1 U1RXBF 1 0 :1:0 
 `uc 1 U1RXBE 1 0 :1:1 
 `uc 1 U1XON 1 0 :1:2 
 `uc 1 U1RXIDL 1 0 :1:3 
@@ -508,26 +514,26 @@
 `uc 1 U1STPMD 1 0 :1:6 
 `uc 1 U1TXWRE 1 0 :1:7 
 ]
-[s S1634 . 1 `uc 1 . 1 0 :3:0 
+[s S1258 . 1 `uc 1 . 1 0 :3:0 
 `uc 1 U1RCIDL 1 0 :1:3 
 ]
-[u S1640 . 1 `S673 1 . 1 0 `S1625 1 . 1 0 `S1634 1 . 1 0 `S694 1 . 1 0 ]
-[v _U1FIFObits U1FIFObits `VES1640  1 e 1 @15863 ]
+[u S1264 . 1 `S673 1 . 1 0 `S1249 1 . 1 0 `S1258 1 . 1 0 `S694 1 . 1 0 ]
+[v _U1FIFObits U1FIFObits `VES1264  1 e 1 @15863 ]
 "26689
 [v _U1UIR U1UIR `VEuc  1 e 1 @15864 ]
 "26710
-[s S1554 . 1 `uc 1 . 1 0 :2:0 
+[s S1178 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 U1ABDIE 1 0 :1:2 
 `uc 1 . 1 0 :3:3 
 `uc 1 U1ABDIF 1 0 :1:6 
 `uc 1 U1WUIF 1 0 :1:7 
 ]
-[u S1560 . 1 `S605 1 . 1 0 `S1554 1 . 1 0 ]
-[v _U1UIRbits U1UIRbits `VES1560  1 e 1 @15864 ]
+[u S1184 . 1 `S605 1 . 1 0 `S1178 1 . 1 0 ]
+[v _U1UIRbits U1UIRbits `VES1184  1 e 1 @15864 ]
 "26745
 [v _U1ERRIR U1ERRIR `VEuc  1 e 1 @15865 ]
 "26772
-[s S1585 . 1 `uc 1 U1TXCIF 1 0 :1:0 
+[s S1209 . 1 `uc 1 U1TXCIF 1 0 :1:0 
 `uc 1 U1RXFOIF 1 0 :1:1 
 `uc 1 U1RXBKIF 1 0 :1:2 
 `uc 1 U1FERIF 1 0 :1:3 
@@ -536,8 +542,8 @@
 `uc 1 U1PERIF 1 0 :1:6 
 `uc 1 U1TXMTIF 1 0 :1:7 
 ]
-[u S1594 . 1 `S633 1 . 1 0 `S1585 1 . 1 0 ]
-[v _U1ERRIRbits U1ERRIRbits `VES1594  1 e 1 @15865 ]
+[u S1218 . 1 `S633 1 . 1 0 `S1209 1 . 1 0 ]
+[v _U1ERRIRbits U1ERRIRbits `VES1218  1 e 1 @15865 ]
 "26857
 [v _U1ERRIE U1ERRIE `VEuc  1 e 1 @15866 ]
 "45976
@@ -560,7 +566,7 @@
 [v _TRISD TRISD `VEuc  1 e 1 @16325 ]
 "46724
 [v _TRISE TRISE `VEuc  1 e 1 @16326 ]
-[s S881 . 1 `uc 1 RA0 1 0 :1:0 
+[s S1444 . 1 `uc 1 RA0 1 0 :1:0 
 `uc 1 RA1 1 0 :1:1 
 `uc 1 RA2 1 0 :1:2 
 `uc 1 RA3 1 0 :1:3 
@@ -570,11 +576,11 @@
 `uc 1 RA7 1 0 :1:7 
 ]
 "46773
-[u S890 . 1 `S881 1 . 1 0 ]
+[u S1453 . 1 `S1444 1 . 1 0 ]
 "46773
 "46773
-[v _PORTAbits PORTAbits `VES890  1 e 1 @16330 ]
-[s S902 . 1 `uc 1 RC0 1 0 :1:0 
+[v _PORTAbits PORTAbits `VES1453  1 e 1 @16330 ]
+[s S1465 . 1 `uc 1 RC0 1 0 :1:0 
 `uc 1 RC1 1 0 :1:1 
 `uc 1 RC2 1 0 :1:2 
 `uc 1 RC3 1 0 :1:3 
@@ -584,10 +590,12 @@
 `uc 1 RC7 1 0 :1:7 
 ]
 "46897
-[u S911 . 1 `S902 1 . 1 0 ]
+[u S1474 . 1 `S1465 1 . 1 0 ]
 "46897
 "46897
-[v _PORTCbits PORTCbits `VES911  1 e 1 @16332 ]
+[v _PORTCbits PORTCbits `VES1474  1 e 1 @16332 ]
+"47004
+[v _PORTE PORTE `VEuc  1 e 1 @16334 ]
 [s S107 . 1 `uc 1 INT0EDG 1 0 :1:0 
 `uc 1 INT1EDG 1 0 :1:1 
 `uc 1 INT2EDG 1 0 :1:2 
@@ -647,81 +655,85 @@
 [v _UART2_OverrunErrorHandler UART2_OverrunErrorHandler `*.38(v  1 e 3 0 ]
 "85
 [v _UART2_ParityErrorHandler UART2_ParityErrorHandler `*.38(v  1 e 3 0 ]
-"62 C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Lidar2.X\main.c
+"63 C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Lidar2.X\main.c
 [v _main main `(i  1 e 2 0 ]
 {
-"85
+"84
+[v main@angle angle `i  1 a 2 84 ]
+"99
 } 0
-"87
+"101
 [v _read read `(v  1 e 1 0 ]
 {
+"124
+[v read@i i `uc  1 a 1 83 ]
+"107
+[v read@data data `[20]uc  1 a 20 47 ]
 "110
-[v read@i i `uc  1 a 1 82 ]
-"93
-[v read@data data `[20]uc  1 a 20 46 ]
-"96
-[v read@received_bytes received_bytes `[9]uc  1 a 9 66 ]
-"91
-[v read@distance distance `us  1 a 2 78 ]
-"99
-[v read@byte_count byte_count `uc  1 a 1 81 ]
-"88
-[v read@Read_header Read_header `uc  1 a 1 80 ]
-"90
-[v read@distance_H distance_H `uc  1 a 1 77 ]
-"89
-[v read@distance_L distance_L `uc  1 a 1 76 ]
-"92
-[v read@count count `uc  1 a 1 75 ]
-"126
+[v read@received_bytes received_bytes `[9]uc  1 a 9 67 ]
+"105
+[v read@distance distance `us  1 a 2 79 ]
+"113
+[v read@byte_count byte_count `uc  1 a 1 82 ]
+"102
+[v read@Read_header Read_header `uc  1 a 1 81 ]
+"104
+[v read@distance_H distance_H `uc  1 a 1 78 ]
+"103
+[v read@distance_L distance_L `uc  1 a 1 77 ]
+"106
+[v read@count count `uc  1 a 1 76 ]
+"140
 } 0
 "9 C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\nf_sprintf.c
 [v _sprintf sprintf `(i  1 e 2 0 ]
 {
-[u S2214 . 3 `*.2uc 1 buffer 3 0 `*.2Cuc 1 source 3 0 ]
+[u S2221 . 3 `*.2uc 1 buffer 3 0 `*.2Cuc 1 source 3 0 ]
 "13
-[s S2217 _IO_FILE 12 `S2214 1 . 3 0 `i 1 count 2 3 `[3]uc 1 ungetbuf 3 5 `i 1 ungetcnt 2 8 `i 1 limit 2 10 ]
-[v sprintf@f f `S2217  1 a 12 32 ]
+[s S2224 _IO_FILE 12 `S2221 1 . 3 0 `i 1 count 2 3 `[3]uc 1 ungetbuf 3 5 `i 1 ungetcnt 2 8 `i 1 limit 2 10 ]
+[v sprintf@f f `S2224  1 a 12 33 ]
 "12
-[v sprintf@ap ap `[1]*.30v  1 a 1 31 ]
+[v sprintf@ap ap `[1]*.30v  1 a 1 32 ]
 "9
-[v sprintf@s s `*.30uc  1 p 1 27 ]
-[v sprintf@fmt fmt `*.31Cuc  1 p 1 28 ]
+[v sprintf@s s `*.30uc  1 p 1 28 ]
+[v sprintf@fmt fmt `*.31Cuc  1 p 1 29 ]
 "23
 } 0
 "5 C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\printf.c
 [v _printf printf `(i  1 e 2 0 ]
 {
 "8
-[v printf@ap ap `[1]*.30v  1 a 1 30 ]
+[v printf@ap ap `[1]*.30v  1 a 1 31 ]
 "5
-[v printf@fmt fmt `*.31Cuc  1 p 1 27 ]
+[v printf@fmt fmt `*.31Cuc  1 p 1 28 ]
 "13
 } 0
 "1817 C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\doprnt.c
 [v _vfprintf vfprintf `(i  1 e 2 0 ]
 {
 "1820
-[v vfprintf@cfmt cfmt `*.31uc  1 a 1 26 ]
-[s S2249 _IO_FILE 0 ]
+[v vfprintf@cfmt cfmt `*.31uc  1 a 1 27 ]
+[s S2256 _IO_FILE 0 ]
 "1817
-[v vfprintf@fp fp `*.39S2249  1 p 2 22 ]
-[v vfprintf@fmt fmt `*.31Cuc  1 p 1 24 ]
-[v vfprintf@ap ap `*.30*.30v  1 p 1 25 ]
+[v vfprintf@fp fp `*.39S2256  1 p 2 23 ]
+[v vfprintf@fmt fmt `*.31Cuc  1 p 1 25 ]
+[v vfprintf@ap ap `*.30*.30v  1 p 1 26 ]
 "1840
 } 0
 "1177
 [v _vfpfcnvrt vfpfcnvrt `(v  1 s 1 vfpfcnvrt ]
 {
-[u S2262 . 4 `i 1 sint 2 0 `ui 1 uint 2 0 `d 1 f 4 0 ]
+[u S2269 . 4 `i 1 sint 2 0 `ui 1 uint 2 0 `d 1 f 4 0 ]
 "1188
-[v vfpfcnvrt@convarg convarg `S2262  1 a 4 16 ]
+[v vfpfcnvrt@convarg convarg `S2269  1 a 4 18 ]
 "1179
-[v vfpfcnvrt@c c `uc  1 a 1 21 ]
-[v vfpfcnvrt@cp cp `*.31uc  1 a 1 20 ]
-[s S2249 _IO_FILE 0 ]
+[v vfpfcnvrt@c c `uc  1 a 1 22 ]
+[v vfpfcnvrt@cp cp `*.31uc  1 a 1 17 ]
+"1180
+[v vfpfcnvrt@done done `a  1 a 1 16 ]
+[s S2256 _IO_FILE 0 ]
 "1177
-[v vfpfcnvrt@fp fp `*.39S2249  1 p 2 11 ]
+[v vfpfcnvrt@fp fp `*.39S2256  1 p 2 11 ]
 [v vfpfcnvrt@fmt fmt `*.30*.31uc  1 p 1 13 ]
 [v vfpfcnvrt@ap ap `*.30*.30v  1 p 1 14 ]
 "1814
@@ -730,9 +742,9 @@
 [v _fputc fputc `(i  1 e 2 0 ]
 {
 [v fputc@c c `i  1 p 2 2 ]
-[u S2214 . 3 `*.2uc 1 buffer 3 0 `*.2Cuc 1 source 3 0 ]
-[s S2217 _IO_FILE 12 `S2214 1 . 3 0 `i 1 count 2 3 `[3]uc 1 ungetbuf 3 5 `i 1 ungetcnt 2 8 `i 1 limit 2 10 ]
-[v fputc@fp fp `*.39S2217  1 p 2 4 ]
+[u S2221 . 3 `*.2uc 1 buffer 3 0 `*.2Cuc 1 source 3 0 ]
+[s S2224 _IO_FILE 12 `S2221 1 . 3 0 `i 1 count 2 3 `[3]uc 1 ungetbuf 3 5 `i 1 ungetcnt 2 8 `i 1 limit 2 10 ]
+[v fputc@fp fp `*.39S2224  1 p 2 4 ]
 "24
 } 0
 "284 C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Lidar2.X\mcc_generated_files/uart/src/uart2.c
@@ -742,6 +754,12 @@
 [v putch@txData txData `uc  1 a 1 wreg ]
 [v putch@txData txData `uc  1 a 1 1 ]
 "288
+} 0
+"1 C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\abs.c
+[v _abs abs `(i  1 e 2 0 ]
+{
+[v abs@a a `i  1 p 2 6 ]
+"4
 } 0
 "7 C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\lwmod.c
 [v ___lwmod __lwmod `(ui  1 e 2 0 ]
@@ -764,6 +782,30 @@
 [v ___lwdiv@dividend dividend `ui  1 p 2 0 ]
 [v ___lwdiv@divisor divisor `ui  1 p 2 2 ]
 "30
+} 0
+"7 C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\awmod.c
+[v ___awmod __awmod `(i  1 e 2 0 ]
+{
+"10
+[v ___awmod@sign sign `uc  1 a 1 5 ]
+[v ___awmod@counter counter `uc  1 a 1 4 ]
+"7
+[v ___awmod@dividend dividend `i  1 p 2 0 ]
+[v ___awmod@divisor divisor `i  1 p 2 2 ]
+"34
+} 0
+"7 C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
+{
+"10
+[v ___awdiv@quotient quotient `i  1 a 2 6 ]
+"11
+[v ___awdiv@sign sign `uc  1 a 1 5 ]
+[v ___awdiv@counter counter `uc  1 a 1 4 ]
+"7
+[v ___awdiv@dividend dividend `i  1 p 2 0 ]
+[v ___awdiv@divisor divisor `i  1 p 2 2 ]
+"41
 } 0
 "281 C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Lidar2.X\mcc_generated_files/uart/src/uart1.c
 [v _UART1_Read UART1_Read `(uc  1 e 1 0 ]
@@ -818,41 +860,41 @@
 {
 "177
 } 0
-"171 C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Lidar2.X\main.c
+"185 C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Lidar2.X\main.c
 [v _TF_Luna_Trigger TF_Luna_Trigger `(v  1 e 1 0 ]
 {
 [v TF_Luna_Trigger@header header `uc  1 a 1 wreg ]
-"172
+"186
 [v TF_Luna_Trigger@bytes bytes `[6]uc  1 a 6 4 ]
-"173
+"187
 [v TF_Luna_Trigger@bytes_sent bytes_sent `uc  1 a 1 11 ]
-"171
+"185
 [v TF_Luna_Trigger@header header `uc  1 a 1 wreg ]
 [v TF_Luna_Trigger@length length `uc  1 p 1 1 ]
 [v TF_Luna_Trigger@id id `uc  1 p 1 2 ]
 [v TF_Luna_Trigger@payload payload `uc  1 p 1 3 ]
-"173
+"187
 [v TF_Luna_Trigger@header header `uc  1 a 1 10 ]
-"188
+"202
 } 0
-"148
+"162
 [v _TF_Luna_Send_Freq TF_Luna_Send_Freq `(v  1 e 1 0 ]
 {
 [v TF_Luna_Send_Freq@header header `uc  1 a 1 wreg ]
-"149
+"163
 [v TF_Luna_Send_Freq@bytes bytes `[6]uc  1 a 6 6 ]
-"152
+"166
 [v TF_Luna_Send_Freq@bytes_sent bytes_sent `uc  1 a 1 13 ]
-"148
+"162
 [v TF_Luna_Send_Freq@header header `uc  1 a 1 wreg ]
 [v TF_Luna_Send_Freq@length length `uc  1 p 1 1 ]
 [v TF_Luna_Send_Freq@id id `uc  1 p 1 2 ]
 [v TF_Luna_Send_Freq@freq freq `uc  1 p 1 3 ]
 [v TF_Luna_Send_Freq@freq_dec freq_dec `uc  1 p 1 4 ]
 [v TF_Luna_Send_Freq@checksum checksum `uc  1 p 1 5 ]
-"152
+"166
 [v TF_Luna_Send_Freq@header header `uc  1 a 1 12 ]
-"167
+"181
 } 0
 "287 C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Lidar2.X\mcc_generated_files/uart/src/uart1.c
 [v _UART1_Write UART1_Write `(v  1 e 1 0 ]

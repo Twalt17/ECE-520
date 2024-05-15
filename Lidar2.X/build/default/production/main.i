@@ -27680,8 +27680,13 @@ uint8_t trigger = 0x04;
 
 
 
+
 int main(void)
 {
+    PORTE = 0;
+    TRISE = 0xFF;
+    ANSELE = 0;
+    LATE = 0;
 
     SYSTEM_Initialize();
     UART2_Initialize();
@@ -27690,18 +27695,27 @@ int main(void)
     U2CON0bits.TXEN = 1;
     UART2_ReceiveEnable();
     LCD_Init();
-    LCD_String_xy(1,0,"programmed2");
+    LCD_String_xy(1,0,"fuck");
     MSdelay(1000);
 
    TF_Luna_Send_Freq(header, 0x6, freq_ID, freq, freq_dec, checksum);
+   TF_Luna_Trigger(header, 0x4, trigger, 0x00);
+
+   int steps = 5;
+   int angle = 0;
+   while(1){
+   if(PORTE != 0){
+   printf("%d", steps);
+   MSdelay(3000);
 
    while(1){
-
-   MSdelay(200);
+   printf("%d", angle);
    TF_Luna_Trigger(header, 0x4, trigger, 0x00);
-   printf("hello..\r\n");
    read();
-   MSdelay(1000);
+   MSdelay(4000);
+   angle +=15;
+}
+   }
 }
 }
 
@@ -27737,7 +27751,7 @@ int main(void)
                 LCD_String_xy(2,0,data);
                 LCD_String_xy(2,5,"CM");
 
-                printf("Distance: %u CM\r\n", distance);
+                printf("%u\r\n", distance);
                 break;
             }
 
@@ -27745,7 +27759,7 @@ int main(void)
 
     return;
     }
-# 148 "main.c"
+# 162 "main.c"
 void TF_Luna_Send_Freq(uint8_t header, uint8_t length, uint8_t id, uint8_t freq, uint8_t freq_dec, uint8_t checksum) {
     uint8_t bytes[6];
 
