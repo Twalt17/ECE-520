@@ -26884,7 +26884,7 @@ void CLOCK_Initialize(void);
 
 
 # 1 "./mcc_generated_files/system/../system/pins.h" 1
-# 138 "./mcc_generated_files/system/../system/pins.h"
+# 158 "./mcc_generated_files/system/../system/pins.h"
 void PIN_MANAGER_Initialize (void);
 
 
@@ -27699,20 +27699,23 @@ int main(void)
     MSdelay(1000);
 
    TF_Luna_Send_Freq(header, 0x6, freq_ID, freq, freq_dec, checksum);
-   TF_Luna_Trigger(header, 0x4, trigger, 0x00);
+
 
    int steps = 5;
    int angle = 0;
-   while(1){
-   if(PORTE != 0){
-   printf("%d", steps);
-   MSdelay(3000);
 
    while(1){
-   printf("%d", angle);
+   if(PORTEbits.RE1 == 1){
+       angle = 0;
+       printf("%d\n\r",steps);
+   MSdelay(3000);
+
+   for (int i = 1; i<=steps;i++){
+   printf("%d\n\r", angle);
+   MSdelay(2000);
    TF_Luna_Trigger(header, 0x4, trigger, 0x00);
    read();
-   MSdelay(4000);
+   MSdelay(2000);
    angle +=15;
 }
    }
@@ -27759,7 +27762,7 @@ int main(void)
 
     return;
     }
-# 162 "main.c"
+# 165 "main.c"
 void TF_Luna_Send_Freq(uint8_t header, uint8_t length, uint8_t id, uint8_t freq, uint8_t freq_dec, uint8_t checksum) {
     uint8_t bytes[6];
 

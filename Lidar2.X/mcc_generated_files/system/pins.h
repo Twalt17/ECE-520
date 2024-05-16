@@ -129,6 +129,26 @@
 #define IO_RD1_SetAnalogMode()      do { ANSELDbits.ANSELD1 = 1; } while(0)
 #define IO_RD1_SetDigitalMode()     do { ANSELDbits.ANSELD1 = 0; } while(0)
 
+// get/set RE1 aliases
+#define IO_RE1_TRIS                 TRISEbits.TRISE1
+#define IO_RE1_LAT                  LATEbits.LATE1
+#define IO_RE1_PORT                 PORTEbits.RE1
+#define IO_RE1_WPU                  WPUEbits.WPUE1
+#define IO_RE1_OD                   ODCONEbits.ODCE1
+#define IO_RE1_ANS                  ANSELEbits.ANSELE1
+#define IO_RE1_SetHigh()            do { LATEbits.LATE1 = 1; } while(0)
+#define IO_RE1_SetLow()             do { LATEbits.LATE1 = 0; } while(0)
+#define IO_RE1_Toggle()             do { LATEbits.LATE1 = ~LATEbits.LATE1; } while(0)
+#define IO_RE1_GetValue()           PORTEbits.RE1
+#define IO_RE1_SetDigitalInput()    do { TRISEbits.TRISE1 = 1; } while(0)
+#define IO_RE1_SetDigitalOutput()   do { TRISEbits.TRISE1 = 0; } while(0)
+#define IO_RE1_SetPullup()          do { WPUEbits.WPUE1 = 1; } while(0)
+#define IO_RE1_ResetPullup()        do { WPUEbits.WPUE1 = 0; } while(0)
+#define IO_RE1_SetPushPull()        do { ODCONEbits.ODCE1 = 0; } while(0)
+#define IO_RE1_SetOpenDrain()       do { ODCONEbits.ODCE1 = 1; } while(0)
+#define IO_RE1_SetAnalogMode()      do { ANSELEbits.ANSELE1 = 1; } while(0)
+#define IO_RE1_SetDigitalMode()     do { ANSELEbits.ANSELE1 = 0; } while(0)
+
 /**
  * @ingroup  pinsdriver
  * @brief GPIO and peripheral I/O initialization

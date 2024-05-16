@@ -26869,7 +26869,7 @@ unsigned char __t1rd16on(void);
 unsigned char __t3rd16on(void);
 # 33 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\xc.h" 2 3
 # 38 "mcc_generated_files/system/src/../pins.h" 2
-# 138 "mcc_generated_files/system/src/../pins.h"
+# 158 "mcc_generated_files/system/src/../pins.h"
 void PIN_MANAGER_Initialize (void);
 
 
@@ -26910,7 +26910,7 @@ void PIN_MANAGER_Initialize(void)
     ANSELB = 0xFF;
     ANSELC = 0x3F;
     ANSELD = 0xFC;
-    ANSELE = 0x7;
+    ANSELE = 0x5;
 
 
 

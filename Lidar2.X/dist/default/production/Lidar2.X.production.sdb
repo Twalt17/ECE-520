@@ -63,11 +63,11 @@
 [v ___omul __omul `(uo  1 e 8 0 ]
 "63 C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Lidar2.X\main.c
 [v _main main `(i  1 e 2 0 ]
-"101
+"104
 [v _read read `(v  1 e 1 0 ]
-"162
+"165
 [v _TF_Luna_Send_Freq TF_Luna_Send_Freq `(v  1 e 1 0 ]
-"185
+"188
 [v _TF_Luna_Trigger TF_Luna_Trigger `(v  1 e 1 0 ]
 "37 C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Lidar2.X\mcc_generated_files/system/src/clock.c
 [v _CLOCK_Initialize CLOCK_Initialize `(v  1 e 1 0 ]
@@ -596,6 +596,16 @@
 [v _PORTCbits PORTCbits `VES1474  1 e 1 @16332 ]
 "47004
 [v _PORTE PORTE `VEuc  1 e 1 @16334 ]
+[s S1561 . 1 `uc 1 RE0 1 0 :1:0 
+`uc 1 RE1 1 0 :1:1 
+`uc 1 RE2 1 0 :1:2 
+`uc 1 RE3 1 0 :1:3 
+]
+"47017
+[u S1566 . 1 `S1561 1 . 1 0 ]
+"47017
+"47017
+[v _PORTEbits PORTEbits `VES1566  1 e 1 @16334 ]
 [s S107 . 1 `uc 1 INT0EDG 1 0 :1:0 
 `uc 1 INT1EDG 1 0 :1:1 
 `uc 1 INT2EDG 1 0 :1:2 
@@ -658,40 +668,44 @@
 "63 C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Lidar2.X\main.c
 [v _main main `(i  1 e 2 0 ]
 {
+"92
+[v main@i i `i  1 a 2 85 ]
+"83
+[v main@steps steps `i  1 a 2 89 ]
 "84
-[v main@angle angle `i  1 a 2 84 ]
-"99
+[v main@angle angle `i  1 a 2 87 ]
+"102
 } 0
-"101
+"104
 [v _read read `(v  1 e 1 0 ]
 {
-"124
+"127
 [v read@i i `uc  1 a 1 83 ]
-"107
-[v read@data data `[20]uc  1 a 20 47 ]
 "110
-[v read@received_bytes received_bytes `[9]uc  1 a 9 67 ]
-"105
-[v read@distance distance `us  1 a 2 79 ]
+[v read@data data `[20]uc  1 a 20 47 ]
 "113
+[v read@received_bytes received_bytes `[9]uc  1 a 9 67 ]
+"108
+[v read@distance distance `us  1 a 2 79 ]
+"116
 [v read@byte_count byte_count `uc  1 a 1 82 ]
-"102
+"105
 [v read@Read_header Read_header `uc  1 a 1 81 ]
-"104
+"107
 [v read@distance_H distance_H `uc  1 a 1 78 ]
-"103
-[v read@distance_L distance_L `uc  1 a 1 77 ]
 "106
+[v read@distance_L distance_L `uc  1 a 1 77 ]
+"109
 [v read@count count `uc  1 a 1 76 ]
-"140
+"143
 } 0
 "9 C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\nf_sprintf.c
 [v _sprintf sprintf `(i  1 e 2 0 ]
 {
-[u S2221 . 3 `*.2uc 1 buffer 3 0 `*.2Cuc 1 source 3 0 ]
+[u S2239 . 3 `*.2uc 1 buffer 3 0 `*.2Cuc 1 source 3 0 ]
 "13
-[s S2224 _IO_FILE 12 `S2221 1 . 3 0 `i 1 count 2 3 `[3]uc 1 ungetbuf 3 5 `i 1 ungetcnt 2 8 `i 1 limit 2 10 ]
-[v sprintf@f f `S2224  1 a 12 33 ]
+[s S2242 _IO_FILE 12 `S2239 1 . 3 0 `i 1 count 2 3 `[3]uc 1 ungetbuf 3 5 `i 1 ungetcnt 2 8 `i 1 limit 2 10 ]
+[v sprintf@f f `S2242  1 a 12 33 ]
 "12
 [v sprintf@ap ap `[1]*.30v  1 a 1 32 ]
 "9
@@ -713,9 +727,9 @@
 {
 "1820
 [v vfprintf@cfmt cfmt `*.31uc  1 a 1 27 ]
-[s S2256 _IO_FILE 0 ]
+[s S2274 _IO_FILE 0 ]
 "1817
-[v vfprintf@fp fp `*.39S2256  1 p 2 23 ]
+[v vfprintf@fp fp `*.39S2274  1 p 2 23 ]
 [v vfprintf@fmt fmt `*.31Cuc  1 p 1 25 ]
 [v vfprintf@ap ap `*.30*.30v  1 p 1 26 ]
 "1840
@@ -723,17 +737,17 @@
 "1177
 [v _vfpfcnvrt vfpfcnvrt `(v  1 s 1 vfpfcnvrt ]
 {
-[u S2269 . 4 `i 1 sint 2 0 `ui 1 uint 2 0 `d 1 f 4 0 ]
+[u S2287 . 4 `i 1 sint 2 0 `ui 1 uint 2 0 `d 1 f 4 0 ]
 "1188
-[v vfpfcnvrt@convarg convarg `S2269  1 a 4 18 ]
+[v vfpfcnvrt@convarg convarg `S2287  1 a 4 18 ]
 "1179
 [v vfpfcnvrt@c c `uc  1 a 1 22 ]
 [v vfpfcnvrt@cp cp `*.31uc  1 a 1 17 ]
 "1180
 [v vfpfcnvrt@done done `a  1 a 1 16 ]
-[s S2256 _IO_FILE 0 ]
+[s S2274 _IO_FILE 0 ]
 "1177
-[v vfpfcnvrt@fp fp `*.39S2256  1 p 2 11 ]
+[v vfpfcnvrt@fp fp `*.39S2274  1 p 2 11 ]
 [v vfpfcnvrt@fmt fmt `*.30*.31uc  1 p 1 13 ]
 [v vfpfcnvrt@ap ap `*.30*.30v  1 p 1 14 ]
 "1814
@@ -742,9 +756,9 @@
 [v _fputc fputc `(i  1 e 2 0 ]
 {
 [v fputc@c c `i  1 p 2 2 ]
-[u S2221 . 3 `*.2uc 1 buffer 3 0 `*.2Cuc 1 source 3 0 ]
-[s S2224 _IO_FILE 12 `S2221 1 . 3 0 `i 1 count 2 3 `[3]uc 1 ungetbuf 3 5 `i 1 ungetcnt 2 8 `i 1 limit 2 10 ]
-[v fputc@fp fp `*.39S2224  1 p 2 4 ]
+[u S2239 . 3 `*.2uc 1 buffer 3 0 `*.2Cuc 1 source 3 0 ]
+[s S2242 _IO_FILE 12 `S2239 1 . 3 0 `i 1 count 2 3 `[3]uc 1 ungetbuf 3 5 `i 1 ungetcnt 2 8 `i 1 limit 2 10 ]
+[v fputc@fp fp `*.39S2242  1 p 2 4 ]
 "24
 } 0
 "284 C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Lidar2.X\mcc_generated_files/uart/src/uart2.c
@@ -860,41 +874,41 @@
 {
 "177
 } 0
-"185 C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Lidar2.X\main.c
+"188 C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Lidar2.X\main.c
 [v _TF_Luna_Trigger TF_Luna_Trigger `(v  1 e 1 0 ]
 {
 [v TF_Luna_Trigger@header header `uc  1 a 1 wreg ]
-"186
+"189
 [v TF_Luna_Trigger@bytes bytes `[6]uc  1 a 6 4 ]
-"187
+"190
 [v TF_Luna_Trigger@bytes_sent bytes_sent `uc  1 a 1 11 ]
-"185
+"188
 [v TF_Luna_Trigger@header header `uc  1 a 1 wreg ]
 [v TF_Luna_Trigger@length length `uc  1 p 1 1 ]
 [v TF_Luna_Trigger@id id `uc  1 p 1 2 ]
 [v TF_Luna_Trigger@payload payload `uc  1 p 1 3 ]
-"187
+"190
 [v TF_Luna_Trigger@header header `uc  1 a 1 10 ]
-"202
+"205
 } 0
-"162
+"165
 [v _TF_Luna_Send_Freq TF_Luna_Send_Freq `(v  1 e 1 0 ]
 {
 [v TF_Luna_Send_Freq@header header `uc  1 a 1 wreg ]
-"163
-[v TF_Luna_Send_Freq@bytes bytes `[6]uc  1 a 6 6 ]
 "166
+[v TF_Luna_Send_Freq@bytes bytes `[6]uc  1 a 6 6 ]
+"169
 [v TF_Luna_Send_Freq@bytes_sent bytes_sent `uc  1 a 1 13 ]
-"162
+"165
 [v TF_Luna_Send_Freq@header header `uc  1 a 1 wreg ]
 [v TF_Luna_Send_Freq@length length `uc  1 p 1 1 ]
 [v TF_Luna_Send_Freq@id id `uc  1 p 1 2 ]
 [v TF_Luna_Send_Freq@freq freq `uc  1 p 1 3 ]
 [v TF_Luna_Send_Freq@freq_dec freq_dec `uc  1 p 1 4 ]
 [v TF_Luna_Send_Freq@checksum checksum `uc  1 p 1 5 ]
-"166
+"169
 [v TF_Luna_Send_Freq@header header `uc  1 a 1 12 ]
-"181
+"184
 } 0
 "287 C:\Users\Tyler\OneDrive\Documents\SSU Masters\ECE 520\Github Repository\ECE-520\Lidar2.X\mcc_generated_files/uart/src/uart1.c
 [v _UART1_Write UART1_Write `(v  1 e 1 0 ]

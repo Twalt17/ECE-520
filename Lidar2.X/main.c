@@ -78,20 +78,23 @@ int main(void)
     MSdelay(1000);
     
    TF_Luna_Send_Freq(header, 0x6, freq_ID, freq, freq_dec, checksum);
-   TF_Luna_Trigger(header, 0x4, trigger, 0x00);
+
    
    int steps = 5;
    int angle = 0;
+   
    while(1){
-   if(PORTE != 0){
-   printf("%d", steps);
+   if(PORTEbits.RE1 == 1){
+       angle = 0;
+       printf("%d\n\r",steps);
    MSdelay(3000);
  
-   while(1){  
-   printf("%d", angle);
+   for (int i = 1; i<=steps;i++){  
+   printf("%d\n\r", angle);
+   MSdelay(2000);
    TF_Luna_Trigger(header, 0x4, trigger, 0x00);
    read();
-   MSdelay(4000);
+   MSdelay(2000);
    angle +=15;
 }
    }

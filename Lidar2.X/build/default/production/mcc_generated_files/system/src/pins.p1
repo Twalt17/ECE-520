@@ -2447,8 +2447,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;mcc_generated_files/system/src/pins.c: 64:     ANSELD = 0xFC;
 [e = _ANSELD -> -> 252 `i `uc ]
 "65
-[; ;mcc_generated_files/system/src/pins.c: 65:     ANSELE = 0x7;
-[e = _ANSELE -> -> 7 `i `uc ]
+[; ;mcc_generated_files/system/src/pins.c: 65:     ANSELE = 0x5;
+[e = _ANSELE -> -> 5 `i `uc ]
 "70
 [; ;mcc_generated_files/system/src/pins.c: 70:     WPUA = 0x0;
 [e = _WPUA -> -> 0 `i `uc ]
